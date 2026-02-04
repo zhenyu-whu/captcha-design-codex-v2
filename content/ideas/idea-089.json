@@ -1,0 +1,78 @@
+{
+  "id": "89",
+  "slug": "idea-089",
+  "title": "时域干扰步调",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在短序列拖拽中插入闪现提示并要求即时反应，以拖拽节律与反应节律的耦合验证真实性。",
+  "background": "双任务切换会在时序上产生稳定的干扰模式，真实用户的拖拽节律与反应节律呈现自然耦合关系。脚本难以同时拟合轨迹动力学与节律序列。",
+  "core_mechanism": [
+    "用户执行短序列拖拽任务。",
+    "期间插入 1–2 次快速闪现提示并要求即时响应。",
+    "记录拖拽节律、反应时与节律耦合程度。",
+    "在任务内做相对比较形成判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户开始短序列拖拽。",
+    "步骤 2：出现闪现提示并即时响应。",
+    "步骤 3：系统记录节律耦合并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "拖拽节律与反应节律耦合",
+      "why_it_matters": "真实用户在双任务下节奏会自然偏移。"
+    },
+    {
+      "signal": "反应时波动",
+      "why_it_matters": "双任务切换引发可预测的时序抖动。"
+    }
+  ],
+  "decision_logic": "耦合关系需落在人类分布区间；过度独立或过度稳定判异常。",
+  "attack_surface": [
+    "脚本固定节奏进行拖拽与点击",
+    "重放真实用户的节律序列"
+  ],
+  "mitigations": [
+    "随机化闪现时机与拖拽路径",
+    "引入轻微速度扰动降低模板化",
+    "叠加轨迹微抖动信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢节奏与简化提示，对注意力或动作障碍用户提供替代任务。",
+  "risks": [
+    "双任务负荷过高导致误拒",
+    "设备延迟影响节律同步"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：拖拽序列",
+      "caption": "短序列拖拽任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-089-1.svg"
+    },
+    {
+      "title": "状态 2：闪现干扰",
+      "caption": "插入闪现提示并即时响应。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-089-2.svg"
+    },
+    {
+      "title": "状态 3：节律判定",
+      "caption": "对节律耦合与波动进行判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-089-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Task switching",
+      "url": "https://en.wikipedia.org/wiki/Task_switching_(psychology)",
+      "note": "说明双任务切换对反应时的影响。"
+    },
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节律耦合与同步特征。"
+    }
+  ]
+}

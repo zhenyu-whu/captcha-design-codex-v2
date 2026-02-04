@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#142 状态驱动分岔 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#142</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>状态驱动分岔</h1>
+        <p>依据滚动或指针速度触发不同微任务，比较分岔前后预测误差与设备基线。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>依据当前滚动速度/指针速度触发不同微任务，系统比较分岔前后预测误差并与设备基线比对。</p>
+        <p>用实时状态分岔打断脚本的固定策略。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在状态切换中会表现出可预测的误差与适应过程。动态分岔可打断脚本固定策略，并捕捉状态驱动的预测误差特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>监测实时状态（滚动/指针速度）。</li><li>达到阈值时触发不同微任务分支。</li><li>记录分岔前后预测误差与适应时间。</li><li>与设备基线及历史分布比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进行连续操作，系统监测状态。</li><li>步骤 2：触发分岔任务并完成。</li><li>步骤 3：系统分析预测误差与适应曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>分岔触发前状态分布</strong>
+  <div>真实用户状态波动具有稳定区间。</div>
+</div>
+
+<div class="signal-item">
+  <strong>分岔后预测误差</strong>
+  <div>适应过程会产生可解释的误差结构。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>状态分布与分岔后误差需匹配基线；无适应或误差恒定判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本保持固定速度触发特定分支</li><li>提前推断阈值并模拟响应</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化分岔阈值与任务类型</li><li>隐藏分岔触发规则</li><li>加入意外分支与回归检查</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低强度阈值与手动触发选项。</p>
+        <ul><li>设备性能差异影响状态测量</li><li>分岔任务过多导致困惑</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-142-1.svg" alt="状态 1：状态监测" />
+  <h3>状态 1：状态监测</h3>
+  <p>根据速度状态触发分岔。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-142-2.svg" alt="状态 2：分岔任务" />
+  <h3>状态 2：分岔任务</h3>
+  <p>进入不同微任务分支。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-142-3.svg" alt="状态 3：误差比较" />
+  <h3>状态 3：误差比较</h3>
+  <p>比较分岔前后预测误差。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Internal_model_(motor_control)" target="_blank" rel="noreferrer">Internal model (motor control)</a>
+  <div>说明运动预测与误差机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明状态变化下的反应时特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

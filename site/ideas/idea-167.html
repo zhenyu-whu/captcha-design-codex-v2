@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#167 主动扰动回馈 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#167</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>主动扰动回馈</h1>
+        <p>轨迹中插入扰动点并观察即时回馈曲线，判定基于纠偏时序与抖动谱。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在轨迹中插入短促扰动点并观察即时回馈曲线，判定基于扰动‑纠偏的时序结构与微抖动谱。</p>
+        <p>预生成“对抗轨迹”难以预测扰动点，实时反馈成为关键门槛。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>主动扰动会引发即时纠偏，真实用户反馈呈稳定时序结构与微抖动谱。扰动点不可预测，可削弱预生成轨迹攻击。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在轨迹中随机插入扰动点。</li><li>记录扰动后的回拉与时延。</li><li>提取微抖动频谱与纠偏幅度。</li><li>与人类基线分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进行连续轨迹操作。</li><li>步骤 2：系统插入短促扰动。</li><li>步骤 3：系统分析回馈曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>扰动后纠偏时延</strong>
+  <div>真实反馈存在可测延迟。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微抖动频谱</strong>
+  <div>生理噪声体现真实操控。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>纠偏时延与抖动谱需匹配人类区间；瞬时回弹或过度平滑判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本预测扰动并预补偿</li><li>回放固定纠偏轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>扰动位置与幅度随机化</li><li>多次扰动叠加检测</li><li>结合反应时与路径信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低强度扰动与慢速模式。</p>
+        <ul><li>扰动过强影响任务完成</li><li>触控设备噪声干扰</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-167-1.svg" alt="状态 1：扰动插入" />
+  <h3>状态 1：扰动插入</h3>
+  <p>轨迹中出现扰动点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-167-2.svg" alt="状态 2：即时纠偏" />
+  <h3>状态 2：即时纠偏</h3>
+  <p>记录回拉与修正。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-167-3.svg" alt="状态 3：频谱判定" />
+  <h3>状态 3：频谱判定</h3>
+  <p>分析抖动谱与时延。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_system#Closed-loop_control" target="_blank" rel="noreferrer">Closed-loop control</a>
+  <div>说明扰动与反馈机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明纠偏与运动控制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

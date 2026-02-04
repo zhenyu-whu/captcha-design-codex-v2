@@ -1,0 +1,78 @@
+{
+  "id": "56",
+  "slug": "idea-056",
+  "title": "假运动路径选择",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "两点快速交替闪现后选择并描绘主观运动路径，利用路径形态与起笔延迟验证视觉补偿特征。",
+  "background": "在高频交替刺激中，人类会产生假运动知觉并补全路径。通过记录路径选择与描绘节奏，可获得稳定的知觉补偿特征。",
+  "core_mechanism": [
+    "两点快速交替闪现形成假运动。",
+    "用户选择“感觉移动的路径”并轻描。",
+    "记录路径形态、起笔延迟与速度。",
+    "分析路径一致性与补全偏差。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到两点交替闪现。",
+    "步骤 2：用户描绘主观运动路径。",
+    "步骤 3：系统分析路径特征并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "路径形态与曲率",
+      "why_it_matters": "真实假运动补全通常呈现平滑路径。"
+    },
+    {
+      "signal": "起笔延迟与描绘速度",
+      "why_it_matters": "假运动知觉形成后会快速描绘。"
+    }
+  ],
+  "decision_logic": "结合路径平滑度、起笔延迟与一致性判定；过度机械或随机化判异常。",
+  "attack_surface": [
+    "脚本直接绘制预设路径",
+    "重放真实用户的描绘轨迹"
+  ],
+  "mitigations": [
+    "随机化点位与交替频率",
+    "引入轻微噪声与时间抖动",
+    "叠加微时序与轨迹抖动进行多信号验证"
+  ],
+  "accessibility": "提供路径选择按钮替代描绘模式，避免对绘制能力受限用户造成负担。",
+  "risks": [
+    "频繁闪现可能引起疲劳",
+    "刷新率影响假运动体验"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：交替闪现",
+      "caption": "两点快速交替形成假运动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-056-1.svg"
+    },
+    {
+      "title": "状态 2：路径描绘",
+      "caption": "用户描绘主观运动路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-056-2.svg"
+    },
+    {
+      "title": "状态 3：路径判定",
+      "caption": "分析路径形态与时序。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-056-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Phi phenomenon",
+      "url": "https://en.wikipedia.org/wiki/Phi_phenomenon",
+      "note": "说明假运动知觉与路径补全。"
+    },
+    {
+      "title": "Apparent motion",
+      "url": "https://en.wikipedia.org/wiki/Apparent_motion",
+      "note": "说明交替刺激引发的运动错觉。"
+    }
+  ]
+}

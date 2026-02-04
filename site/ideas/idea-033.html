@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#33 暗适应恢复点 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#33</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>暗适应恢复点</h1>
+        <p>明亮闪光后呈现低对比目标，记录用户“刚刚看见”的恢复时间分布。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>明亮闪光后立即呈现低对比目标，用户在“刚刚看见”的瞬间点击。记录恢复时间分布与点击路径。</p>
+        <p>利用暗适应时间曲线与不稳定阈值，而非视觉识别能力。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>暗适应过程受视网膜敏感度恢复影响，存在可测的时间曲线与阈值波动。通过测量从强光刺激到目标可见的恢复时刻，可得到稳定的感知特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>强光闪烁后立即呈现低对比目标。</li><li>用户在刚可见时点击确认。</li><li>记录恢复时间、点击路径与犹豫。</li><li>分析恢复时间分布与稳定性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户经历短暂强光刺激。</li><li>步骤 2：低对比目标出现，用户等待可见。</li><li>步骤 3：用户点击确认，系统记录判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>恢复时间分布</strong>
+  <div>暗适应具有稳定的恢复曲线范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>确认点击前的微调与停顿</strong>
+  <div>真实可见阈值存在短暂犹豫与回看。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检查恢复时间是否落在合理区间，并结合点击前的停顿节奏；恢复过快或无犹豫判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定等待时间后点击</li><li>重放真实用户的确认序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化闪光强度与目标对比度</li><li>引入轻微位置漂移与噪声减少模板化</li><li>叠加鼠标轨迹与时序特征进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供可跳过或低强度模式，避免对光敏或视力受限用户造成不适。</p>
+        <ul><li>强光刺激可能引起不适</li><li>环境光线差异影响恢复时间</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-033-1.svg" alt="状态 1：强光刺激" />
+  <h3>状态 1：强光刺激</h3>
+  <p>短时强光闪烁后切换。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-033-2.svg" alt="状态 2：恢复等待" />
+  <h3>状态 2：恢复等待</h3>
+  <p>低对比目标逐渐可见。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-033-3.svg" alt="状态 3：恢复判定" />
+  <h3>状态 3：恢复判定</h3>
+  <p>记录恢复时间分布与点击。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Dark_adaptation" target="_blank" rel="noreferrer">Dark adaptation</a>
+  <div>说明暗适应的恢复过程。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_adaptation" target="_blank" rel="noreferrer">Visual adaptation</a>
+  <div>说明视觉适应与阈值变化。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

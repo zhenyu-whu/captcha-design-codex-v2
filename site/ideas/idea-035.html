@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#35 色彩适应回弹 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#35</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>色彩适应回弹</h1>
+        <p>凝视强烈色块后调节灰阶中性点，以补偿方向与幅度验证色彩适应特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>让用户凝视强烈色块后切到灰阶，要求调节滑杆使“灰看起来中性”。记录补偿方向与幅度。</p>
+        <p>使用色彩适应带来的主观偏移作为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>色彩适应会导致中性色产生偏色错觉，且补偿方向与幅度存在稳定分布。通过测量用户对灰阶中性点的主观校准，可获得难以伪造的感知信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现强烈色块进行短时适应。</li><li>切换至灰阶目标并提供色相滑杆。</li><li>用户调节到“看起来中性”的灰。</li><li>记录补偿方向、幅度与收敛过程。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户凝视高饱和色块。</li><li>步骤 2：画面切换到灰阶并开始调节。</li><li>步骤 3：系统记录补偿幅度并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>补偿方向与幅度</strong>
+  <div>色彩适应引发的偏色具有可预测方向。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调节收敛速度与回撤次数</strong>
+  <div>真实校准通常表现为逐步收敛。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检查补偿方向与幅度是否落在适应强度对应区间，并结合收敛曲线；固定值或一次到位判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接提交固定补偿值</li><li>重放真实用户的调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化色块颜色与适应时长</li><li>加入轻微背景纹理与亮度变化</li><li>叠加微时序与鼠标轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低饱和或替代任务模式，避免对色觉异常用户造成不公平负担。</p>
+        <ul><li>色觉差异导致阈值偏移</li><li>显示设备色彩校准差异影响结果</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-035-1.svg" alt="状态 1：色块适应" />
+  <h3>状态 1：色块适应</h3>
+  <p>高饱和色块进行短时适应。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-035-2.svg" alt="状态 2：灰阶调节" />
+  <h3>状态 2：灰阶调节</h3>
+  <p>用户调节灰阶至中性。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-035-3.svg" alt="状态 3：回弹判定" />
+  <h3>状态 3：回弹判定</h3>
+  <p>分析补偿方向与幅度。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Color_adaptation" target="_blank" rel="noreferrer">Color adaptation</a>
+  <div>说明色彩适应与中性点偏移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Afterimage" target="_blank" rel="noreferrer">Afterimage</a>
+  <div>说明适应后的色彩残影效应。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#117 现实节奏对齐 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#117</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>现实节奏对齐</h1>
+        <p>任务移动目标节奏由系统时钟驱动，用户在节奏点完成操作，以节律序列验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>任务中的移动目标节奏由系统时钟驱动，用户需在节奏点完成操作，系统以节律序列与群体基线判定。任务结构为短序列，信号形态为节律序列。</p>
+        <p>把“真实时间节奏”作为不可伪造的约束。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实时间节奏是不可伪造的外部约束，用户对系统节拍的同步会呈现稳定的误差分布。将节奏点作为操作窗口，可检验在场同步能力。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>移动目标按系统时钟节拍变化。</li><li>用户在节奏点完成操作。</li><li>记录节律序列与对齐误差。</li><li>与群体基线分布比对判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观察节奏驱动的移动目标。</li><li>步骤 2：在节奏点完成操作。</li><li>步骤 3：系统分析节律序列并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>对齐误差序列</strong>
+  <div>人类同步存在稳定的偏移与波动。</div>
+</div>
+
+<div class="signal-item">
+  <strong>节律一致性</strong>
+  <div>真实用户的节奏一致性不会过度完美。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>误差序列需落在人类分布区间；过度精准或无波动判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本读取时钟精确同步</li><li>重放真实用户的节奏序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化节拍间隔与目标路径</li><li>引入轻微扰动降低固定同步</li><li>叠加轨迹与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节奏与更大目标，允许键盘替代。</p>
+        <ul><li>设备延迟影响同步误差</li><li>节拍过快导致误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-117-1.svg" alt="状态 1：节奏目标" />
+  <h3>状态 1：节奏目标</h3>
+  <p>目标按节奏点移动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-117-2.svg" alt="状态 2：节奏操作" />
+  <h3>状态 2：节奏操作</h3>
+  <p>用户在节奏点完成操作。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-117-3.svg" alt="状态 3：序列判定" />
+  <h3>状态 3：序列判定</h3>
+  <p>比较节律一致性与误差。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Sensorimotor_synchronization" target="_blank" rel="noreferrer">Sensorimotor synchronization</a>
+  <div>说明节拍同步与误差分布。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Rhythm" target="_blank" rel="noreferrer">Rhythm</a>
+  <div>说明节律序列与同步能力。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

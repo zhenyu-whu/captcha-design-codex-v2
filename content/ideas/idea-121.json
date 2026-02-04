@@ -1,0 +1,78 @@
+{
+  "id": "121",
+  "slug": "idea-121",
+  "title": "双频融合对比",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "两个区域以不同频率闪烁，用户调节到“都不再闪烁”，记录临界频率差并做相对比较。",
+  "background": "临界闪烁融合频率存在个体差异，但两区域的阈值差异更稳定。以融合阈值差异作为信号可降低绝对阈值被仿真的风险。",
+  "core_mechanism": [
+    "两个区域以不同频率闪烁。",
+    "用户调节频率到“都不再闪烁”。",
+    "记录两区临界频率与差值。",
+    "进行任务内相对比较判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到双区域闪烁。",
+    "步骤 2：调节到两区都不再闪烁。",
+    "步骤 3：系统比较阈值差并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "两区融合阈值差",
+      "why_it_matters": "差值相对稳定，难以被固定阈值伪造。"
+    },
+    {
+      "signal": "调节过程与回弹",
+      "why_it_matters": "真实用户通常会出现微调与回弹。"
+    }
+  ],
+  "decision_logic": "阈值差需落在人类分布区间且存在自然微调；过度一致或无回弹判异常。",
+  "attack_surface": [
+    "脚本直接选择固定阈值差",
+    "重放真实用户的调节轨迹"
+  ],
+  "mitigations": [
+    "随机化初始频率与区域位置",
+    "加入轻微亮度扰动降低模板化",
+    "叠加停顿与反应时信号"
+  ],
+  "accessibility": "提供更慢频率范围与替代任务，避免对光敏用户造成不适。",
+  "risks": [
+    "屏幕刷新率限制阈值精度",
+    "光敏用户可能触发不适"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：双频闪烁",
+      "caption": "两个区域不同频率闪烁。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-121-1.svg"
+    },
+    {
+      "title": "状态 2：阈值调节",
+      "caption": "调节至两区都不再闪烁。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-121-2.svg"
+    },
+    {
+      "title": "状态 3：差值判定",
+      "caption": "比较融合阈值差异。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-121-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Flicker fusion threshold",
+      "url": "https://en.wikipedia.org/wiki/Flicker_fusion_threshold",
+      "note": "说明临界闪烁融合频率。"
+    },
+    {
+      "title": "Temporal resolution",
+      "url": "https://en.wikipedia.org/wiki/Temporal_resolution",
+      "note": "说明视觉系统的时间分辨能力。"
+    }
+  ]
+}

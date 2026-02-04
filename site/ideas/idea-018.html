@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#18 视觉搜索路径签名 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#18</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>视觉搜索路径签名</h1>
+        <p>记录密集图形中的搜索路径与停留分布，以粗扫到局部细扫的层级搜索模式区分脚本。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在密集图形中寻找特定目标，记录搜索路径与停留点分布。人类通常呈“粗扫—局部细扫”的层级搜索模式。</p>
+        <p>验证的是“搜索路径形态”而不是识别结果。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉搜索任务中，人类通常先进行全局扫视，再进入局部细扫，形成具有层级性的扫描路径与停留点分布。基于这一规律，可将搜索路径的形态特征作为验证信号，避免单纯依赖答案正确与否。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在密集图形中嵌入目标元素并设定时间窗口。</li><li>要求用户找到目标并点击，记录鼠标搜索路径与停留点。</li><li>提取路径的层级性、回访率与停留分布。</li><li>与人类搜索模式区间比对，判定真实性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到密集图形与目标提示。</li><li>步骤 2：用户在画面内搜索并点击目标。</li><li>步骤 3：系统分析搜索路径并输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>扫视长度与停留点层级结构</strong>
+  <div>人类搜索常呈现先长程粗扫再短程细扫的层级特征。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回访率与路径熵</strong>
+  <div>真实搜索存在有限回访与非线性路径，脚本常过度规则或过度随机。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>计算搜索路径的层级性指标、停留点密度与回访率，要求位于人类统计范围；过度直线化或完全随机化均判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本使用显著性模型生成伪搜索路径</li><li>重放真实用户的搜索轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标位置与干扰布局，降低重放价值</li><li>加入微时序信号（速度波动与停顿）进行多信号判定</li><li>在搜索过程中动态切换目标，提高脚本难度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高对比与放大模式，并允许替代通道（列表选择或键盘导航），避免低视力用户被排斥。</p>
+        <ul><li>密集搜索可能带来较高认知负担</li><li>设备尺寸与输入设备差异影响路径特征</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-018-1.svg" alt="状态 1：密集搜索任务" />
+  <h3>状态 1：密集搜索任务</h3>
+  <p>目标嵌入在高密度元素中。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-018-2.svg" alt="状态 2：搜索路径" />
+  <h3>状态 2：搜索路径</h3>
+  <p>记录搜索轨迹与停留点分布。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-018-3.svg" alt="状态 3：路径判定" />
+  <h3>状态 3：路径判定</h3>
+  <p>分析层级结构与回访率形成判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_search" target="_blank" rel="noreferrer">Visual search</a>
+  <div>说明视觉搜索任务的基本范式。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Saccade" target="_blank" rel="noreferrer">Saccade</a>
+  <div>说明扫视与停留点的行为特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

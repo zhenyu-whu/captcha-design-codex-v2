@@ -1,0 +1,78 @@
+{
+  "id": "25",
+  "slug": "idea-025",
+  "title": "变化盲视检测",
+  "group": "视觉思考范式：空间/结构/直觉",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "利用变化发现的延迟曲线与变化尺度关系验证真实性。",
+  "background": "变化盲视表明人类对场景变化的检测存在显著延迟，且延迟与变化规模、位置与干扰程度相关。通过测量发现时间分布可形成稳定的行为特征，而非单纯依赖是否找到。",
+  "core_mechanism": [
+    "两幅近似图形快速交替呈现。",
+    "用户发现变化后点击变化位置。",
+    "记录发现时间与点击位置误差。",
+    "分析发现时间与变化尺度的关系。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到交替闪烁的场景。",
+    "步骤 2：用户发现变化并点击位置。",
+    "步骤 3：系统拟合延迟曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "发现时间与变化尺度的曲线",
+      "why_it_matters": "人类变化检测存在稳定的延迟曲线。"
+    },
+    {
+      "signal": "搜索轨迹与点击误差",
+      "why_it_matters": "真实搜索会出现逐步定位与局部停顿。"
+    }
+  ],
+  "decision_logic": "综合发现时间曲线与搜索轨迹特征，要求与人类统计范围一致；极端快速或无规律波动判异常。",
+  "attack_surface": [
+    "脚本对两帧做像素差检测",
+    "重放真实用户的发现序列"
+  ],
+  "mitigations": [
+    "随机化变化位置、大小与出现节奏",
+    "加入局部噪声与轻微位移干扰差分检测",
+    "叠加鼠标轨迹与停顿分布进行多信号判定"
+  ],
+  "accessibility": "提供低闪烁频率或替代模式，并允许键盘选择变化区域，避免对光敏或注意力受限用户不友好。",
+  "risks": [
+    "频繁闪烁可能引起视觉疲劳",
+    "环境光线与屏幕刷新率影响延迟测量"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：交替场景",
+      "caption": "两幅近似图形快速切换。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-025-1.svg"
+    },
+    {
+      "title": "状态 2：变化定位",
+      "caption": "用户发现变化并点击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-025-2.svg"
+    },
+    {
+      "title": "状态 3：延迟曲线",
+      "caption": "拟合变化尺度与发现时间关系。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-025-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Change blindness",
+      "url": "https://en.wikipedia.org/wiki/Change_blindness",
+      "note": "说明变化盲视的基本现象与机制。"
+    },
+    {
+      "title": "Attention",
+      "url": "https://en.wikipedia.org/wiki/Attention",
+      "note": "说明注意力限制对变化检测的影响。"
+    }
+  ]
+}

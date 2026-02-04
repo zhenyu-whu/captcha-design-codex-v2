@@ -1,0 +1,78 @@
+{
+  "id": "178",
+  "slug": "idea-178",
+  "title": "延迟漂移剖面",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "逐步改变响应延迟并记录适应曲线，识别固定延迟回放。",
+  "background": "真实用户会对延迟变化逐步适应，形成可观测的漂移剖面。回放或脚本通常表现为固定延迟模式。",
+  "core_mechanism": [
+    "在验证过程中缓慢改变反馈延迟。",
+    "记录用户补偿行为与反应时。",
+    "拟合延迟适应曲线。",
+    "检测固定延迟或不适应模式。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成连续操作。",
+    "步骤 2：系统逐步改变反馈延迟。",
+    "步骤 3：系统分析适应剖面并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "适应斜率",
+      "why_it_matters": "真实用户会逐步补偿延迟。"
+    },
+    {
+      "signal": "反应时漂移",
+      "why_it_matters": "延迟变化会改变反应时结构。"
+    }
+  ],
+  "decision_logic": "适应曲线需连续且有补偿趋势；固定延迟或无适应判异常。",
+  "attack_surface": [
+    "脚本忽略反馈并固定输出",
+    "回放固定延迟轨迹"
+  ],
+  "mitigations": [
+    "随机化延迟漂移轨迹",
+    "加入短时反向漂移",
+    "与路径信号联合判定"
+  ],
+  "accessibility": "限制最大延迟并提供慢速模式。",
+  "risks": [
+    "高延迟设备误判",
+    "用户体验下降"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：延迟变化",
+      "caption": "反馈延迟逐步漂移。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-178-1.svg"
+    },
+    {
+      "title": "状态 2：适应轨迹",
+      "caption": "记录补偿与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-178-2.svg"
+    },
+    {
+      "title": "状态 3：剖面判定",
+      "caption": "分析漂移剖面特征。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-178-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Latency (engineering)",
+      "url": "https://en.wikipedia.org/wiki/Latency_(engineering)",
+      "note": "说明延迟与响应特性。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时变化与适应。"
+    }
+  ]
+}

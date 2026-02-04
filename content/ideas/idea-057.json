@@ -1,0 +1,78 @@
+{
+  "id": "57",
+  "slug": "idea-057",
+  "title": "深度先验排序",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "依据遮挡、阴影或透视提示快速排序前后层级，利用深度先验与排序时序验证真实性。",
+  "background": "人类利用遮挡、阴影和透视线索形成稳定的深度先验。测量层级排序的一致性与耗时，可形成可靠的视觉分层特征。",
+  "core_mechanism": [
+    "展示包含遮挡与透视线索的场景。",
+    "用户快速排序前后层级。",
+    "记录排序耗时与一致性。",
+    "分析排序策略与反应时分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到深度线索场景。",
+    "步骤 2：用户拖拽或点击排序层级。",
+    "步骤 3：系统分析排序一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "排序一致性与反应时",
+      "why_it_matters": "深度先验通常产生稳定的快速排序。"
+    },
+    {
+      "signal": "回撤次数与排序路径",
+      "why_it_matters": "真实判断会出现短暂回撤与微调。"
+    }
+  ],
+  "decision_logic": "综合排序一致性与反应时，要求与人类深度先验分布一致；排序随机或过快判异常。",
+  "attack_surface": [
+    "脚本直接读取图层信息排序",
+    "重放真实用户的排序序列"
+  ],
+  "mitigations": [
+    "随机化遮挡关系与透视角度",
+    "引入轻微噪声与位置抖动",
+    "叠加鼠标轨迹与微时序信号进行多信号验证"
+  ],
+  "accessibility": "提供简化场景或替代任务模式，避免对空间感知受限用户造成负担。",
+  "risks": [
+    "场景复杂度过高增加认知负担",
+    "小屏设备降低深度线索显著性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：深度线索",
+      "caption": "遮挡与透视形成层级暗示。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-057-1.svg"
+    },
+    {
+      "title": "状态 2：层级排序",
+      "caption": "用户快速排序前后层级。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-057-2.svg"
+    },
+    {
+      "title": "状态 3：排序判定",
+      "caption": "分析一致性与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-057-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Depth perception",
+      "url": "https://en.wikipedia.org/wiki/Depth_perception",
+      "note": "说明深度线索与层级判断。"
+    },
+    {
+      "title": "Occlusion",
+      "url": "https://en.wikipedia.org/wiki/Occlusion_(perception)",
+      "note": "说明遮挡作为深度先验线索。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#64 透视尺寸校准 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#64</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>透视尺寸校准</h1>
+        <p>在透视网格中调节远景物体大小，利用校准比例与微调路径验证大小恒常性偏差。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>透视网格中有近景与远景物体，用户调整远景物体大小直到“看起来一样大”。记录校准比例与微调路径。</p>
+        <p>以人类“大小恒常性”偏差作为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>大小恒常性使人类在透视场景中维持对物体真实大小的估计，但会产生系统性偏差。通过测量远景物体的校准比例与调节路径，可获得稳定的感知信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示透视网格中的近景与远景物体。</li><li>用户调节远景物体大小直到看起来一致。</li><li>记录校准比例与微调步数。</li><li>分析大小恒常偏差与收敛曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到透视场景与两物体。</li><li>步骤 2：用户调节远景物体大小。</li><li>步骤 3：系统记录比例并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>校准比例与偏移方向</strong>
+  <div>大小恒常性导致可预测的比例偏差。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调步数与回撤节奏</strong>
+  <div>真实校准通常伴随小幅回撤。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估校准比例与微调曲线是否落在人类范围；无偏差或一次到位判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本依据透视比例直接设置大小</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化透视角度与物体位置</li><li>加入轻微噪声与比例扰动</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化场景或键盘微调模式，避免对精细操作用户造成负担。</p>
+        <ul><li>透视线索不足导致偏差增大</li><li>小屏设备影响深度感知</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-064-1.svg" alt="状态 1：透视场景" />
+  <h3>状态 1：透视场景</h3>
+  <p>近景与远景物体处在透视网格中。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-064-2.svg" alt="状态 2：尺寸调节" />
+  <h3>状态 2：尺寸调节</h3>
+  <p>用户调节远景物体大小。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-064-3.svg" alt="状态 3：比例判定" />
+  <h3>状态 3：比例判定</h3>
+  <p>分析校准比例与微调路径。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Size_constancy" target="_blank" rel="noreferrer">Size constancy</a>
+  <div>说明大小恒常与透视偏差。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Perspective_(graphical)" target="_blank" rel="noreferrer">Perspective (graphical)</a>
+  <div>说明透视线索与尺度感知。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

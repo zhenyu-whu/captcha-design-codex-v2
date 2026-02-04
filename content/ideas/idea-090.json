@@ -1,0 +1,78 @@
+{
+  "id": "90",
+  "slug": "idea-090",
+  "title": "微弧双击校准",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "用户双击后立即拖出微弧轨迹，系统记录加速度与抖动谱并与基线比对验证真实性。",
+  "background": "短序列中的双击—微弧动作会暴露人类手部控制的非线性细节，如起始加速度、过冲与微抖动。脚本虽可生成轨迹，但难以稳定复现真实动力学特征。",
+  "core_mechanism": [
+    "提示用户完成一次双击。",
+    "双击后立即拖出短小弧形轨迹。",
+    "记录加速度、过冲与抖动频谱。",
+    "与群体基线进行比对判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到双击提示。",
+    "步骤 2：双击后拖出微弧轨迹。",
+    "步骤 3：系统分析动力学并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "起始加速度与过冲",
+      "why_it_matters": "人类动作起步存在稳定的动力学形态。"
+    },
+    {
+      "signal": "抖动频谱",
+      "why_it_matters": "微弧轨迹包含生理噪声结构。"
+    }
+  ],
+  "decision_logic": "加速度曲线与抖动谱需落在人类分布区间；过度平滑或过度一致判异常。",
+  "attack_surface": [
+    "脚本生成固定微弧轨迹",
+    "重放真实用户的拖拽序列"
+  ],
+  "mitigations": [
+    "随机化弧长与方向",
+    "加入轻微动态扰动降低模板化",
+    "叠加双击节奏与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供替代任务与慢速模式，避免对手部障碍用户造成负担。",
+  "risks": [
+    "小屏设备难以精确拖弧",
+    "设备采样率影响频谱质量"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：双击提示",
+      "caption": "用户完成双击操作。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-090-1.svg"
+    },
+    {
+      "title": "状态 2：微弧拖动",
+      "caption": "双击后拖出微弧轨迹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-090-2.svg"
+    },
+    {
+      "title": "状态 3：动力判定",
+      "caption": "根据动力学与抖动谱判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-090-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明动作控制与动力学特征。"
+    },
+    {
+      "title": "Kinematics",
+      "url": "https://en.wikipedia.org/wiki/Kinematics",
+      "note": "说明速度与加速度等运动学指标。"
+    }
+  ]
+}

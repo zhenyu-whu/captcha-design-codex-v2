@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#83 错觉校准双任务 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#83</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>错觉校准双任务</h1>
+        <p>在校准错觉图形的同时响应短促提示，以错觉偏差量与反应时序列的相对关系验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户在校准错觉图形的同时响应短促提示，系统用错觉偏差量与反应时序列的任务内相对比较判定。任务结构为双任务切换，信号形态为错觉偏差与节律序列。</p>
+        <p>把“错觉偏差 + 干扰结构”组合成难以复制的双信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉错觉会引发稳定的感知偏差，而双任务切换会带来可预测的注意力与反应时波动。将错觉校准与节律提示结合，可形成难以被脚本同时拟合的双信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现错觉图形并要求用户调整到“看起来正确”的状态。</li><li>同时出现短促提示，用户需要即时响应。</li><li>记录错觉偏差量与反应时序列。</li><li>在任务内做相对比较以形成稳定判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到错觉图形并开始校准。</li><li>步骤 2：期间响应短促提示并继续校准。</li><li>步骤 3：系统记录偏差量与节律序列并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>错觉偏差量</strong>
+  <div>人类对错觉的校准偏差具有稳定分布。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时序列与波动</strong>
+  <div>双任务切换会产生特定的节律抖动。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>偏差量需落在人类分布区间，且反应时序列与偏差存在合理关联；过度平滑或无波动判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算错觉图形几何并校准</li><li>预设固定反应时序列进行伪造</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化错觉类型与参数</li><li>动态调整提示时序与负载</li><li>叠加指针轨迹与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低负担模式与更长响应窗口，允许替代任务避免对注意力障碍用户造成压力。</p>
+        <ul><li>双任务负荷过高导致误拒</li><li>不同设备刷新率影响错觉呈现</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-083-1.svg" alt="状态 1：错觉校准" />
+  <h3>状态 1：错觉校准</h3>
+  <p>用户调整错觉图形到主观正确。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-083-2.svg" alt="状态 2：双任务响应" />
+  <h3>状态 2：双任务响应</h3>
+  <p>校准过程中出现短促提示。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-083-3.svg" alt="状态 3：序列判定" />
+  <h3>状态 3：序列判定</h3>
+  <p>结合偏差量与节律序列判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Optical_illusion" target="_blank" rel="noreferrer">Optical illusion</a>
+  <div>说明错觉偏差与感知校准基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Task_switching_(psychology)" target="_blank" rel="noreferrer">Task switching</a>
+  <div>说明双任务切换对反应时的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

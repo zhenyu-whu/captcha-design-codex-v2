@@ -1,0 +1,78 @@
+{
+  "id": "130",
+  "slug": "idea-130",
+  "title": "虚轮廓描边‑抖动谱",
+  "group": "E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "描绘虚轮廓并记录抖动谱与曲率稳定性，综合知觉补全与生理噪声判定。",
+  "background": "虚轮廓依赖知觉补全（如 Kanizsa 图形），描绘路径需要持续感知。手部微颤具有稳定频谱特征，两者结合可提升鲁棒性。",
+  "core_mechanism": [
+    "呈现虚轮廓线索（缺口圆/夹角）。",
+    "用户沿虚轮廓描边完成路径。",
+    "提取路径偏差与微抖动频谱。",
+    "综合补全准确度与抖动特征判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到虚轮廓线索。",
+    "步骤 2：拖动描边沿轮廓完成闭合。",
+    "步骤 3：系统分析路径与抖动谱。"
+  ],
+  "signals": [
+    {
+      "signal": "轮廓补全偏差",
+      "why_it_matters": "真实用户会沿虚轮廓完成连续曲线。"
+    },
+    {
+      "signal": "微抖动频谱",
+      "why_it_matters": "人类手部微颤具有稳定带宽。"
+    }
+  ],
+  "decision_logic": "路径需贴合预期轮廓且抖动谱在生理区间；过度平滑或偏离判异常。",
+  "attack_surface": [
+    "脚本生成完美曲线轨迹",
+    "重放真实用户路径"
+  ],
+  "mitigations": [
+    "随机化线索布局与轮廓形状",
+    "加入轻微动态漂移",
+    "结合时间窗与多段路径一致性"
+  ],
+  "accessibility": "提供更粗描边与放大视图，支持触控/键控替代。",
+  "risks": [
+    "精细描边对运动障碍用户不友好",
+    "触控设备噪声影响抖动判定"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：虚轮廓线索",
+      "caption": "用缺口形状形成虚轮廓。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-130-1.svg"
+    },
+    {
+      "title": "状态 2：描边轨迹",
+      "caption": "沿虚轮廓描绘并采集轨迹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-130-2.svg"
+    },
+    {
+      "title": "状态 3：抖动谱判定",
+      "caption": "分析曲率与抖动频谱。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-130-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Illusory contours",
+      "url": "https://en.wikipedia.org/wiki/Illusory_contours",
+      "note": "说明虚轮廓与知觉补全。"
+    },
+    {
+      "title": "Physiological tremor",
+      "url": "https://en.wikipedia.org/wiki/Physiological_tremor",
+      "note": "说明手部微颤的生理特征。"
+    }
+  ]
+}

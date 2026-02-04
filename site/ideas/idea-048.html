@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#48 倾斜后效校准 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#48</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>倾斜后效校准</h1>
+        <p>暴露倾斜条纹后调节到真垂直，利用偏移量与微调步长验证倾斜后效特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>暴露倾斜条纹后，要求用户调节到“真垂直”；记录偏移量与调节微步。</p>
+        <p>用倾斜后效引起的系统性偏差作为生理签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>倾斜后效会使垂直线条呈现倾斜错觉，偏移量与调节步长具有稳定范围。通过测量偏移量与微调行为，可获得稳定的视觉适应信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现倾斜条纹进行短时适应。</li><li>切换到可调节的垂直基线。</li><li>用户调节到“真垂直”位置。</li><li>记录偏移量与微调步长。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看倾斜条纹刺激。</li><li>步骤 2：出现基线并开始调节。</li><li>步骤 3：系统记录偏移与判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>偏移量方向与幅度</strong>
+  <div>倾斜后效引发系统性偏移。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调步长与回撤次数</strong>
+  <div>真实调节通常存在细小步进。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估偏移量是否在预期范围，并结合微调步长；偏移异常或一次到位判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设定固定角度</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化倾斜角度与适应时长</li><li>加入轻微噪声与纹理扰动</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低倾斜强度或替代任务模式，避免对视觉敏感用户造成不适。</p>
+        <ul><li>显示设备倾斜校准差异影响判定</li><li>强刺激可能引起不适</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-048-1.svg" alt="状态 1：倾斜适应" />
+  <h3>状态 1：倾斜适应</h3>
+  <p>倾斜条纹刺激短时适应。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-048-2.svg" alt="状态 2：垂直调节" />
+  <h3>状态 2：垂直调节</h3>
+  <p>用户调节到真垂直。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-048-3.svg" alt="状态 3：后效判定" />
+  <h3>状态 3：后效判定</h3>
+  <p>分析偏移量与微调步长。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Tilt_aftereffect" target="_blank" rel="noreferrer">Tilt aftereffect</a>
+  <div>说明倾斜后效与角度偏移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_adaptation" target="_blank" rel="noreferrer">Visual adaptation</a>
+  <div>说明视觉适应与主观校准。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

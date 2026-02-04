@@ -1,0 +1,15 @@
+<svg width="480" height="300" viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="440" height="260" rx="20" fill="#FFF9F2" stroke="#D7C9BB" stroke-width="2"/>
+  <rect x="60" y="70" width="360" height="160" rx="14" fill="#FFFDF9" stroke="#E1D4C8" stroke-width="1.5"/>
+  <rect x="95" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="120" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="145" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="185" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="210" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="250" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="275" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <rect x="300" y="135" width="18" height="30" rx="5" fill="#E7D7C7"/>
+  <path d="M170 120V180" stroke="#D7C9BB" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M235 120V180" stroke="#D7C9BB" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M290 120V180" stroke="#D7C9BB" stroke-width="2" stroke-dasharray="4 4"/>
+</svg>

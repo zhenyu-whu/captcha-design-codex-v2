@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#27 视觉因果路径 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#27</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>视觉因果路径</h1>
+        <p>让用户描绘直觉物理轨迹，依据惯性与转折自然度验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>展示简单物理场景（球、斜坡、挡板），让用户用鼠标描绘运动轨迹；系统评估轨迹的惯性与转折自然度。</p>
+        <p>用“直觉物理轨迹”作为认知特征，而非图形问答。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对物体运动存在直觉物理预期，如惯性延续、平滑转折与碰撞反弹。将该直觉转化为绘制轨迹任务，可得到相对稳定且难以精确伪造的运动路径特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示简单物理场景（球、斜坡、挡板）。</li><li>用户用鼠标描绘物体运动轨迹。</li><li>记录轨迹曲率、速度变化与转折角度。</li><li>评估轨迹与直觉物理模型的一致度。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到物理场景与起点。</li><li>步骤 2：用户描绘物体可能的运动轨迹。</li><li>步骤 3：系统分析轨迹特征并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>轨迹曲率与转折平滑度</strong>
+  <div>真实直觉轨迹通常连续平滑而非突变折线。</div>
+</div>
+
+<div class="signal-item">
+  <strong>碰撞点后的反弹角与惯性延续</strong>
+  <div>符合直觉物理的反弹角度与方向具有规律性。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估轨迹的平滑度、转折角与反弹方向是否符合直觉物理范围；过度理想化或完全随机化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本调用物理引擎生成轨迹</li><li>重放真实用户绘制路径</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化坡度、挡板位置与摩擦参数</li><li>引入轻微扰动与多场景组合提高伪造成本</li><li>叠加速度曲线与停顿分布进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供点击选择路径的替代模式，避免对精细绘制能力受限用户造成障碍。</p>
+        <ul><li>不同文化与物理经验差异导致轨迹偏差</li><li>触控设备绘制精度影响信号稳定性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-027-1.svg" alt="状态 1：物理场景" />
+  <h3>状态 1：物理场景</h3>
+  <p>球体与斜坡构成直觉物理任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-027-2.svg" alt="状态 2：轨迹描绘" />
+  <h3>状态 2：轨迹描绘</h3>
+  <p>用户描绘可能的运动路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-027-3.svg" alt="状态 3：路径判定" />
+  <h3>状态 3：路径判定</h3>
+  <p>评估平滑度与反弹角度。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Na%C3%AFve_physics" target="_blank" rel="noreferrer">Naive physics</a>
+  <div>说明人类直觉物理的认知基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Projectile_motion" target="_blank" rel="noreferrer">Projectile motion</a>
+  <div>说明常见运动轨迹的物理规律。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "id": "38",
+  "slug": "idea-038",
+  "title": "断裂补全延迟",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "断裂轮廓短闪后消失，记录心理补全的方向与描绘速度作为补全偏差信号。",
+  "background": "视觉系统会对断裂轮廓进行补全，形成主观连续的形状。补全方向与长度存在稳定偏差，可通过描绘节奏与路径特征提取行为签名。",
+  "core_mechanism": [
+    "断裂轮廓短时闪现后立即消失。",
+    "用户快速描绘他们认为的补全段。",
+    "记录补全方向、长度与描绘速度。",
+    "分析补全偏差与节奏特征。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到断裂轮廓闪现。",
+    "步骤 2：图形消失后用户描绘补全段。",
+    "步骤 3：系统分析补全特征并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "补全方向与长度分布",
+      "why_it_matters": "人类补全具有稳定的方向与长度偏差。"
+    },
+    {
+      "signal": "描绘速度与起笔延迟",
+      "why_it_matters": "真实补全会在短暂思考后快速描绘。"
+    }
+  ],
+  "decision_logic": "评估补全方向、长度与描绘时序是否落在人类范围；过度精确或随机化判异常。",
+  "attack_surface": [
+    "脚本基于几何规则直接补全",
+    "重放真实用户的描绘轨迹"
+  ],
+  "mitigations": [
+    "随机化断裂形态与方向，避免固定几何解",
+    "引入轻微噪声与遮罩增强不确定性",
+    "叠加微时序与轨迹抖动进行多信号判定"
+  ],
+  "accessibility": "提供点击选择补全方向的替代模式，减少精细描绘负担。",
+  "risks": [
+    "对形状知觉差异导致补全偏差",
+    "触控设备描绘精度影响特征稳定性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：断裂轮廓",
+      "caption": "断裂轮廓短时闪现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-038-1.svg"
+    },
+    {
+      "title": "状态 2：补全描绘",
+      "caption": "用户描绘心理补全段。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-038-2.svg"
+    },
+    {
+      "title": "状态 3：补全判定",
+      "caption": "分析补全方向与速度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-038-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Perceptual completion",
+      "url": "https://en.wikipedia.org/wiki/Illusory_contours",
+      "note": "说明视觉补全与虚假轮廓现象。"
+    },
+    {
+      "title": "Gestalt psychology",
+      "url": "https://en.wikipedia.org/wiki/Gestalt_psychology",
+      "note": "说明补全作为整体知觉原则。"
+    }
+  ]
+}

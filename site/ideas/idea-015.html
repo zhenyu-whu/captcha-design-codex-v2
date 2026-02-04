@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#15 纠偏过冲签名 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#15</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>纠偏过冲签名</h1>
+        <p>通过窄目标停靠任务测量过冲与回拉比例，提取方向性纠偏签名。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>要求用户精确停在窄目标上，测量其过冲/回拉比率。人类在不同方向具有稳定的“过冲-回拉”比例偏差。</p>
+        <p>用“过冲结构”区分人类控制模式与程序控制。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>受反馈延迟与运动控制机制影响，人在精确停靠时常出现过冲与回拉。过冲比例与方向性偏差具有稳定性，可作为行为签名，区分脚本的完美停靠或机械化轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>提供窄目标或细线作为停止点。</li><li>要求用户精确停靠并重复多次。</li><li>记录过冲距离、回拉幅度与纠偏时间。</li><li>比较不同方向的过冲‑回拉比例。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户按提示快速移动并停靠。</li><li>步骤 2：系统记录过冲与纠偏过程。</li><li>步骤 3：系统计算比例与方向偏差并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>过冲距离与回拉比例</strong>
+  <div>真实操控会产生稳定的纠偏模式。</div>
+</div>
+
+<div class="signal-item">
+  <strong>纠偏时延与方向性偏差</strong>
+  <div>人类在不同方向具有可测的偏置。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>要求过冲‑回拉比例落在合理区间，并在多次尝试中保持一致的方向性偏差；过度精准或无纠偏判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本模拟过冲轨迹</li><li>回放真实操控序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标方向与距离</li><li>加入轻微摩擦或延迟，检测实时纠偏</li><li>与速度曲线及抖动信号耦合判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与更宽松停止区，允许用户选择慢速模式完成。</p>
+        <ul><li>窄目标可能造成挫败感</li><li>设备延迟会影响过冲特征</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-015-1.svg" alt="状态 1：窄目标停靠" />
+  <h3>状态 1：窄目标停靠</h3>
+  <p>细线目标要求精确停靠。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-015-2.svg" alt="状态 2：过冲回拉" />
+  <h3>状态 2：过冲回拉</h3>
+  <p>过冲后回拉形成纠偏轨迹。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-015-3.svg" alt="状态 3：比例判定" />
+  <h3>状态 3：比例判定</h3>
+  <p>计算过冲‑回拉比例与方向偏差。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明精细运动控制与纠偏特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_theory" target="_blank" rel="noreferrer">Control theory</a>
+  <div>说明反馈控制下的过冲与回拉机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

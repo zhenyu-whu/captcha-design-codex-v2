@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#77 字形风格匹配 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#77</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>字形风格匹配</h1>
+        <p>让用户从多种字形风格中选出同一字体系列的组合，以选择路径与回撤验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>展示同一字母的不同字体风格，让用户快速选择“最像同一系列”的组合；记录选择路径与回撤。</p>
+        <p>把人类对字体家族一致性的直觉作为视觉特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对字体家族一致性具有直觉判断，会依据笔画粗细、曲直与结构一致性进行匹配。选择路径与纠偏过程反映了自然的视觉分组策略。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示同一字母的多种字体风格样本。</li><li>用户选择“最像同一系列”的组合。</li><li>记录选择路径、停顿与回撤。</li><li>多轮随机字母与字体族建立稳定分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到多种字形风格卡片。</li><li>步骤 2：用户选择匹配的字体系列。</li><li>步骤 3：系统记录选择路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>匹配组合一致性</strong>
+  <div>人类对字体风格的分组具有稳定倾向。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回撤次数与停顿</strong>
+  <div>真实选择常伴随短暂停顿与微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>匹配组合需落在人类一致性分布，且存在自然的停顿与回撤；过度快速或零回撤判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>字体特征计算脚本直接聚类</li><li>重放真实用户的选择序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化字体样本与字母类型</li><li>加入细微渲染扰动降低特征计算</li><li>叠加指针轨迹与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供大字号与高对比模式，并允许键盘选择，必要时提供非文字替代任务。</p>
+        <ul><li>字体渲染差异影响风格判断</li><li>不同文化背景对字体风格熟悉度不同</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-077-1.svg" alt="状态 1：风格样本" />
+  <h3>状态 1：风格样本</h3>
+  <p>同一字母的多种字体风格。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-077-2.svg" alt="状态 2：选择匹配" />
+  <h3>状态 2：选择匹配</h3>
+  <p>用户选择同一风格系列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-077-3.svg" alt="状态 3：一致判定" />
+  <h3>状态 3：一致判定</h3>
+  <p>依据匹配一致性与路径判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Typeface" target="_blank" rel="noreferrer">Typeface</a>
+  <div>说明字体风格与家族的视觉特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Font" target="_blank" rel="noreferrer">Font</a>
+  <div>说明字体与字形样式的基本概念。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

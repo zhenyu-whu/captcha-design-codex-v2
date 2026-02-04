@@ -1,0 +1,78 @@
+{
+  "id": "75",
+  "slug": "idea-075",
+  "title": "倒置阅读时间曲线",
+  "group": "视觉思考范式：文字与符号",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "通过逐步旋转文本并记录可读范围内的反应时曲线，利用人类阅读姿态的时间函数验证真实性。",
+  "background": "文本旋转会显著增加阅读时间，人类在不同角度下的反应时具有稳定的非线性曲线。记录不同角度的完成时长与失败阈值，可形成区别于脚本的行为特征。",
+  "core_mechanism": [
+    "提供多个旋转角度的短文本任务。",
+    "用户在仍可读的范围内完成简单操作。",
+    "记录各角度反应时与失败点。",
+    "多轮随机文本与角度建立曲线。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到不同旋转角度的文本卡片。",
+    "步骤 2：用户完成快速阅读任务。",
+    "步骤 3：系统记录时间曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "反应时随角度变化的曲线",
+      "why_it_matters": "人类阅读时间会随旋转角度非线性上升。"
+    },
+    {
+      "signal": "可读阈值角度",
+      "why_it_matters": "人类在高角度下存在稳定的失败区间。"
+    }
+  ],
+  "decision_logic": "曲线斜率与阈值需符合人类分布；过于平坦或过度稳定的曲线判异常。",
+  "attack_surface": [
+    "OCR 直接识别并绕过阅读过程",
+    "模拟固定时间曲线进行伪造"
+  ],
+  "mitigations": [
+    "随机化文本长度、字体与角度顺序",
+    "加入轻微扰动降低 OCR 直接识别",
+    "叠加鼠标轨迹与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供低角度替代任务或非文本方案，允许放慢节奏并支持键盘操作。",
+  "risks": [
+    "视力或认知差异导致反应时偏移",
+    "小屏设备上角度识别更困难"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：多角度文本",
+      "caption": "文本以不同角度呈现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-075-1.svg"
+    },
+    {
+      "title": "状态 2：阅读计时",
+      "caption": "用户完成短任务并记录耗时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-075-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "反应时曲线用于判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-075-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Mental rotation",
+      "url": "https://en.wikipedia.org/wiki/Mental_rotation",
+      "note": "说明旋转对识别与处理时间的影响。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时作为行为指标的意义。"
+    }
+  ]
+}

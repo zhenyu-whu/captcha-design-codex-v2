@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#63 双稳态首选与翻转 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#63</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>双稳态首选与翻转</h1>
+        <p>展示双稳态图形并记录首选版本与翻转时刻，用潜伏期与偏好分布验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>展示 Necker 立方体或鲁宾花瓶，用户点击“第一眼看到的版本”，随后按键标记“翻转时刻”。记录首选偏好与翻转潜伏期。</p>
+        <p>利用双稳态知觉的动态特征，而非识别内容。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>双稳态知觉（如 Necker 立方体、鲁宾花瓶）会在两个版本间自发翻转，首选偏好与翻转潜伏期具有稳定分布。通过记录动态特征可形成可靠的知觉信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示双稳态图形。</li><li>用户点击第一眼看到的版本。</li><li>随后按键标记翻转时刻。</li><li>记录首选偏好与翻转潜伏期。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到双稳态图形。</li><li>步骤 2：用户选择第一眼版本。</li><li>步骤 3：系统记录翻转时刻并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>首选版本偏好</strong>
+  <div>首选偏好在群体中具有稳定趋势。</div>
+</div>
+
+<div class="signal-item">
+  <strong>翻转潜伏期分布</strong>
+  <div>双稳态翻转具有典型时间分布。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>综合首选偏好与翻转潜伏期分布判定；潜伏期过于恒定或无翻转判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定选择并定时触发</li><li>重放真实用户的翻转序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化双稳态图形样式与尺度</li><li>加入轻微噪声与对比度扰动</li><li>叠加微时序与鼠标轨迹信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供替代任务或降低对比度刺激，避免对视觉敏感用户造成不适。</p>
+        <ul><li>长时间注视可能疲劳</li><li>部分用户翻转不明显导致误差</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-063-1.svg" alt="状态 1：双稳态图形" />
+  <h3>状态 1：双稳态图形</h3>
+  <p>Necker 立方体或鲁宾花瓶。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-063-2.svg" alt="状态 2：首选选择" />
+  <h3>状态 2：首选选择</h3>
+  <p>用户标记第一眼版本。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-063-3.svg" alt="状态 3：翻转判定" />
+  <h3>状态 3：翻转判定</h3>
+  <p>记录翻转潜伏期分布。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Bistable_perception" target="_blank" rel="noreferrer">Bistable perception</a>
+  <div>说明双稳态知觉与翻转现象。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Necker_cube" target="_blank" rel="noreferrer">Necker cube</a>
+  <div>说明经典双稳态图形。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

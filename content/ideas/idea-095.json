@@ -1,0 +1,78 @@
+{
+  "id": "95",
+  "slug": "idea-095",
+  "title": "毫秒节拍敲击",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "通过 3–5 次节拍提示引导点击，评估节律序列的微波动以识别真实性。",
+  "background": "人类节拍同步会产生可测的微抖动与相位漂移，短序列仍能体现稳定的生理节律特征。脚本往往过度稳定，易被识别。",
+  "core_mechanism": [
+    "呈现 3–5 次节拍提示。",
+    "用户同步点击或按键响应。",
+    "记录节律序列与微波动。",
+    "与群体基线分布进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到节拍提示。",
+    "步骤 2：用户同步敲击完成序列。",
+    "步骤 3：系统分析节律波动并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "节律微波动",
+      "why_it_matters": "人类同步存在稳定的微抖动与漂移。"
+    },
+    {
+      "signal": "节拍一致性",
+      "why_it_matters": "真实用户的节奏一致性不会过度完美。"
+    }
+  ],
+  "decision_logic": "节律波动需落在人类分布区间；过度稳定或随机判异常。",
+  "attack_surface": [
+    "脚本按固定间隔敲击",
+    "重放真实用户的节拍序列"
+  ],
+  "mitigations": [
+    "随机化节拍间隔与提示方式",
+    "引入轻微节奏扰动降低模板化",
+    "叠加指针轨迹与停顿信号"
+  ],
+  "accessibility": "提供更慢节奏与视觉提示替代，兼容听觉障碍用户。",
+  "risks": [
+    "节奏过快导致误差增大",
+    "设备延迟影响节拍同步"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：节拍提示",
+      "caption": "连续节拍引导敲击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-095-1.svg"
+    },
+    {
+      "title": "状态 2：同步敲击",
+      "caption": "用户完成节拍序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-095-2.svg"
+    },
+    {
+      "title": "状态 3：波动判定",
+      "caption": "根据节律波动判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-095-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节拍同步中的抖动特征。"
+    },
+    {
+      "title": "Rhythm",
+      "url": "https://en.wikipedia.org/wiki/Rhythm",
+      "note": "说明节律感知与时序一致性。"
+    }
+  ]
+}

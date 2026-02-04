@@ -1,0 +1,78 @@
+{
+  "id": "172",
+  "slug": "idea-172",
+  "title": "设备层可信度分层",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "依据设备与浏览器可信度分层验证，低可信触发多信号任务。",
+  "background": "设备指纹与环境特征可提供可信度估计。按层级分配验证强度能降低正常用户负担，同时提升对可疑环境的区分度。",
+  "core_mechanism": [
+    "采集设备/浏览器特征并估计可信度。",
+    "低可信环境升级为多信号任务。",
+    "高可信环境使用轻量验证。",
+    "结合风险策略输出判定。"
+  ],
+  "user_flow": [
+    "步骤 1：系统评估设备可信度。",
+    "步骤 2：根据可信度选择验证路径。",
+    "步骤 3：系统输出最终判定。"
+  ],
+  "signals": [
+    {
+      "signal": "设备指纹可信度",
+      "why_it_matters": "可信度影响验证强度选择。"
+    },
+    {
+      "signal": "升级任务行为信号",
+      "why_it_matters": "多信号验证更难伪造。"
+    }
+  ],
+  "decision_logic": "高可信可快速通过；低可信需满足多信号阈值。",
+  "attack_surface": [
+    "伪造设备指纹提升可信度",
+    "脚本针对轻量验证优化"
+  ],
+  "mitigations": [
+    "动态更新指纹特征",
+    "随机抽检高可信设备",
+    "多层信号组合判定"
+  ],
+  "accessibility": "升级任务提供可达性替代通道。",
+  "risks": [
+    "指纹误判导致体验不稳",
+    "过度分层影响公平性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：可信度分层",
+      "caption": "设备按可信度分层。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-172-1.svg"
+    },
+    {
+      "title": "状态 2：路径升级",
+      "caption": "低可信触发多信号任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-172-2.svg"
+    },
+    {
+      "title": "状态 3：分层判定",
+      "caption": "按层级输出验证结果。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-172-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Device fingerprint",
+      "url": "https://en.wikipedia.org/wiki/Device_fingerprint",
+      "note": "说明设备特征与可信度估计。"
+    },
+    {
+      "title": "Risk-based authentication",
+      "url": "https://en.wikipedia.org/wiki/Risk-based_authentication",
+      "note": "说明分层验证策略。"
+    }
+  ]
+}

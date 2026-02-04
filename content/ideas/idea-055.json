@@ -1,0 +1,78 @@
+{
+  "id": "55",
+  "slug": "idea-055",
+  "title": "直线错位校准",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "断裂斜线被遮挡，用户拖拽对齐两段，利用错位偏移与微调步数验证 Poggendorff 错觉特征。",
+  "background": "Poggendorff 错觉会使被遮挡的斜线段在视觉上产生系统性错位。通过测量对齐偏移量与微调行为，可形成稳定的知觉偏差特征。",
+  "core_mechanism": [
+    "展示被遮挡的断裂斜线与干扰形状。",
+    "用户拖拽使两段线看起来对齐。",
+    "记录对齐偏移量与微调步数。",
+    "分析偏移方向与稳定性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到被遮挡的断裂斜线。",
+    "步骤 2：用户拖拽调整对齐位置。",
+    "步骤 3：系统记录偏移并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "对齐偏移方向与幅度",
+      "why_it_matters": "错觉引发的偏移具有稳定方向。"
+    },
+    {
+      "signal": "微调步数与回撤节奏",
+      "why_it_matters": "真实校准通常伴随多次微调。"
+    }
+  ],
+  "decision_logic": "评估偏移量是否落在错觉范围，并结合微调节奏；无偏移或一次到位判异常。",
+  "attack_surface": [
+    "脚本直接计算几何对齐",
+    "重放真实用户的拖拽轨迹"
+  ],
+  "mitigations": [
+    "随机化遮挡形状与线段角度",
+    "加入轻微噪声与位置扰动",
+    "叠加微时序与轨迹抖动进行多信号判定"
+  ],
+  "accessibility": "提供键盘微调或替代任务模式，避免对精细操作用户造成负担。",
+  "risks": [
+    "个体差异导致偏移量波动",
+    "触控设备精度影响微调特征"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：错位线段",
+      "caption": "断裂斜线被遮挡形成错位感。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-055-1.svg"
+    },
+    {
+      "title": "状态 2：对齐拖拽",
+      "caption": "用户拖拽调整对齐位置。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-055-2.svg"
+    },
+    {
+      "title": "状态 3：偏移判定",
+      "caption": "分析偏移量与微调步数。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-055-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Poggendorff illusion",
+      "url": "https://en.wikipedia.org/wiki/Poggendorff_illusion",
+      "note": "说明断裂线段错位的经典错觉。"
+    },
+    {
+      "title": "Illusion",
+      "url": "https://en.wikipedia.org/wiki/Illusion",
+      "note": "说明视觉错觉与系统性偏差。"
+    }
+  ]
+}

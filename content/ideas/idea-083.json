@@ -1,0 +1,78 @@
+{
+  "id": "83",
+  "slug": "idea-083",
+  "title": "错觉校准双任务",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在校准错觉图形的同时响应短促提示，以错觉偏差量与反应时序列的相对关系验证真实性。",
+  "background": "视觉错觉会引发稳定的感知偏差，而双任务切换会带来可预测的注意力与反应时波动。将错觉校准与节律提示结合，可形成难以被脚本同时拟合的双信号。",
+  "core_mechanism": [
+    "呈现错觉图形并要求用户调整到“看起来正确”的状态。",
+    "同时出现短促提示，用户需要即时响应。",
+    "记录错觉偏差量与反应时序列。",
+    "在任务内做相对比较以形成稳定判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到错觉图形并开始校准。",
+    "步骤 2：期间响应短促提示并继续校准。",
+    "步骤 3：系统记录偏差量与节律序列并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "错觉偏差量",
+      "why_it_matters": "人类对错觉的校准偏差具有稳定分布。"
+    },
+    {
+      "signal": "反应时序列与波动",
+      "why_it_matters": "双任务切换会产生特定的节律抖动。"
+    }
+  ],
+  "decision_logic": "偏差量需落在人类分布区间，且反应时序列与偏差存在合理关联；过度平滑或无波动判异常。",
+  "attack_surface": [
+    "脚本直接计算错觉图形几何并校准",
+    "预设固定反应时序列进行伪造"
+  ],
+  "mitigations": [
+    "随机化错觉类型与参数",
+    "动态调整提示时序与负载",
+    "叠加指针轨迹与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供低负担模式与更长响应窗口，允许替代任务避免对注意力障碍用户造成压力。",
+  "risks": [
+    "双任务负荷过高导致误拒",
+    "不同设备刷新率影响错觉呈现"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：错觉校准",
+      "caption": "用户调整错觉图形到主观正确。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-083-1.svg"
+    },
+    {
+      "title": "状态 2：双任务响应",
+      "caption": "校准过程中出现短促提示。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-083-2.svg"
+    },
+    {
+      "title": "状态 3：序列判定",
+      "caption": "结合偏差量与节律序列判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-083-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Optical illusion",
+      "url": "https://en.wikipedia.org/wiki/Optical_illusion",
+      "note": "说明错觉偏差与感知校准基础。"
+    },
+    {
+      "title": "Task switching",
+      "url": "https://en.wikipedia.org/wiki/Task_switching_(psychology)",
+      "note": "说明双任务切换对反应时的影响。"
+    }
+  ]
+}

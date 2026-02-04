@@ -1,0 +1,78 @@
+{
+  "id": "137",
+  "slug": "idea-137",
+  "title": "搜索不对称‑节律抖动",
+  "group": "E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "完成两种搜索不对称任务后节律点击，比较搜索耗时差与节律抖动的一致性。",
+  "background": "视觉搜索存在不对称性，某些特征组合更易被发现。节律点击体现感知‑运动同步能力，将两者耦合可增强区分度。",
+  "core_mechanism": [
+    "执行两种不对称视觉搜索任务。",
+    "记录两任务耗时差与路径停顿。",
+    "进入节律点击任务并记录间隔抖动。",
+    "比较耗时差与节律抖动的任务内一致性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成两组搜索任务。",
+    "步骤 2：跟随节拍完成点击序列。",
+    "步骤 3：系统对比耗时差与抖动特征。"
+  ],
+  "signals": [
+    {
+      "signal": "搜索耗时不对称",
+      "why_it_matters": "不对称差异反映视觉搜索策略。"
+    },
+    {
+      "signal": "节律抖动（间隔方差）",
+      "why_it_matters": "人类节律同步存在自然波动。"
+    }
+  ],
+  "decision_logic": "耗时差与节律抖动需落在基线区间且具一致性；过度稳定或无差异判异常。",
+  "attack_surface": [
+    "脚本直接识别目标并给出最短路径",
+    "以固定间隔生成节律点击"
+  ],
+  "mitigations": [
+    "随机化目标/干扰项与布局",
+    "节拍速度与相位随机扰动",
+    "加入停顿检测与多轮比较"
+  ],
+  "accessibility": "提供更慢节奏与键盘模式，降低节律负担。",
+  "risks": [
+    "视觉疲劳导致搜索耗时波动",
+    "设备延迟影响节拍精度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：搜索不对称",
+      "caption": "两种搜索任务耗时对比。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-137-1.svg"
+    },
+    {
+      "title": "状态 2：节律点击",
+      "caption": "跟随节拍完成点击序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-137-2.svg"
+    },
+    {
+      "title": "状态 3：一致性判定",
+      "caption": "比较耗时差与抖动分布。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-137-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual search",
+      "url": "https://en.wikipedia.org/wiki/Visual_search",
+      "note": "说明视觉搜索与不对称性。"
+    },
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节律同步与抖动。"
+    }
+  ]
+}

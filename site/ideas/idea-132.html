@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#132 全局‑局部切换‑节律点击 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#132</span>
+          <span class="chip teal">E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>全局‑局部切换‑节律点击</h1>
+        <p>先测全局/局部偏好再进行节律点击，结合反应时与节律抖动进行判定。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>先判断全局/局部偏好，再跟随节拍点击，系统对反应时与节律抖动做群体基线比对。</p>
+        <p>将知觉偏置与节律稳定性耦合。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>全局‑局部加工存在稳定偏好（Navon 刺激），节律跟随反映感知‑运动同步能力。双任务可提供互补信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现 Navon 刺激并要求全局/局部判断。</li><li>记录反应时差异与偏好。</li><li>进入节拍点击任务并记录节律抖动。</li><li>综合偏好与节律稳定性判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成几轮全局/局部判断。</li><li>步骤 2：跟随节拍进行点击。</li><li>步骤 3：系统比较反应时与节律抖动。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>全局‑局部反应时差</strong>
+  <div>偏好会在切换中呈现稳定差异。</div>
+</div>
+
+<div class="signal-item">
+  <strong>节律抖动（间隔方差）</strong>
+  <div>人类节拍同步存在自然波动。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>反应时差与节律抖动需落在人类区间且彼此一致；过于恒定或无偏好判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定节拍间隔</li><li>重放历史点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化节拍速度与相位扰动</li><li>变换 Navon 图形与切换频率</li><li>加入意外停顿检测恢复</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供视觉/触觉节拍提示与更慢节奏选项。</p>
+        <ul><li>音频延迟导致节拍偏差</li><li>听力或注意力受限用户受影响</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-132-1.svg" alt="状态 1：全局/局部判断" />
+  <h3>状态 1：全局/局部判断</h3>
+  <p>Navon 图形触发全局‑局部加工。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-132-2.svg" alt="状态 2：任务切换" />
+  <h3>状态 2：任务切换</h3>
+  <p>全局与局部任务切换后进入节拍。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-132-3.svg" alt="状态 3：节律抖动" />
+  <h3>状态 3：节律抖动</h3>
+  <p>记录节拍点击的时间抖动。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Navon_figure" target="_blank" rel="noreferrer">Navon figure</a>
+  <div>说明全局‑局部加工偏好。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Sensorimotor_synchronization" target="_blank" rel="noreferrer">Sensorimotor synchronization</a>
+  <div>说明节拍同步与抖动。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

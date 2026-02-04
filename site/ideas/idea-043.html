@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#43 运动一致性门槛 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#43</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>运动一致性门槛</h1>
+        <p>随机点阵中调节一致性比例至可稳定判断方向，以临界点与微调行为验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>随机点阵中有部分同向运动，用户调节一致性比例直到“能稳定判断方向”；记录临界点与微调次数。</p>
+        <p>以运动一致性阈值和调整行为作证据，而非方向判断本身。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>运动一致性阈值反映视觉系统对全局运动的整合能力，存在稳定的主观临界点。通过测量调节曲线与临界点，可形成可重复的感知特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>随机点阵中部分点同向运动。</li><li>用户调节一致性比例直到能稳定判断方向。</li><li>记录临界点与微调次数。</li><li>分析临界区间与收敛曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到随机点阵运动。</li><li>步骤 2：用户调节一致性比例。</li><li>步骤 3：系统记录临界点与判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>一致性临界点</strong>
+  <div>人类对全局运动的阈值存在稳定范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调次数与回撤节奏</strong>
+  <div>真实判断会出现试探与回拉。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合临界点区间与微调曲线判定；临界点异常低或调节过快判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设置固定一致性比例</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化点阵密度与运动方向</li><li>加入短时扰动与噪声降低模板化</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢速度或替代任务，避免对运动敏感用户造成不适。</p>
+        <ul><li>长时间观看点阵可能引起眩晕</li><li>显示设备刷新率影响运动一致性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-043-1.svg" alt="状态 1：点阵运动" />
+  <h3>状态 1：点阵运动</h3>
+  <p>部分点同向运动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-043-2.svg" alt="状态 2：一致性调节" />
+  <h3>状态 2：一致性调节</h3>
+  <p>用户调节一致性比例。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-043-3.svg" alt="状态 3：临界判定" />
+  <h3>状态 3：临界判定</h3>
+  <p>记录临界点与微调曲线。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Random_dot_motion" target="_blank" rel="noreferrer">Random dot motion</a>
+  <div>说明运动一致性阈值与点阵实验。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motion_perception" target="_blank" rel="noreferrer">Motion perception</a>
+  <div>说明全局运动整合机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

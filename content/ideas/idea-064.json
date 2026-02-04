@@ -1,0 +1,78 @@
+{
+  "id": "64",
+  "slug": "idea-064",
+  "title": "透视尺寸校准",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在透视网格中调节远景物体大小，利用校准比例与微调路径验证大小恒常性偏差。",
+  "background": "大小恒常性使人类在透视场景中维持对物体真实大小的估计，但会产生系统性偏差。通过测量远景物体的校准比例与调节路径，可获得稳定的感知信号。",
+  "core_mechanism": [
+    "展示透视网格中的近景与远景物体。",
+    "用户调节远景物体大小直到看起来一致。",
+    "记录校准比例与微调步数。",
+    "分析大小恒常偏差与收敛曲线。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到透视场景与两物体。",
+    "步骤 2：用户调节远景物体大小。",
+    "步骤 3：系统记录比例并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "校准比例与偏移方向",
+      "why_it_matters": "大小恒常性导致可预测的比例偏差。"
+    },
+    {
+      "signal": "微调步数与回撤节奏",
+      "why_it_matters": "真实校准通常伴随小幅回撤。"
+    }
+  ],
+  "decision_logic": "评估校准比例与微调曲线是否落在人类范围；无偏差或一次到位判异常。",
+  "attack_surface": [
+    "脚本依据透视比例直接设置大小",
+    "重放真实用户的调节轨迹"
+  ],
+  "mitigations": [
+    "随机化透视角度与物体位置",
+    "加入轻微噪声与比例扰动",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供简化场景或键盘微调模式，避免对精细操作用户造成负担。",
+  "risks": [
+    "透视线索不足导致偏差增大",
+    "小屏设备影响深度感知"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：透视场景",
+      "caption": "近景与远景物体处在透视网格中。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-064-1.svg"
+    },
+    {
+      "title": "状态 2：尺寸调节",
+      "caption": "用户调节远景物体大小。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-064-2.svg"
+    },
+    {
+      "title": "状态 3：比例判定",
+      "caption": "分析校准比例与微调路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-064-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Size constancy",
+      "url": "https://en.wikipedia.org/wiki/Size_constancy",
+      "note": "说明大小恒常与透视偏差。"
+    },
+    {
+      "title": "Perspective (graphical)",
+      "url": "https://en.wikipedia.org/wiki/Perspective_(graphical)",
+      "note": "说明透视线索与尺度感知。"
+    }
+  ]
+}

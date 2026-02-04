@@ -1,0 +1,78 @@
+{
+  "id": "115",
+  "slug": "idea-115",
+  "title": "路径回忆复刻",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "用户完成导航后异步要求快速复刻操作路径，以路径相似度与反应时验证真实性。",
+  "background": "真实用户对刚完成的路径具有短时记忆，复刻路径会呈现自然的简化与偏差。脚本难以在跨时上下文中保持一致的意图轨迹。",
+  "core_mechanism": [
+    "记录用户完成任务时的操作路径。",
+    "异步提示用户快速复刻路径。",
+    "计算路径相似度与反应时。",
+    "与群体分布比对判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成导航任务，系统记录路径。",
+    "步骤 2：异步提示复刻路径。",
+    "步骤 3：系统比较相似度与反应时。"
+  ],
+  "signals": [
+    {
+      "signal": "路径相似度",
+      "why_it_matters": "真实用户能复刻大致路径但会有自然误差。"
+    },
+    {
+      "signal": "反应时与停顿",
+      "why_it_matters": "记忆复刻存在合理的启动与停顿节奏。"
+    }
+  ],
+  "decision_logic": "相似度与反应时需落在人类分布区间；过度精确或随机判异常。",
+  "attack_surface": [
+    "脚本直接重放原路径",
+    "伪造固定路径模板"
+  ],
+  "mitigations": [
+    "随机化复刻入口与路径分辨率",
+    "引入轻微扰动降低重放价值",
+    "叠加轨迹微抖动与停顿信号"
+  ],
+  "accessibility": "提供简化路径复刻或替代任务，避免对记忆障碍用户造成压力。",
+  "risks": [
+    "异步弹窗可能打断体验",
+    "用户未记清路径导致误判"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：路径记录",
+      "caption": "记录用户完成任务路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-115-1.svg"
+    },
+    {
+      "title": "状态 2：路径复刻",
+      "caption": "用户快速复刻路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-115-2.svg"
+    },
+    {
+      "title": "状态 3：相似判定",
+      "caption": "比较路径相似度与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-115-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Procedural memory",
+      "url": "https://en.wikipedia.org/wiki/Procedural_memory",
+      "note": "说明路径复刻与动作记忆基础。"
+    },
+    {
+      "title": "Spatial memory",
+      "url": "https://en.wikipedia.org/wiki/Spatial_memory",
+      "note": "说明路径记忆与复刻误差。"
+    }
+  ]
+}

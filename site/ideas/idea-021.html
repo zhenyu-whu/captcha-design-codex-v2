@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#21 视觉显著性共识 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#21</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>视觉显著性共识</h1>
+        <p>让用户点击最显著元素，并以点击顺序与位置是否符合群体显著性分布进行判定。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在一组抽象元素中让用户点击“最吸引注意力的 3 个点”，以点击顺序与位置构建个体显著性图。</p>
+        <p>依赖人类群体趋同的注意力分布，而非单一识别任务。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉注意力在亮度、对比度、大小等线索驱动下形成相对稳定的显著性分布。利用群体显著性共识，可将注意力指向转化为行为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示一组抽象元素并形成显著性差异。</li><li>要求用户快速选择最吸引注意力的 3 个点。</li><li>记录点击顺序、位置与反应时。</li><li>与预期显著性分布进行相似度比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到抽象元素排列。</li><li>步骤 2：用户快速点击 3 个最显著的点。</li><li>步骤 3：系统计算显著性一致度并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>点击位置与显著性热点距离</strong>
+  <div>人类注意力倾向聚集在高显著性区域。</div>
+</div>
+
+<div class="signal-item">
+  <strong>点击顺序与显著性排序一致度</strong>
+  <div>显著性更高的目标通常先被注意到。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>计算点击集合与显著性热点的匹配度，并检查点击顺序的合理性；偏离群体分布或顺序随机化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本调用显著性模型直接选点</li><li>重放预录点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态生成元素布局与显著性线索</li><li>加入微时序与鼠标轨迹特征进行多信号验证</li><li>在局部引入弱显著性干扰点，观察真实犹豫</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高对比和少量元素模式，并允许键盘选择或替代任务，避免对低视力用户不友好。</p>
+        <ul><li>个体差异与色觉差异影响显著性判断</li><li>过度追求速度可能造成误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-021-1.svg" alt="状态 1：显著性场景" />
+  <h3>状态 1：显著性场景</h3>
+  <p>元素在亮度与大小上形成差异。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-021-2.svg" alt="状态 2：点击选择" />
+  <h3>状态 2：点击选择</h3>
+  <p>点击最显著的 3 个点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-021-3.svg" alt="状态 3：显著性判定" />
+  <h3>状态 3：显著性判定</h3>
+  <p>对比点击与显著性热点分布。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Salience_(neuroscience)" target="_blank" rel="noreferrer">Salience (neuroscience)</a>
+  <div>说明显著性与注意力机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Attention" target="_blank" rel="noreferrer">Attention</a>
+  <div>说明注意力选择的基本机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

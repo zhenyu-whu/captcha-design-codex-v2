@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#106 暂留拼合‑预测误差 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#106</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>暂留拼合‑预测误差</h1>
+        <p>两段图形快速交替后消失，用户预测缺失段位置并轻描，以预测误差与一致性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两段图形快速交替后消失，用户预测缺失段位置并轻描，系统评估预测误差与任务内一致性。任务结构为多阶段，信号形态为预测误差与轨迹动力学。</p>
+        <p>以“时域整合 + 预测误差”作为验证组合。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉暂留会在短时间内整合交替刺激，用户的补全预测会呈现稳定的误差分布。脚本难以在时域整合与预测误差上保持人类特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>两段图形快速交替呈现后消失。</li><li>用户预测缺失段位置并轻描。</li><li>记录预测误差与路径曲率。</li><li>与任务内一致性进行比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到交替闪现的图形片段。</li><li>步骤 2：图形消失后用户轻描缺失段。</li><li>步骤 3：系统计算预测误差并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>预测误差分布</strong>
+  <div>人类补全存在稳定的误差范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>路径曲率与停顿</strong>
+  <div>真实用户补全会出现自然的曲率与微停顿。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>误差分布与路径形态需落在人类区间；过度精确或过度平滑判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算缺失段并描绘</li><li>重放真实用户的补全轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化交替片段与节奏</li><li>加入轻微噪声降低模板化</li><li>叠加反应时与抖动信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢闪现与替代任务，避免对视觉敏感用户造成压力。</p>
+        <ul><li>闪现过快导致真实用户补全困难</li><li>设备刷新率影响暂留效果</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-106-1.svg" alt="状态 1：交替片段" />
+  <h3>状态 1：交替片段</h3>
+  <p>两段图形快速交替呈现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-106-2.svg" alt="状态 2：预测补全" />
+  <h3>状态 2：预测补全</h3>
+  <p>用户轻描缺失段。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-106-3.svg" alt="状态 3：误差判定" />
+  <h3>状态 3：误差判定</h3>
+  <p>根据预测误差与路径判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Persistence_of_vision" target="_blank" rel="noreferrer">Persistence of vision</a>
+  <div>说明视觉暂留与时域整合。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Predictive_coding" target="_blank" rel="noreferrer">Predictive coding</a>
+  <div>说明预测误差与感知补全机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

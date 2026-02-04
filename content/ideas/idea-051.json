@@ -1,0 +1,78 @@
+{
+  "id": "51",
+  "slug": "idea-051",
+  "title": "阅读路径偏好",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在结构化布局中标出最先扫到的关键块，利用阅读扫描路径偏好验证真实性。",
+  "background": "阅读或浏览布局时，人类常呈现典型扫描路径（如 F 型、Z 型），并在关键块上形成停留。记录首扫路径与停留顺序可形成稳定的视觉策略特征。",
+  "core_mechanism": [
+    "展示类似文本的结构化布局。",
+    "用户标出最先扫到的两个关键块。",
+    "记录路径顺序与停留时间。",
+    "分析是否符合典型扫描结构。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到结构化布局。",
+    "步骤 2：用户选择最先扫到的关键块。",
+    "步骤 3：系统分析扫描路径并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "首扫路径结构",
+      "why_it_matters": "阅读扫描通常呈现稳定的路径模式。"
+    },
+    {
+      "signal": "停留顺序与停留时长",
+      "why_it_matters": "真实扫描会在关键块上产生停留。"
+    }
+  ],
+  "decision_logic": "结合路径结构与停留时序判定；路径过度随机或过度机械判异常。",
+  "attack_surface": [
+    "脚本固定点击预设位置",
+    "重放真实用户的点击序列"
+  ],
+  "mitigations": [
+    "随机化布局结构与块大小",
+    "引入扰动元素减少模板化路径",
+    "叠加鼠标轨迹与微时序信号进行多信号判定"
+  ],
+  "accessibility": "提供更简单布局或键盘选择模式，避免对阅读困难用户造成负担。",
+  "risks": [
+    "文化与阅读习惯差异影响路径",
+    "小屏设备改变扫描模式"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：结构化布局",
+      "caption": "模拟文本与模块布局。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-051-1.svg"
+    },
+    {
+      "title": "状态 2：路径选择",
+      "caption": "标出最先扫到的关键块。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-051-2.svg"
+    },
+    {
+      "title": "状态 3：路径判定",
+      "caption": "分析扫描结构与停留顺序。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-051-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Eye tracking",
+      "url": "https://en.wikipedia.org/wiki/Eye_tracking",
+      "note": "说明阅读路径与注视分析方法。"
+    },
+    {
+      "title": "Saccade",
+      "url": "https://en.wikipedia.org/wiki/Saccade",
+      "note": "说明扫视与停留行为基础。"
+    }
+  ]
+}

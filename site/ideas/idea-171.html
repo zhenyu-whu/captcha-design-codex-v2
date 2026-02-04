@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#171 传感器一致性校核 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#171</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>传感器一致性校核</h1>
+        <p>融合指针、姿态与触控等多源信号，检查跨传感器时间一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>融合指针事件与设备姿态/触控/滚动等多源信号，检查跨传感器时间一致性并做异常检测。</p>
+        <p>模拟器需要同步伪造多个通道的一致性，显著提高攻击成本。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实设备多传感器具有同步结构，模拟器需要同时伪造多通道一致性。跨传感器校核可显著抬高攻击成本。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>采集指针、姿态、触控等多源信号。</li><li>对齐时间轴并计算一致性。</li><li>分析相位差与漂移。</li><li>与设备基线比对输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成短交互产生多源信号。</li><li>步骤 2：系统对齐多通道时间线。</li><li>步骤 3：系统评估一致性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>跨传感器时间一致性</strong>
+  <div>真实设备信号具有同步结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>相位偏移与漂移</strong>
+  <div>一致性偏移反映真实在场。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>一致性得分需在基线范围；时间对齐异常判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>伪造单一传感器信号</li><li>脚本同步生成多通道事件</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化采样窗口与触发条件</li><li>加入微扰与交叉验证</li><li>对异常同步进行二次校验</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>对无传感器设备提供替代通道。</p>
+        <ul><li>权限受限导致信号缺失</li><li>设备噪声影响一致性评分</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-171-1.svg" alt="状态 1：多源采集" />
+  <h3>状态 1：多源采集</h3>
+  <p>采集指针与姿态信号。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-171-2.svg" alt="状态 2：时间对齐" />
+  <h3>状态 2：时间对齐</h3>
+  <p>对齐多通道时间线。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-171-3.svg" alt="状态 3：一致性判定" />
+  <h3>状态 3：一致性判定</h3>
+  <p>计算跨通道一致性得分。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Sensor_fusion" target="_blank" rel="noreferrer">Sensor fusion</a>
+  <div>说明多传感器一致性与融合。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" target="_blank" rel="noreferrer">Inertial measurement unit</a>
+  <div>说明姿态传感器与运动信号。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#80 异步现实印章 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#80</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>异步现实印章</h1>
+        <p>在正常交互中采集在场轨迹，异步弹出微任务让用户匹配轨迹特征，以预测误差与相对比较判定真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在用户正常操作时记录真实在场的时间‑动作轨迹，稍后异步弹出微任务要求匹配该轨迹的局部特征，并以预测误差与任务内相对比较判定。任务结构为异步验证，信号形态为预测误差与轨迹动力学。</p>
+        <p>把验证从当下动作转成跨时一致性证明，脚本难以补足在场轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实用户在自然操作中形成稳定的时间‑动作轨迹，而脚本难以在不同时间点保持连续一致性。将验证从当下动作转移到跨时一致性，可增强对自动化的抵抗力。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>后台记录用户真实交互轨迹与微时序特征。</li><li>稍后弹出微任务，要求匹配轨迹的局部节奏或曲线。</li><li>计算预测误差与相对选择一致性。</li><li>多次异步触发以累积稳定信号。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户正常完成页面操作，系统记录轨迹。</li><li>步骤 2：稍后出现短微任务，要求匹配轨迹片段。</li><li>步骤 3：系统计算预测误差并给出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>轨迹动力学预测误差</strong>
+  <div>真实用户的轨迹节奏在短时间内具有连续性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>相对匹配选择一致性</strong>
+  <div>真实用户更容易匹配自己的轨迹特征。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>预测误差需落在人类连续性区间，并在多轮匹配中保持一致；随机或过度完美判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本记录并重放轨迹特征</li><li>伪造固定节奏曲线以匹配任务</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化异步触发时机与任务形式</li><li>绑定上下文参数降低重放价值</li><li>叠加多段轨迹与时序信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供可跳过的替代验证或简化任务，避免对记忆与认知造成负担。</p>
+        <ul><li>用户未意识到异步任务导致困惑</li><li>隐私与透明度要求需明确告知</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-080-1.svg" alt="状态 1：轨迹记录" />
+  <h3>状态 1：轨迹记录</h3>
+  <p>用户正常操作时记录轨迹。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-080-2.svg" alt="状态 2：异步微任务" />
+  <h3>状态 2：异步微任务</h3>
+  <p>稍后弹出匹配轨迹的微任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-080-3.svg" alt="状态 3：误差判定" />
+  <h3>状态 3：误差判定</h3>
+  <p>根据预测误差与一致性判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Behavioral_biometrics" target="_blank" rel="noreferrer">Behavioral biometrics</a>
+  <div>说明行为轨迹作为验证信号的依据。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_memory" target="_blank" rel="noreferrer">Motor memory</a>
+  <div>说明跨时一致性的动作记忆基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

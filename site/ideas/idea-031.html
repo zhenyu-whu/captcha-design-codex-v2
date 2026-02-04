@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#31 闪烁融合阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#31</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>闪烁融合阈值</h1>
+        <p>通过调节闪烁频率到“刚不再闪烁”，采集主观融合阈值与调整轨迹作为人类特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>元素以可调频率闪烁，用户拖动滑杆直到“感觉不再闪烁”为止。记录临界融合频率与调整路径。</p>
+        <p>利用人类 CFF 阈值与调整行为作为生理特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>临界闪烁融合阈值（CFF）描述了人眼感知闪烁与稳定光的临界频率，与个体状态、亮度与视野有关。让用户主动调节阈值可将时域感知特征转化为连续交互信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现闪烁元素并提供频率调节控件。</li><li>用户将频率调整到“感觉不再闪烁”的临界点。</li><li>记录阈值、微调轨迹与回拉行为。</li><li>可进行 2 次短重复以提高可靠性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到闪烁方块与调节滑杆。</li><li>步骤 2：用户调整频率直到“刚不再闪烁”。</li><li>步骤 3：系统记录阈值与微调路径完成判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>临界融合频率与调节曲线</strong>
+  <div>阈值范围与调整过程体现人类时域感知特性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回拉/微调次数</strong>
+  <div>真实用户常在临界点附近进行细微试探。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>使用“阈值区间 + 调节路径形态”判定：阈值必须落入设备/亮度校准后的合理范围，且微调轨迹呈现接近临界的试探模式。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设置预估阈值绕过</li><li>通过读取屏幕刷新率进行推断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>双区域相对比较，要求同时消除两处闪烁</li><li>随机初始频率与亮度，降低单值猜测有效性</li><li>结合反应时与微调节律进行交叉验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>对光敏用户提供非闪烁替代任务；允许降低亮度并提供明确的安全提示。</p>
+        <ul><li>闪烁可能触发光敏不适，需要安全提示</li><li>显示器刷新率与环境亮度会影响阈值稳定性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-031-1.svg" alt="状态 1：闪烁呈现" />
+  <h3>状态 1：闪烁呈现</h3>
+  <p>显示闪烁方块与频率调节滑杆。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-031-2.svg" alt="状态 2：临界调节" />
+  <h3>状态 2：临界调节</h3>
+  <p>用户在临界点附近微调并回拉。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-031-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>记录阈值与调节曲线，完成判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Flicker_fusion_threshold" target="_blank" rel="noreferrer">Flicker fusion threshold</a>
+  <div>说明闪烁融合阈值的基本概念。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

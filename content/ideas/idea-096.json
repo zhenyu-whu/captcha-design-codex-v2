@@ -1,0 +1,78 @@
+{
+  "id": "96",
+  "slug": "idea-096",
+  "title": "微回旋关闭",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在 1 秒内画出闭合微回旋并停在中心点，以曲率分布与抖动谱验证真实性。",
+  "background": "短时闭合轨迹会暴露人类手部控制的曲率变化与微抖动特征。脚本虽可绘制几何闭合，但难以复现自然的曲率分布。",
+  "core_mechanism": [
+    "提示用户在 1 秒内画出闭合微回旋。",
+    "要求停在中心点完成动作。",
+    "记录曲率分布、加速度与抖动谱。",
+    "与群体基线分布进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到回旋绘制提示。",
+    "步骤 2：快速绘制闭合回旋并停在中心。",
+    "步骤 3：系统分析曲率与抖动谱判定。"
+  ],
+  "signals": [
+    {
+      "signal": "曲率分布",
+      "why_it_matters": "人类绘制曲线时曲率变化具有稳定形态。"
+    },
+    {
+      "signal": "抖动频谱",
+      "why_it_matters": "微回旋包含生理噪声结构。"
+    }
+  ],
+  "decision_logic": "曲率分布与抖动谱需落在人类区间；过度平滑或几何完美判异常。",
+  "attack_surface": [
+    "脚本绘制固定曲线",
+    "重放真实用户的回旋轨迹"
+  ],
+  "mitigations": [
+    "随机化回旋方向与大小",
+    "加入轻微动态扰动降低模板化",
+    "叠加停顿与速度信号进行多信号判定"
+  ],
+  "accessibility": "提供更大回旋与慢速模式，对手部障碍用户提供替代任务。",
+  "risks": [
+    "小屏设备难以精确绘制",
+    "采样率不足影响曲率与频谱质量"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：回旋提示",
+      "caption": "提示绘制闭合微回旋。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-096-1.svg"
+    },
+    {
+      "title": "状态 2：回旋绘制",
+      "caption": "用户快速绘制并停在中心。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-096-2.svg"
+    },
+    {
+      "title": "状态 3：曲率判定",
+      "caption": "依据曲率与抖动谱判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-096-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明动作控制与曲率变化。"
+    },
+    {
+      "title": "Kinematics",
+      "url": "https://en.wikipedia.org/wiki/Kinematics",
+      "note": "说明轨迹动力学指标。"
+    }
+  ]
+}

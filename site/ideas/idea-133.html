@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#133 双稳态翻转‑速度衰减 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#133</span>
+          <span class="chip teal">E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>双稳态翻转‑速度衰减</h1>
+        <p>追踪双稳态刺激并标记翻转时刻，关联翻转潜伏期与追踪速度衰减进行判定。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户持续追踪目标并标记知觉翻转时刻，系统关联翻转潜伏期与速度衰减曲线做异常检测。</p>
+        <p>结合双稳态动态特征与生理漂移。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>双稳态知觉会在时间上自发翻转，潜伏期分布具有稳定区间。持续追踪任务通常出现速度衰减与微漂移，将两者耦合可形成难以伪造的时域特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现可翻转的双稳态刺激并要求持续追踪。</li><li>用户在知觉翻转时点击标记。</li><li>记录翻转潜伏期序列与追踪速度曲线。</li><li>计算翻转‑速度的耦合强度并与基线比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户开始追踪双稳态目标。</li><li>步骤 2：每次翻转时点击标记。</li><li>步骤 3：系统分析潜伏期与速度衰减。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>翻转潜伏期分布</strong>
+  <div>双稳态翻转呈现稳定的时间结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>追踪速度衰减曲线</strong>
+  <div>人类追踪存在自然衰减与微漂移。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>潜伏期分布与速度衰减需落在人类区间且具有合理耦合；过度规则或无衰减判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本按固定间隔触发翻转标记</li><li>重放真实用户的追踪轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化刺激形态与翻转诱因</li><li>加入轻微抖动与噪声干扰</li><li>多段任务取平均提升鲁棒性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢速度与低运动强度版本，允许键盘触发翻转标记。</p>
+        <ul><li>运动刺激可能引起不适</li><li>注意力负担过高导致误判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-133-1.svg" alt="状态 1：双稳态刺激" />
+  <h3>状态 1：双稳态刺激</h3>
+  <p>可翻转形态提示持续追踪。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-133-2.svg" alt="状态 2：翻转标记" />
+  <h3>状态 2：翻转标记</h3>
+  <p>用户在翻转时点击并留下标记。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-133-3.svg" alt="状态 3：耦合判定" />
+  <h3>状态 3：耦合判定</h3>
+  <p>比较潜伏期与速度衰减曲线。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Bistable_perception" target="_blank" rel="noreferrer">Bistable perception</a>
+  <div>说明双稳态知觉的翻转特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Smooth_pursuit" target="_blank" rel="noreferrer">Smooth pursuit</a>
+  <div>说明连续追踪运动目标的特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

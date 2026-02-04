@@ -1,0 +1,78 @@
+{
+  "id": "164",
+  "slug": "idea-164",
+  "title": "会话隐变量指纹",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "每次会话注入动态隐变量，评估用户适应曲线与纠偏模式。",
+  "background": "会话级隐变量（微延迟、摩擦、节奏）在用户不可感知的层面影响操控。真实用户会产生稳定的适应曲线与回拉模式，而样本库难以覆盖这些动态变化。",
+  "core_mechanism": [
+    "在会话内注入动态隐变量。",
+    "记录误差与适应过程。",
+    "提取适应斜率与纠偏结构。",
+    "与人类分布与设备基线比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户开始交互任务。",
+    "步骤 2：系统动态调整隐变量。",
+    "步骤 3：系统分析适应曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "适应斜率与稳定时间",
+      "why_it_matters": "真实适应呈连续收敛曲线。"
+    },
+    {
+      "signal": "纠偏回拉结构",
+      "why_it_matters": "微纠偏反映闭环反馈特性。"
+    }
+  ],
+  "decision_logic": "适应曲线需符合人类区间；无适应或瞬时收敛判异常。",
+  "attack_surface": [
+    "脚本预测隐变量并预补偿",
+    "回放已采集的适应轨迹"
+  ],
+  "mitigations": [
+    "会话级随机化隐变量序列",
+    "加入多阶段变化提升拟合成本",
+    "与其他信号交叉验证"
+  ],
+  "accessibility": "提供低强度隐变量与替代任务。",
+  "risks": [
+    "低性能设备适应曲线失真",
+    "隐变量过强影响完成率"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：隐变量注入",
+      "caption": "会话内动态变化参数。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-164-1.svg"
+    },
+    {
+      "title": "状态 2：适应轨迹",
+      "caption": "记录误差回落过程。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-164-2.svg"
+    },
+    {
+      "title": "状态 3：指纹判定",
+      "caption": "对比适应曲线与纠偏结构。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-164-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor adaptation",
+      "url": "https://en.wikipedia.org/wiki/Motor_adaptation",
+      "note": "说明适应曲线与误差修正。"
+    },
+    {
+      "title": "Control system",
+      "url": "https://en.wikipedia.org/wiki/Control_system",
+      "note": "说明动态系统与反馈控制。"
+    }
+  ]
+}

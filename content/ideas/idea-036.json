@@ -1,0 +1,78 @@
+{
+  "id": "36",
+  "slug": "idea-036",
+  "title": "眩光恢复定位",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "眩光遮罩逐步衰减，记录首次可辨识时刻与定位策略作为恢复特征。",
+  "background": "眩光会降低对比敏感度并干扰目标识别，恢复过程具有时间梯度与个体差异。通过测量首次可辨识时刻与点击策略，可提取稳定的视觉恢复信号。",
+  "core_mechanism": [
+    "在场景上叠加眩光遮罩并逐步衰减。",
+    "目标位于遮罩下方，用户等待可辨识。",
+    "用户在首次可辨识时点击目标。",
+    "记录恢复时间与点击路径。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到强眩光遮罩覆盖目标。",
+    "步骤 2：遮罩衰减，用户等待目标出现。",
+    "步骤 3：用户点击目标，系统记录判定。"
+  ],
+  "signals": [
+    {
+      "signal": "恢复时间斜率",
+      "why_it_matters": "眩光恢复具有可测的时间梯度。"
+    },
+    {
+      "signal": "点击路径与犹豫节奏",
+      "why_it_matters": "真实恢复通常伴随短暂确认与微调。"
+    }
+  ],
+  "decision_logic": "拟合恢复时间分布并结合点击前停顿，要求与人类恢复曲线一致；过快或无犹豫判异常。",
+  "attack_surface": [
+    "脚本固定等待时间后点击",
+    "重放真实用户的点击序列"
+  ],
+  "mitigations": [
+    "随机化眩光强度、衰减曲线与目标位置",
+    "引入轻微噪声与遮罩扰动降低模板化",
+    "叠加鼠标轨迹与时序信号进行多信号验证"
+  ],
+  "accessibility": "提供低眩光或替代任务模式，避免对光敏或低视力用户造成不适。",
+  "risks": [
+    "眩光刺激可能引起不适",
+    "显示设备亮度差异影响恢复时间"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：眩光遮罩",
+      "caption": "目标被强眩光遮罩覆盖。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-036-1.svg"
+    },
+    {
+      "title": "状态 2：恢复定位",
+      "caption": "遮罩衰减后点击目标。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-036-2.svg"
+    },
+    {
+      "title": "状态 3：恢复判定",
+      "caption": "分析恢复斜率与点击策略。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-036-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Glare (vision)",
+      "url": "https://en.wikipedia.org/wiki/Glare_(vision)",
+      "note": "说明眩光对视觉识别的影响。"
+    },
+    {
+      "title": "Contrast sensitivity",
+      "url": "https://en.wikipedia.org/wiki/Contrast_sensitivity",
+      "note": "说明眩光对对比敏感度的影响。"
+    }
+  ]
+}

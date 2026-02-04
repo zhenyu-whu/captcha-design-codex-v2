@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#123 掩蔽解除对齐 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#123</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>掩蔽解除对齐</h1>
+        <p>调节两目标的掩蔽强度到刚可见且相等，记录阈值差与微调轨迹进行判定。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两个被不同强度掩蔽的目标，用户调节曝光/透明度到“刚能看见且两者相等”，系统记录阈值差与微调路径并做任务内比较。</p>
+        <p>利用“相对可见性校准”替代单点阈值判定。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉掩蔽会改变可见性阈值，个体对相对可见性校准更稳定。通过比较两目标的解除阈值与微调路径，可形成难以伪造的时域特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>两个目标被不同强度的掩蔽覆盖。</li><li>用户调节曝光/透明度到“刚能看见且两者相等”。</li><li>记录两目标阈值差与微调轨迹。</li><li>在任务内做相对比较并与基线对照。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到两个被掩蔽的目标。</li><li>步骤 2：拖动滑杆调整掩蔽强度直到两者刚好等可见。</li><li>步骤 3：系统记录阈值差与微调次数并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>相对可见性阈值差</strong>
+  <div>相对阈值比绝对亮度更稳定。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调轨迹与回拉</strong>
+  <div>真实用户会出现细微往返调整。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值差需落在人类分布区间且存在自然微调；过度稳定或无回拉判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接读取渲染层并设定固定阈值</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化掩蔽纹理与目标形状</li><li>加入短时呈现与噪声干扰</li><li>多轮相对比较降低单次伪造</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高对比替代任务与可调亮度范围，避免低视力用户失败。</p>
+        <ul><li>屏幕亮度/对比度差异影响阈值</li><li>掩蔽过强导致用户挫败</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-123-1.svg" alt="状态 1：双目标掩蔽" />
+  <h3>状态 1：双目标掩蔽</h3>
+  <p>两个目标被不同强度的掩蔽覆盖。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-123-2.svg" alt="状态 2：阈值对齐" />
+  <h3>状态 2：阈值对齐</h3>
+  <p>拖动滑杆让两者刚可见且相等。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-123-3.svg" alt="状态 3：阈值差判定" />
+  <h3>状态 3：阈值差判定</h3>
+  <p>比较阈值差与微调轨迹。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_masking" target="_blank" rel="noreferrer">Visual masking</a>
+  <div>说明掩蔽对可见性阈值的影响。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Just-noticeable_difference" target="_blank" rel="noreferrer">Just-noticeable difference</a>
+  <div>说明阈值与可觉差异。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

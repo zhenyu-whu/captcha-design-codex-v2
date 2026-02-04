@@ -1,0 +1,78 @@
+{
+  "id": "105",
+  "slug": "idea-105",
+  "title": "搜索不对称双题",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "依次完成“Q 中找 O”与“O 中找 Q”，比较搜索路径长度与耗时差异验证真实性。",
+  "background": "视觉搜索存在不对称性，在不同目标/干扰组合中耗时与路径差异明显。对比两题的差异可捕捉人类注意力组织特征。",
+  "core_mechanism": [
+    "呈现“Q 中找 O”的搜索任务。",
+    "随后呈现“O 中找 Q”的搜索任务。",
+    "记录两段搜索路径与耗时。",
+    "比较差异并与基线分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成第一题搜索并点击目标。",
+    "步骤 2：用户完成第二题搜索并点击目标。",
+    "步骤 3：系统比较路径与耗时差异并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "路径长度差异",
+      "why_it_matters": "搜索不对称会带来路径复杂度差异。"
+    },
+    {
+      "signal": "耗时差异",
+      "why_it_matters": "不对称任务的反应时存在稳定差距。"
+    }
+  ],
+  "decision_logic": "路径与耗时差异需符合人类分布区间；过度一致或无差异判异常。",
+  "attack_surface": [
+    "脚本直接定位目标并瞬时点击",
+    "重放真实用户的搜索路径"
+  ],
+  "mitigations": [
+    "随机化目标位置与阵列密度",
+    "加入轻微扰动降低直接定位",
+    "叠加停顿与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更大目标与低密度模式，对视觉障碍用户提供替代任务。",
+  "risks": [
+    "阵列过密导致真实用户耗时过长",
+    "屏幕尺寸差异影响路径长度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：Q 中找 O",
+      "caption": "第一题搜索任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-105-1.svg"
+    },
+    {
+      "title": "状态 2：O 中找 Q",
+      "caption": "第二题搜索任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-105-2.svg"
+    },
+    {
+      "title": "状态 3：差异判定",
+      "caption": "比较路径与耗时差异。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-105-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual search",
+      "url": "https://en.wikipedia.org/wiki/Visual_search",
+      "note": "说明视觉搜索与不对称效应。"
+    },
+    {
+      "title": "Feature integration theory",
+      "url": "https://en.wikipedia.org/wiki/Feature_integration_theory",
+      "note": "说明目标与干扰特征的搜索差异。"
+    }
+  ]
+}

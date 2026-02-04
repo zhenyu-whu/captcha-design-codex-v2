@@ -1,0 +1,78 @@
+{
+  "id": "43",
+  "slug": "idea-043",
+  "title": "运动一致性门槛",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "随机点阵中调节一致性比例至可稳定判断方向，以临界点与微调行为验证真实性。",
+  "background": "运动一致性阈值反映视觉系统对全局运动的整合能力，存在稳定的主观临界点。通过测量调节曲线与临界点，可形成可重复的感知特征。",
+  "core_mechanism": [
+    "随机点阵中部分点同向运动。",
+    "用户调节一致性比例直到能稳定判断方向。",
+    "记录临界点与微调次数。",
+    "分析临界区间与收敛曲线。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到随机点阵运动。",
+    "步骤 2：用户调节一致性比例。",
+    "步骤 3：系统记录临界点与判定。"
+  ],
+  "signals": [
+    {
+      "signal": "一致性临界点",
+      "why_it_matters": "人类对全局运动的阈值存在稳定范围。"
+    },
+    {
+      "signal": "微调次数与回撤节奏",
+      "why_it_matters": "真实判断会出现试探与回拉。"
+    }
+  ],
+  "decision_logic": "结合临界点区间与微调曲线判定；临界点异常低或调节过快判异常。",
+  "attack_surface": [
+    "脚本直接设置固定一致性比例",
+    "重放真实用户的调节轨迹"
+  ],
+  "mitigations": [
+    "随机化点阵密度与运动方向",
+    "加入短时扰动与噪声降低模板化",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢速度或替代任务，避免对运动敏感用户造成不适。",
+  "risks": [
+    "长时间观看点阵可能引起眩晕",
+    "显示设备刷新率影响运动一致性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：点阵运动",
+      "caption": "部分点同向运动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-043-1.svg"
+    },
+    {
+      "title": "状态 2：一致性调节",
+      "caption": "用户调节一致性比例。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-043-2.svg"
+    },
+    {
+      "title": "状态 3：临界判定",
+      "caption": "记录临界点与微调曲线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-043-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Random dot motion",
+      "url": "https://en.wikipedia.org/wiki/Random_dot_motion",
+      "note": "说明运动一致性阈值与点阵实验。"
+    },
+    {
+      "title": "Motion perception",
+      "url": "https://en.wikipedia.org/wiki/Motion_perception",
+      "note": "说明全局运动整合机制。"
+    }
+  ]
+}

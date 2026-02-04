@@ -1,0 +1,83 @@
+{
+  "id": "10",
+  "slug": "idea-010",
+  "title": "抖动谱指纹",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在小范围保持轻微移动，通过抖动频谱与能量分布识别真实人类噪声。",
+  "background": "人类精细动作存在生理性微抖动，频谱常表现为特定的能量分布与 1/f 特征。将轨迹信号进行频谱分析，可捕捉真实人体噪声结构；脚本往往难以生成自然谱形。",
+  "core_mechanism": [
+    "要求用户在小圆内轻微移动保持。",
+    "高频采样轨迹，计算功率谱密度与频段能量比例。",
+    "评估谱斜率与能量分布是否落入人类范围。",
+    "多段采样提高稳定性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进入“小圆保持移动”任务。",
+    "步骤 2：系统采集轨迹并进行频谱分析。",
+    "步骤 3：系统基于抖动谱指纹完成判定。"
+  ],
+  "signals": [
+    {
+      "signal": "频谱斜率与 1/f 结构",
+      "why_it_matters": "真实肌肉噪声呈现稳定的谱形特征。"
+    },
+    {
+      "signal": "频段能量比例",
+      "why_it_matters": "脚本生成的噪声常出现过度平滑或过度随机。"
+    }
+  ],
+  "decision_logic": "对比谱斜率与频带能量分布，要求落入可解释范围；过度平滑、白噪声或固定模式判异常。",
+  "attack_surface": [
+    "脚本生成仿真噪声以伪造频谱",
+    "回放真实采样数据"
+  ],
+  "mitigations": [
+    "随机采样窗口与任务时长，降低回放价值",
+    "多频段与多信号耦合检测",
+    "检测谱形随时间的微变化"
+  ],
+  "accessibility": "允许更大移动范围与更短时长，避免手部疲劳；提供替代通道。",
+  "risks": [
+    "低采样率设备难以获得稳定频谱",
+    "设备级平滑会影响谱形"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：小圆保持",
+      "caption": "要求在小范围内持续轻微移动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-010-1.svg"
+    },
+    {
+      "title": "状态 2：抖动轨迹",
+      "caption": "轨迹在小圆内形成细微抖动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-010-2.svg"
+    },
+    {
+      "title": "状态 3：频谱判定",
+      "caption": "对比频谱斜率与能量分布。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-010-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Physiological tremor",
+      "url": "https://en.wikipedia.org/wiki/Physiological_tremor",
+      "note": "说明生理性微抖动的来源。"
+    },
+    {
+      "title": "1/f noise",
+      "url": "https://en.wikipedia.org/wiki/1/f_noise",
+      "note": "说明频谱呈现 1/f 结构的噪声特征。"
+    },
+    {
+      "title": "Signal processing",
+      "url": "https://en.wikipedia.org/wiki/Signal_processing",
+      "note": "说明频谱分析与信号特征提取方法。"
+    }
+  ]
+}

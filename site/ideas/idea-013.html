@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#13 点击时长微分布 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#13</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>点击时长微分布</h1>
+        <p>记录按下‑抬起的点击时长分布与微波动，利用稳定而不完美的节律作为人类特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>记录按下与抬起之间的微时长分布，并设置 3-5 次重复任务获取个体化节律。人类点击时长在短时段内有稳定的微波动区间。</p>
+        <p>把“点击时长的自然波动”当作人体生物性证据。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在微动作中存在稳定的时间分布与微波动，类似于键击节律在行为生物识别中的使用方式。通过多次点击采样，可形成个体化的时长分布与节律窗口，脚本难以在短时间内精确复刻这种分布。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>设置 3–5 次短点击或轻拖，采集按下‑抬起时长。</li><li>统计时长分布、均值与方差，并观察微波动。</li><li>结合点击间隔形成节律特征。</li><li>允许误差，强调稳定但非完美的分布结构。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户根据提示完成一组点击。</li><li>步骤 2：系统记录每次按下与抬起时长。</li><li>步骤 3：系统计算分布并输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>点击时长分布（均值/方差/偏度）</strong>
+  <div>人类点击时长具有稳定但不完全一致的统计特征。</div>
+</div>
+
+<div class="signal-item">
+  <strong>点击间隔节律</strong>
+  <div>节律稳定性可反映真实操控节拍。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>要求时长分布落在合理区间，并在短序列内保持一致性；过度一致或过度随机均判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本生成伪随机时长分布</li><li>回放采集到的真实点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机提示节奏与顺序，降低回放复用</li><li>联合指针轨迹与微抖动作为辅判</li><li>多轮短序列交叉比对</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供键盘或触控替代通道，并允许更宽松的时长窗口。</p>
+        <ul><li>设备或系统级事件合并可能影响时长精度</li><li>长按习惯可能导致分布偏移</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-013-1.svg" alt="状态 1：点击提示" />
+  <h3>状态 1：点击提示</h3>
+  <p>短序列点击任务，标记点击目标。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-013-2.svg" alt="状态 2：时长采集" />
+  <h3>状态 2：时长采集</h3>
+  <p>不同点击时长形成微差异。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-013-3.svg" alt="状态 3：分布判定" />
+  <h3>状态 3：分布判定</h3>
+  <p>统计时长分布与节律窗口。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Keystroke_dynamics" target="_blank" rel="noreferrer">Keystroke dynamics</a>
+  <div>说明点击/键击节律作为行为特征的可用性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Behavioral_biometrics" target="_blank" rel="noreferrer">Behavioral biometrics</a>
+  <div>说明行为特征可用于身份识别与区分。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

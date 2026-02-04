@@ -1,0 +1,78 @@
+{
+  "id": "33",
+  "slug": "idea-033",
+  "title": "暗适应恢复点",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "明亮闪光后呈现低对比目标，记录用户“刚刚看见”的恢复时间分布。",
+  "background": "暗适应过程受视网膜敏感度恢复影响，存在可测的时间曲线与阈值波动。通过测量从强光刺激到目标可见的恢复时刻，可得到稳定的感知特征。",
+  "core_mechanism": [
+    "强光闪烁后立即呈现低对比目标。",
+    "用户在刚可见时点击确认。",
+    "记录恢复时间、点击路径与犹豫。",
+    "分析恢复时间分布与稳定性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户经历短暂强光刺激。",
+    "步骤 2：低对比目标出现，用户等待可见。",
+    "步骤 3：用户点击确认，系统记录判定。"
+  ],
+  "signals": [
+    {
+      "signal": "恢复时间分布",
+      "why_it_matters": "暗适应具有稳定的恢复曲线范围。"
+    },
+    {
+      "signal": "确认点击前的微调与停顿",
+      "why_it_matters": "真实可见阈值存在短暂犹豫与回看。"
+    }
+  ],
+  "decision_logic": "检查恢复时间是否落在合理区间，并结合点击前的停顿节奏；恢复过快或无犹豫判异常。",
+  "attack_surface": [
+    "脚本固定等待时间后点击",
+    "重放真实用户的确认序列"
+  ],
+  "mitigations": [
+    "随机化闪光强度与目标对比度",
+    "引入轻微位置漂移与噪声减少模板化",
+    "叠加鼠标轨迹与时序特征进行多信号判定"
+  ],
+  "accessibility": "提供可跳过或低强度模式，避免对光敏或视力受限用户造成不适。",
+  "risks": [
+    "强光刺激可能引起不适",
+    "环境光线差异影响恢复时间"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：强光刺激",
+      "caption": "短时强光闪烁后切换。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-033-1.svg"
+    },
+    {
+      "title": "状态 2：恢复等待",
+      "caption": "低对比目标逐渐可见。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-033-2.svg"
+    },
+    {
+      "title": "状态 3：恢复判定",
+      "caption": "记录恢复时间分布与点击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-033-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Dark adaptation",
+      "url": "https://en.wikipedia.org/wiki/Dark_adaptation",
+      "note": "说明暗适应的恢复过程。"
+    },
+    {
+      "title": "Visual adaptation",
+      "url": "https://en.wikipedia.org/wiki/Visual_adaptation",
+      "note": "说明视觉适应与阈值变化。"
+    }
+  ]
+}

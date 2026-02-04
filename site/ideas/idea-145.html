@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#145 交互节奏指纹 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#145</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>交互节奏指纹</h1>
+        <p>记录用户自然交互节奏并随机要求复刻，比较节奏分布与历史基线。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>系统先记录用户自然交互节奏，随机插入任务要求“复刻节奏”，系统与个体历史基线比对。</p>
+        <p>利用个人节奏习惯作为难以伪造的签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>个体节奏习惯与时序控制具有稳定性。通过记录自然交互节奏，再要求复刻，可形成难以伪造的节奏指纹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>采集一段自然交互节奏作为基线。</li><li>随机插入复刻节奏任务。</li><li>记录复刻时的间隔序列。</li><li>与个体历史基线比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成常规操作并记录节奏。</li><li>步骤 2：系统提示复刻刚才的节奏。</li><li>步骤 3：系统比较节奏分布与漂移。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>间隔序列分布</strong>
+  <div>节奏的间隔分布具有个体差异。</div>
+</div>
+
+<div class="signal-item">
+  <strong>复刻漂移与微抖动</strong>
+  <div>真实复刻会出现轻微漂移与波动。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>复刻节奏需与基线相似且存在自然波动；过度一致或随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>记录节奏后直接回放</li><li>脚本生成固定间隔</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化复刻时机与段长</li><li>交错不同节拍与任务</li><li>叠加反应时与轨迹信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节奏与键盘点击替代。</p>
+        <ul><li>长时间节奏任务导致疲劳</li><li>设备延迟影响节奏准确度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-145-1.svg" alt="状态 1：节奏采集" />
+  <h3>状态 1：节奏采集</h3>
+  <p>记录自然交互间隔。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-145-2.svg" alt="状态 2：复刻节奏" />
+  <h3>状态 2：复刻节奏</h3>
+  <p>提示用户复刻节奏。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-145-3.svg" alt="状态 3：指纹比对" />
+  <h3>状态 3：指纹比对</h3>
+  <p>比较节奏分布与漂移。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Sensorimotor_synchronization" target="_blank" rel="noreferrer">Sensorimotor synchronization</a>
+  <div>说明节拍同步与时序控制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Time_perception" target="_blank" rel="noreferrer">Time perception</a>
+  <div>说明时间感知与节奏偏差。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

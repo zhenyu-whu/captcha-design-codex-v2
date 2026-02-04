@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#125 倾斜后效递减 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#125</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>倾斜后效递减</h1>
+        <p>倾斜纹理适应后连续校准垂直线，记录偏差递减斜率进行判定。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>暴露倾斜纹理后进行 3 次快速“真垂直”校准，系统记录偏差衰减斜率并与群体基线对比。</p>
+        <p>用“后效衰减斜率”取代单次校准。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>倾斜后效会导致方向知觉偏移，并随时间衰减。偏差初值与衰减斜率具有个体特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现固定角度倾斜纹理进行适应。</li><li>显示可调节的细线用于“真垂直”校准。</li><li>连续 3 次快速校准记录偏差。</li><li>计算衰减斜率与群体基线比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看倾斜纹理适应。</li><li>步骤 2：调节细线到垂直位置。</li><li>步骤 3：重复多次并记录偏差衰减。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>初始方向偏差</strong>
+  <div>倾斜后效强度反映适应程度。</div>
+</div>
+
+<div class="signal-item">
+  <strong>偏差衰减斜率</strong>
+  <div>人类衰减呈连续下降而非瞬时恢复。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>初始偏差与衰减斜率需在合理区间且呈单调递减；异常平坦判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本始终设置为正垂直</li><li>重放真实用户的校准序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化倾斜角度与空间频率</li><li>调整适应时长与纹理位置</li><li>叠加反应时与微调信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低对比纹理或替代任务，避免视觉疲劳。</p>
+        <ul><li>屏幕分辨率影响角度精度</li><li>用户疲劳导致误差增大</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-125-1.svg" alt="状态 1：倾斜适应" />
+  <h3>状态 1：倾斜适应</h3>
+  <p>倾斜纹理作为适应刺激。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-125-2.svg" alt="状态 2：垂直校准" />
+  <h3>状态 2：垂直校准</h3>
+  <p>调节细线到真垂直。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-125-3.svg" alt="状态 3：衰减斜率" />
+  <h3>状态 3：衰减斜率</h3>
+  <p>记录偏差随轮次递减。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Tilt_aftereffect" target="_blank" rel="noreferrer">Tilt aftereffect</a>
+  <div>说明倾斜适应导致的方向偏移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Aftereffect" target="_blank" rel="noreferrer">Aftereffect</a>
+  <div>说明知觉后效的衰减特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

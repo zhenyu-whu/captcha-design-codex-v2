@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#36 眩光恢复定位 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#36</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>眩光恢复定位</h1>
+        <p>眩光遮罩逐步衰减，记录首次可辨识时刻与定位策略作为恢复特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>叠加眩光遮罩后逐步衰减，用户在“首次可辨识”时点击目标。记录恢复斜率与点击策略。</p>
+        <p>用眩光恢复的时间过程作为人类视觉特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>眩光会降低对比敏感度并干扰目标识别，恢复过程具有时间梯度与个体差异。通过测量首次可辨识时刻与点击策略，可提取稳定的视觉恢复信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在场景上叠加眩光遮罩并逐步衰减。</li><li>目标位于遮罩下方，用户等待可辨识。</li><li>用户在首次可辨识时点击目标。</li><li>记录恢复时间与点击路径。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到强眩光遮罩覆盖目标。</li><li>步骤 2：遮罩衰减，用户等待目标出现。</li><li>步骤 3：用户点击目标，系统记录判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>恢复时间斜率</strong>
+  <div>眩光恢复具有可测的时间梯度。</div>
+</div>
+
+<div class="signal-item">
+  <strong>点击路径与犹豫节奏</strong>
+  <div>真实恢复通常伴随短暂确认与微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合恢复时间分布并结合点击前停顿，要求与人类恢复曲线一致；过快或无犹豫判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定等待时间后点击</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化眩光强度、衰减曲线与目标位置</li><li>引入轻微噪声与遮罩扰动降低模板化</li><li>叠加鼠标轨迹与时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低眩光或替代任务模式，避免对光敏或低视力用户造成不适。</p>
+        <ul><li>眩光刺激可能引起不适</li><li>显示设备亮度差异影响恢复时间</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-036-1.svg" alt="状态 1：眩光遮罩" />
+  <h3>状态 1：眩光遮罩</h3>
+  <p>目标被强眩光遮罩覆盖。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-036-2.svg" alt="状态 2：恢复定位" />
+  <h3>状态 2：恢复定位</h3>
+  <p>遮罩衰减后点击目标。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-036-3.svg" alt="状态 3：恢复判定" />
+  <h3>状态 3：恢复判定</h3>
+  <p>分析恢复斜率与点击策略。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Glare_(vision)" target="_blank" rel="noreferrer">Glare (vision)</a>
+  <div>说明眩光对视觉识别的影响。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_sensitivity" target="_blank" rel="noreferrer">Contrast sensitivity</a>
+  <div>说明眩光对对比敏感度的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

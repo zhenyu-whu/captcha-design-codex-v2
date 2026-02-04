@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#73 基线对齐纠偏 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#73</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>基线对齐纠偏</h1>
+        <p>在文字基线轻微错位的情况下让用户拖拽纠偏，以纠偏方向与微调节奏验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>一行字中个别字符微错位，用户拖拽恢复“看起来对齐”的基线。记录纠偏方向、幅度与细调次数。</p>
+        <p>利用人类对基线整齐度的敏感性作为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>排版阅读依赖对基线与对齐的稳定感知，人类对错位极为敏感，会产生可测的纠偏幅度与停顿模式。通过记录纠偏过程，可以捕捉区别于脚本的细粒度行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现一行文字，部分字符轻微上/下偏移。</li><li>用户拖拽错位字符恢复“看起来对齐”的基线。</li><li>记录纠偏方向、幅度与细调次数。</li><li>多轮随机字体与错位幅度建立稳定分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到带错位字符的文本行。</li><li>步骤 2：用户拖拽错位字符完成对齐。</li><li>步骤 3：系统记录纠偏轨迹与节奏并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>纠偏方向与幅度</strong>
+  <div>人类对基线错位有稳定的纠偏范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调次数与停顿节奏</strong>
+  <div>真实纠偏通常伴随短暂停顿与小幅回调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>纠偏幅度需落在人类分布区间，且伴随合理微调节奏；一次到位或无回调判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本计算基线并直接对齐</li><li>重放真实用户的拖拽轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化字体、字号与错位幅度</li><li>引入细微渲染扰动降低参数直接映射</li><li>叠加拖拽速度与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供键盘微调与更大字号模式，对阅读障碍或低视力用户提供替代任务。</p>
+        <ul><li>不同设备渲染导致基线感知差异</li><li>阅读障碍用户可能出现误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-073-1.svg" alt="状态 1：基线错位" />
+  <h3>状态 1：基线错位</h3>
+  <p>部分字符轻微偏离基线。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-073-2.svg" alt="状态 2：拖拽纠偏" />
+  <h3>状态 2：拖拽纠偏</h3>
+  <p>用户拖拽字符恢复对齐。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-073-3.svg" alt="状态 3：对齐判定" />
+  <h3>状态 3：对齐判定</h3>
+  <p>依据纠偏轨迹与节奏给出判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Baseline_(typography)" target="_blank" rel="noreferrer">Baseline (typography)</a>
+  <div>说明排版中的基线概念与对齐关系。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Alignment_(graphic_design)" target="_blank" rel="noreferrer">Alignment (graphic design)</a>
+  <div>说明视觉对齐对感知与可读性的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

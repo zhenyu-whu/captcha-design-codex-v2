@@ -1,0 +1,78 @@
+{
+  "id": "34",
+  "slug": "idea-034",
+  "title": "视觉暂留顺序判别",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "两个点短时依次闪现，记录最小可分辨时差与错误分布作为时间顺序阈值信号。",
+  "background": "视觉系统对时间顺序的分辨存在阈值限制，短时差下会出现稳定的误判模式。测量时间顺序判断的阈值与错误分布，可提供稳健的时域行为特征。",
+  "core_mechanism": [
+    "两个点在极短时差内依次闪现。",
+    "用户选择先出现的点。",
+    "记录判断正确率与反应时。",
+    "估计最小可分辨时差阈值。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到两个点快速闪现。",
+    "步骤 2：用户选择先出现的点。",
+    "步骤 3：系统拟合阈值并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "最小可分辨时差阈值",
+      "why_it_matters": "人类时间分辨率具有稳定范围。"
+    },
+    {
+      "signal": "错误分布与反应时",
+      "why_it_matters": "阈值附近的错误模式具有规律性。"
+    }
+  ],
+  "decision_logic": "拟合时间顺序阈值与错误分布，要求落在人类区间；阈值异常低或错误模式随机判异常。",
+  "attack_surface": [
+    "脚本读取刺激顺序直接回答",
+    "重放真实用户的响应序列"
+  ],
+  "mitigations": [
+    "随机化点位与时差范围，避免固定模式",
+    "加入空白掩蔽与轻微噪声干扰",
+    "叠加反应时与轨迹微特征进行多信号判定"
+  ],
+  "accessibility": "提供更长时差或替代任务，避免对时间分辨能力受限用户造成障碍。",
+  "risks": [
+    "高频闪现可能引起视觉疲劳",
+    "显示器刷新率限制最小可用时差"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：短时闪现",
+      "caption": "两个点依次快速出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-034-1.svg"
+    },
+    {
+      "title": "状态 2：顺序选择",
+      "caption": "用户选择先出现的点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-034-2.svg"
+    },
+    {
+      "title": "状态 3：阈值判定",
+      "caption": "估计时间顺序阈值与错误分布。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-034-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Temporal order judgment",
+      "url": "https://en.wikipedia.org/wiki/Temporal_order_judgment",
+      "note": "说明时间顺序判断任务与阈值。"
+    },
+    {
+      "title": "Psychophysics",
+      "url": "https://en.wikipedia.org/wiki/Psychophysics",
+      "note": "说明阈值测量的基础方法。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#174 交互‑渲染闭环 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#174</span>
+          <span class="chip teal">Reverse Brainstorming - Round 4</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>交互‑渲染闭环</h1>
+        <p>将用户操作实时反馈到渲染中，评估“操作‑渲染‑再操作”的闭环一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 4</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>将用户操作实时反馈到渲染中（例如动态改变阻尼/对比度），并基于“操作‑渲染‑再操作”的闭环一致性判定。</p>
+        <p>篡改 UI 的代理层难以保持闭环同步。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实交互是闭环反馈过程：渲染变化会即时影响下一步操作。代理层或回放难以保持细粒度同步，闭环误差与延迟结构可用于识别异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>用户操作驱动渲染参数实时变化。</li><li>系统记录操作‑渲染的时延与幅度响应。</li><li>观察再操作的修正与收敛曲线。</li><li>以闭环一致性和收敛速度判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户操作界面，渲染实时反馈。</li><li>步骤 2：用户根据反馈继续调整。</li><li>步骤 3：系统分析闭环一致性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>操作‑渲染响应延迟</strong>
+  <div>真实反馈存在稳定延迟结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>闭环误差收敛曲线</strong>
+  <div>人类会逐步修正并收敛。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>响应延迟与收敛曲线需落在人类区间；无收敛或过度线性补偿判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接读取渲染状态并模拟</li><li>代理层篡改 UI 后回放</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化反馈映射与参数</li><li>加入微小动态变化</li><li>多参数耦合提高拟合成本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低敏感度或简化反馈的替代任务。</p>
+        <ul><li>高延迟设备影响闭环一致性</li><li>参数过强导致误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-174-1.svg" alt="状态 1：实时反馈" />
+  <h3>状态 1：实时反馈</h3>
+  <p>操作即时改变渲染效果。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-174-2.svg" alt="状态 2：连续修正" />
+  <h3>状态 2：连续修正</h3>
+  <p>用户根据反馈继续调整。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-174-3.svg" alt="状态 3：闭环判定" />
+  <h3>状态 3：闭环判定</h3>
+  <p>分析收敛与延迟结构。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_system#Closed-loop_control" target="_blank" rel="noreferrer">Closed-loop control</a>
+  <div>说明闭环反馈与收敛特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction" target="_blank" rel="noreferrer">Human–computer interaction</a>
+  <div>说明交互中的反馈与响应。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#3 变阻尼追踪 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#3</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>变阻尼追踪</h1>
+        <p>通过动态变化的阻尼/惯性让用户持续纠偏，评估其适应曲线与反应时结构。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>光标在不同时间片呈现不同“阻尼/惯性”，用户需要动态修正才能保持在窄通道内。人类凭肌肉反馈快速调整，脚本若没有控制模型会出现过度平滑或过度抖动。</p>
+        <p>把验证从“看懂什么”变成“能否适应不可预测的动力学”。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在运动控制中会根据外部动力学变化进行快速适应，形成可观测的适应曲线与纠偏模式。若在指针控制中引入随机阻尼或增益变化，人类可在短时内调整动作幅度，而脚本往往表现为过度平滑或机械化补偿。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在追踪任务中动态改变阻尼/惯性或增益参数。</li><li>记录用户的过冲、回拉与适应时间。</li><li>提取“短期试错 → 稳定校准”的适应曲线形态。</li><li>采用多段随机参数，抬高预估与重放难度。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进入窄通道追踪任务。</li><li>步骤 2：系统在不同时间片改变阻尼/惯性。</li><li>步骤 3：系统评估纠偏曲线与适应速度并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>适应曲线斜率与稳定时间</strong>
+  <div>人类会出现可测的试错‑校准过程。</div>
+</div>
+
+<div class="signal-item">
+  <strong>过冲‑回拉比率与纠偏时延</strong>
+  <div>真实操控存在非线性纠偏与滞后。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>以参数切换点为锚，计算适应时间窗、过冲比例与回拉速度；要求多段任务内具有一致的“人类适应曲线形态”。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本提前读取参数并用控制器拟合</li><li>回放采集到的适应轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>参数随机化并加入不可见微扰</li><li>多段切换与多信号耦合提升拟合成本</li><li>对“过度平滑”与“零延迟”进行异常检测</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低强度模式与更宽容通道，允许用户主动切换为更慢的适应节奏。</p>
+        <ul><li>高频切换可能导致用户疲劳</li><li>低性能设备延迟可能扭曲适应曲线</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-003-1.svg" alt="状态 1：动态阻尼通道" />
+  <h3>状态 1：动态阻尼通道</h3>
+  <p>窄通道中阻尼随时间变化。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-003-2.svg" alt="状态 2：纠偏与过冲" />
+  <h3>状态 2：纠偏与过冲</h3>
+  <p>用户在阻尼切换处出现过冲与回拉。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-003-3.svg" alt="状态 3：适应曲线判定" />
+  <h3>状态 3：适应曲线判定</h3>
+  <p>对比多段适应曲线的一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_adaptation" target="_blank" rel="noreferrer">Motor adaptation</a>
+  <div>说明人在动力学变化下的适应机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_learning" target="_blank" rel="noreferrer">Motor learning</a>
+  <div>说明短期试错到稳定校准的学习过程。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

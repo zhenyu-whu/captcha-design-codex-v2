@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#146 意图漂移检测 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#146</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>意图漂移检测</h1>
+        <p>同一目标在流程中两次随机插入，比较注意力分布与路径一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>同一目标在流程中被两次随机插入，系统比较两次注意力分布与路径一致性。</p>
+        <p>用“意图一致性”替代单次表现。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实用户的意图具有一致性但不会完全复制，注意力分布与路径会呈现相似‑非恒定的模式。通过两次插入对比可识别脚本或回放。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在流程中两次插入同类目标任务。</li><li>记录两次的注意力分布与路径。</li><li>计算相似度与偏移量。</li><li>与基线区间比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成首次目标任务。</li><li>步骤 2：随机插入第二次同类任务。</li><li>步骤 3：系统比较注意力与路径一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>注意力热区相似度</strong>
+  <div>真实意图会保持一定一致性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>路径长度与停顿一致性</strong>
+  <div>路径重复不会完全相同且存在微差。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>相似度需落在人类区间；过度一致或过度漂移判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定路径并重复</li><li>随机化路径伪装</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>更换背景与干扰项</li><li>插入时间间隔拉开记忆</li><li>多任务叠加一致性检查</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>减少干扰元素并提供较大目标。</p>
+        <ul><li>疲劳导致路径漂移增大</li><li>界面复杂影响注意力判断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-146-1.svg" alt="状态 1：首次插入" />
+  <h3>状态 1：首次插入</h3>
+  <p>记录首次注意力分布与路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-146-2.svg" alt="状态 2：再次插入" />
+  <h3>状态 2：再次插入</h3>
+  <p>同类目标再次出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-146-3.svg" alt="状态 3：一致性对比" />
+  <h3>状态 3：一致性对比</h3>
+  <p>比较两次热区与路径相似度。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_attention" target="_blank" rel="noreferrer">Visual attention</a>
+  <div>说明注意力分配与热区特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Saliency_map" target="_blank" rel="noreferrer">Saliency map</a>
+  <div>说明显著性与注意力热点。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

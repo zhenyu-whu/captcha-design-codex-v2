@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#11 变延迟修正 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#11</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>变延迟修正</h1>
+        <p>在指针响应中引入随机微延迟，利用过冲与回拉的反馈控制特征识别人类操控。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>对光标响应引入随机微小延迟，观察用户过冲与回拉的修正波形。人类会因延迟出现短期预测错误并快速纠正，曲线呈非线性回弹。</p>
+        <p>用“被动适应延迟”的真实反馈模式区分自动化轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>反馈控制系统在存在延迟时会出现过冲与纠偏，人的手眼控制也遵循类似规律。通过随机引入微小延迟，可观察人类的预测误差与纠正波形；脚本往往缺少真实反馈滞后。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在指针响应中引入随机微延迟。</li><li>记录延迟引发的过冲与回拉波形。</li><li>评估纠偏时延、幅度与非线性回弹。</li><li>多段延迟变化提升稳定性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户执行指针控制任务。</li><li>步骤 2：系统随机注入微延迟并采集轨迹。</li><li>步骤 3：系统分析过冲‑回拉波形并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>延迟引发的过冲幅度</strong>
+  <div>真实反馈控制会产生可测过冲。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回拉速度与纠偏时延</strong>
+  <div>人类控制存在反应时与纠正滞后。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检测延迟切换点的过冲‑回拉曲线形态与反应时分布；过度平滑或零延迟响应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本预测延迟并使用控制器模拟反馈</li><li>回放已有延迟曲线</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化延迟模式并加入微扰</li><li>多段延迟组合与多信号耦合检测</li><li>联合抖动谱与速度曲线提升鲁棒性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低延迟或无延迟替代任务，避免对反应速度受限用户造成负担。</p>
+        <ul><li>网络或设备延迟可能干扰判定</li><li>过高延迟会明显影响体验</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-011-1.svg" alt="状态 1：延迟注入" />
+  <h3>状态 1：延迟注入</h3>
+  <p>指针响应引入微小延迟。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-011-2.svg" alt="状态 2：过冲回拉" />
+  <h3>状态 2：过冲回拉</h3>
+  <p>用户出现过冲与回拉纠偏。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-011-3.svg" alt="状态 3：延迟波形判定" />
+  <h3>状态 3：延迟波形判定</h3>
+  <p>基于过冲‑回拉曲线进行判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_theory" target="_blank" rel="noreferrer">Control theory</a>
+  <div>说明反馈控制与延迟下的过冲现象。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Latency_(engineering)" target="_blank" rel="noreferrer">Latency (engineering)</a>
+  <div>说明系统延迟对响应的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#169 反拟合噪声窗 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#169</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>反拟合噪声窗</h1>
+        <p>设定合理噪声窗口，过度平滑或过度随机均判异常。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在判定中引入“合理噪声窗口”，过度平滑或过度随机都判异常，要求噪声谱落在可解释区间。</p>
+        <p>抑制“刻意伪装的轨迹”，让拟合本身成为风险信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类轨迹噪声具有可解释的谱结构。引入噪声窗可抑制刻意拟合：过平滑或过随机都会偏离人类分布。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>定义噪声谱的合理窗口。</li><li>采集轨迹微抖动与速度波动。</li><li>检测是否落在噪声窗内。</li><li>结合纠偏频率输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成短轨迹任务。</li><li>步骤 2：系统提取噪声谱与波动。</li><li>步骤 3：系统对照噪声窗判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>噪声谱落点</strong>
+  <div>人类噪声谱在有限窗口内。</div>
+</div>
+
+<div class="signal-item">
+  <strong>纠偏频率</strong>
+  <div>真实纠偏节律不会过度规则。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>噪声谱需落在窗口且纠偏频率合理；过度平滑或过度随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本注入伪随机噪声</li><li>平滑轨迹规避噪声检测</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态调整噪声窗口</li><li>结合多维信号交叉验证</li><li>检测噪声谱与任务参数的耦合</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>允许放宽噪声窗并提供替代任务。</p>
+        <ul><li>设备采样率影响噪声谱</li><li>噪声窗设置过严导致误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-169-1.svg" alt="状态 1：噪声窗口" />
+  <h3>状态 1：噪声窗口</h3>
+  <p>定义合理噪声范围。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-169-2.svg" alt="状态 2：平滑/随机对照" />
+  <h3>状态 2：平滑/随机对照</h3>
+  <p>过平滑或过随机为异常。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-169-3.svg" alt="状态 3：窗口判定" />
+  <h3>状态 3：窗口判定</h3>
+  <p>噪声落窗则通过。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Noise" target="_blank" rel="noreferrer">Noise</a>
+  <div>说明噪声与谱结构。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Signal_detection_theory" target="_blank" rel="noreferrer">Signal detection theory</a>
+  <div>说明阈值窗口与判定。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

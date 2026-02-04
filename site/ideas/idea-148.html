@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#148 时钟抖动节拍 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#148</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>时钟抖动节拍</h1>
+        <p>系统发出不规则时间脉冲，用户跟随点击，记录节律序列并与群体基线对比。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>系统给出不规则时间脉冲，用户跟随点击，记录节律序列并与群体基线对比。</p>
+        <p>把真实时钟抖动作为不可预测的节奏锚点。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实时钟抖动与微随机节拍会导致人类出现可解释的同步误差与修正曲线。利用不规则脉冲可提高脚本伪造成本。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>生成带抖动的不规则节拍序列。</li><li>用户跟随节拍点击。</li><li>记录相位偏差与修正过程。</li><li>与人类基线分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到不规则节拍提示。</li><li>步骤 2：跟随节拍完成点击序列。</li><li>步骤 3：系统分析相位偏差与抖动。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>相位偏差与修正</strong>
+  <div>人类会滞后并逐步修正。</div>
+</div>
+
+<div class="signal-item">
+  <strong>节拍间隔抖动</strong>
+  <div>真实跟随存在自然抖动。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>相位偏差与抖动需符合人类区间；过度精准或无修正判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本使用固定间隔模拟点击</li><li>记录节拍后回放</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>使用高分辨率计时抖动</li><li>随机化节拍段落与相位</li><li>加入干扰节拍检测恢复</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节拍与音/视觉双通道提示。</p>
+        <ul><li>设备延迟影响同步精度</li><li>节拍过快导致挫败</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-148-1.svg" alt="状态 1：不规则脉冲" />
+  <h3>状态 1：不规则脉冲</h3>
+  <p>节拍间隔不规则。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-148-2.svg" alt="状态 2：跟随点击" />
+  <h3>状态 2：跟随点击</h3>
+  <p>用户跟随脉冲点击。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-148-3.svg" alt="状态 3：抖动判定" />
+  <h3>状态 3：抖动判定</h3>
+  <p>分析相位偏差与节拍抖动。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Sensorimotor_synchronization" target="_blank" rel="noreferrer">Sensorimotor synchronization</a>
+  <div>说明节拍同步与相位偏差。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Time_perception" target="_blank" rel="noreferrer">Time perception</a>
+  <div>说明不规则节拍的时间感知。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

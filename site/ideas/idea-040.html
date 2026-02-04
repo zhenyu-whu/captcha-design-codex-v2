@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#40 视觉暂留拼合 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#40</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>视觉暂留拼合</h1>
+        <p>快速呈现互补轮廓并短间隔切换，利用视觉暂留的拼合与描绘节奏验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>快速呈现两段互补轮廓（每段 100–200ms，间隔 <100ms），让用户描出融合后的整体或选出正确形状；记录起笔延迟与描绘节奏。</p>
+        <p>依赖视觉暂留与时域整合的动作轨迹，而非单帧识别。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉暂留可将短时分离的图形片段整合为整体知觉，拼合后的描绘节奏与起笔延迟呈稳定模式。通过测量拼合后的动作轨迹，可获得时域整合特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>快速呈现两段互补轮廓，间隔极短。</li><li>要求用户描出融合后的整体或选择对应形状。</li><li>记录起笔延迟与描绘速度变化。</li><li>分析整合成功率与时序特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到两段轮廓快速交替。</li><li>步骤 2：用户描绘或选择整合后的形状。</li><li>步骤 3：系统评估时序与轨迹特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>起笔延迟与拼合成功率</strong>
+  <div>人类在整合后会在短时间内启动描绘。</div>
+</div>
+
+<div class="signal-item">
+  <strong>描绘节奏与线段连贯性</strong>
+  <div>真实拼合通常带来连续且稳定的描绘节奏。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合起笔延迟、描绘节奏与拼合正确性评估一致性；过度恒定或无延迟判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接合成轮廓并描绘</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化轮廓片段与呈现顺序</li><li>引入轻微噪声与时间抖动</li><li>叠加微时序与轨迹抖动进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供选择题替代描绘模式，避免对精细描绘能力受限用户造成障碍。</p>
+        <ul><li>过短间隔可能引起疲劳</li><li>显示设备刷新率影响拼合质量</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-040-1.svg" alt="状态 1：分段呈现" />
+  <h3>状态 1：分段呈现</h3>
+  <p>互补轮廓快速交替出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-040-2.svg" alt="状态 2：拼合描绘" />
+  <h3>状态 2：拼合描绘</h3>
+  <p>用户描绘整合后的整体。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-040-3.svg" alt="状态 3：时序判定" />
+  <h3>状态 3：时序判定</h3>
+  <p>分析起笔延迟与节奏。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Iconic_memory" target="_blank" rel="noreferrer">Iconic memory</a>
+  <div>说明视觉暂留与短时整合机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Afterimage" target="_blank" rel="noreferrer">Afterimage</a>
+  <div>说明残影在时间整合中的作用。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

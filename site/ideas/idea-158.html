@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#158 帧级瞬态挑战 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#158</span>
+          <span class="chip teal">Reverse Brainstorming - Round 2</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>帧级瞬态挑战</h1>
+        <p>帧级微变形/噪声呈现元素，要求短序列响应并评估反应时与路径一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 2</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>任务元素以帧级微变形/噪声方式呈现，要求用户完成短序列响应，判定使用反应时与路径一致性。</p>
+        <p>自动化脚本难以稳健读取瞬态渲染细节，降低 UI 绕过概率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>瞬态渲染细节对自动化读取不友好，真实用户在快速响应中会表现出稳定的反应时分布与路径特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在帧级引入微变形或噪声。</li><li>要求用户快速完成短序列响应。</li><li>记录反应时与路径轨迹。</li><li>检查跨帧一致性与分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到瞬态变化元素。</li><li>步骤 2：快速响应并完成序列。</li><li>步骤 3：系统分析反应时与路径。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时分布</strong>
+  <div>真实反应存在稳定时间窗。</div>
+</div>
+
+<div class="signal-item">
+  <strong>路径微波动</strong>
+  <div>短序列中轨迹仍具生理特征。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>反应时与路径需符合基线；过快或过度平滑判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接读取渲染帧并点击</li><li>预计算帧序列回放</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化微变形相位</li><li>加入时间窗限制</li><li>结合输入抖动信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢版本或替代任务。</p>
+        <ul><li>帧率差异影响一致性</li><li>视觉敏感用户不适</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-158-1.svg" alt="状态 1：帧级变化" />
+  <h3>状态 1：帧级变化</h3>
+  <p>元素在帧间微变形。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-158-2.svg" alt="状态 2：快速响应" />
+  <h3>状态 2：快速响应</h3>
+  <p>短序列响应与点击。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-158-3.svg" alt="状态 3：一致性分析" />
+  <h3>状态 3：一致性分析</h3>
+  <p>分析反应时与路径一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时与时间窗。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Frame_rate" target="_blank" rel="noreferrer">Frame rate</a>
+  <div>说明帧级变化与显示特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

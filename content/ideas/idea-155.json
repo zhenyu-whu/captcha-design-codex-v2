@@ -1,0 +1,78 @@
+{
+  "id": "155",
+  "slug": "idea-155",
+  "title": "异步回验链",
+  "group": "Reverse Brainstorming - Round 1",
+  "phase": "Reverse Brainstorming - Round 1",
+  "kind": "idea",
+  "summary": "主任务完成后异步触发短回验，验证与先前行为的一致性。",
+  "background": "一次性解答难以跨时间保持一致性。异步回验可捕捉意图与节律的持续性，抬高回放与脚本成本。",
+  "core_mechanism": [
+    "主任务完成后延迟触发回验。",
+    "回验复用先前任务的关键特征。",
+    "对比路径、停顿或节律一致性。",
+    "以一致性链作为判定依据。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成主任务。",
+    "步骤 2：系统异步触发短回验。",
+    "步骤 3：系统比较前后一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "前后节律一致性",
+      "why_it_matters": "真实用户节律保持相似结构。"
+    },
+    {
+      "signal": "路径/停顿复现度",
+      "why_it_matters": "回放容易过度一致或失真。"
+    }
+  ],
+  "decision_logic": "一致性需在合理区间；过度一致或无关联判异常。",
+  "attack_surface": [
+    "脚本记录并重放全链",
+    "随机生成回验轨迹"
+  ],
+  "mitigations": [
+    "回验时机与形式随机化",
+    "回验内容与主任务轻度变形",
+    "多次回验取一致性"
+  ],
+  "accessibility": "回验任务保持低负担并可跳转替代通道。",
+  "risks": [
+    "异步回验增加流程时长",
+    "短时记忆差异导致误拒"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：主任务完成",
+      "caption": "记录主任务行为信号。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-155-1.svg"
+    },
+    {
+      "title": "状态 2：异步回验",
+      "caption": "延迟触发短回验任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-155-2.svg"
+    },
+    {
+      "title": "状态 3：一致性链",
+      "caption": "比较前后链路一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-155-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明跨时间行为一致性。"
+    },
+    {
+      "title": "Short-term memory",
+      "url": "https://en.wikipedia.org/wiki/Short-term_memory",
+      "note": "说明短时记忆与回验关联。"
+    }
+  ]
+}

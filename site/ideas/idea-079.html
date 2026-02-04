@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#79 词形轮廓补全 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#79</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>词形轮廓补全</h1>
+        <p>仅展示词形上下轮廓，引导用户补全或选择匹配词形，以描绘路径与弯折位置验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>仅显示词的上下轮廓线，用户选择最符合的词或描出轮廓补全路径；记录描绘速度与弯折位置。</p>
+        <p>依赖人类对“词形轮廓”的整体感知，而非逐字识别。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类阅读不仅依赖逐字识别，还会利用词形轮廓进行整体感知。对轮廓的补全路径与弯折点具有可测的速度与停顿模式，可用于区分脚本与真实用户。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示词形上下轮廓线或缺口轮廓。</li><li>用户选择匹配词或沿轮廓描绘补全。</li><li>记录描绘速度、弯折位置与停顿。</li><li>多轮随机词形与字体保持稳定分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到词形轮廓提示。</li><li>步骤 2：用户补全轮廓或选择匹配词。</li><li>步骤 3：系统记录路径与节奏并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>描绘速度与弯折点分布</strong>
+  <div>人类补全轮廓会在关键拐点处放慢并微调。</div>
+</div>
+
+<div class="signal-item">
+  <strong>轮廓匹配误差</strong>
+  <div>真实用户的补全路径具有稳定的误差范围。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>补全路径需落在人类误差区间且包含自然的停顿节奏；过度平滑或直线化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本提取轮廓并自动描绘</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化词形、字体与轮廓缺口</li><li>加入轻微噪声降低轮廓拟合</li><li>叠加描绘时序与压力节奏进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大字号与高对比模式，并允许选择题替代描绘任务。</p>
+        <ul><li>语言与词形熟悉度差异影响表现</li><li>描绘任务对手部障碍用户不友好</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-079-1.svg" alt="状态 1：轮廓提示" />
+  <h3>状态 1：轮廓提示</h3>
+  <p>仅显示词形轮廓线。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-079-2.svg" alt="状态 2：补全描绘" />
+  <h3>状态 2：补全描绘</h3>
+  <p>用户沿轮廓补全路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-079-3.svg" alt="状态 3：误差判定" />
+  <h3>状态 3：误差判定</h3>
+  <p>根据路径误差与节奏判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Bouma_shape" target="_blank" rel="noreferrer">Bouma shape</a>
+  <div>说明词形轮廓在阅读中的作用。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_word_recognition" target="_blank" rel="noreferrer">Visual word recognition</a>
+  <div>说明整体词形感知的研究背景。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

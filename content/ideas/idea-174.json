@@ -1,0 +1,78 @@
+{
+  "id": "174",
+  "slug": "idea-174",
+  "title": "交互‑渲染闭环",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "将用户操作实时反馈到渲染中，评估“操作‑渲染‑再操作”的闭环一致性。",
+  "background": "真实交互是闭环反馈过程：渲染变化会即时影响下一步操作。代理层或回放难以保持细粒度同步，闭环误差与延迟结构可用于识别异常。",
+  "core_mechanism": [
+    "用户操作驱动渲染参数实时变化。",
+    "系统记录操作‑渲染的时延与幅度响应。",
+    "观察再操作的修正与收敛曲线。",
+    "以闭环一致性和收敛速度判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户操作界面，渲染实时反馈。",
+    "步骤 2：用户根据反馈继续调整。",
+    "步骤 3：系统分析闭环一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "操作‑渲染响应延迟",
+      "why_it_matters": "真实反馈存在稳定延迟结构。"
+    },
+    {
+      "signal": "闭环误差收敛曲线",
+      "why_it_matters": "人类会逐步修正并收敛。"
+    }
+  ],
+  "decision_logic": "响应延迟与收敛曲线需落在人类区间；无收敛或过度线性补偿判异常。",
+  "attack_surface": [
+    "脚本直接读取渲染状态并模拟",
+    "代理层篡改 UI 后回放"
+  ],
+  "mitigations": [
+    "随机化反馈映射与参数",
+    "加入微小动态变化",
+    "多参数耦合提高拟合成本"
+  ],
+  "accessibility": "提供低敏感度或简化反馈的替代任务。",
+  "risks": [
+    "高延迟设备影响闭环一致性",
+    "参数过强导致误拒"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：实时反馈",
+      "caption": "操作即时改变渲染效果。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-174-1.svg"
+    },
+    {
+      "title": "状态 2：连续修正",
+      "caption": "用户根据反馈继续调整。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-174-2.svg"
+    },
+    {
+      "title": "状态 3：闭环判定",
+      "caption": "分析收敛与延迟结构。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-174-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Closed-loop control",
+      "url": "https://en.wikipedia.org/wiki/Control_system#Closed-loop_control",
+      "note": "说明闭环反馈与收敛特性。"
+    },
+    {
+      "title": "Human–computer interaction",
+      "url": "https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction",
+      "note": "说明交互中的反馈与响应。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#22 心理旋转时间曲线 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#22</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>心理旋转时间曲线</h1>
+        <p>通过旋转角度与反应时曲线的匹配关系检验心理旋转特性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给定目标形状与不同旋转角的候选，要求快速匹配；系统记录“旋转角度—反应时”曲线是否符合人类心理旋转规律。</p>
+        <p>通过反应时函数形态判定真实性，而非正确率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>心理旋转研究表明，目标与候选形状之间的角度差越大，反应时往往越长，形成近似线性关系。利用这一时间曲线可形成较难伪造的行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示目标形状与多角度旋转候选。</li><li>要求用户快速匹配目标并记录反应时。</li><li>在多个角度条件下收集反应时序列。</li><li>拟合角度-反应时曲线并进行判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到目标形状与候选集合。</li><li>步骤 2：用户选择匹配形状并完成点击。</li><li>步骤 3：系统拟合时间曲线并输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时随角度差的斜率</strong>
+  <div>人类心理旋转呈现随角度增大的时间成本。</div>
+</div>
+
+<div class="signal-item">
+  <strong>角度差条件下的错误分布</strong>
+  <div>角度更大时错误率上升具有稳定趋势。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合角度差与反应时的线性趋势，要求斜率与误差分布落在人类范围；反应时近似常数或随机波动判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本预计算答案并固定延时响应</li><li>重放真实用户的作答序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态生成形状与角度，避免固定答案</li><li>混合镜像与干扰角度，增加判断复杂度</li><li>叠加微时序与鼠标轨迹信号提高伪造成本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长时间窗口与替代通道（非旋转类任务），避免对空间旋转能力受限用户过度惩罚。</p>
+        <ul><li>不同年龄与经验导致反应时差异</li><li>过多试次可能增加疲劳</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-022-1.svg" alt="状态 1：旋转匹配任务" />
+  <h3>状态 1：旋转匹配任务</h3>
+  <p>目标形状与多角度候选同时出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-022-2.svg" alt="状态 2：快速匹配" />
+  <h3>状态 2：快速匹配</h3>
+  <p>用户选择与目标相同的旋转形态。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-022-3.svg" alt="状态 3：时间曲线" />
+  <h3>状态 3：时间曲线</h3>
+  <p>拟合角度与反应时曲线并判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Mental_rotation" target="_blank" rel="noreferrer">Mental rotation</a>
+  <div>说明心理旋转与反应时关系。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时作为行为特征的基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

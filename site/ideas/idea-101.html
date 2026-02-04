@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#101 眨眼漏检序列 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#101</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>眨眼漏检序列</h1>
+        <p>在 RSVP 序列中识别两个目标，比较 200–500ms 区间的漏检曲线与首目标反应时。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>RSVP 中要求识别两个目标，系统记录第二目标在 200–500ms 区间的漏检曲线并与首目标反应时作任务内比较。任务结构为短序列，信号形态为反应时/节律序列。</p>
+        <p>利用注意力眨眼曲线作为人类特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>注意力眨眼导致第二目标在特定时间窗内更易漏检，漏检曲线与首目标反应时存在稳定关系。该时域特征难以被脚本自然复现。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>快速串行呈现字符或图形序列（RSVP）。</li><li>用户识别两个目标项。</li><li>记录第二目标在 200–500ms 的漏检率。</li><li>与首目标反应时进行任务内比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看 RSVP 序列。</li><li>步骤 2：用户报告两个目标项。</li><li>步骤 3：系统计算漏检曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>漏检曲线形态</strong>
+  <div>注意力眨眼形成稳定的时间窗漏检。</div>
+</div>
+
+<div class="signal-item">
+  <strong>首目标反应时</strong>
+  <div>首目标负荷与漏检程度存在关联。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>漏检曲线与反应时需符合人类分布区间；过度稳定或无眨眼效应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接识别全部目标并零漏检</li><li>模拟固定漏检率曲线</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化序列内容与目标间隔</li><li>加入轻微噪声降低直接识别</li><li>叠加反应时与选择路径信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢序列与更大目标，必要时提供替代任务。</p>
+        <ul><li>序列过快导致真实用户漏检过多</li><li>视觉障碍用户可能无法完成</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-101-1.svg" alt="状态 1：RSVP 序列" />
+  <h3>状态 1：RSVP 序列</h3>
+  <p>快速串行呈现目标序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-101-2.svg" alt="状态 2：时间窗漏检" />
+  <h3>状态 2：时间窗漏检</h3>
+  <p>关注 200–500ms 的漏检区间。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-101-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>对比漏检曲线与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Attentional_blink" target="_blank" rel="noreferrer">Attentional blink</a>
+  <div>说明注意力眨眼效应与时间窗漏检。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation" target="_blank" rel="noreferrer">Rapid serial visual presentation</a>
+  <div>说明 RSVP 任务结构与特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

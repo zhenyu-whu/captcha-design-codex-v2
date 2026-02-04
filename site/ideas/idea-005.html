@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#5 双手协同微调 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#5</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>双手协同微调</h1>
+        <p>通过键盘与指针双通道协作，验证手眼协同与通道切换的连续性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户按住一个键调整光标灵敏度，同时完成细微轨迹穿越。系统评估“手眼+指令协同”的微调能力与延迟。</p>
+        <p>引入多通道同步控制（鼠标+键盘），强调人类协调的连续性，而非单一动作完成度。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>双手协同控制与手眼协调是人类操作的稳定特征，涉及多通道时序同步与连续控制。将“键盘切换灵敏度 + 指针精细操作”组合，可要求用户在两个输入通道间进行实时协调，脚本难以自然模拟。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>用户按键切换指针灵敏度或模式。</li><li>在单次任务中完成粗定位与细定位。</li><li>记录切换时序、过渡平滑度与微调行为。</li><li>评估“按键‑指针”协调的连续性与延迟。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户按住键盘键进入低灵敏度模式。</li><li>步骤 2：用户完成粗定位后释放键并细调到目标。</li><li>步骤 3：系统分析切换时序与轨迹连续性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>按键状态变化与指针速度的对齐度</strong>
+  <div>人类在通道切换时呈现可观察的时序耦合。</div>
+</div>
+
+<div class="signal-item">
+  <strong>切换过渡区的轨迹连续性</strong>
+  <div>真实操控会出现平滑过渡而非突变。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>基于按键事件与指针速度曲线的同步性、切换前后轨迹连续度进行综合判定；若通道切换与轨迹无关联则判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本同时驱动键盘与鼠标事件</li><li>通过预录轨迹回放模拟双通道</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化切换条件与灵敏度曲线</li><li>加入微扰与多次切换要求，提升一致性难度</li><li>联合微抖动与过冲‑回拉作为辅判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供单通道替代（例如滑杆切换灵敏度），并允许用户选择触控等输入方式。</p>
+        <ul><li>需要键盘输入的任务可能不适用于移动端</li><li>对新手用户可能增加学习成本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-005-1.svg" alt="状态 1：双通道提示" />
+  <h3>状态 1：双通道提示</h3>
+  <p>提示按键切换灵敏度并进入粗定位。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-005-2.svg" alt="状态 2：协同微调" />
+  <h3>状态 2：协同微调</h3>
+  <p>按键切换时轨迹连续过渡到细调。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-005-3.svg" alt="状态 3：时序一致性" />
+  <h3>状态 3：时序一致性</h3>
+  <p>分析按键事件与速度曲线对齐度。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Bimanual_coordination" target="_blank" rel="noreferrer">Bimanual coordination</a>
+  <div>说明双手协同控制的规律。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination" target="_blank" rel="noreferrer">Hand–eye coordination</a>
+  <div>说明手眼协调的多通道协作特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

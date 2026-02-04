@@ -1,0 +1,78 @@
+{
+  "id": "101",
+  "slug": "idea-101",
+  "title": "眨眼漏检序列",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在 RSVP 序列中识别两个目标，比较 200–500ms 区间的漏检曲线与首目标反应时。",
+  "background": "注意力眨眼导致第二目标在特定时间窗内更易漏检，漏检曲线与首目标反应时存在稳定关系。该时域特征难以被脚本自然复现。",
+  "core_mechanism": [
+    "快速串行呈现字符或图形序列（RSVP）。",
+    "用户识别两个目标项。",
+    "记录第二目标在 200–500ms 的漏检率。",
+    "与首目标反应时进行任务内比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看 RSVP 序列。",
+    "步骤 2：用户报告两个目标项。",
+    "步骤 3：系统计算漏检曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "漏检曲线形态",
+      "why_it_matters": "注意力眨眼形成稳定的时间窗漏检。"
+    },
+    {
+      "signal": "首目标反应时",
+      "why_it_matters": "首目标负荷与漏检程度存在关联。"
+    }
+  ],
+  "decision_logic": "漏检曲线与反应时需符合人类分布区间；过度稳定或无眨眼效应判异常。",
+  "attack_surface": [
+    "脚本直接识别全部目标并零漏检",
+    "模拟固定漏检率曲线"
+  ],
+  "mitigations": [
+    "随机化序列内容与目标间隔",
+    "加入轻微噪声降低直接识别",
+    "叠加反应时与选择路径信号"
+  ],
+  "accessibility": "提供更慢序列与更大目标，必要时提供替代任务。",
+  "risks": [
+    "序列过快导致真实用户漏检过多",
+    "视觉障碍用户可能无法完成"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：RSVP 序列",
+      "caption": "快速串行呈现目标序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-101-1.svg"
+    },
+    {
+      "title": "状态 2：时间窗漏检",
+      "caption": "关注 200–500ms 的漏检区间。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-101-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "对比漏检曲线与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-101-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Attentional blink",
+      "url": "https://en.wikipedia.org/wiki/Attentional_blink",
+      "note": "说明注意力眨眼效应与时间窗漏检。"
+    },
+    {
+      "title": "Rapid serial visual presentation",
+      "url": "https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation",
+      "note": "说明 RSVP 任务结构与特性。"
+    }
+  ]
+}

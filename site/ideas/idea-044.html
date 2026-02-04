@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#44 外周拥挤签名 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#44</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>外周拥挤签名</h1>
+        <p>保持中心锚点不动，外围短暂出现目标，利用错误类型与反应时分布验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>要求用户保持光标在中心锚点，外围短暂出现目标，用户快速点击或选择；记录错误类型与反应时间。</p>
+        <p>借用外周视觉拥挤效应与错误分布作为人类信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>外周视觉存在拥挤效应，短暂刺激下会出现稳定的错误类型与反应时分布。通过记录外围目标识别的误差结构，可得到具有鲁棒性的行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>要求用户保持光标在中心锚点。</li><li>外围短暂出现目标与干扰。</li><li>用户快速点击或选择目标。</li><li>记录错误类型与反应时分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户将光标保持在中心锚点。</li><li>步骤 2：外围目标短暂出现，用户快速点击。</li><li>步骤 3：系统统计误差分布并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>错误类型分布</strong>
+  <div>外周拥挤引发的混淆错误具有规律性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与偏心距离关系</strong>
+  <div>目标越偏外围反应通常越慢。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>综合错误类型分布与反应时曲线，要求符合外周拥挤规律；误差过低或反应异常快判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接识别外围目标并点击</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标位置、出现时长与干扰密度</li><li>引入轻微噪声与掩蔽降低脚本识别</li><li>叠加轨迹与时序信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节奏或替代任务模式，避免对低视力用户造成不适。</p>
+        <ul><li>过短呈现可能导致较高误拒</li><li>显示器尺寸影响偏心距离参数</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-044-1.svg" alt="状态 1：中心锚点" />
+  <h3>状态 1：中心锚点</h3>
+  <p>中心锚点与外围刺激区域。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-044-2.svg" alt="状态 2：外围点击" />
+  <h3>状态 2：外围点击</h3>
+  <p>目标短暂出现后快速点击。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-044-3.svg" alt="状态 3：拥挤判定" />
+  <h3>状态 3：拥挤判定</h3>
+  <p>分析错误类型与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Crowding_(visual_perception)" target="_blank" rel="noreferrer">Crowding (visual perception)</a>
+  <div>说明外周视觉拥挤效应。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Peripheral_vision" target="_blank" rel="noreferrer">Peripheral vision</a>
+  <div>说明外周视觉的识别限制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#179 帧锁反制 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#179</span>
+          <span class="chip teal">Reverse Brainstorming - Round 4</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>帧锁反制</h1>
+        <p>在关键帧触发响应要求，判定基于反应时与帧同步一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 4</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>采用渲染帧锁机制，在关键帧要求即时响应，系统以反应时与帧同步一致性判定。</p>
+        <p>代理渲染/回放难以在关键帧精准同步。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>关键帧同步依赖真实渲染时序，代理层或回放难以精确对齐。通过帧锁响应可检测渲染同步异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在关键帧显示提示或目标。</li><li>要求用户即时响应。</li><li>记录响应相对帧时间的偏差。</li><li>检测帧同步一致性与抖动。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看帧级提示。</li><li>步骤 2：在关键帧内响应。</li><li>步骤 3：系统分析帧同步与反应时。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>帧对齐反应时</strong>
+  <div>真实用户响应与帧同步存在自然窗口。</div>
+</div>
+
+<div class="signal-item">
+  <strong>帧间响应抖动</strong>
+  <div>回放难以复刻自然抖动。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>响应需落在帧同步窗口且抖动合理；过度精准或偏移判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接读取帧事件并触发</li><li>高帧率回放模拟</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化关键帧与提示形态</li><li>加入帧级微扰</li><li>与路径信号联合判断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更宽的帧窗口与替代通道。</p>
+        <ul><li>低帧率设备影响判定</li><li>视觉敏感用户不适</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-179-1.svg" alt="状态 1：关键帧提示" />
+  <h3>状态 1：关键帧提示</h3>
+  <p>关键帧出现响应提示。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-179-2.svg" alt="状态 2：即时响应" />
+  <h3>状态 2：即时响应</h3>
+  <p>用户在帧窗口内操作。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-179-3.svg" alt="状态 3：同步判定" />
+  <h3>状态 3：同步判定</h3>
+  <p>分析帧同步与抖动。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Vertical_synchronization" target="_blank" rel="noreferrer">Vertical synchronization</a>
+  <div>说明帧同步与渲染时序。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Frame_rate" target="_blank" rel="noreferrer">Frame rate</a>
+  <div>说明帧级时序与窗口。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

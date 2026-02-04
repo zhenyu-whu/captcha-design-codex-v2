@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#16 双通道灵敏度切换 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#16</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>双通道灵敏度切换</h1>
+        <p>在单次拖拽中切换灵敏度，验证按键与指针的时序协调与动作连续性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户按住键盘键切换鼠标灵敏度，在单次拖拽中完成粗定位与细定位。系统评估两通道切换的时序协调性和动作连续性。</p>
+        <p>引入多通道协调，让脚本需要同时模拟“时序与意图”。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>多通道协同控制是人类交互的重要特征，涉及按键与指针同步调整。通过在任务中要求切换灵敏度完成粗定位与细定位，可观察通道切换的时序一致性与轨迹连续性，从而区分脚本与真实操控。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>设置“按键切换灵敏度”的规则。</li><li>要求用户在一次拖拽中完成粗定位与细定位。</li><li>记录按键事件与速度曲线的对齐关系。</li><li>评估切换瞬间的轨迹连续性与微调行为。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户按住键进入低灵敏度模式。</li><li>步骤 2：完成粗定位后释放键进行细调。</li><li>步骤 3：系统分析时序一致性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>按键事件与速度曲线同步性</strong>
+  <div>真实操控会体现明确的通道切换时序。</div>
+</div>
+
+<div class="signal-item">
+  <strong>切换点轨迹连续性</strong>
+  <div>人类切换通常平滑而非突变。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检测按键切换时序与速度曲线是否一致，并评估切换处的轨迹连续性；若事件序列与轨迹无关联则判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本同步发送键鼠事件</li><li>预录轨迹与切换序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化切换条件与灵敏度曲线</li><li>加入微扰以检测实时适应</li><li>与抖动谱或过冲‑回拉信号耦合</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供非按键切换的替代方式（如滑杆或按钮），兼容移动端与无键盘设备。</p>
+        <ul><li>对新手用户存在学习成本</li><li>移动端或触控设备可能不适配</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-016-1.svg" alt="状态 1：灵敏度切换" />
+  <h3>状态 1：灵敏度切换</h3>
+  <p>按键控制灵敏度并启动拖拽。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-016-2.svg" alt="状态 2：粗细定位" />
+  <h3>状态 2：粗细定位</h3>
+  <p>粗定位后切换到细定位完成对准。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-016-3.svg" alt="状态 3：时序判定" />
+  <h3>状态 3：时序判定</h3>
+  <p>检测按键事件与速度曲线对齐。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Bimanual_coordination" target="_blank" rel="noreferrer">Bimanual coordination</a>
+  <div>说明双通道协同控制的规律。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination" target="_blank" rel="noreferrer">Hand–eye coordination</a>
+  <div>说明手眼协调与多通道协作。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

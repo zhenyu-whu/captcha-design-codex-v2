@@ -1,0 +1,78 @@
+{
+  "id": "91",
+  "slug": "idea-091",
+  "title": "弹性回缩短拖",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "拖拽到目标后被弹性拉回，用户需二次微调完成，以过冲‑回拉曲线验证真实性。",
+  "background": "弹性回缩引入外部扰动，真实用户会表现出可测的过冲、回拉与微调节奏。脚本难以在非线性扰动下复现自然纠偏曲线。",
+  "core_mechanism": [
+    "用户拖拽目标到指定位置。",
+    "系统施加弹性回缩，迫使二次微调。",
+    "记录过冲‑回拉曲线与微调节奏。",
+    "与基线分布进行比对判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户拖拽目标进入区域。",
+    "步骤 2：弹性回缩触发二次微调。",
+    "步骤 3：系统记录曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "过冲‑回拉曲线",
+      "why_it_matters": "真实纠偏存在稳定的非线性形态。"
+    },
+    {
+      "signal": "微调节奏",
+      "why_it_matters": "人类修正会伴随短暂停顿与回撤。"
+    }
+  ],
+  "decision_logic": "曲线形态与节奏需落在人类分布区间；过度平滑或一次完成判异常。",
+  "attack_surface": [
+    "脚本计算回缩量并一次到位",
+    "重放真实用户的纠偏轨迹"
+  ],
+  "mitigations": [
+    "随机化弹性强度与回缩方向",
+    "引入轻微噪声降低预测性",
+    "叠加速度与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供较弱弹性或替代任务，避免对手部障碍用户造成负担。",
+  "risks": [
+    "弹性过强导致挫败感",
+    "设备输入延迟影响曲线质量"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：初次拖拽",
+      "caption": "用户将目标拖入区域。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-091-1.svg"
+    },
+    {
+      "title": "状态 2：弹性回缩",
+      "caption": "触发回缩并进行二次微调。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-091-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "根据回拉曲线与节奏判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-091-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor learning",
+      "url": "https://en.wikipedia.org/wiki/Motor_learning",
+      "note": "说明纠偏与反馈学习机制。"
+    },
+    {
+      "title": "Control theory",
+      "url": "https://en.wikipedia.org/wiki/Control_theory",
+      "note": "说明反馈控制与过冲现象。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "165",
+  "slug": "idea-165",
+  "title": "非平稳适应轨迹",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "在单次验证中缓慢漂移动力学参数，判定基于适应连续性与曲线形态。",
+  "background": "非平稳变化会迫使用户持续调整，真实适应呈连续跟随而非静态分布。攻击者难以用固定模型拟合非平稳轨迹。",
+  "core_mechanism": [
+    "在任务中缓慢漂移增益/阻尼等参数。",
+    "记录用户误差与纠偏变化。",
+    "分析适应曲线连续性。",
+    "与基线区间比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进入连续控制任务。",
+    "步骤 2：系统逐步改变动力学参数。",
+    "步骤 3：系统评估适应连续性。"
+  ],
+  "signals": [
+    {
+      "signal": "连续适应斜率",
+      "why_it_matters": "真实适应表现为平滑连续变化。"
+    },
+    {
+      "signal": "漂移跟随误差",
+      "why_it_matters": "跟随误差反映实时调整能力。"
+    }
+  ],
+  "decision_logic": "适应曲线需连续且在基线范围；分段跳变或无跟随判异常。",
+  "attack_surface": [
+    "控制器拟合固定分布",
+    "回放静态轨迹"
+  ],
+  "mitigations": [
+    "随机化漂移速率与方向",
+    "插入小幅随机扰动",
+    "结合反应时信号"
+  ],
+  "accessibility": "提供更慢漂移与宽容阈值。",
+  "risks": [
+    "漂移过快导致失败率高",
+    "低性能设备响应滞后"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：参数漂移",
+      "caption": "动力学参数缓慢变化。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-165-1.svg"
+    },
+    {
+      "title": "状态 2：连续适应",
+      "caption": "用户持续修正误差。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-165-2.svg"
+    },
+    {
+      "title": "状态 3：形态判定",
+      "caption": "评估适应曲线形态。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-165-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Non-stationary process",
+      "url": "https://en.wikipedia.org/wiki/Non-stationary_process",
+      "note": "说明非平稳变化与漂移。"
+    },
+    {
+      "title": "Motor adaptation",
+      "url": "https://en.wikipedia.org/wiki/Motor_adaptation",
+      "note": "说明持续适应与曲线形态。"
+    }
+  ]
+}

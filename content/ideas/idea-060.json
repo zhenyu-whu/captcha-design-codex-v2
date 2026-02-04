@@ -1,0 +1,78 @@
+{
+  "id": "60",
+  "slug": "idea-060",
+  "title": "亲近‑相似冲突分组",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在亲近与相似线索冲突时观察分组偏置，用拖拽路径与犹豫停顿验证真实性。",
+  "background": "Gestalt 分组中亲近性与相似性常产生冲突，人类会在冲突条件下表现出稳定的偏置与犹豫节奏。通过记录分组选择与拖拽轨迹，可获得比正确性更稳定的行为信号。",
+  "core_mechanism": [
+    "呈现点阵同时提供距离近与颜色同两类线索。",
+    "用户按直觉拖拽分组并画出分界。",
+    "记录分组选择、拖拽路径与停顿。",
+    "分析偏置方向与犹豫节奏。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到冲突线索点阵。",
+    "步骤 2：用户拖拽分组并画出分界。",
+    "步骤 3：系统分析偏置与路径并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "分组选择偏置",
+      "why_it_matters": "人类在冲突线索下存在可预测偏向。"
+    },
+    {
+      "signal": "拖拽路径与犹豫停顿",
+      "why_it_matters": "真实分组会出现试探与短暂停顿。"
+    }
+  ],
+  "decision_logic": "结合分组偏置方向、路径连贯性与停顿节奏判定；极端规则或完全随机判异常。",
+  "attack_surface": [
+    "脚本固定按颜色或距离规则分组",
+    "重放真实用户的拖拽轨迹"
+  ],
+  "mitigations": [
+    "随机化点阵布局与颜色分布",
+    "加入轻微位置噪声与密度变化",
+    "叠加微时序与轨迹抖动进行多信号判定"
+  ],
+  "accessibility": "提供点击选择分组或降低密度模式，避免对精细拖拽用户造成负担。",
+  "risks": [
+    "文化或经验差异影响分组偏好",
+    "小屏设备降低分组清晰度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：冲突线索",
+      "caption": "距离与颜色同时提示分组。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-060-1.svg"
+    },
+    {
+      "title": "状态 2：拖拽分组",
+      "caption": "用户拖拽并画出分界。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-060-2.svg"
+    },
+    {
+      "title": "状态 3：偏置判定",
+      "caption": "分析分组偏置与犹豫节奏。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-060-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Gestalt psychology",
+      "url": "https://en.wikipedia.org/wiki/Gestalt_psychology",
+      "note": "说明亲近性与相似性分组原则。"
+    },
+    {
+      "title": "Principles of grouping",
+      "url": "https://en.wikipedia.org/wiki/Principles_of_grouping",
+      "note": "说明冲突线索下的分组偏置。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "17",
+  "slug": "idea-017",
+  "title": "干扰避让反射",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在目标路径中插入移动干扰点，利用反射性避让的时间‑幅度分布验证真实性。",
+  "background": "突发刺激会引发人类的反射性避让反应，具有可测的反应时与纠偏幅度分布。通过在轨迹中加入移动干扰点，可捕捉人类反射性纠偏的时序结构，抑制脚本的零延迟与过度平滑。",
+  "core_mechanism": [
+    "在目标路径中随机插入移动干扰点。",
+    "要求用户保持主路径并即时避让。",
+    "记录反应时、避让幅度与回归速度。",
+    "多次插入构建稳定统计特征。"
+  ],
+  "user_flow": [
+    "步骤 1：用户开始沿主路径移动。",
+    "步骤 2：干扰点出现，用户即时避让并回归。",
+    "步骤 3：系统分析反射性参数并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "干扰出现后的反应时",
+      "why_it_matters": "反射性反应存在典型时间窗。"
+    },
+    {
+      "signal": "避让幅度与回归速度",
+      "why_it_matters": "真实纠偏会呈现特定幅度与回弹曲线。"
+    }
+  ],
+  "decision_logic": "以干扰事件为锚点统计反应时分布与避让幅度区间，要求符合人类反射模式；零延迟或过度平滑判异常。",
+  "attack_surface": [
+    "脚本预测干扰点并提前规划路径",
+    "回放真实避让轨迹"
+  ],
+  "mitigations": [
+    "随机干扰点位置、速度与出现时机",
+    "结合微抖动与速度曲线进行多信号判定",
+    "引入短时不可预测的微扰"
+  ],
+  "accessibility": "提供低干扰强度与更慢速度模式，避免对反应速度受限用户造成负担。",
+  "risks": [
+    "频繁干扰可能引起认知负担",
+    "高延迟设备影响反应时统计"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：主路径追踪",
+      "caption": "用户沿主路径移动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-017-1.svg"
+    },
+    {
+      "title": "状态 2：干扰避让",
+      "caption": "干扰点出现后立即避让并回归。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-017-2.svg"
+    },
+    {
+      "title": "状态 3：反射判定",
+      "caption": "基于反应时与幅度分布判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-017-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Reflex",
+      "url": "https://en.wikipedia.org/wiki/Reflex",
+      "note": "说明反射性反应的生理基础。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时分布作为行为特征。"
+    }
+  ]
+}

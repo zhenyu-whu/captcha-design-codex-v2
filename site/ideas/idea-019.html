@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#19 形态直觉分组 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#19</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>形态直觉分组</h1>
+        <p>利用 Gestalt 分组直觉与描绘路径的一致性来验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出多组形态排列，要求用户快速选择“最符合直觉的分组”，随后用鼠标轻描分组路径。人类的 Gestalt 分组直觉具有稳定一致性。</p>
+        <p>利用“视觉直觉+动作表达”的联合特征，而非单纯判断题。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在相似性、接近性、连续性等 Gestalt 规则下会形成稳定的分组直觉。将这一视觉直觉与动作表达结合，可得到比单纯判断更稳定的行为签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示多个形态元素与几种潜在分组结构。</li><li>用户选择最符合直觉的分组并轻描分组路径。</li><li>记录分组选择、描绘顺序与笔划连贯性。</li><li>与群体一致性与动作特征区间进行比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到多组形态排列。</li><li>步骤 2：用户选择直觉分组并描绘边界或连线。</li><li>步骤 3：系统评估分组一致性与动作特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>分组选择与群体一致度</strong>
+  <div>Gestalt 分组倾向在群体中具有稳定共识。</div>
+</div>
+
+<div class="signal-item">
+  <strong>描绘路径的连贯性与停顿节奏</strong>
+  <div>真实绘制呈现连续笔划与自然停顿分布。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>综合分组选择的一致性得分与描绘路径的连贯性指标，要求同时落在人类区间；任一过度规则或异常离散判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接选择最常见分组</li><li>重放真实描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机布局与形态组合，降低模板化脚本命中率</li><li>多轮短任务叠加并检查跨题稳定性</li><li>引入微时序与速度波动信号增加伪造成本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供点击选择替代描绘模式，并降低元素密度，避免对精细动作或视觉障碍用户造成负担。</p>
+        <ul><li>不同文化或经验导致分组偏好差异</li><li>小屏设备降低分组清晰度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-019-1.svg" alt="状态 1：形态排列" />
+  <h3>状态 1：形态排列</h3>
+  <p>多组元素形成潜在分组结构。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-019-2.svg" alt="状态 2：分组描绘" />
+  <h3>状态 2：分组描绘</h3>
+  <p>用户描绘分组边界或连线。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-019-3.svg" alt="状态 3：一致性判定" />
+  <h3>状态 3：一致性判定</h3>
+  <p>对比群体分组与动作连贯性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gestalt_psychology" target="_blank" rel="noreferrer">Gestalt psychology</a>
+  <div>说明视觉分组与整体知觉的基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Principles_of_grouping" target="_blank" rel="noreferrer">Principles of grouping</a>
+  <div>说明相似性与接近性等分组规则。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

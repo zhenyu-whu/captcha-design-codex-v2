@@ -1,0 +1,78 @@
+{
+  "id": "116",
+  "slug": "idea-116",
+  "title": "目标意图插问",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在操作流程中随机插入与目标相关的微选择，以反应时与路径停顿一致性验证真实性。",
+  "background": "意图驱动的快速决策会在路径停顿与反应时中体现。随机插问可检验用户是否保持目标意图，脚本难以在动态上下文中一致应答。",
+  "core_mechanism": [
+    "在操作流程中随机插入微选择题。",
+    "题目与当前目标意图相关。",
+    "记录反应时与路径停顿位置。",
+    "比较任务内一致性与分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行正常操作流程。",
+    "步骤 2：随机插入微选择并即时响应。",
+    "步骤 3：系统分析反应时与停顿一致性。"
+  ],
+  "signals": [
+    {
+      "signal": "反应时分布",
+      "why_it_matters": "真实用户对目标相关问题反应更快。"
+    },
+    {
+      "signal": "路径停顿一致性",
+      "why_it_matters": "意图驱动会在停顿位置上形成一致性。"
+    }
+  ],
+  "decision_logic": "反应时与停顿一致性需落在人类分布区间；随机或过度稳定判异常。",
+  "attack_surface": [
+    "脚本快速选择固定答案",
+    "重放真实用户的响应序列"
+  ],
+  "mitigations": [
+    "随机化插问时机与题目形式",
+    "绑定上下文与目标状态",
+    "叠加轨迹与停顿信号"
+  ],
+  "accessibility": "提供可跳过或简化问题，避免对注意力障碍用户造成负担。",
+  "risks": [
+    "插问过多影响体验",
+    "用户分心导致误判"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：正常操作",
+      "caption": "用户进行目标操作流程。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-116-1.svg"
+    },
+    {
+      "title": "状态 2：意图插问",
+      "caption": "随机插入与目标相关的问题。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-116-2.svg"
+    },
+    {
+      "title": "状态 3：一致判定",
+      "caption": "比较反应时与停顿一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-116-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Attention",
+      "url": "https://en.wikipedia.org/wiki/Attention",
+      "note": "说明意图驱动的注意力与反应时。"
+    },
+    {
+      "title": "Decision making",
+      "url": "https://en.wikipedia.org/wiki/Decision-making",
+      "note": "说明快速决策与路径停顿关联。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "166",
+  "slug": "idea-166",
+  "title": "意图‑上下文绑定",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "将验证任务绑定当前操作上下文，比较注意力路径与任务一致性。",
+  "background": "上下文绑定可避免通用分布攻击。真实用户的注意力路径与当前意图高度相关，脚本难以在具体上下文中保持一致。",
+  "core_mechanism": [
+    "从当前操作上下文生成任务。",
+    "记录注意力路径与停顿。",
+    "比较路径与上下文一致性。",
+    "结合反应时输出判定。"
+  ],
+  "user_flow": [
+    "步骤 1：系统基于当前上下文生成任务。",
+    "步骤 2：用户完成任务并产生路径。",
+    "步骤 3：系统评估上下文一致性。"
+  ],
+  "signals": [
+    {
+      "signal": "注意力路径‑上下文匹配",
+      "why_it_matters": "真实用户路径与目标区域关联度高。"
+    },
+    {
+      "signal": "上下文切换反应时",
+      "why_it_matters": "意图绑定会体现自然反应时分布。"
+    }
+  ],
+  "decision_logic": "路径一致性与反应时需在基线范围；脱离上下文或异常快判异常。",
+  "attack_surface": [
+    "脚本忽略上下文并固定路径",
+    "利用通用模型模拟注意力"
+  ],
+  "mitigations": [
+    "动态生成上下文相关任务",
+    "隐藏关键线索并随机化提示",
+    "结合历史上下文链验证"
+  ],
+  "accessibility": "提供简化上下文提示与键盘替代。",
+  "risks": [
+    "上下文变化过快导致困惑",
+    "复杂界面影响路径判断"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：上下文锚点",
+      "caption": "任务与当前区域绑定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-166-1.svg"
+    },
+    {
+      "title": "状态 2：路径一致性",
+      "caption": "记录注意力路径与停顿。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-166-2.svg"
+    },
+    {
+      "title": "状态 3：绑定判定",
+      "caption": "比较路径与上下文一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-166-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Context-aware computing",
+      "url": "https://en.wikipedia.org/wiki/Context-aware_computing",
+      "note": "说明上下文绑定与任务生成。"
+    },
+    {
+      "title": "Visual attention",
+      "url": "https://en.wikipedia.org/wiki/Visual_attention",
+      "note": "说明注意力路径与目标一致性。"
+    }
+  ]
+}

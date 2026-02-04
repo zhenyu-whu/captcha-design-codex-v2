@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#99 非均匀增益校准 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#99</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>非均匀增益校准</h1>
+        <p>水平/垂直增益不同的短拖任务要求两次校准，以适应曲线与轨迹动力学验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>水平/垂直增益不同的短拖任务要求用户完成两次校准，系统分析适应曲线并与群体基线比对。任务结构为多阶段，信号形态为适应曲线与轨迹动力学。</p>
+        <p>把“适应过程”作为判定核心而非结果。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>当轴向增益不一致时，人类需要进行感知‑动作适应，校准过程中会出现稳定的误差收敛曲线。脚本难以复现自然的适应过程。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>设置水平/垂直不同增益的拖拽任务。</li><li>用户完成两次校准并修正偏差。</li><li>记录误差收敛与轨迹变化。</li><li>与群体基线分布比对判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成第一次增益校准。</li><li>步骤 2：系统提示第二次校准以修正。</li><li>步骤 3：系统分析适应曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>误差收敛曲线</strong>
+  <div>人类适应过程具有稳定的渐进变化。</div>
+</div>
+
+<div class="signal-item">
+  <strong>轴向纠偏比例</strong>
+  <div>水平/垂直纠偏存在可测的比例关系。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>适应曲线与纠偏比例需落在人类区间；过度一致或无适应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接修正增益并一次到位</li><li>重放真实用户的校准轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化增益比例与目标位置</li><li>引入轻微扰动降低模板化</li><li>叠加停顿与速度信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢增益变化与更大目标，允许键盘替代操作。</p>
+        <ul><li>设备差异导致增益感知不同</li><li>触控设备校准成本较高</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-099-1.svg" alt="状态 1：增益偏差" />
+  <h3>状态 1：增益偏差</h3>
+  <p>水平/垂直增益不同。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-099-2.svg" alt="状态 2：两次校准" />
+  <h3>状态 2：两次校准</h3>
+  <p>误差逐步收敛。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-099-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>比较适应曲线与比例关系。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_adaptation" target="_blank" rel="noreferrer">Motor adaptation</a>
+  <div>说明运动适应与误差收敛。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visuomotor_adaptation" target="_blank" rel="noreferrer">Visuomotor adaptation</a>
+  <div>说明视觉‑动作增益调整的机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

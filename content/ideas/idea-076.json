@@ -1,0 +1,78 @@
+{
+  "id": "76",
+  "slug": "idea-076",
+  "title": "标点视觉节律",
+  "group": "视觉思考范式：文字与符号",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "利用无标点短句的视觉节奏提示让用户插入标点，以插入位置与顺序验证真实性。",
+  "background": "阅读节律与停顿与标点位置密切相关，即使缺乏语义也会产生视觉分段倾向。记录标点插入位置与时间顺序，可提取人类在节奏感知上的稳定特征。",
+  "core_mechanism": [
+    "呈现无标点的短句，并用布局暗示节奏。",
+    "用户插入标点符号完成分段。",
+    "记录插入位置、先后顺序与停顿。",
+    "多轮不同句式建立稳定分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到无标点短句与插入工具。",
+    "步骤 2：用户插入标点形成节奏分段。",
+    "步骤 3：系统记录位置与顺序并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "标点插入位置",
+      "why_it_matters": "人类节奏分段在位置上具有聚集性。"
+    },
+    {
+      "signal": "插入顺序与停顿",
+      "why_it_matters": "真实用户会呈现自然的节奏化停顿。"
+    }
+  ],
+  "decision_logic": "插入位置与顺序需符合人类节律分布；随机或等距分布判异常。",
+  "attack_surface": [
+    "规则化脚本按固定间隔插入标点",
+    "重放真实用户的插入序列"
+  ],
+  "mitigations": [
+    "随机化句长、字体与布局节奏",
+    "引入轻微视觉扰动降低模板化",
+    "叠加停顿与指针轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更简短句式与键盘操作，对语言障碍用户提供替代任务。",
+  "risks": [
+    "语言背景差异导致节奏偏好不同",
+    "语义不足时分段更具不确定性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：无标点短句",
+      "caption": "视觉布局暗示节奏分段。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-076-1.svg"
+    },
+    {
+      "title": "状态 2：插入标点",
+      "caption": "用户插入标点并形成节奏。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-076-2.svg"
+    },
+    {
+      "title": "状态 3：节律判定",
+      "caption": "依据位置与顺序判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-076-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Punctuation",
+      "url": "https://en.wikipedia.org/wiki/Punctuation",
+      "note": "说明标点在阅读节奏中的作用。"
+    },
+    {
+      "title": "Prosody (linguistics)",
+      "url": "https://en.wikipedia.org/wiki/Prosody_(linguistics)",
+      "note": "说明节奏与停顿的语言学基础。"
+    }
+  ]
+}

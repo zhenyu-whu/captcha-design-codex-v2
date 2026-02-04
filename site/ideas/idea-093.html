@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#93 两点跃迁比 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#93</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>两点跃迁比</h1>
+        <p>连续完成近点与远点点击，比较两段耗时与距离关系，以时间‑距离函数验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>连续完成近点与远点点击，系统比较两段耗时与难度指数的相对关系并与群体基线比对。任务结构为短序列，信号形态为反应时与节律序列。</p>
+        <p>用“时间‑距离函数”验证运动规律性。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在指向任务中遵循稳定的时间‑距离关系（如 Fitts' law），近点与远点的耗时比具有可预测的区间。通过短序列测量可有效区分脚本。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现近点与远点目标，要求连续点击。</li><li>记录两段移动耗时与路径节奏。</li><li>计算耗时比与距离指数的相对关系。</li><li>与群体基线分布进行比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户点击近点目标。</li><li>步骤 2：立即点击远点目标完成序列。</li><li>步骤 3：系统计算耗时比并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>近远点耗时比</strong>
+  <div>人类移动时间与距离呈稳定函数关系。</div>
+</div>
+
+<div class="signal-item">
+  <strong>路径节奏与停顿</strong>
+  <div>真实用户会表现出自然的微停顿与纠偏。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>耗时比需落在人类分布区间，且路径节奏合理；过度一致或不符合距离关系判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本按固定耗时模拟点击</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标距离与大小</li><li>引入轻微动态扰动降低模板化</li><li>叠加轨迹微抖动信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与慢速模式，支持键盘替代选择。</p>
+        <ul><li>设备输入延迟影响耗时比</li><li>触控与鼠标差异导致分布变化</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-093-1.svg" alt="状态 1：近点目标" />
+  <h3>状态 1：近点目标</h3>
+  <p>先点击近点目标。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-093-2.svg" alt="状态 2：远点跃迁" />
+  <h3>状态 2：远点跃迁</h3>
+  <p>随后快速移动点击远点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-093-3.svg" alt="状态 3：耗时判定" />
+  <h3>状态 3：耗时判定</h3>
+  <p>比较耗时比与距离关系。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Fitts%27s_law" target="_blank" rel="noreferrer">Fitts's law</a>
+  <div>说明移动时间与距离/目标大小的关系。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction" target="_blank" rel="noreferrer">Human–computer interaction</a>
+  <div>说明指向任务与交互节奏特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

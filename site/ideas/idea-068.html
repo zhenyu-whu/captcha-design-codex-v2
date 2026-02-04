@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#68 对称性检测阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#68</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>对称性检测阈值</h1>
+        <p>随机点阵中逐步提高对称度，记录“刚觉得对称”的阈值与决策时间作为敏感度信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>随机点阵中逐步提高对称度，用户调节到“刚觉得对称”。记录阈值与决策时间。</p>
+        <p>利用人类对对称性的敏感阈值作为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对对称性具有敏感阈值，需达到一定对称度才产生明显对称感。通过测量阈值与决策时间分布，可形成稳定的知觉特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示随机点阵并逐步提高对称度。</li><li>用户调节到“刚觉得对称”。</li><li>记录阈值位置与决策时间。</li><li>分析对称敏感度与收敛节奏。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到点阵对称度变化。</li><li>步骤 2：用户调节到刚觉得对称。</li><li>步骤 3：系统记录阈值并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>对称性阈值</strong>
+  <div>对称敏感度存在稳定阈值范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>决策时间与回拉路径</strong>
+  <div>真实判断会有短暂停顿与回撤。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估阈值与决策时间是否落在人类范围；阈值异常或无回拉判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算对称度并固定提交</li><li>重放真实用户的调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化点阵密度与噪声分布</li><li>改变对称轴位置与方向</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更低密度或替代任务模式，避免对视觉负担过高用户造成不适。</p>
+        <ul><li>屏幕尺寸影响对称感受</li><li>点阵密度过高导致疲劳</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-068-1.svg" alt="状态 1：随机点阵" />
+  <h3>状态 1：随机点阵</h3>
+  <p>点阵对称度逐步提升。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-068-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>用户调节到刚觉得对称。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-068-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>分析对称阈值与决策时间。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Symmetry" target="_blank" rel="noreferrer">Symmetry</a>
+  <div>说明对称性与视觉敏感度。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Perceptual_organization" target="_blank" rel="noreferrer">Perceptual organization</a>
+  <div>说明对称性在知觉中的作用。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

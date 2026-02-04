@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#159 原生事件指纹 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#159</span>
+          <span class="chip teal">Reverse Brainstorming - Round 2</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>原生事件指纹</h1>
+        <p>利用高频输入事件时序特征作为核心信号，并与设备基线比对。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 2</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>使用高频输入事件的时序特征（合并事件节律、指针加速度噪声）作为核心信号，并与设备基线比对。</p>
+        <p>通过输入层指纹识别自动化脚本的非人类事件序列。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>原生输入事件存在合并节律、抖动与加速度噪声。自动化脚本很难准确复刻这些时序指纹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>高频采集输入事件时间戳。</li><li>提取事件间隔抖动与合并模式。</li><li>分析指针加速度噪声。</li><li>与设备基线分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成短交互序列。</li><li>步骤 2：系统采集原生事件。</li><li>步骤 3：系统分析时序指纹并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>事件间隔抖动</strong>
+  <div>硬件管线产生稳定抖动结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>加速度噪声谱</strong>
+  <div>真实输入存在生理性噪声。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>时序指纹需匹配设备基线；过度规则或异常合并判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本伪造固定间隔事件</li><li>注入随机噪声伪装</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>使用高分辨率计时与多维统计</li><li>与其他行为信号耦合</li><li>设备分层基线动态更新</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>不依赖精细动作，仅需短交互即可采集。</p>
+        <ul><li>系统级平滑影响事件特征</li><li>低采样率设备降低判别力</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-159-1.svg" alt="状态 1：事件序列" />
+  <h3>状态 1：事件序列</h3>
+  <p>高频事件时序采集。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-159-2.svg" alt="状态 2：抖动分布" />
+  <h3>状态 2：抖动分布</h3>
+  <p>分析事件间隔抖动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-159-3.svg" alt="状态 3：指纹比对" />
+  <h3>状态 3：指纹比对</h3>
+  <p>与设备基线进行匹配。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Input_method" target="_blank" rel="noreferrer">Input method</a>
+  <div>说明输入事件与设备特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Jitter" target="_blank" rel="noreferrer">Jitter</a>
+  <div>说明事件时序抖动特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

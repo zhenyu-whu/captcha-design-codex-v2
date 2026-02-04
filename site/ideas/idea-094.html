@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#94 随机摩擦点刺 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#94</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>随机摩擦点刺</h1>
+        <p>多个目标点带不同摩擦系数，用户快速点击，系统观察适应曲线与停顿分布判定真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>2–3 个目标点各自带不同摩擦系数，用户快速点击，系统观察适应曲线与停顿分布并做异常检测。任务结构为短序列，信号形态为轨迹动力学与反应时。</p>
+        <p>通过“非均匀摩擦适应”区分程序轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>在非均匀摩擦或阻力环境中，人类会表现出可测的适应与回调策略。脚本难以在短序列中体现自然的摩擦适应曲线。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现 2–3 个具有不同摩擦系数的目标点。</li><li>用户快速点击目标完成短序列。</li><li>记录到达时间、停顿与速度变化。</li><li>分析适应曲线与停顿分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到多个目标点。</li><li>步骤 2：依次快速点击各目标。</li><li>步骤 3：系统分析适应曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>速度变化与适应曲线</strong>
+  <div>人类对摩擦差异会出现渐进调整。</div>
+</div>
+
+<div class="signal-item">
+  <strong>停顿分布</strong>
+  <div>真实用户会在高摩擦点短暂停顿。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>适应曲线需符合人类分布，停顿与速度变化合理；过度一致或无适应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本忽略摩擦差异并固定速度</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化摩擦系数与目标位置</li><li>引入轻微扰动降低模板化</li><li>叠加轨迹微抖动与反应时信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供慢速模式与更大目标，避免对手部障碍用户造成负担。</p>
+        <ul><li>设备差异导致摩擦感受不一致</li><li>触控设备难以体现摩擦变化</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-094-1.svg" alt="状态 1：摩擦目标" />
+  <h3>状态 1：摩擦目标</h3>
+  <p>目标点带不同摩擦标记。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-094-2.svg" alt="状态 2：快速点击" />
+  <h3>状态 2：快速点击</h3>
+  <p>用户在不同摩擦点间切换。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-094-3.svg" alt="状态 3：适应判定" />
+  <h3>状态 3：适应判定</h3>
+  <p>依据适应曲线与停顿判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_adaptation" target="_blank" rel="noreferrer">Motor adaptation</a>
+  <div>说明对阻力变化的运动适应机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Haptic_perception" target="_blank" rel="noreferrer">Haptic perception</a>
+  <div>说明触觉反馈与摩擦感知基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "id": "88",
+  "slug": "idea-088",
+  "title": "意图一致性延迟",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在用户完成操作后延迟弹出微选择题，以意图一致性、注意力路径与反应时验证真实性。",
+  "background": "真实用户的操作意图会在短时间内保持一致性，延迟后的选择与注意力路径仍具有可预测的倾向。脚本难以在跨时上下文中保持一致，因此可通过异步微任务捕捉在场证明。",
+  "core_mechanism": [
+    "在用户完成核心操作后延迟弹出微选择题。",
+    "题目与刚才的意图或路径相关，但非直接重复。",
+    "记录反应时、选择偏向与注意力路径。",
+    "与历史倾向或群体分布进行比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成主要操作并继续浏览。",
+    "步骤 2：延迟弹出简短微选择题。",
+    "步骤 3：系统记录反应时与路径并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "意图一致性与选择偏向",
+      "why_it_matters": "真实用户的选择与先前意图保持稳定关联。"
+    },
+    {
+      "signal": "反应时与注意力路径",
+      "why_it_matters": "在场用户的响应更快且路径更自然。"
+    }
+  ],
+  "decision_logic": "一致性与反应时需落在人类分布区间；随机选择或过度稳定判异常。",
+  "attack_surface": [
+    "脚本尝试记录上下文并固定选择",
+    "重放真实用户的路径与反应时"
+  ],
+  "mitigations": [
+    "随机化延迟时机与题目形式",
+    "绑定实时状态与多源上下文",
+    "叠加轨迹与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供可跳过或简化任务，避免打断体验并兼容注意力障碍用户。",
+  "risks": [
+    "异步弹窗可能造成困扰",
+    "用户中断导致样本不完整"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：完成操作",
+      "caption": "用户完成主要任务后继续浏览。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-088-1.svg"
+    },
+    {
+      "title": "状态 2：延迟微选择",
+      "caption": "延迟弹出的微选择题。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-088-2.svg"
+    },
+    {
+      "title": "状态 3：一致判定",
+      "caption": "对一致性与反应时进行判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-088-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Prospective memory",
+      "url": "https://en.wikipedia.org/wiki/Prospective_memory",
+      "note": "说明延迟任务中的意图保持机制。"
+    },
+    {
+      "title": "Attention",
+      "url": "https://en.wikipedia.org/wiki/Attention",
+      "note": "说明注意力路径与即时反应的关系。"
+    }
+  ]
+}

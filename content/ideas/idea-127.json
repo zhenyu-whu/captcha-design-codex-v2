@@ -1,0 +1,78 @@
+{
+  "id": "127",
+  "slug": "idea-127",
+  "title": "顺序判别临界值",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "调节两刺激间隔到刚能判断先后，记录顺序判别阈值与微调次数。",
+  "background": "时间顺序判别任务可估计 JND，阈值与微调模式具有稳定区间，适合形成单信号验证。",
+  "core_mechanism": [
+    "呈现两个时间相近的刺激。",
+    "用户调节间隔到“刚能判断先后”。",
+    "记录 JND 阈值与调整次数。",
+    "与群体基线或历史分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到两刺激依次出现。",
+    "步骤 2：调节间隔直到刚能分辨顺序。",
+    "步骤 3：系统记录阈值并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "时间顺序 JND 阈值",
+      "why_it_matters": "阈值落在稳定范围且难以精确伪造。"
+    },
+    {
+      "signal": "微调次数与反应时",
+      "why_it_matters": "真实用户需要多次试探。"
+    }
+  ],
+  "decision_logic": "阈值与微调特征需符合人类分布；过低阈值或无试探判异常。",
+  "attack_surface": [
+    "脚本选择固定阈值",
+    "重放用户的调整轨迹"
+  ],
+  "mitigations": [
+    "随机化刺激位置/强度与顺序",
+    "加入零间隔/长间隔捕捉试次",
+    "限制可见时窗减少脚本读取"
+  ],
+  "accessibility": "提供更大间隔范围与视觉/听觉替代版本。",
+  "risks": [
+    "设备计时精度影响阈值",
+    "视觉敏感用户不适"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：顺序呈现",
+      "caption": "两刺激按顺序出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-127-1.svg"
+    },
+    {
+      "title": "状态 2：间隔调节",
+      "caption": "拖动滑杆调整时间间隔。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-127-2.svg"
+    },
+    {
+      "title": "状态 3：阈值判定",
+      "caption": "记录阈值与微调次数。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-127-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Temporal order judgment",
+      "url": "https://en.wikipedia.org/wiki/Temporal_order_judgment",
+      "note": "说明顺序判别任务与阈值。"
+    },
+    {
+      "title": "Just-noticeable difference",
+      "url": "https://en.wikipedia.org/wiki/Just-noticeable_difference",
+      "note": "说明可觉差阈值。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#69 视觉节律分组 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#69</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>视觉节律分组</h1>
+        <p>点阵按节律闪现，用户按感知节拍点击分组边界，利用节律位置与一致性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>点阵按时间节律闪现，用户按“感觉到的节拍”点击分组边界。记录节拍位置与一致性。</p>
+        <p>以时间分组偏好作为人类知觉签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>时间节律会引导人类对视觉事件进行分组，形成稳定的节拍边界与一致性模式。通过记录分组边界与节奏偏差可形成行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>点阵按一定节律闪现。</li><li>用户按“感觉到的节拍”点击分组边界。</li><li>记录节拍位置与一致性。</li><li>分析节律偏差与稳定性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到点阵按节律闪现。</li><li>步骤 2：用户点击分组边界。</li><li>步骤 3：系统分析节拍位置并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>节拍边界位置</strong>
+  <div>人类对节律分组存在稳定的边界偏好。</div>
+</div>
+
+<div class="signal-item">
+  <strong>节律一致性与偏差</strong>
+  <div>真实节律感知具有一致的时序偏差。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合节拍边界与一致性分布判定；边界随机或无节律偏好判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定节拍位置点击</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化节律间隔与点阵位置</li><li>加入轻微节奏扰动降低模板化</li><li>叠加微时序与鼠标轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节律或替代任务模式，避免对节奏敏感用户造成负担。</p>
+        <ul><li>节奏过快导致误差增大</li><li>不同设备刷新率影响节拍感知</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-069-1.svg" alt="状态 1：节律闪现" />
+  <h3>状态 1：节律闪现</h3>
+  <p>点阵按节律闪现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-069-2.svg" alt="状态 2：边界点击" />
+  <h3>状态 2：边界点击</h3>
+  <p>用户点击感知到的分组边界。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-069-3.svg" alt="状态 3：节律判定" />
+  <h3>状态 3：节律判定</h3>
+  <p>分析节拍位置与一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Rhythm" target="_blank" rel="noreferrer">Rhythm</a>
+  <div>说明节律感知与分组倾向。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Perceptual_organization" target="_blank" rel="noreferrer">Temporal grouping</a>
+  <div>说明时间分组与知觉组织。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

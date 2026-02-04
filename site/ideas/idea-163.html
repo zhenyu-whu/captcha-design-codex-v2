@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#163 时钟标记现场感 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#163</span>
+          <span class="chip teal">Reverse Brainstorming - Round 2</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>时钟标记现场感</h1>
+        <p>将系统时钟抖动嵌入节奏提示，要求短窗口响应并评估节律序列。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 2</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>将系统时钟抖动或随机节奏嵌入任务，引导用户在短窗口响应，判定基于节律序列与异常检测。</p>
+        <p>把“现场时间锚”作为不可预测因素，降低环境伪造可行性。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>时钟抖动与系统节拍具有微随机性，真实用户在短窗口响应中会表现出稳定的相位滞后与修正轨迹。将“现场时间锚”作为不可预测因素可抬高伪造成本。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>生成带抖动的节奏提示或时间窗。</li><li>用户在短窗口内进行响应。</li><li>记录相位偏差与节律序列。</li><li>与人类基线分布进行比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到随机节奏提示。</li><li>步骤 2：在短时间窗内点击或操作。</li><li>步骤 3：系统分析节律序列与偏差。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>相位滞后与修正曲线</strong>
+  <div>人类对节拍响应存在稳定滞后与校准。</div>
+</div>
+
+<div class="signal-item">
+  <strong>节律间隔抖动</strong>
+  <div>真实跟随会产生可解释的抖动结构。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>相位偏差与抖动需落在人类区间；过度精准或完全随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本读取时间窗并精确触发</li><li>回放记录的节律序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化抖动分布与相位</li><li>缩短响应窗口并加入干扰节拍</li><li>结合反应时与轨迹信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节奏与视觉提示，避免听觉依赖。</p>
+        <ul><li>设备计时精度差异影响判定</li><li>网络延迟影响短窗口响应</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-163-1.svg" alt="状态 1：节奏提示" />
+  <h3>状态 1：节奏提示</h3>
+  <p>带抖动的节奏序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-163-2.svg" alt="状态 2：短窗响应" />
+  <h3>状态 2：短窗响应</h3>
+  <p>用户在短窗口内操作。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-163-3.svg" alt="状态 3：节律判定" />
+  <h3>状态 3：节律判定</h3>
+  <p>分析相位偏差与抖动。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Jitter" target="_blank" rel="noreferrer">Jitter</a>
+  <div>说明时间抖动与随机性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明短窗口响应与反应时分布。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#9 Fitts 定律挑战 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#9</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>Fitts 定律挑战</h1>
+        <p>通过一组不同大小与距离的目标点击，验证移动时间与难度指数是否符合人类 Fitts 定律曲线。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>连续出现不同大小/距离的目标点，记录完成时间与难度指数关系是否符合 Fitts 定律。人类轨迹对难度的时间响应具有稳定函数关系。</p>
+        <p>以“运动时间规律性”作为人机差异，而非识别准确率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>Fitts 定律描述了目标大小与距离对移动时间的影响，是人机交互中广泛验证的速度‑精度权衡规律。以该规律为基础，验证码可检验操控行为是否呈现人类稳定的时间‑难度函数，而非单次命中是否正确。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>生成一组不同大小/距离的目标，构成不同难度指数。</li><li>记录每次移动时间、轨迹与误差，并计算难度‑时间关系。</li><li>将用户的曲线与人类典型函数区间进行比对。</li><li>允许一定噪声，强调曲线形态与趋势一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进入目标序列任务，依次点击出现的圆点。</li><li>步骤 2：系统记录每次移动时间、轨迹长度与误差。</li><li>步骤 3：系统计算难度指数曲线并完成判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>移动时间与难度指数（ID）相关性</strong>
+  <div>人类表现符合稳定的速度‑精度权衡规律。</div>
+</div>
+
+<div class="signal-item">
+  <strong>末端减速与微调轨迹</strong>
+  <div>真实操控通常呈现“快‑慢”双阶段轨迹。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>计算 ID‑时间曲线的拟合度与斜率区间；若出现“极快且精准”或“曲线异常平坦”，则判定为异常；结合末端微调波形进行二次校验。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本基于 Fitts 模型生成伪造曲线</li><li>重放已采集的人类轨迹序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态改变目标序列与布局，降低重放可复用性</li><li>加入轻微摩擦/延迟扰动，检测适应过程</li><li>联合轨迹微抖动与过冲回拉等二级信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与更宽容的时间窗口；为键盘或触控用户提供等效的“步进式”目标选择。</p>
+        <ul><li>输入设备差异（触控板/鼠标）导致曲线偏移</li><li>高延迟或系统负载可能扭曲时间统计</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-009-1.svg" alt="状态 1：目标序列" />
+  <h3>状态 1：目标序列</h3>
+  <p>不同大小与距离的目标依次出现，构成难度梯度。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-009-2.svg" alt="状态 2：轨迹与时间采集" />
+  <h3>状态 2：轨迹与时间采集</h3>
+  <p>记录每次移动时间与末端微调轨迹。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-009-3.svg" alt="状态 3：曲线拟合" />
+  <h3>状态 3：曲线拟合</h3>
+  <p>计算难度指数与移动时间的函数关系。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Fitts%27s_law" target="_blank" rel="noreferrer">Fitts's law</a>
+  <div>描述目标大小/距离与移动时间的关系。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

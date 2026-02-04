@@ -1,0 +1,78 @@
+{
+  "id": "159",
+  "slug": "idea-159",
+  "title": "原生事件指纹",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "利用高频输入事件时序特征作为核心信号，并与设备基线比对。",
+  "background": "原生输入事件存在合并节律、抖动与加速度噪声。自动化脚本很难准确复刻这些时序指纹。",
+  "core_mechanism": [
+    "高频采集输入事件时间戳。",
+    "提取事件间隔抖动与合并模式。",
+    "分析指针加速度噪声。",
+    "与设备基线分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成短交互序列。",
+    "步骤 2：系统采集原生事件。",
+    "步骤 3：系统分析时序指纹并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "事件间隔抖动",
+      "why_it_matters": "硬件管线产生稳定抖动结构。"
+    },
+    {
+      "signal": "加速度噪声谱",
+      "why_it_matters": "真实输入存在生理性噪声。"
+    }
+  ],
+  "decision_logic": "时序指纹需匹配设备基线；过度规则或异常合并判异常。",
+  "attack_surface": [
+    "脚本伪造固定间隔事件",
+    "注入随机噪声伪装"
+  ],
+  "mitigations": [
+    "使用高分辨率计时与多维统计",
+    "与其他行为信号耦合",
+    "设备分层基线动态更新"
+  ],
+  "accessibility": "不依赖精细动作，仅需短交互即可采集。",
+  "risks": [
+    "系统级平滑影响事件特征",
+    "低采样率设备降低判别力"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：事件序列",
+      "caption": "高频事件时序采集。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-159-1.svg"
+    },
+    {
+      "title": "状态 2：抖动分布",
+      "caption": "分析事件间隔抖动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-159-2.svg"
+    },
+    {
+      "title": "状态 3：指纹比对",
+      "caption": "与设备基线进行匹配。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-159-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Input method",
+      "url": "https://en.wikipedia.org/wiki/Input_method",
+      "note": "说明输入事件与设备特性。"
+    },
+    {
+      "title": "Jitter",
+      "url": "https://en.wikipedia.org/wiki/Jitter",
+      "note": "说明事件时序抖动特征。"
+    }
+  ]
+}

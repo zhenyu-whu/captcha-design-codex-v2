@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#172 设备层可信度分层 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#172</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>设备层可信度分层</h1>
+        <p>依据设备与浏览器可信度分层验证，低可信触发多信号任务。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>依据设备/浏览器可信度分层选择验证强度，低可信环境强制多信号验证，高可信环境简化流程。</p>
+        <p>把模拟器局限转化为风险分层优势，减少正常用户负担。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>设备指纹与环境特征可提供可信度估计。按层级分配验证强度能降低正常用户负担，同时提升对可疑环境的区分度。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>采集设备/浏览器特征并估计可信度。</li><li>低可信环境升级为多信号任务。</li><li>高可信环境使用轻量验证。</li><li>结合风险策略输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：系统评估设备可信度。</li><li>步骤 2：根据可信度选择验证路径。</li><li>步骤 3：系统输出最终判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>设备指纹可信度</strong>
+  <div>可信度影响验证强度选择。</div>
+</div>
+
+<div class="signal-item">
+  <strong>升级任务行为信号</strong>
+  <div>多信号验证更难伪造。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>高可信可快速通过；低可信需满足多信号阈值。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>伪造设备指纹提升可信度</li><li>脚本针对轻量验证优化</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态更新指纹特征</li><li>随机抽检高可信设备</li><li>多层信号组合判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>升级任务提供可达性替代通道。</p>
+        <ul><li>指纹误判导致体验不稳</li><li>过度分层影响公平性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-172-1.svg" alt="状态 1：可信度分层" />
+  <h3>状态 1：可信度分层</h3>
+  <p>设备按可信度分层。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-172-2.svg" alt="状态 2：路径升级" />
+  <h3>状态 2：路径升级</h3>
+  <p>低可信触发多信号任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-172-3.svg" alt="状态 3：分层判定" />
+  <h3>状态 3：分层判定</h3>
+  <p>按层级输出验证结果。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Device_fingerprint" target="_blank" rel="noreferrer">Device fingerprint</a>
+  <div>说明设备特征与可信度估计。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Risk-based_authentication" target="_blank" rel="noreferrer">Risk-based authentication</a>
+  <div>说明分层验证策略。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "id": "81",
+  "slug": "idea-081",
+  "title": "意图路径双段",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "通过两阶段意图定位任务比较搜索路径与停顿分布的一致性，验证目的驱动的注意力轨迹。",
+  "background": "人类在目标导向任务中会形成稳定的搜索路径与停顿节奏，两阶段任务能揭示意图一致性。脚本往往缺乏自然的探索与纠偏模式。",
+  "core_mechanism": [
+    "第一阶段让用户完成粗定位或初步选择。",
+    "第二阶段要求细化或再次确认目标。",
+    "记录两阶段的搜索路径、停顿与回撤。",
+    "比较一致性与差异形成判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成第一阶段的意图定位。",
+    "步骤 2：进入第二阶段进行细化选择。",
+    "步骤 3：系统比较路径与节奏并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "搜索路径一致性",
+      "why_it_matters": "真实用户的注意力路径具有目的驱动的稳定性。"
+    },
+    {
+      "signal": "停顿与回撤分布",
+      "why_it_matters": "自然探索会出现短暂停顿与修正。"
+    }
+  ],
+  "decision_logic": "两阶段路径与停顿分布需保持合理一致性；瞬时直达或完全随机判异常。",
+  "attack_surface": [
+    "脚本直接点击目标绕过搜索",
+    "重放真实用户的路径序列"
+  ],
+  "mitigations": [
+    "随机化目标与干扰项位置",
+    "加入动态提示与多目标场景",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更大目标与键盘导航，允许慢速模式或替代任务。",
+  "risks": [
+    "复杂场景可能增加真实用户负担",
+    "设备差异影响路径分布"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：初步定位",
+      "caption": "第一阶段完成意图定位。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-081-1.svg"
+    },
+    {
+      "title": "状态 2：细化选择",
+      "caption": "第二阶段进行细化选择。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-081-2.svg"
+    },
+    {
+      "title": "状态 3：路径判定",
+      "caption": "比较路径与节奏一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-081-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual search",
+      "url": "https://en.wikipedia.org/wiki/Visual_search",
+      "note": "说明目标搜索中的注意力路径与停顿。"
+    },
+    {
+      "title": "Attention",
+      "url": "https://en.wikipedia.org/wiki/Attention",
+      "note": "说明目的驱动的注意力机制。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "140",
+  "slug": "idea-140",
+  "title": "意图前瞻选择",
+  "group": "F：意图/现实耦合 × 异步/随机插入（路径/预测误差）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在操作流中插入“下一步要做什么”的即时选择，记录反应时与路径停顿。",
+  "background": "前瞻记忆与意图保持会影响即时选择速度。插入式问题可捕捉“意图‑操作”的自然反应，而脚本往往表现为过快或无停顿。",
+  "core_mechanism": [
+    "在操作流程中随机插入意图选择。",
+    "用户快速选择下一步动作。",
+    "记录反应时与路径停顿。",
+    "与历史基线或群体分布比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行常规操作流程。",
+    "步骤 2：出现意图选择提示并立即作答。",
+    "步骤 3：系统记录反应时与停顿并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "意图选择反应时",
+      "why_it_matters": "真实用户需要短时检索当前意图。"
+    },
+    {
+      "signal": "插入前后停顿",
+      "why_it_matters": "自然操作会出现轻微停顿与调整。"
+    }
+  ],
+  "decision_logic": "反应时与停顿需落在合理区间；过快、无停顿或与上下文不匹配判异常。",
+  "attack_surface": [
+    "脚本读取 DOM 并瞬时作答",
+    "固定反应时伪装"
+  ],
+  "mitigations": [
+    "随机化插入时机与选项布局",
+    "加入上下文相依的选项",
+    "多次插入取一致性"
+  ],
+  "accessibility": "提供键盘选择与更长响应窗口，避免对行动受限用户不友好。",
+  "risks": [
+    "用户误解选项导致误判",
+    "过多插入降低体验"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：流程插入",
+      "caption": "在操作流中出现意图提示。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-140-1.svg"
+    },
+    {
+      "title": "状态 2：快速选择",
+      "caption": "用户快速选择下一步动作。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-140-2.svg"
+    },
+    {
+      "title": "状态 3：停顿判定",
+      "caption": "分析反应时与路径停顿。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-140-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Prospective memory",
+      "url": "https://en.wikipedia.org/wiki/Prospective_memory",
+      "note": "说明意图保持与前瞻记忆机制。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明快速选择的反应时特征。"
+    }
+  ]
+}

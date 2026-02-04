@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#107 扫描‑显著性双证 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#107</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>扫描‑显著性双证</h1>
+        <p>画面短闪后点击三个最显著点，再拖拽标注扫视路径，以点击顺序与路径一致性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>画面短闪后用户点击 3 个最显著点，再拖拽标注扫视路径，系统比较点击顺序与路径一致性。任务结构为短序列，信号形态为注意力分布与搜索路径。</p>
+        <p>双通道捕捉“注意力组织方式”。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>显著性点选择与扫视路径体现注意力组织方式。双通道记录可捕捉一致性与自然的探索节奏，提升对脚本的区分度。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>短闪呈现复杂画面。</li><li>用户点击三个最显著点。</li><li>用户拖拽标注扫视路径。</li><li>比较点击顺序与路径一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短闪画面。</li><li>步骤 2：用户点击三个最显著点。</li><li>步骤 3：用户拖拽标注扫视路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>显著点点击顺序</strong>
+  <div>人类注意力会形成稳定的显著点优先级。</div>
+</div>
+
+<div class="signal-item">
+  <strong>扫视路径形态</strong>
+  <div>真实用户的路径包含自然的探索节奏。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>点击顺序与路径需符合人类分布且一致性合理；过度完美或随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本基于显著性模型直接选择</li><li>重放真实用户的路径序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化画面内容与布局</li><li>加入轻微噪声降低模型预测</li><li>叠加反应时与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长展示时间与更少显著点要求，支持键盘替代。</p>
+        <ul><li>短闪可能导致真实用户漏检</li><li>视觉障碍用户难以完成</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-107-1.svg" alt="状态 1：短闪画面" />
+  <h3>状态 1：短闪画面</h3>
+  <p>复杂画面短时闪现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-107-2.svg" alt="状态 2：显著点点击" />
+  <h3>状态 2：显著点点击</h3>
+  <p>用户点击三个显著点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-107-3.svg" alt="状态 3：路径判定" />
+  <h3>状态 3：路径判定</h3>
+  <p>比较点击顺序与扫视路径。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_attention" target="_blank" rel="noreferrer">Visual attention</a>
+  <div>说明显著性与注意力选择机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Salience_(neuroscience)" target="_blank" rel="noreferrer">Salience (neuroscience)</a>
+  <div>说明显著性与注意力组织。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

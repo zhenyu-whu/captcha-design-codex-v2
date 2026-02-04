@@ -1,0 +1,78 @@
+{
+  "id": "142",
+  "slug": "idea-142",
+  "title": "状态驱动分岔",
+  "group": "F：意图/现实耦合 × 异步/随机插入（路径/预测误差）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "依据滚动或指针速度触发不同微任务，比较分岔前后预测误差与设备基线。",
+  "background": "人类在状态切换中会表现出可预测的误差与适应过程。动态分岔可打断脚本固定策略，并捕捉状态驱动的预测误差特征。",
+  "core_mechanism": [
+    "监测实时状态（滚动/指针速度）。",
+    "达到阈值时触发不同微任务分支。",
+    "记录分岔前后预测误差与适应时间。",
+    "与设备基线及历史分布比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行连续操作，系统监测状态。",
+    "步骤 2：触发分岔任务并完成。",
+    "步骤 3：系统分析预测误差与适应曲线。"
+  ],
+  "signals": [
+    {
+      "signal": "分岔触发前状态分布",
+      "why_it_matters": "真实用户状态波动具有稳定区间。"
+    },
+    {
+      "signal": "分岔后预测误差",
+      "why_it_matters": "适应过程会产生可解释的误差结构。"
+    }
+  ],
+  "decision_logic": "状态分布与分岔后误差需匹配基线；无适应或误差恒定判异常。",
+  "attack_surface": [
+    "脚本保持固定速度触发特定分支",
+    "提前推断阈值并模拟响应"
+  ],
+  "mitigations": [
+    "随机化分岔阈值与任务类型",
+    "隐藏分岔触发规则",
+    "加入意外分支与回归检查"
+  ],
+  "accessibility": "提供低强度阈值与手动触发选项。",
+  "risks": [
+    "设备性能差异影响状态测量",
+    "分岔任务过多导致困惑"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：状态监测",
+      "caption": "根据速度状态触发分岔。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-142-1.svg"
+    },
+    {
+      "title": "状态 2：分岔任务",
+      "caption": "进入不同微任务分支。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-142-2.svg"
+    },
+    {
+      "title": "状态 3：误差比较",
+      "caption": "比较分岔前后预测误差。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-142-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Internal model (motor control)",
+      "url": "https://en.wikipedia.org/wiki/Internal_model_(motor_control)",
+      "note": "说明运动预测与误差机制。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明状态变化下的反应时特征。"
+    }
+  ]
+}

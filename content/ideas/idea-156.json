@@ -1,0 +1,78 @@
+{
+  "id": "156",
+  "slug": "idea-156",
+  "title": "多信号耦合一致性",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "同时采集轨迹动力学、反应时与适应曲线，判定依赖多信号耦合结构。",
+  "background": "单一分布易被伪造，多信号间的相关结构更难复刻。耦合一致性可反映真实操控的整体模式。",
+  "core_mechanism": [
+    "在同一任务内采集多维信号。",
+    "提取轨迹、反应时与适应曲线。",
+    "计算信号间相关结构。",
+    "以耦合一致性作为判定核心。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成多信号任务。",
+    "步骤 2：系统提取多维信号。",
+    "步骤 3：系统评估耦合一致性。"
+  ],
+  "signals": [
+    {
+      "signal": "轨迹‑反应时相关性",
+      "why_it_matters": "真实操作会呈现耦合关系。"
+    },
+    {
+      "signal": "适应曲线与纠偏一致性",
+      "why_it_matters": "多维信号同步性难以伪造。"
+    }
+  ],
+  "decision_logic": "多信号相关结构需落在基线区间；单一信号异常或耦合断裂判异常。",
+  "attack_surface": [
+    "逐一拟合单信号分布",
+    "回放真实多信号记录"
+  ],
+  "mitigations": [
+    "动态参数扰动避免固定分布",
+    "加入额外信号提高维度",
+    "检查跨任务一致性"
+  ],
+  "accessibility": "确保任务负担可控并提供替代通道。",
+  "risks": [
+    "信号耦合过强导致误拒",
+    "采样不足影响相关性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：多信号采集",
+      "caption": "同时采集轨迹与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-156-1.svg"
+    },
+    {
+      "title": "状态 2：耦合结构",
+      "caption": "展示信号相关结构。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-156-2.svg"
+    },
+    {
+      "title": "状态 3：一致性判定",
+      "caption": "基于耦合关系输出判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-156-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Multivariate analysis",
+      "url": "https://en.wikipedia.org/wiki/Multivariate_analysis",
+      "note": "说明多维信号相关结构。"
+    },
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明多信号行为特征。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "176",
+  "slug": "idea-176",
+  "title": "多点并发输入",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "要求短时内并发完成两类输入，判定多通道事件的时序一致性。",
+  "background": "多通道并发需要感知‑运动协调，真实用户会有稳定的跨通道滞后与同步结构。脚本难以精确模拟微同步。",
+  "core_mechanism": [
+    "同时触发两类输入任务（拖拽+按键）。",
+    "记录两个通道的时间线。",
+    "计算同步窗口与滞后分布。",
+    "基于并发一致性判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到并发输入提示。",
+    "步骤 2：同时完成拖拽与按键/点击。",
+    "步骤 3：系统分析同步性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "跨通道滞后",
+      "why_it_matters": "真实同步存在稳定滞后范围。"
+    },
+    {
+      "signal": "并发重叠比例",
+      "why_it_matters": "真实并发会有一定重叠区间。"
+    }
+  ],
+  "decision_logic": "滞后与重叠需符合人类分布；完全同步或完全分离判异常。",
+  "attack_surface": [
+    "脚本固定延迟触发两通道",
+    "回放多通道事件序列"
+  ],
+  "mitigations": [
+    "随机化并发提示与持续时长",
+    "加入微小相位扰动",
+    "多轮并发一致性验证"
+  ],
+  "accessibility": "提供顺序替代模式与低负担通道。",
+  "risks": [
+    "部分设备不支持并发输入",
+    "对运动障碍用户不友好"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：并发提示",
+      "caption": "两通道输入同时提示。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-176-1.svg"
+    },
+    {
+      "title": "状态 2：同步操作",
+      "caption": "拖拽与按键并发执行。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-176-2.svg"
+    },
+    {
+      "title": "状态 3：时序判定",
+      "caption": "分析并发滞后与重叠。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-176-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Multimodal interaction",
+      "url": "https://en.wikipedia.org/wiki/Multimodal_interaction",
+      "note": "说明多通道输入与同步。"
+    },
+    {
+      "title": "Human–computer interaction",
+      "url": "https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction",
+      "note": "说明并发输入场景。"
+    }
+  ]
+}

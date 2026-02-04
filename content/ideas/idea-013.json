@@ -1,0 +1,78 @@
+{
+  "id": "13",
+  "slug": "idea-013",
+  "title": "点击时长微分布",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "记录按下‑抬起的点击时长分布与微波动，利用稳定而不完美的节律作为人类特征。",
+  "background": "人类在微动作中存在稳定的时间分布与微波动，类似于键击节律在行为生物识别中的使用方式。通过多次点击采样，可形成个体化的时长分布与节律窗口，脚本难以在短时间内精确复刻这种分布。",
+  "core_mechanism": [
+    "设置 3–5 次短点击或轻拖，采集按下‑抬起时长。",
+    "统计时长分布、均值与方差，并观察微波动。",
+    "结合点击间隔形成节律特征。",
+    "允许误差，强调稳定但非完美的分布结构。"
+  ],
+  "user_flow": [
+    "步骤 1：用户根据提示完成一组点击。",
+    "步骤 2：系统记录每次按下与抬起时长。",
+    "步骤 3：系统计算分布并输出判定。"
+  ],
+  "signals": [
+    {
+      "signal": "点击时长分布（均值/方差/偏度）",
+      "why_it_matters": "人类点击时长具有稳定但不完全一致的统计特征。"
+    },
+    {
+      "signal": "点击间隔节律",
+      "why_it_matters": "节律稳定性可反映真实操控节拍。"
+    }
+  ],
+  "decision_logic": "要求时长分布落在合理区间，并在短序列内保持一致性；过度一致或过度随机均判异常。",
+  "attack_surface": [
+    "脚本生成伪随机时长分布",
+    "回放采集到的真实点击序列"
+  ],
+  "mitigations": [
+    "随机提示节奏与顺序，降低回放复用",
+    "联合指针轨迹与微抖动作为辅判",
+    "多轮短序列交叉比对"
+  ],
+  "accessibility": "提供键盘或触控替代通道，并允许更宽松的时长窗口。",
+  "risks": [
+    "设备或系统级事件合并可能影响时长精度",
+    "长按习惯可能导致分布偏移"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：点击提示",
+      "caption": "短序列点击任务，标记点击目标。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-013-1.svg"
+    },
+    {
+      "title": "状态 2：时长采集",
+      "caption": "不同点击时长形成微差异。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-013-2.svg"
+    },
+    {
+      "title": "状态 3：分布判定",
+      "caption": "统计时长分布与节律窗口。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-013-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Keystroke dynamics",
+      "url": "https://en.wikipedia.org/wiki/Keystroke_dynamics",
+      "note": "说明点击/键击节律作为行为特征的可用性。"
+    },
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明行为特征可用于身份识别与区分。"
+    }
+  ]
+}

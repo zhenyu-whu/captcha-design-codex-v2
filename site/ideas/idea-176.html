@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#176 多点并发输入 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#176</span>
+          <span class="chip teal">Reverse Brainstorming - Round 4</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>多点并发输入</h1>
+        <p>要求短时内并发完成两类输入，判定多通道事件的时序一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 4</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>要求短时内同时进行两类输入（如拖拽 + 键盘轻触），并判定多通道事件间的时序一致性。</p>
+        <p>自动化脚本很难模拟多通道并发与微同步。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>多通道并发需要感知‑运动协调，真实用户会有稳定的跨通道滞后与同步结构。脚本难以精确模拟微同步。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>同时触发两类输入任务（拖拽+按键）。</li><li>记录两个通道的时间线。</li><li>计算同步窗口与滞后分布。</li><li>基于并发一致性判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到并发输入提示。</li><li>步骤 2：同时完成拖拽与按键/点击。</li><li>步骤 3：系统分析同步性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>跨通道滞后</strong>
+  <div>真实同步存在稳定滞后范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>并发重叠比例</strong>
+  <div>真实并发会有一定重叠区间。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>滞后与重叠需符合人类分布；完全同步或完全分离判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定延迟触发两通道</li><li>回放多通道事件序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化并发提示与持续时长</li><li>加入微小相位扰动</li><li>多轮并发一致性验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供顺序替代模式与低负担通道。</p>
+        <ul><li>部分设备不支持并发输入</li><li>对运动障碍用户不友好</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-176-1.svg" alt="状态 1：并发提示" />
+  <h3>状态 1：并发提示</h3>
+  <p>两通道输入同时提示。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-176-2.svg" alt="状态 2：同步操作" />
+  <h3>状态 2：同步操作</h3>
+  <p>拖拽与按键并发执行。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-176-3.svg" alt="状态 3：时序判定" />
+  <h3>状态 3：时序判定</h3>
+  <p>分析并发滞后与重叠。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Multimodal_interaction" target="_blank" rel="noreferrer">Multimodal interaction</a>
+  <div>说明多通道输入与同步。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction" target="_blank" rel="noreferrer">Human–computer interaction</a>
+  <div>说明并发输入场景。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

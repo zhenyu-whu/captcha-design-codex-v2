@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#103 双稳态翻转拖拽 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#103</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>双稳态翻转拖拽</h1>
+        <p>在双稳态刺激拖拽中标记感知翻转时刻，以翻转潜伏期与拖拽节律一致性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户在拖拽过程中标记首选感知并按键记录翻转时刻，系统比较翻转潜伏期与拖拽节律的任务内一致性。任务结构为持续追踪，信号形态为翻转潜伏期与节律序列。</p>
+        <p>把双稳态的动态特征融入动作轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>双稳态感知会产生自发翻转，翻转潜伏期具有稳定统计特征。将翻转标记与拖拽节律结合，可形成难以仿真的动态特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现双稳态图形并要求持续拖拽。</li><li>用户在感知翻转时按键标记。</li><li>记录翻转潜伏期与拖拽节律。</li><li>比较两者的任务内一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户开始拖拽双稳态刺激。</li><li>步骤 2：感知翻转时按键记录。</li><li>步骤 3：系统分析潜伏期与节律并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>翻转潜伏期序列</strong>
+  <div>双稳态翻转具有稳定的时间分布。</div>
+</div>
+
+<div class="signal-item">
+  <strong>拖拽节律与一致性</strong>
+  <div>真实用户节律与翻转节奏存在自然耦合。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>潜伏期与节律需落在人类分布区间，且两者存在合理关联；过度一致或无翻转判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定时间间隔伪造翻转</li><li>重放真实用户的翻转序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化双稳态刺激参数</li><li>引入轻微扰动降低固定时间策略</li><li>叠加轨迹微抖动与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供可选慢速模式与替代任务，避免对注意力障碍用户造成负担。</p>
+        <ul><li>部分用户不易感知翻转</li><li>设备刷新率影响双稳态感知</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-103-1.svg" alt="状态 1：双稳态拖拽" />
+  <h3>状态 1：双稳态拖拽</h3>
+  <p>用户拖拽双稳态刺激。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-103-2.svg" alt="状态 2：翻转标记" />
+  <h3>状态 2：翻转标记</h3>
+  <p>感知翻转时按键标记。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-103-3.svg" alt="状态 3：一致判定" />
+  <h3>状态 3：一致判定</h3>
+  <p>比较潜伏期与节律一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Bistable_perception" target="_blank" rel="noreferrer">Bistable perception</a>
+  <div>说明双稳态感知与翻转潜伏期。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Multistable_perception" target="_blank" rel="noreferrer">Perceptual multistability</a>
+  <div>说明多稳态感知的动态特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

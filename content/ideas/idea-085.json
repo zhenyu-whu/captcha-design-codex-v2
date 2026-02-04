@@ -1,0 +1,78 @@
+{
+  "id": "85",
+  "slug": "idea-085",
+  "title": "瞬时节律抖动",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在极短节拍序列中让用户同步点击，以节律抖动与反应时序列识别真实性。",
+  "background": "人类在节拍同步任务中会出现可预测的微抖动与相位偏移，短序列仍能体现稳定的生理节律特征。利用“适度不精确”可提高对脚本的区分度。",
+  "core_mechanism": [
+    "呈现 3–4 次短促节拍提示。",
+    "用户同步点击或按键响应。",
+    "记录反应时序列与节律抖动。",
+    "与群体基线进行比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到短促节拍提示。",
+    "步骤 2：用户同步点击完成序列。",
+    "步骤 3：系统分析抖动与相位并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "反应时抖动与相位偏移",
+      "why_it_matters": "人类同步点击存在稳定的微抖动。"
+    },
+    {
+      "signal": "节拍一致性",
+      "why_it_matters": "真实用户的节奏一致性不会过度完美。"
+    }
+  ],
+  "decision_logic": "抖动与相位偏移需落在人类分布区间；过度精准或随机判异常。",
+  "attack_surface": [
+    "脚本按固定间隔触发点击",
+    "重放真实用户的节奏序列"
+  ],
+  "mitigations": [
+    "随机化节拍间隔与音视觉提示",
+    "加入轻微节奏扰动降低模板化",
+    "叠加指针轨迹与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢节奏与视觉替代提示，避免对听觉障碍用户造成影响。",
+  "risks": [
+    "节奏过快导致误差增大",
+    "不同设备延迟影响节拍同步"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：短促节拍",
+      "caption": "节拍提示快速出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-085-1.svg"
+    },
+    {
+      "title": "状态 2：同步点击",
+      "caption": "用户同步点击完成节拍序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-085-2.svg"
+    },
+    {
+      "title": "状态 3：抖动判定",
+      "caption": "根据抖动与相位判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-085-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节拍同步中的反应时与抖动特征。"
+    },
+    {
+      "title": "Rhythm",
+      "url": "https://en.wikipedia.org/wiki/Rhythm",
+      "note": "说明节律感知与时序一致性。"
+    }
+  ]
+}

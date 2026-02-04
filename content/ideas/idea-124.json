@@ -1,0 +1,78 @@
+{
+  "id": "124",
+  "slug": "idea-124",
+  "title": "色彩回弹阶梯",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "颜色适应后进行多轮灰阶校准，记录回弹曲线与稳定时间作为特征。",
+  "background": "色彩适应会引起中性点偏移与回弹，恢复时间常数具有个体差异。通过多轮校准可获取稳定的色彩回弹轨迹。",
+  "core_mechanism": [
+    "短时呈现高饱和颜色进行适应。",
+    "进入灰阶/中性校准并记录中性点。",
+    "重复 2–3 轮形成回弹曲线。",
+    "与个人基线或群体分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看饱和色适应屏。",
+    "步骤 2：在灰阶中调整到“刚好中性”。",
+    "步骤 3：重复数轮并记录回弹曲线。"
+  ],
+  "signals": [
+    {
+      "signal": "中性点回弹曲线",
+      "why_it_matters": "回弹斜率与拐点反映适应恢复特征。"
+    },
+    {
+      "signal": "稳定时间与波动幅度",
+      "why_it_matters": "人类会出现轻微波动与趋稳过程。"
+    }
+  ],
+  "decision_logic": "回弹曲线与稳定时间需落在基线区间；过快收敛或无波动判异常。",
+  "attack_surface": [
+    "脚本固定设置中性点",
+    "重放历史校准轨迹"
+  ],
+  "mitigations": [
+    "随机化适应色相/强度与时长",
+    "打乱灰阶阶梯顺序",
+    "加入短暂空白降低记忆重放"
+  ],
+  "accessibility": "提供低饱和版本与色觉障碍替代任务。",
+  "risks": [
+    "环境光变化影响色彩判断",
+    "色弱用户可能误判"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：颜色适应",
+      "caption": "高饱和色块形成适应。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-124-1.svg"
+    },
+    {
+      "title": "状态 2：灰阶校准",
+      "caption": "在阶梯灰阶中调到中性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-124-2.svg"
+    },
+    {
+      "title": "状态 3：回弹曲线",
+      "caption": "记录中性点回弹与稳定时间。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-124-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Chromatic adaptation",
+      "url": "https://en.wikipedia.org/wiki/Chromatic_adaptation",
+      "note": "说明色彩适应与中性点偏移。"
+    },
+    {
+      "title": "Afterimage",
+      "url": "https://en.wikipedia.org/wiki/Afterimage",
+      "note": "说明适应后的回弹与残像。"
+    }
+  ]
+}

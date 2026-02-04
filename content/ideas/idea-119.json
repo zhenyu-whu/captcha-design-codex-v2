@@ -1,0 +1,78 @@
+{
+  "id": "119",
+  "slug": "idea-119",
+  "title": "现实耦合分岔",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "根据当前交互状态随机分岔到不同微任务，以分岔前后预测误差与反应时验证真实性。",
+  "background": "真实交互中存在不可预期的状态分岔，脚本策略容易被打断。利用实时状态触发分岔微任务，可检验用户对上下文的即时理解与反应一致性。",
+  "core_mechanism": [
+    "监测当前交互状态并随机触发分岔。",
+    "进入不同的短微任务分支。",
+    "记录分岔前后的预测误差与反应时。",
+    "对任务内一致性进行判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户正常操作流程。",
+    "步骤 2：系统根据状态分岔到微任务。",
+    "步骤 3：系统比较误差与反应时并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "预测误差",
+      "why_it_matters": "真实用户能基于上下文做出更准确判断。"
+    },
+    {
+      "signal": "反应时变化",
+      "why_it_matters": "分岔会引发可预测的反应时波动。"
+    }
+  ],
+  "decision_logic": "误差与反应时需落在人类分布区间，且分岔前后变化合理；过度一致或无关联判异常。",
+  "attack_surface": [
+    "脚本固定分支策略快速应答",
+    "重放真实用户的分岔序列"
+  ],
+  "mitigations": [
+    "随机化分岔触发时机与任务类型",
+    "绑定实时上下文与短时状态",
+    "叠加轨迹与停顿信号"
+  ],
+  "accessibility": "提供简化分岔或可跳过选项，避免频繁打断体验。",
+  "risks": [
+    "分岔过多导致用户疲劳",
+    "上下文理解差异引发误判"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：正常流程",
+      "caption": "用户处于正常交互流程。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-119-1.svg"
+    },
+    {
+      "title": "状态 2：状态分岔",
+      "caption": "随机分岔进入不同微任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-119-2.svg"
+    },
+    {
+      "title": "状态 3：误差判定",
+      "caption": "比较预测误差与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-119-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Decision-making",
+      "url": "https://en.wikipedia.org/wiki/Decision-making",
+      "note": "说明分岔选择与即时决策机制。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时作为行为信号。"
+    }
+  ]
+}

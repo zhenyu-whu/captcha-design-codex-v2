@@ -1,0 +1,78 @@
+{
+  "id": "65",
+  "slug": "idea-065",
+  "title": "同时对比亮度匹配",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "不同背景下调节中心块亮度到看似相等，用对比错觉的稳定点与调整曲线验证真实性。",
+  "background": "同时对比会让相同亮度在不同背景上呈现不同主观亮度。通过测量亮度匹配的稳定点与调节路径，可形成可靠的知觉偏差特征。",
+  "core_mechanism": [
+    "两个中心块置于不同亮度背景。",
+    "用户调节其中一个中心块亮度到“看起来相等”。",
+    "记录稳定点与回拉轨迹。",
+    "分析对比错觉偏差与调整节奏。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到不同背景上的中心块。",
+    "步骤 2：用户调节亮度至主观相等。",
+    "步骤 3：系统记录稳定点并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "亮度匹配稳定点",
+      "why_it_matters": "对比错觉引发稳定的偏移方向。"
+    },
+    {
+      "signal": "调整曲线与回拉节奏",
+      "why_it_matters": "真实匹配通常伴随微调与回撤。"
+    }
+  ],
+  "decision_logic": "评估稳定点是否落在错觉范围，并结合调整曲线；无偏移或一次到位判异常。",
+  "attack_surface": [
+    "脚本直接计算亮度差并设定",
+    "重放真实用户的调整轨迹"
+  ],
+  "mitigations": [
+    "随机化背景亮度与中心块大小",
+    "加入轻微噪声与渐变扰动",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供高对比或替代任务模式，避免对低视力用户造成负担。",
+  "risks": [
+    "环境光线影响亮度判断",
+    "显示设备亮度校准差异"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：对比场景",
+      "caption": "相同中心块处于不同背景。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-065-1.svg"
+    },
+    {
+      "title": "状态 2：亮度调节",
+      "caption": "用户调节到看似相等。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-065-2.svg"
+    },
+    {
+      "title": "状态 3：稳定点判定",
+      "caption": "分析调整曲线与稳定点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-065-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Simultaneous contrast",
+      "url": "https://en.wikipedia.org/wiki/Simultaneous_contrast",
+      "note": "说明背景对亮度感知的影响。"
+    },
+    {
+      "title": "Luminance",
+      "url": "https://en.wikipedia.org/wiki/Luminance",
+      "note": "说明亮度感知与校准基础。"
+    }
+  ]
+}

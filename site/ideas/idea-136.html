@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#136 虚轮廓‑阈值联测 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#136</span>
+          <span class="chip teal">E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>虚轮廓‑阈值联测</h1>
+        <p>描绘虚轮廓后调节对称或对比阈值，记录路径误差与阈值差异。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户描绘虚轮廓后立即调节对称/对比阈值，系统进行任务内相对比较。</p>
+        <p>将补全路径与阈值调节绑定。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>虚轮廓依赖知觉补全，对称/对比阈值反映感知敏感度。将补全路径与阈值调节绑定，可形成复合信号并提升鲁棒性。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现虚轮廓线索并要求描边。</li><li>随后进入对称/对比阈值调节。</li><li>记录描边偏差与阈值位置。</li><li>进行任务内相对比较与一致性判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户描绘虚轮廓路径。</li><li>步骤 2：调节阈值到刚可辨别。</li><li>步骤 3：系统对比路径误差与阈值。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>虚轮廓描边偏差</strong>
+  <div>补全能力会影响路径贴合程度。</div>
+</div>
+
+<div class="signal-item">
+  <strong>阈值位置与微调</strong>
+  <div>阈值反映感知敏感度与试探行为。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>描边偏差与阈值需在基线范围且存在自然微调；过于完美或无调整判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本绘制理想路径并设定固定阈值</li><li>重放历史描边与调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化虚轮廓形状与位置</li><li>加入轻微噪声与遮罩</li><li>多轮任务取相对比较</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更粗描边与高对比版本，支持键盘或触控替代。</p>
+        <ul><li>精细描边对部分用户不友好</li><li>显示质量影响阈值判断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-136-1.svg" alt="状态 1：虚轮廓描边" />
+  <h3>状态 1：虚轮廓描边</h3>
+  <p>根据线索描绘虚轮廓。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-136-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>调节对称/对比到刚可辨别。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-136-3.svg" alt="状态 3：联测判定" />
+  <h3>状态 3：联测判定</h3>
+  <p>比较描边与阈值特征。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Illusory_contours" target="_blank" rel="noreferrer">Illusory contours</a>
+  <div>说明知觉补全与虚轮廓。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_sensitivity" target="_blank" rel="noreferrer">Contrast sensitivity</a>
+  <div>说明对比阈值的感知特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

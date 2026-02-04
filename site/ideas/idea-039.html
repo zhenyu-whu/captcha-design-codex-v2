@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#39 交替主导判别 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#39</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>交替主导判别</h1>
+        <p>两个模式快速交替，用户调节到主导感受平衡点，以平衡阈值与路径验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两个模式快速交替呈现，用户调整直到“主导感受”相等，记录平衡点与反应路径。</p>
+        <p>借助视觉主导权/竞争的主观阈值。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉竞争会导致主导感受在不同刺激间交替，主观平衡点具有可测的个体区间。通过测量平衡阈值与调节路径，可形成难以伪造的知觉信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现两种模式快速交替的刺激。</li><li>提供滑杆调节两者强度比例。</li><li>用户调节到主导感受相等。</li><li>记录平衡阈值与调节曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到两种模式交替呈现。</li><li>步骤 2：用户调节比例直到主导感平衡。</li><li>步骤 3：系统记录平衡点并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>平衡阈值区间</strong>
+  <div>主导竞争存在稳定的主观平衡点。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调节路径与回撤次数</strong>
+  <div>真实判断通常呈逐步逼近与微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估平衡阈值是否落在人类区间，并结合调节收敛曲线；一次到位或固定值判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设置固定比例</li><li>重放真实用户的调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化交替频率与模式细节</li><li>加入短时扰动与噪声避免固定模式</li><li>叠加鼠标轨迹与微时序信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更低频率或替代任务模式，避免对视觉敏感用户造成不适。</p>
+        <ul><li>快速交替可能引起视觉疲劳</li><li>显示器刷新率影响交替感受</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-039-1.svg" alt="状态 1：交替刺激" />
+  <h3>状态 1：交替刺激</h3>
+  <p>两种模式快速交替呈现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-039-2.svg" alt="状态 2：主导调节" />
+  <h3>状态 2：主导调节</h3>
+  <p>用户调节比例直到平衡。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-039-3.svg" alt="状态 3：平衡判定" />
+  <h3>状态 3：平衡判定</h3>
+  <p>记录平衡点与调节路径。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Binocular_rivalry" target="_blank" rel="noreferrer">Binocular rivalry</a>
+  <div>说明视觉竞争与主导交替。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_perception" target="_blank" rel="noreferrer">Visual perception</a>
+  <div>说明视觉主导与竞争的基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

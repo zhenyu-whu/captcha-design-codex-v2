@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#168 交错微任务一致性 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#168</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>交错微任务一致性</h1>
+        <p>在多微任务中切换动力学参数，判定依赖跨任务一致性与节律结构。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在连续 2–3 个微任务中随机切换动力学参数，判定依赖跨任务的相对一致性与节律结构。</p>
+        <p>对抗轨迹需要在多场景中保持一致，成本显著上升。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>交错微任务增加了策略迁移要求，真实用户在不同任务中会保持相似节律与适应模式，而脚本难以在多场景保持一致。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>连续 2–3 个微任务随机切换参数。</li><li>记录每段节律、路径与适应速度。</li><li>比较跨任务一致性与漂移。</li><li>以一致性阈值判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成第一段微任务。</li><li>步骤 2：系统切换参数进入下一段。</li><li>步骤 3：系统分析跨任务一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>跨任务节律一致性</strong>
+  <div>真实节律结构在不同任务中仍相似。</div>
+</div>
+
+<div class="signal-item">
+  <strong>适应速度差异</strong>
+  <div>适应能力在多任务中保持稳定。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>一致性需落在人类区间；过度一致或无规律漂移判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定路径跨任务复用</li><li>随机化轨迹伪装</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>任务参数与顺序随机化</li><li>加入段间扰动与时间间隔</li><li>多信号耦合评估</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供慢速与简化版本，减少负担。</p>
+        <ul><li>多任务导致疲劳</li><li>设备差异影响适应速度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-168-1.svg" alt="状态 1：交错任务" />
+  <h3>状态 1：交错任务</h3>
+  <p>多段微任务交错出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-168-2.svg" alt="状态 2：跨段信号" />
+  <h3>状态 2：跨段信号</h3>
+  <p>记录节律与适应速度。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-168-3.svg" alt="状态 3：一致性判定" />
+  <h3>状态 3：一致性判定</h3>
+  <p>比较跨任务一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Task_switching_(psychology)" target="_blank" rel="noreferrer">Task switching</a>
+  <div>说明多任务切换与成本。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_learning" target="_blank" rel="noreferrer">Motor learning</a>
+  <div>说明跨任务适应与稳定性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

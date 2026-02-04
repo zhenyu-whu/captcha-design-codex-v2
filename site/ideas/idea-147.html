@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#147 随机焦点复核 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#147</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>随机焦点复核</h1>
+        <p>操作完成后随机询问最先关注区域，记录反应时与点击热区并做异常检测。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>操作完成后随机询问“最先关注的区域”，记录反应时与点击热区并做异常检测。</p>
+        <p>验证“即时注意力记忆”而非识别答案。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>短时注意力记忆会保留最初关注区域的模糊线索，回忆存在典型反应时与空间偏差分布。该特征可用于识别脚本作答。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>任务结束后随机触发焦点复核问题。</li><li>用户点击或选择最先关注区域。</li><li>记录反应时与点击位置。</li><li>与热区分布与基线对比。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成主任务。</li><li>步骤 2：系统询问最先关注区域。</li><li>步骤 3：系统记录反应时与点击位置。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时</strong>
+  <div>真实回忆需要短时检索。</div>
+</div>
+
+<div class="signal-item">
+  <strong>点击与热区距离</strong>
+  <div>注意力记忆会落在热区附近。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>反应时与点击距离需落在合理区间；过快或离散分布判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本用显著性算法直接选择</li><li>随机点击伪装</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化问题形式与选项</li><li>结合先前停顿/悬停记录</li><li>多次抽查取一致性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供文字选项与键盘选择，避免精细点击负担。</p>
+        <ul><li>记忆负担导致误判</li><li>问题过多影响体验</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-147-1.svg" alt="状态 1：任务完成" />
+  <h3>状态 1：任务完成</h3>
+  <p>任务结束后保留注意力热区。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-147-2.svg" alt="状态 2：焦点复核" />
+  <h3>状态 2：焦点复核</h3>
+  <p>提示用户选择最先关注区域。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-147-3.svg" alt="状态 3：反应判定" />
+  <h3>状态 3：反应判定</h3>
+  <p>比较反应时与点击位置。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Iconic_memory" target="_blank" rel="noreferrer">Iconic memory</a>
+  <div>说明短时视觉记忆特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_attention" target="_blank" rel="noreferrer">Visual attention</a>
+  <div>说明注意力分布与记忆线索。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

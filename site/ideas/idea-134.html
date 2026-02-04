@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#134 错觉对齐‑预测误差 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#134</span>
+          <span class="chip teal">E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>错觉对齐‑预测误差</h1>
+        <p>先对齐错觉图形，再预测遮挡物体位置，比较错觉偏差与预测误差的关联。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>先校准错觉图形，再预测遮挡物体的出现位置，系统比较错觉偏差与预测误差的任务内关联。</p>
+        <p>用“偏差‑预测”耦合削弱脚本模仿。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉错觉会系统性偏移对齐判断，遮挡预测依赖对运动与空间的外推。两种偏差在同一会话内的关联更难被脚本复刻。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现错觉图形并要求对齐校准。</li><li>随后展示遮挡运动并要求预测出现位置。</li><li>记录错觉偏差与预测误差。</li><li>比较两者的方向一致性与相关性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成错觉对齐校准。</li><li>步骤 2：预测遮挡物体的出现位置。</li><li>步骤 3：系统比较偏差与误差关系。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>错觉对齐偏差</strong>
+  <div>错觉诱发的偏差具有稳定方向。</div>
+</div>
+
+<div class="signal-item">
+  <strong>遮挡预测误差</strong>
+  <div>外推误差受个体感知与策略影响。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>偏差与误差需呈合理关联且落在基线区间；无关联或异常一致判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算几何对齐与预测位置</li><li>重放历史对齐与点击坐标</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化错觉类型与方向</li><li>变化遮挡速度与出现时机</li><li>引入多轮相对比较</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化图形与更大目标，提高低视力用户可用性。</p>
+        <ul><li>错觉效应弱导致偏差不明显</li><li>屏幕尺寸影响预测精度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-134-1.svg" alt="状态 1：错觉对齐" />
+  <h3>状态 1：错觉对齐</h3>
+  <p>在错觉线索中进行对齐校准。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-134-2.svg" alt="状态 2：遮挡预测" />
+  <h3>状态 2：遮挡预测</h3>
+  <p>预测遮挡物体的出现点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-134-3.svg" alt="状态 3：误差关联" />
+  <h3>状态 3：误差关联</h3>
+  <p>比较错觉偏差与预测误差。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Ponzo_illusion" target="_blank" rel="noreferrer">Ponzo illusion</a>
+  <div>说明错觉导致的尺度偏差。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Representational_momentum" target="_blank" rel="noreferrer">Representational momentum</a>
+  <div>说明运动外推与预测误差。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

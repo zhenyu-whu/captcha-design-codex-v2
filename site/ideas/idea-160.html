@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#160 风险分层减负 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#160</span>
+          <span class="chip teal">Reverse Brainstorming - Round 2</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>风险分层减负</h1>
+        <p>低风险场景采用短序列低负担任务，高风险触发多阶段验证。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 2</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>低风险场景只需短序列低负担任务，高风险或异常行为触发多阶段验证，降低整体误拒率。</p>
+        <p>让“安全强度”与“用户负担”动态平衡，避免可用性崩溃。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>安全强度应与风险动态匹配，避免所有用户承担高负担。分层策略可降低误拒并保持安全性。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>低风险采用短任务快速通过。</li><li>异常或高风险触发多阶段验证。</li><li>多阶段任务采集多信号。</li><li>按风险级别输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成低负担任务。</li><li>步骤 2：系统判断是否升级。</li><li>步骤 3：必要时进入多阶段验证。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>风险评分</strong>
+  <div>决定任务强度与验证路径。</div>
+</div>
+
+<div class="signal-item">
+  <strong>多阶段行为信号</strong>
+  <div>高风险需要更强判定信号。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>低风险直接通过；高风险需满足多阶段阈值。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>伪装低风险绕过</li><li>针对低负担任务优化脚本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态风险评估与随机抽检</li><li>低负担任务加入轻量行为信号</li><li>升级任务参数随机化</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>多阶段任务提供等效替代通道与慢速模式。</p>
+        <ul><li>风险模型误判带来体验波动</li><li>多阶段验证增加时延</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-160-1.svg" alt="状态 1：低负担流程" />
+  <h3>状态 1：低负担流程</h3>
+  <p>低风险快速任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-160-2.svg" alt="状态 2：多阶段验证" />
+  <h3>状态 2：多阶段验证</h3>
+  <p>高风险触发多阶段任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-160-3.svg" alt="状态 3：分层判定" />
+  <h3>状态 3：分层判定</h3>
+  <p>按风险级别输出结果。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Risk-based_authentication" target="_blank" rel="noreferrer">Risk-based authentication</a>
+  <div>说明风险分层的验证策略。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Usability" target="_blank" rel="noreferrer">Usability</a>
+  <div>说明可用性与负担权衡。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

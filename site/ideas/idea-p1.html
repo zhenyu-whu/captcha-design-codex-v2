@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#P1 普适可达 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#P1</span>
+          <span class="chip teal">Foundational Principles</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>普适可达</h1>
+        <p>把低门槛与等效替代通道作为验证机制的安全约束，确保多数真实用户可快速通过。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>验证机制必须让绝大多数真实用户在低门槛、低成本下快速通过，并为特殊群体提供等效替代路径，以降低误拒带来的流失与不公平。</p>
+        <p>把“通用性”作为安全逻辑的硬约束，而非仅体验优化。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>验证码一旦对真实用户设置过高门槛，会显著放大误拒与流失。可达性设计强调不同能力与设备条件下的可用性与公平性，因此应将通用性视为安全体系的一部分，而不仅是体验优化。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>选择低负担的感知或动作任务，降低认知与体力成本。</li><li>提供等效替代通道（键盘/简化模式/辅助提示）并保持安全强度一致。</li><li>根据设备与环境自适应阈值，允许合理的误差区间与重试。</li><li>持续记录完成时间与失败模式，作为阈值与任务复杂度的校准依据。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到主任务及可达性入口。</li><li>步骤 2：用户完成主任务或选择替代通道完成验证。</li><li>步骤 3：系统以一致的安全标准判定并输出结果。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>完成时间与纠错次数</strong>
+  <div>可达性不足会导致异常耗时与高纠错率。</div>
+</div>
+
+<div class="signal-item">
+  <strong>替代通道使用率与成功率</strong>
+  <div>反映不同用户群体的可达性需求与任务门槛。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>主通道或替代通道满足人类基线分布即可通过；对异常低成本或异常一致的行为进行额外校验。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>攻击者利用最弱通道绕过主任务</li><li>脚本模拟低负担流程进行批量通过</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>各通道共用核心行为信号，避免安全强度割裂</li><li>风险分级：高风险场景要求更强信号或多通道验证</li><li>持续监控替代通道的通过率与异常分布</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供键盘可操作、慢速模式与辅助提示，支持屏幕阅读器与高对比显示，确保特殊群体有等效通道。</p>
+        <ul><li>替代通道成为攻击者优先选择的弱点</li><li>过度简化导致区分度下降</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-p1-1.svg" alt="状态 1：多通道入口" />
+  <h3>状态 1：多通道入口</h3>
+  <p>主任务与可达性入口并列呈现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-p1-2.svg" alt="状态 2：替代通道" />
+  <h3>状态 2：替代通道</h3>
+  <p>用户选择等效替代方式完成验证。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-p1-3.svg" alt="状态 3：一致判定" />
+  <h3>状态 3：一致判定</h3>
+  <p>不同通道均以一致标准判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noreferrer">Web Content Accessibility Guidelines (WCAG) 2.1</a>
+  <div>说明可达性要求与设计约束。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Inclusive_design" target="_blank" rel="noreferrer">Inclusive design</a>
+  <div>说明面向多样化能力的通用设计原则。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

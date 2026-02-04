@@ -1,0 +1,71 @@
+{
+  "id": "000",
+  "slug": "idea-000",
+  "title": "示例标题",
+  "group": "示例分组",
+  "phase": "示例阶段",
+  "kind": "idea",
+  "summary": "一句话说明该方案的核心验证逻辑与人机差异来源。",
+  "background": "补充研究背景与相关的感知/运动/交互规律，说明为什么该方案成立。",
+  "core_mechanism": [
+    "机制要点 1",
+    "机制要点 2",
+    "机制要点 3"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到任务提示与初始状态。",
+    "步骤 2：用户进行主要操作（拖拽/点击/调节）。",
+    "步骤 3：系统记录信号并完成判定。"
+  ],
+  "signals": [
+    {
+      "signal": "信号 1（如速度曲线/抖动谱/反应时）",
+      "why_it_matters": "解释该信号与人机差异的关联。"
+    },
+    {
+      "signal": "信号 2",
+      "why_it_matters": "解释该信号的判别价值。"
+    }
+  ],
+  "decision_logic": "说明如何组合多个信号形成判定（阈值、相对比较、曲线形态等）。",
+  "attack_surface": [
+    "可能的伪造或绕过方式 1",
+    "可能的伪造或绕过方式 2"
+  ],
+  "mitigations": [
+    "对抗方式 1（例如动态参数/多信号耦合）",
+    "对抗方式 2"
+  ],
+  "accessibility": "说明可达性与替代通道设计，避免对特殊用户群体的排斥。",
+  "risks": [
+    "误拒风险与场景",
+    "用户疲劳或学习成本"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：任务呈现",
+      "caption": "说明用户看到的界面与关键元素。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-000-1.svg"
+    },
+    {
+      "title": "状态 2：用户操作",
+      "caption": "说明操作过程与信号采集。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-000-2.svg"
+    },
+    {
+      "title": "状态 3：信号判定",
+      "caption": "说明判定依据与输出。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-000-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "参考资料标题",
+      "url": "https://example.com",
+      "note": "与该方案相关的要点说明。"
+    }
+  ]
+}

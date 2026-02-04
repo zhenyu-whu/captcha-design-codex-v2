@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#61 连续路径追踪 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#61</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>连续路径追踪</h1>
+        <p>在短线段中描出唯一平滑路径，利用起笔延迟与修正节律验证良好连续性整合。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>大量短线段中只有一条能形成平滑连续路径，用户快速描出该路径。记录起笔延迟、路径连续性与修正节律。</p>
+        <p>依赖视觉“良好连续性”整合能力，而非图形识别。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>良好连续性是典型的 Gestalt 规则，人类能迅速把分散线段整合为平滑路径。通过记录起笔延迟、路径连续性与修正节律，可形成稳定的视觉整合特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在大量短线段中嵌入一条可连续路径。</li><li>用户快速描出该路径。</li><li>记录起笔延迟、路径连续性与修正。</li><li>分析连续性指标与节律特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到混杂短线段。</li><li>步骤 2：用户描出连续路径。</li><li>步骤 3：系统分析路径连贯性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>路径连续性与曲率变化</strong>
+  <div>真实整合路径通常平滑且连续。</div>
+</div>
+
+<div class="signal-item">
+  <strong>修正节律与停顿</strong>
+  <div>真实追踪会出现短暂停顿与纠偏。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合路径连续性、曲率平滑度与修正节律判定；过度机械或随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算连续路径</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化线段方向与密度</li><li>加入诱饵路径与局部扰动</li><li>叠加微时序与轨迹抖动进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更粗线段或点击式路径选择，避免对精细描绘用户造成负担。</p>
+        <ul><li>高密度线段增加认知负担</li><li>触控设备精度影响路径特征</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-061-1.svg" alt="状态 1：线段混杂" />
+  <h3>状态 1：线段混杂</h3>
+  <p>短线段中隐含一条连续路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-061-2.svg" alt="状态 2：路径描绘" />
+  <h3>状态 2：路径描绘</h3>
+  <p>用户描出平滑连续路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-061-3.svg" alt="状态 3：连续性判定" />
+  <h3>状态 3：连续性判定</h3>
+  <p>分析曲率与修正节律。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gestalt_psychology" target="_blank" rel="noreferrer">Gestalt psychology</a>
+  <div>说明良好连续性与路径整合。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Perceptual_organization" target="_blank" rel="noreferrer">Perceptual organization</a>
+  <div>说明视觉整合与连续性原则。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

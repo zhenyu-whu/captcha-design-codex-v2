@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#104 虚轮廓‑对称联测 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#104</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>虚轮廓‑对称联测</h1>
+        <p>先描绘 Kanizsa 虚轮廓，再微调对称阈值，以反应时与调整幅度的关系验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>先描绘 Kanizsa 虚轮廓，再微调对称阈值，系统对两步的反应时与调整幅度做任务内比较。任务结构为多阶段，信号形态为轨迹动力学与阈值调节。</p>
+        <p>组合“补全能力”与“对称敏感度”。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>虚轮廓补全体现人类的整体感知能力，对称阈值反映感知敏感度。两步任务结合可形成更稳定的区分信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现 Kanizsa 虚轮廓并要求描绘轮廓。</li><li>进入对称阈值滑杆微调。</li><li>记录描绘反应时与阈值调整幅度。</li><li>进行任务内相对比较判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户描绘虚轮廓边界。</li><li>步骤 2：用户微调对称阈值。</li><li>步骤 3：系统比较反应时与幅度并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>虚轮廓描绘反应时</strong>
+  <div>补全能力影响完成速度。</div>
+</div>
+
+<div class="signal-item">
+  <strong>对称阈值调整幅度</strong>
+  <div>对称敏感度有稳定分布。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>反应时与阈值幅度需落在人类区间且相对关系合理；过度极端或无微调判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接描绘轮廓并固定阈值</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化虚轮廓形态与对称参数</li><li>加入轻微噪声降低模板化</li><li>叠加描绘速度与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大图形与慢速模式，允许选择题替代描绘。</p>
+        <ul><li>虚轮廓感知能力差异导致误拒</li><li>设备显示质量影响虚轮廓效果</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-104-1.svg" alt="状态 1：虚轮廓描绘" />
+  <h3>状态 1：虚轮廓描绘</h3>
+  <p>用户描绘 Kanizsa 虚轮廓。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-104-2.svg" alt="状态 2：对称微调" />
+  <h3>状态 2：对称微调</h3>
+  <p>微调对称阈值。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-104-3.svg" alt="状态 3：联测判定" />
+  <h3>状态 3：联测判定</h3>
+  <p>比较两步指标判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Kanizsa_triangle" target="_blank" rel="noreferrer">Kanizsa triangle</a>
+  <div>说明虚轮廓补全的感知基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Symmetry" target="_blank" rel="noreferrer">Symmetry</a>
+  <div>说明对称感知与阈值判断。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

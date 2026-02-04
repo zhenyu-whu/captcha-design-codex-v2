@@ -1,0 +1,78 @@
+{
+  "id": "69",
+  "slug": "idea-069",
+  "title": "视觉节律分组",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "点阵按节律闪现，用户按感知节拍点击分组边界，利用节律位置与一致性验证真实性。",
+  "background": "时间节律会引导人类对视觉事件进行分组，形成稳定的节拍边界与一致性模式。通过记录分组边界与节奏偏差可形成行为信号。",
+  "core_mechanism": [
+    "点阵按一定节律闪现。",
+    "用户按“感觉到的节拍”点击分组边界。",
+    "记录节拍位置与一致性。",
+    "分析节律偏差与稳定性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到点阵按节律闪现。",
+    "步骤 2：用户点击分组边界。",
+    "步骤 3：系统分析节拍位置并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "节拍边界位置",
+      "why_it_matters": "人类对节律分组存在稳定的边界偏好。"
+    },
+    {
+      "signal": "节律一致性与偏差",
+      "why_it_matters": "真实节律感知具有一致的时序偏差。"
+    }
+  ],
+  "decision_logic": "结合节拍边界与一致性分布判定；边界随机或无节律偏好判异常。",
+  "attack_surface": [
+    "脚本固定节拍位置点击",
+    "重放真实用户的点击序列"
+  ],
+  "mitigations": [
+    "随机化节律间隔与点阵位置",
+    "加入轻微节奏扰动降低模板化",
+    "叠加微时序与鼠标轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢节律或替代任务模式，避免对节奏敏感用户造成负担。",
+  "risks": [
+    "节奏过快导致误差增大",
+    "不同设备刷新率影响节拍感知"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：节律闪现",
+      "caption": "点阵按节律闪现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-069-1.svg"
+    },
+    {
+      "title": "状态 2：边界点击",
+      "caption": "用户点击感知到的分组边界。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-069-2.svg"
+    },
+    {
+      "title": "状态 3：节律判定",
+      "caption": "分析节拍位置与一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-069-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Rhythm",
+      "url": "https://en.wikipedia.org/wiki/Rhythm",
+      "note": "说明节律感知与分组倾向。"
+    },
+    {
+      "title": "Temporal grouping",
+      "url": "https://en.wikipedia.org/wiki/Perceptual_organization",
+      "note": "说明时间分组与知觉组织。"
+    }
+  ]
+}

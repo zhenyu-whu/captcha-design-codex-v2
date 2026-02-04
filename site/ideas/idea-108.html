@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#108 拥挤‑阈值联动 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#108</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>拥挤‑阈值联动</h1>
+        <p>保持中心锚点并响应外围目标后，立即调节对比阈值，以干扰前后阈值变化验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户保持中心锚点并响应外围目标后，立即调节对比阈值，系统比较干扰前后阈值变化。任务结构为双任务切换，信号形态为反应时与阈值调节。</p>
+        <p>利用外周拥挤对阈值的干扰效应。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉拥挤会干扰外周识别并影响阈值判断，真实用户在干扰后的阈值调整呈现稳定变化。将外围任务与阈值调节结合可形成双信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>用户保持中心锚点并响应外围目标。</li><li>任务结束后立即进入对比阈值调节。</li><li>记录反应时与阈值变化幅度。</li><li>比较干扰前后阈值差异。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户保持中心锚点并响应外围目标。</li><li>步骤 2：进入对比阈值滑杆调节。</li><li>步骤 3：系统分析阈值变化并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时与错误分布</strong>
+  <div>拥挤任务会引入稳定的反应时波动。</div>
+</div>
+
+<div class="signal-item">
+  <strong>阈值变化幅度</strong>
+  <div>干扰后的对比阈值调整具有可预测的偏移。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值变化需落在人类分布区间且与反应时合理关联；无变化或过度一致判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本忽略干扰并固定阈值</li><li>重放真实用户的阈值调整</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化外围目标位置与密度</li><li>动态调整阈值范围与起点</li><li>叠加停顿与轨迹信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与慢速模式，必要时提供替代任务。</p>
+        <ul><li>外周任务对视力弱用户不友好</li><li>设备显示差异影响对比阈值</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-108-1.svg" alt="状态 1：拥挤任务" />
+  <h3>状态 1：拥挤任务</h3>
+  <p>中心锚点与外围目标同时存在。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-108-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>完成干扰后调节对比阈值。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-108-3.svg" alt="状态 3：联动判定" />
+  <h3>状态 3：联动判定</h3>
+  <p>比较反应时与阈值变化。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Crowding" target="_blank" rel="noreferrer">Crowding</a>
+  <div>说明视觉拥挤效应与外周识别干扰。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank" rel="noreferrer">Contrast (vision)</a>
+  <div>说明对比阈值与视觉敏感度。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

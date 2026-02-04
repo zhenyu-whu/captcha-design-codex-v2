@@ -1,0 +1,78 @@
+{
+  "id": "48",
+  "slug": "idea-048",
+  "title": "倾斜后效校准",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "暴露倾斜条纹后调节到真垂直，利用偏移量与微调步长验证倾斜后效特征。",
+  "background": "倾斜后效会使垂直线条呈现倾斜错觉，偏移量与调节步长具有稳定范围。通过测量偏移量与微调行为，可获得稳定的视觉适应信号。",
+  "core_mechanism": [
+    "呈现倾斜条纹进行短时适应。",
+    "切换到可调节的垂直基线。",
+    "用户调节到“真垂直”位置。",
+    "记录偏移量与微调步长。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看倾斜条纹刺激。",
+    "步骤 2：出现基线并开始调节。",
+    "步骤 3：系统记录偏移与判定。"
+  ],
+  "signals": [
+    {
+      "signal": "偏移量方向与幅度",
+      "why_it_matters": "倾斜后效引发系统性偏移。"
+    },
+    {
+      "signal": "微调步长与回撤次数",
+      "why_it_matters": "真实调节通常存在细小步进。"
+    }
+  ],
+  "decision_logic": "评估偏移量是否在预期范围，并结合微调步长；偏移异常或一次到位判异常。",
+  "attack_surface": [
+    "脚本直接设定固定角度",
+    "重放真实用户的调节轨迹"
+  ],
+  "mitigations": [
+    "随机化倾斜角度与适应时长",
+    "加入轻微噪声与纹理扰动",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供低倾斜强度或替代任务模式，避免对视觉敏感用户造成不适。",
+  "risks": [
+    "显示设备倾斜校准差异影响判定",
+    "强刺激可能引起不适"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：倾斜适应",
+      "caption": "倾斜条纹刺激短时适应。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-048-1.svg"
+    },
+    {
+      "title": "状态 2：垂直调节",
+      "caption": "用户调节到真垂直。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-048-2.svg"
+    },
+    {
+      "title": "状态 3：后效判定",
+      "caption": "分析偏移量与微调步长。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-048-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Tilt aftereffect",
+      "url": "https://en.wikipedia.org/wiki/Tilt_aftereffect",
+      "note": "说明倾斜后效与角度偏移。"
+    },
+    {
+      "title": "Visual adaptation",
+      "url": "https://en.wikipedia.org/wiki/Visual_adaptation",
+      "note": "说明视觉适应与主观校准。"
+    }
+  ]
+}

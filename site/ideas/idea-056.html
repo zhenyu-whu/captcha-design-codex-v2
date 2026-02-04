@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#56 假运动路径选择 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#56</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>假运动路径选择</h1>
+        <p>两点快速交替闪现后选择并描绘主观运动路径，利用路径形态与起笔延迟验证视觉补偿特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两点快速交替闪现，用户选择“感觉移动的路径”并轻描其轨迹；记录路径形态与起笔延迟。</p>
+        <p>验证“视觉运动补偿”而非位置识别。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>在高频交替刺激中，人类会产生假运动知觉并补全路径。通过记录路径选择与描绘节奏，可获得稳定的知觉补偿特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>两点快速交替闪现形成假运动。</li><li>用户选择“感觉移动的路径”并轻描。</li><li>记录路径形态、起笔延迟与速度。</li><li>分析路径一致性与补全偏差。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到两点交替闪现。</li><li>步骤 2：用户描绘主观运动路径。</li><li>步骤 3：系统分析路径特征并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>路径形态与曲率</strong>
+  <div>真实假运动补全通常呈现平滑路径。</div>
+</div>
+
+<div class="signal-item">
+  <strong>起笔延迟与描绘速度</strong>
+  <div>假运动知觉形成后会快速描绘。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合路径平滑度、起笔延迟与一致性判定；过度机械或随机化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接绘制预设路径</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化点位与交替频率</li><li>引入轻微噪声与时间抖动</li><li>叠加微时序与轨迹抖动进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供路径选择按钮替代描绘模式，避免对绘制能力受限用户造成负担。</p>
+        <ul><li>频繁闪现可能引起疲劳</li><li>刷新率影响假运动体验</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-056-1.svg" alt="状态 1：交替闪现" />
+  <h3>状态 1：交替闪现</h3>
+  <p>两点快速交替形成假运动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-056-2.svg" alt="状态 2：路径描绘" />
+  <h3>状态 2：路径描绘</h3>
+  <p>用户描绘主观运动路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-056-3.svg" alt="状态 3：路径判定" />
+  <h3>状态 3：路径判定</h3>
+  <p>分析路径形态与时序。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Phi_phenomenon" target="_blank" rel="noreferrer">Phi phenomenon</a>
+  <div>说明假运动知觉与路径补全。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Apparent_motion" target="_blank" rel="noreferrer">Apparent motion</a>
+  <div>说明交替刺激引发的运动错觉。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

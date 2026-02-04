@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#37 瞬时阵列记忆 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#37</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>瞬时阵列记忆</h1>
+        <p>短时闪现图形阵列后遮罩，利用短时记忆容量与反应模式进行判定。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>50–200ms 快闪一组图形，随后遮罩，用户选择“刚才出现过的那个/出现的位置”。记录反应时与容量边界。</p>
+        <p>依赖视觉短时记忆容量与反应模式，而非准确率本身。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉短时记忆容量有限，短暂呈现后对位置与形状的记忆呈现稳定上限。通过测量反应时与容量边界，可获得稳健的认知特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>50-200ms 闪现一组图形阵列。</li><li>立即遮罩并呈现选择题。</li><li>用户选择刚才出现的形状或位置。</li><li>记录反应时与容量边界。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短暂闪现的阵列。</li><li>步骤 2：遮罩后选择出现过的元素。</li><li>步骤 3：系统统计反应与容量指标。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>容量边界与正确率曲线</strong>
+  <div>人类短时记忆容量存在稳定上限。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与不确定性分布</strong>
+  <div>真实判断会呈现特定的犹豫与选择时序。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合容量边界与反应时分布，要求落在人类范围；容量异常高或反应过快判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接记录闪现阵列并选择</li><li>重放真实用户的选择序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化阵列布局与元素组合</li><li>加入掩蔽噪声与短时干扰</li><li>叠加鼠标轨迹与微时序信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长呈现时间或替代任务，避免对短时记忆受限用户造成障碍。</p>
+        <ul><li>快速闪现可能引起不适</li><li>屏幕刷新率限制呈现时间精度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-037-1.svg" alt="状态 1：阵列闪现" />
+  <h3>状态 1：阵列闪现</h3>
+  <p>元素阵列短时出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-037-2.svg" alt="状态 2：遮罩选择" />
+  <h3>状态 2：遮罩选择</h3>
+  <p>遮罩后选择出现过的元素。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-037-3.svg" alt="状态 3：容量判定" />
+  <h3>状态 3：容量判定</h3>
+  <p>分析容量边界与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Short-term_memory" target="_blank" rel="noreferrer">Short-term memory</a>
+  <div>说明短时记忆容量与时域限制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Iconic_memory" target="_blank" rel="noreferrer">Iconic memory</a>
+  <div>说明视觉暂留与快速呈现的基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

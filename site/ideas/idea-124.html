@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#124 色彩回弹阶梯 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#124</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>色彩回弹阶梯</h1>
+        <p>颜色适应后进行多轮灰阶校准，记录回弹曲线与稳定时间作为特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>颜色适应后进入 2–3 轮灰阶中性校准，记录回弹曲线与稳定时间，并与个体历史基线比对。</p>
+        <p>使用个人色彩适应轨迹作为生理签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>色彩适应会引起中性点偏移与回弹，恢复时间常数具有个体差异。通过多轮校准可获取稳定的色彩回弹轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>短时呈现高饱和颜色进行适应。</li><li>进入灰阶/中性校准并记录中性点。</li><li>重复 2–3 轮形成回弹曲线。</li><li>与个人基线或群体分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看饱和色适应屏。</li><li>步骤 2：在灰阶中调整到“刚好中性”。</li><li>步骤 3：重复数轮并记录回弹曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>中性点回弹曲线</strong>
+  <div>回弹斜率与拐点反映适应恢复特征。</div>
+</div>
+
+<div class="signal-item">
+  <strong>稳定时间与波动幅度</strong>
+  <div>人类会出现轻微波动与趋稳过程。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>回弹曲线与稳定时间需落在基线区间；过快收敛或无波动判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定设置中性点</li><li>重放历史校准轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化适应色相/强度与时长</li><li>打乱灰阶阶梯顺序</li><li>加入短暂空白降低记忆重放</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低饱和版本与色觉障碍替代任务。</p>
+        <ul><li>环境光变化影响色彩判断</li><li>色弱用户可能误判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-124-1.svg" alt="状态 1：颜色适应" />
+  <h3>状态 1：颜色适应</h3>
+  <p>高饱和色块形成适应。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-124-2.svg" alt="状态 2：灰阶校准" />
+  <h3>状态 2：灰阶校准</h3>
+  <p>在阶梯灰阶中调到中性。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-124-3.svg" alt="状态 3：回弹曲线" />
+  <h3>状态 3：回弹曲线</h3>
+  <p>记录中性点回弹与稳定时间。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Chromatic_adaptation" target="_blank" rel="noreferrer">Chromatic adaptation</a>
+  <div>说明色彩适应与中性点偏移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Afterimage" target="_blank" rel="noreferrer">Afterimage</a>
+  <div>说明适应后的回弹与残像。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

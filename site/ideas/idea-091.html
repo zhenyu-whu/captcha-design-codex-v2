@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#91 弹性回缩短拖 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#91</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>弹性回缩短拖</h1>
+        <p>拖拽到目标后被弹性拉回，用户需二次微调完成，以过冲‑回拉曲线验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>光标拖拽到目标后被系统弹性拉回，用户需二次微调完成，系统评估过冲‑回拉曲线并做异常检测。任务结构为多阶段，信号形态为轨迹动力学。</p>
+        <p>把“弹性干扰下的纠偏曲线”作为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>弹性回缩引入外部扰动，真实用户会表现出可测的过冲、回拉与微调节奏。脚本难以在非线性扰动下复现自然纠偏曲线。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>用户拖拽目标到指定位置。</li><li>系统施加弹性回缩，迫使二次微调。</li><li>记录过冲‑回拉曲线与微调节奏。</li><li>与基线分布进行比对判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户拖拽目标进入区域。</li><li>步骤 2：弹性回缩触发二次微调。</li><li>步骤 3：系统记录曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>过冲‑回拉曲线</strong>
+  <div>真实纠偏存在稳定的非线性形态。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调节奏</strong>
+  <div>人类修正会伴随短暂停顿与回撤。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>曲线形态与节奏需落在人类分布区间；过度平滑或一次完成判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本计算回缩量并一次到位</li><li>重放真实用户的纠偏轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化弹性强度与回缩方向</li><li>引入轻微噪声降低预测性</li><li>叠加速度与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供较弱弹性或替代任务，避免对手部障碍用户造成负担。</p>
+        <ul><li>弹性过强导致挫败感</li><li>设备输入延迟影响曲线质量</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-091-1.svg" alt="状态 1：初次拖拽" />
+  <h3>状态 1：初次拖拽</h3>
+  <p>用户将目标拖入区域。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-091-2.svg" alt="状态 2：弹性回缩" />
+  <h3>状态 2：弹性回缩</h3>
+  <p>触发回缩并进行二次微调。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-091-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>根据回拉曲线与节奏判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_learning" target="_blank" rel="noreferrer">Motor learning</a>
+  <div>说明纠偏与反馈学习机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_theory" target="_blank" rel="noreferrer">Control theory</a>
+  <div>说明反馈控制与过冲现象。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

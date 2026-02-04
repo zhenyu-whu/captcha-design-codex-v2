@@ -1,0 +1,78 @@
+{
+  "id": "61",
+  "slug": "idea-061",
+  "title": "连续路径追踪",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在短线段中描出唯一平滑路径，利用起笔延迟与修正节律验证良好连续性整合。",
+  "background": "良好连续性是典型的 Gestalt 规则，人类能迅速把分散线段整合为平滑路径。通过记录起笔延迟、路径连续性与修正节律，可形成稳定的视觉整合特征。",
+  "core_mechanism": [
+    "在大量短线段中嵌入一条可连续路径。",
+    "用户快速描出该路径。",
+    "记录起笔延迟、路径连续性与修正。",
+    "分析连续性指标与节律特征。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到混杂短线段。",
+    "步骤 2：用户描出连续路径。",
+    "步骤 3：系统分析路径连贯性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "路径连续性与曲率变化",
+      "why_it_matters": "真实整合路径通常平滑且连续。"
+    },
+    {
+      "signal": "修正节律与停顿",
+      "why_it_matters": "真实追踪会出现短暂停顿与纠偏。"
+    }
+  ],
+  "decision_logic": "结合路径连续性、曲率平滑度与修正节律判定；过度机械或随机判异常。",
+  "attack_surface": [
+    "脚本直接计算连续路径",
+    "重放真实用户的描绘轨迹"
+  ],
+  "mitigations": [
+    "随机化线段方向与密度",
+    "加入诱饵路径与局部扰动",
+    "叠加微时序与轨迹抖动进行多信号判定"
+  ],
+  "accessibility": "提供更粗线段或点击式路径选择，避免对精细描绘用户造成负担。",
+  "risks": [
+    "高密度线段增加认知负担",
+    "触控设备精度影响路径特征"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：线段混杂",
+      "caption": "短线段中隐含一条连续路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-061-1.svg"
+    },
+    {
+      "title": "状态 2：路径描绘",
+      "caption": "用户描出平滑连续路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-061-2.svg"
+    },
+    {
+      "title": "状态 3：连续性判定",
+      "caption": "分析曲率与修正节律。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-061-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Gestalt psychology",
+      "url": "https://en.wikipedia.org/wiki/Gestalt_psychology",
+      "note": "说明良好连续性与路径整合。"
+    },
+    {
+      "title": "Perceptual organization",
+      "url": "https://en.wikipedia.org/wiki/Perceptual_organization",
+      "note": "说明视觉整合与连续性原则。"
+    }
+  ]
+}

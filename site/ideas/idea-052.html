@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#52 全局‑局部优先偏置 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#52</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>全局‑局部优先偏置</h1>
+        <p>展示 Navon 图形并让用户判断第一眼看到的大字母或小字母，利用全局/局部优先性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>展示由小元素拼成的大字母（Navon 图形），要求用户快速选择“你第一眼看到的是大字母还是小字母”；记录反应时与选择偏向。</p>
+        <p>依赖人类全局/局部知觉优先性差异，而非图形识别难度。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>Navon 图形显示人类常对全局形状具有优先加工倾向，但个体与情境差异可导致局部优先。通过记录选择偏向与反应时，可形成稳定的知觉特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示由小元素组成的大字母图形。</li><li>用户选择第一眼注意到的是全局还是局部。</li><li>记录反应时与选择偏向。</li><li>分析全局/局部优先性分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到 Navon 图形。</li><li>步骤 2：用户选择全局或局部优先。</li><li>步骤 3：系统分析反应与偏向。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>全局/局部选择偏向</strong>
+  <div>人类存在稳定的全局优先或局部优先倾向。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时分布</strong>
+  <div>全局优先通常伴随更快的初始反应。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合选择偏向与反应时分布判定；反应过快且无偏向或随机化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定选择某一选项</li><li>重放真实用户的选择序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化字母组合与大小比例</li><li>引入轻微噪声与位置抖动</li><li>叠加鼠标轨迹与微时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大字号或替代任务模式，避免对视力较弱用户造成负担。</p>
+        <ul><li>文化与阅读习惯影响局部优先性</li><li>屏幕尺寸影响全局感知</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-052-1.svg" alt="状态 1：Navon 图形" />
+  <h3>状态 1：Navon 图形</h3>
+  <p>大字母由小字母组成。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-052-2.svg" alt="状态 2：优先选择" />
+  <h3>状态 2：优先选择</h3>
+  <p>选择全局或局部优先。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-052-3.svg" alt="状态 3：偏置判定" />
+  <h3>状态 3：偏置判定</h3>
+  <p>统计偏向与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Navon_figure" target="_blank" rel="noreferrer">Navon figures</a>
+  <div>说明全局与局部优先加工现象。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Global_precedence" target="_blank" rel="noreferrer">Global precedence</a>
+  <div>说明全局优先效应与反应时差异。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

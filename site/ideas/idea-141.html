@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#141 操作因果回溯 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#141</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>操作因果回溯</h1>
+        <p>任务后异步要求复原两步操作顺序或关键路径，比较复原与真实轨迹的一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>完成任务后异步要求复原两步操作顺序或关键路径，系统比较复原路径与历史基线。</p>
+        <p>以“意图因果记忆”作为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实用户会保留短时操作因果关系与顺序记忆，回溯存在典型延迟与误差分布。脚本虽可完美复原，但其反应时与停顿模式不同。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>用户完成主任务后延迟触发回溯问题。</li><li>要求复原两步顺序或关键路径。</li><li>记录回忆准确率与反应时。</li><li>与历史基线或群体分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成主任务流程。</li><li>步骤 2：系统提示回溯两步操作。</li><li>步骤 3：系统记录准确率与反应时。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>顺序回忆准确率</strong>
+  <div>真实回忆存在有限但稳定的准确率。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回忆反应时</strong>
+  <div>回溯需要检索而非瞬时输出。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>准确率与反应时需在合理区间；完美且零迟疑或随机猜测判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本记录操作日志并完美作答</li><li>重放历史回忆序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化回溯时机与问题形式</li><li>加入干扰选项与时间间隔</li><li>多轮回溯取一致性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供清晰提示与更长答题时间，支持键盘操作。</p>
+        <ul><li>记忆负担导致误拒</li><li>复杂流程可能引发困惑</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-141-1.svg" alt="状态 1：操作路径" />
+  <h3>状态 1：操作路径</h3>
+  <p>记录用户完成的操作路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-141-2.svg" alt="状态 2：回溯选择" />
+  <h3>状态 2：回溯选择</h3>
+  <p>选择两步操作的正确顺序。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-141-3.svg" alt="状态 3：一致性判定" />
+  <h3>状态 3：一致性判定</h3>
+  <p>对比回溯结果与历史路径。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Episodic_memory" target="_blank" rel="noreferrer">Episodic memory</a>
+  <div>说明回溯与情景记忆特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Working_memory" target="_blank" rel="noreferrer">Working memory</a>
+  <div>说明短时顺序保持能力。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

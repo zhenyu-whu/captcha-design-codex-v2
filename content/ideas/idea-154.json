@@ -1,0 +1,78 @@
+{
+  "id": "154",
+  "slug": "idea-154",
+  "title": "风险分层校验",
+  "group": "Reverse Brainstorming - Round 1",
+  "phase": "Reverse Brainstorming - Round 1",
+  "kind": "idea",
+  "summary": "低风险快速通过，高风险或异常时升级为高维度连续信号任务。",
+  "background": "验证码需要在可用性与安全性间平衡。风险分层可让正常用户快速通过，同时对异常流量提升验证强度。",
+  "core_mechanism": [
+    "先执行低负担小答案空间任务。",
+    "风险评估触发升级验证。",
+    "升级任务采集多维连续信号。",
+    "结合风险级别给出最终判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成快速验证。",
+    "步骤 2：系统评估风险并决定是否升级。",
+    "步骤 3：必要时完成高维任务并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "风险评分与行为异常",
+      "why_it_matters": "高风险场景需要更强信号。"
+    },
+    {
+      "signal": "升级任务的连续信号",
+      "why_it_matters": "高维信号更难伪造。"
+    }
+  ],
+  "decision_logic": "低风险直接通过；高风险需满足升级任务阈值。",
+  "attack_surface": [
+    "伪装低风险以规避升级",
+    "脚本固定通过低负担任务"
+  ],
+  "mitigations": [
+    "动态调整风险阈值",
+    "将部分低风险也随机抽检",
+    "升级任务参数随机化"
+  ],
+  "accessibility": "升级任务提供等效替代通道，避免高负担阻断。",
+  "risks": [
+    "风险误判导致过度升级",
+    "升级任务影响体验"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：低风险快速",
+      "caption": "低负担验证快速通过。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-154-1.svg"
+    },
+    {
+      "title": "状态 2：风险升级",
+      "caption": "高风险进入多信号任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-154-2.svg"
+    },
+    {
+      "title": "状态 3：分层判定",
+      "caption": "根据风险级别输出结果。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-154-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Risk-based authentication",
+      "url": "https://en.wikipedia.org/wiki/Risk-based_authentication",
+      "note": "说明风险分层与动态校验。"
+    },
+    {
+      "title": "Multi-factor authentication",
+      "url": "https://en.wikipedia.org/wiki/Multi-factor_authentication",
+      "note": "说明多层验证思路。"
+    }
+  ]
+}

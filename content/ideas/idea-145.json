@@ -1,0 +1,78 @@
+{
+  "id": "145",
+  "slug": "idea-145",
+  "title": "交互节奏指纹",
+  "group": "F：意图/现实耦合 × 异步/随机插入（路径/预测误差）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "记录用户自然交互节奏并随机要求复刻，比较节奏分布与历史基线。",
+  "background": "个体节奏习惯与时序控制具有稳定性。通过记录自然交互节奏，再要求复刻，可形成难以伪造的节奏指纹。",
+  "core_mechanism": [
+    "采集一段自然交互节奏作为基线。",
+    "随机插入复刻节奏任务。",
+    "记录复刻时的间隔序列。",
+    "与个体历史基线比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成常规操作并记录节奏。",
+    "步骤 2：系统提示复刻刚才的节奏。",
+    "步骤 3：系统比较节奏分布与漂移。"
+  ],
+  "signals": [
+    {
+      "signal": "间隔序列分布",
+      "why_it_matters": "节奏的间隔分布具有个体差异。"
+    },
+    {
+      "signal": "复刻漂移与微抖动",
+      "why_it_matters": "真实复刻会出现轻微漂移与波动。"
+    }
+  ],
+  "decision_logic": "复刻节奏需与基线相似且存在自然波动；过度一致或随机判异常。",
+  "attack_surface": [
+    "记录节奏后直接回放",
+    "脚本生成固定间隔"
+  ],
+  "mitigations": [
+    "随机化复刻时机与段长",
+    "交错不同节拍与任务",
+    "叠加反应时与轨迹信号"
+  ],
+  "accessibility": "提供更慢节奏与键盘点击替代。",
+  "risks": [
+    "长时间节奏任务导致疲劳",
+    "设备延迟影响节奏准确度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：节奏采集",
+      "caption": "记录自然交互间隔。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-145-1.svg"
+    },
+    {
+      "title": "状态 2：复刻节奏",
+      "caption": "提示用户复刻节奏。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-145-2.svg"
+    },
+    {
+      "title": "状态 3：指纹比对",
+      "caption": "比较节奏分布与漂移。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-145-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节拍同步与时序控制。"
+    },
+    {
+      "title": "Time perception",
+      "url": "https://en.wikipedia.org/wiki/Time_perception",
+      "note": "说明时间感知与节奏偏差。"
+    }
+  ]
+}

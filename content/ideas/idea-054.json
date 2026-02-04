@@ -1,0 +1,78 @@
+{
+  "id": "54",
+  "slug": "idea-054",
+  "title": "大小错觉校准",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在 Ebbinghaus 错觉场景中调节中心圆大小，利用偏移量与调整路径验证真实性。",
+  "background": "Ebbinghaus 错觉会导致中心圆的大小感知受到周围圆的影响，产生稳定的系统性偏差。通过测量校准偏移量与调整路径，可形成可靠的知觉特征。",
+  "core_mechanism": [
+    "展示中心圆与周围不同大小圆的排列。",
+    "用户调节中心圆直到看起来一样大。",
+    "记录偏移量与调整步进。",
+    "分析错觉偏差与收敛路径。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到错觉场景。",
+    "步骤 2：用户调节中心圆大小。",
+    "步骤 3：系统记录偏移并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "偏移量方向与幅度",
+      "why_it_matters": "错觉引发的偏差具有稳定方向。"
+    },
+    {
+      "signal": "调整路径与回撤次数",
+      "why_it_matters": "真实校准通常伴随微调与回撤。"
+    }
+  ],
+  "decision_logic": "评估偏移量是否在错觉范围内，并结合调整路径；无偏差或一次到位判异常。",
+  "attack_surface": [
+    "脚本直接计算中心圆大小",
+    "重放真实用户的调整轨迹"
+  ],
+  "mitigations": [
+    "随机化周围圆大小与位置",
+    "加入轻微噪声与颜色扰动",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更高对比或替代任务模式，避免对视力较弱用户造成负担。",
+  "risks": [
+    "个体差异导致偏移量波动",
+    "小屏设备影响错觉强度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：错觉场景",
+      "caption": "中心圆被不同大小圆包围。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-054-1.svg"
+    },
+    {
+      "title": "状态 2：大小调节",
+      "caption": "用户调节中心圆大小。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-054-2.svg"
+    },
+    {
+      "title": "状态 3：错觉判定",
+      "caption": "分析偏移量与调整路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-054-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Ebbinghaus illusion",
+      "url": "https://en.wikipedia.org/wiki/Ebbinghaus_illusion",
+      "note": "说明大小错觉与系统性偏差。"
+    },
+    {
+      "title": "Visual perception",
+      "url": "https://en.wikipedia.org/wiki/Visual_perception",
+      "note": "说明大小感知与上下文效应。"
+    }
+  ]
+}

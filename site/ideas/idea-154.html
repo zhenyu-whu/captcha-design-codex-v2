@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#154 风险分层校验 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#154</span>
+          <span class="chip teal">Reverse Brainstorming - Round 1</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>风险分层校验</h1>
+        <p>低风险快速通过，高风险或异常时升级为高维度连续信号任务。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 1</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>将小答案空间任务改为“低风险快速通过”，但在异常行为或高风险场景下自动升级为高维度连续信号任务。</p>
+        <p>降低正常用户负担，同时让暴力策略成本急剧上升。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>验证码需要在可用性与安全性间平衡。风险分层可让正常用户快速通过，同时对异常流量提升验证强度。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>先执行低负担小答案空间任务。</li><li>风险评估触发升级验证。</li><li>升级任务采集多维连续信号。</li><li>结合风险级别给出最终判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成快速验证。</li><li>步骤 2：系统评估风险并决定是否升级。</li><li>步骤 3：必要时完成高维任务并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>风险评分与行为异常</strong>
+  <div>高风险场景需要更强信号。</div>
+</div>
+
+<div class="signal-item">
+  <strong>升级任务的连续信号</strong>
+  <div>高维信号更难伪造。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>低风险直接通过；高风险需满足升级任务阈值。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>伪装低风险以规避升级</li><li>脚本固定通过低负担任务</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态调整风险阈值</li><li>将部分低风险也随机抽检</li><li>升级任务参数随机化</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>升级任务提供等效替代通道，避免高负担阻断。</p>
+        <ul><li>风险误判导致过度升级</li><li>升级任务影响体验</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-154-1.svg" alt="状态 1：低风险快速" />
+  <h3>状态 1：低风险快速</h3>
+  <p>低负担验证快速通过。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-154-2.svg" alt="状态 2：风险升级" />
+  <h3>状态 2：风险升级</h3>
+  <p>高风险进入多信号任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-154-3.svg" alt="状态 3：分层判定" />
+  <h3>状态 3：分层判定</h3>
+  <p>根据风险级别输出结果。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Risk-based_authentication" target="_blank" rel="noreferrer">Risk-based authentication</a>
+  <div>说明风险分层与动态校验。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Multi-factor_authentication" target="_blank" rel="noreferrer">Multi-factor authentication</a>
+  <div>说明多层验证思路。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

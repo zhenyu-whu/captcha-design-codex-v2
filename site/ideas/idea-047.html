@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#47 运动诱导消失 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#47</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>运动诱导消失</h1>
+        <p>静止目标置于动态背景中，记录目标消失与再出现的时序作为运动诱导消失信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>静止目标叠加动态背景，用户点击“目标消失/再出现”的瞬间；记录时间分布与点击策略。</p>
+        <p>基于人类运动诱导消失的时序特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>运动诱导消失会让静止目标在动态背景中暂时消失，消失与再出现的时间分布具有稳定规律。测量点击时序与策略可形成可重复的行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>静止目标叠加在动态背景之上。</li><li>用户点击目标消失或再出现的瞬间。</li><li>记录点击时间分布与策略。</li><li>分析消失-再出现的周期特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观察静止目标与动态背景。</li><li>步骤 2：目标消失或再出现时点击。</li><li>步骤 3：系统统计时序并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>消失与再出现的时间分布</strong>
+  <div>运动诱导消失呈现典型的时间节律。</div>
+</div>
+
+<div class="signal-item">
+  <strong>点击策略与等待间隔</strong>
+  <div>真实判断会出现稳定的等待与确认模式。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合消失-再出现时间分布并结合点击策略；过度固定或异常快速判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本读取运动状态并固定时刻点击</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化背景运动方向与速度</li><li>引入轻微噪声与局部扰动降低模板化</li><li>叠加鼠标轨迹与微时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢运动或替代任务，避免对运动敏感用户造成不适。</p>
+        <ul><li>动态背景可能引起眩晕</li><li>显示设备刷新率影响消失周期</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-047-1.svg" alt="状态 1：动态背景" />
+  <h3>状态 1：动态背景</h3>
+  <p>静止目标叠加在运动背景上。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-047-2.svg" alt="状态 2：消失点击" />
+  <h3>状态 2：消失点击</h3>
+  <p>目标消失或再出现时点击。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-047-3.svg" alt="状态 3：时序判定" />
+  <h3>状态 3：时序判定</h3>
+  <p>分析消失周期与点击节奏。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motion-induced_blindness" target="_blank" rel="noreferrer">Motion-induced blindness</a>
+  <div>说明运动诱导消失现象。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motion_perception" target="_blank" rel="noreferrer">Motion perception</a>
+  <div>说明运动知觉与背景干扰。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

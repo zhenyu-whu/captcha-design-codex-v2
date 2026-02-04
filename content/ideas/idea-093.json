@@ -1,0 +1,78 @@
+{
+  "id": "93",
+  "slug": "idea-093",
+  "title": "两点跃迁比",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "连续完成近点与远点点击，比较两段耗时与距离关系，以时间‑距离函数验证真实性。",
+  "background": "人类在指向任务中遵循稳定的时间‑距离关系（如 Fitts' law），近点与远点的耗时比具有可预测的区间。通过短序列测量可有效区分脚本。",
+  "core_mechanism": [
+    "呈现近点与远点目标，要求连续点击。",
+    "记录两段移动耗时与路径节奏。",
+    "计算耗时比与距离指数的相对关系。",
+    "与群体基线分布进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户点击近点目标。",
+    "步骤 2：立即点击远点目标完成序列。",
+    "步骤 3：系统计算耗时比并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "近远点耗时比",
+      "why_it_matters": "人类移动时间与距离呈稳定函数关系。"
+    },
+    {
+      "signal": "路径节奏与停顿",
+      "why_it_matters": "真实用户会表现出自然的微停顿与纠偏。"
+    }
+  ],
+  "decision_logic": "耗时比需落在人类分布区间，且路径节奏合理；过度一致或不符合距离关系判异常。",
+  "attack_surface": [
+    "脚本按固定耗时模拟点击",
+    "重放真实用户的点击序列"
+  ],
+  "mitigations": [
+    "随机化目标距离与大小",
+    "引入轻微动态扰动降低模板化",
+    "叠加轨迹微抖动信号进行多信号判定"
+  ],
+  "accessibility": "提供更大目标与慢速模式，支持键盘替代选择。",
+  "risks": [
+    "设备输入延迟影响耗时比",
+    "触控与鼠标差异导致分布变化"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：近点目标",
+      "caption": "先点击近点目标。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-093-1.svg"
+    },
+    {
+      "title": "状态 2：远点跃迁",
+      "caption": "随后快速移动点击远点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-093-2.svg"
+    },
+    {
+      "title": "状态 3：耗时判定",
+      "caption": "比较耗时比与距离关系。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-093-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Fitts's law",
+      "url": "https://en.wikipedia.org/wiki/Fitts%27s_law",
+      "note": "说明移动时间与距离/目标大小的关系。"
+    },
+    {
+      "title": "Human–computer interaction",
+      "url": "https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction",
+      "note": "说明指向任务与交互节奏特征。"
+    }
+  ]
+}

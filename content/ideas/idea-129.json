@@ -1,0 +1,78 @@
+{
+  "id": "129",
+  "slug": "idea-129",
+  "title": "瞬时容量阈值",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "闪现阵列中调整数量/曝光到刚能回忆，记录容量阈值与反应时。",
+  "background": "视觉瞬时容量与图像记忆存在稳定上限，阈值与反应时的组合可表征个体差异。",
+  "core_mechanism": [
+    "短时闪现物体阵列并立刻遮罩。",
+    "用户调节物体数量或曝光时长到“刚可回忆”。",
+    "记录容量阈值与回忆反应时。",
+    "与群体基线或历史记录比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到短暂闪现的物体阵列。",
+    "步骤 2：调整数量/时长到刚能回忆。",
+    "步骤 3：系统记录阈值与反应时。"
+  ],
+  "signals": [
+    {
+      "signal": "瞬时容量阈值",
+      "why_it_matters": "阈值反映视觉短时容量上限。"
+    },
+    {
+      "signal": "临界反应时与正确率",
+      "why_it_matters": "临界附近反应时与错率变化具有特征。"
+    }
+  ],
+  "decision_logic": "阈值与反应时需落在人类范围；过高容量或零迟疑判异常。",
+  "attack_surface": [
+    "脚本读取 DOM/像素直接识别",
+    "重放历史答题序列"
+  ],
+  "mitigations": [
+    "随机化物体类型与位置",
+    "使用短时呈现后遮罩",
+    "引入干扰项与多轮一致性检查"
+  ],
+  "accessibility": "提供更大目标与较慢曝光选项。",
+  "risks": [
+    "展示过短导致挫败",
+    "工作记忆差异导致波动"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：闪现阵列",
+      "caption": "短暂闪现多目标阵列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-129-1.svg"
+    },
+    {
+      "title": "状态 2：阈值调节",
+      "caption": "调整数量或曝光到刚可回忆。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-129-2.svg"
+    },
+    {
+      "title": "状态 3：容量判定",
+      "caption": "记录容量阈值与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-129-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Iconic memory",
+      "url": "https://en.wikipedia.org/wiki/Iconic_memory",
+      "note": "说明瞬时视觉记忆容量。"
+    },
+    {
+      "title": "Visual working memory",
+      "url": "https://en.wikipedia.org/wiki/Visual_working_memory",
+      "note": "说明视觉短时记忆容量限制。"
+    }
+  ]
+}

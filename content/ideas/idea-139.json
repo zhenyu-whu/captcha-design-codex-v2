@@ -1,0 +1,78 @@
+{
+  "id": "139",
+  "slug": "idea-139",
+  "title": "显著性‑微纠偏联动",
+  "group": "E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "先点击最显著点，再进行短时微追踪，关联显著性分布与纠偏频率。",
+  "background": "视觉显著性会引导注意力与初始选择，而短时微追踪包含生理性纠偏。将注意力组织与微运动噪声结合可形成双信号。",
+  "core_mechanism": [
+    "展示复杂场景并要求点击最显著位置。",
+    "随后在局部区域进行 2 秒微追踪。",
+    "记录显著性选择与纠偏频率。",
+    "比较注意力选择与微纠偏的一致性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户选择最显著目标。",
+    "步骤 2：保持并微追踪短时间。",
+    "步骤 3：系统分析选择与纠偏特征。"
+  ],
+  "signals": [
+    {
+      "signal": "显著性选择位置",
+      "why_it_matters": "注意力偏好反映显著性分布。"
+    },
+    {
+      "signal": "微纠偏频率与抖动",
+      "why_it_matters": "人类微运动存在稳定噪声结构。"
+    }
+  ],
+  "decision_logic": "选择位置需匹配显著性热点且纠偏频率在基线区间；过度平滑或偏离判异常。",
+  "attack_surface": [
+    "脚本计算显著性并直接点击",
+    "生成平滑追踪路径并回放"
+  ],
+  "mitigations": [
+    "随机化场景与显著性线索",
+    "加入动态扰动与遮挡",
+    "综合反应时与停顿信号"
+  ],
+  "accessibility": "提供高对比与放大模式，允许替代点击方式。",
+  "risks": [
+    "设备平滑影响纠偏信号",
+    "注意力分散导致选择偏差"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：显著性选择",
+      "caption": "在多点中选择最显著目标。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-139-1.svg"
+    },
+    {
+      "title": "状态 2：微追踪",
+      "caption": "局部微追踪并记录纠偏。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-139-2.svg"
+    },
+    {
+      "title": "状态 3：联动判定",
+      "caption": "比较显著性与纠偏特征。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-139-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Saliency map",
+      "url": "https://en.wikipedia.org/wiki/Saliency_map",
+      "note": "说明视觉显著性与注意力分布。"
+    },
+    {
+      "title": "Physiological tremor",
+      "url": "https://en.wikipedia.org/wiki/Physiological_tremor",
+      "note": "说明微运动噪声特征。"
+    }
+  ]
+}

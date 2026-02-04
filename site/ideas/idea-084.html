@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#84 闪烁自适应爬坡 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#84</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>闪烁自适应爬坡</h1>
+        <p>逐步提高闪烁频率，让用户在“刚不再闪烁”时停下，以适应阈值与回弹曲线验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>闪烁频率逐步提高，用户在“刚不再闪烁”时停下，记录适应/回弹曲线并与个体基线比对。任务结构为自适应递进，信号形态为阈值调节与回弹曲线。</p>
+        <p>使用个人视觉适应曲线作为验证，而非固定阈值。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对闪烁频率的敏感度存在个体差异，且在适应过程中会出现稳定的阈值与回弹曲线。通过记录阈值位置与回弹行为，可形成难以被脚本稳定拟合的视觉信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>闪烁频率缓慢爬升并提示用户观察。</li><li>用户在主观“刚不再闪烁”的位置停止。</li><li>记录阈值位置与回弹调整曲线。</li><li>与个体或群体基线进行比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到闪烁目标，频率逐步提高。</li><li>步骤 2：用户在临界点停止并微调。</li><li>步骤 3：系统记录阈值与回弹曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>临界闪烁阈值</strong>
+  <div>人类对临界融合频率存在稳定区间。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回弹与微调曲线</strong>
+  <div>真实用户会出现自然的回调与确认过程。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值需落在人类分布区间，回弹曲线具有人类特征；过度一致或无回弹判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接选择固定阈值</li><li>模拟线性调整曲线进行伪造</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化闪烁样式与爬升速度</li><li>加入轻微亮度扰动降低固定阈值价值</li><li>叠加停顿与微调信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢频率范围与替代任务，避免对光敏用户造成不适。</p>
+        <ul><li>光敏用户可能触发不适或误拒</li><li>显示设备刷新率影响阈值判断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-084-1.svg" alt="状态 1：闪烁爬升" />
+  <h3>状态 1：闪烁爬升</h3>
+  <p>闪烁频率逐步提高。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-084-2.svg" alt="状态 2：阈值停止" />
+  <h3>状态 2：阈值停止</h3>
+  <p>用户停在主观临界点并微调。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-084-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>根据阈值与回弹曲线判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Flicker_fusion_threshold" target="_blank" rel="noreferrer">Flicker fusion threshold</a>
+  <div>说明临界闪烁融合频率与个体差异。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_adaptation" target="_blank" rel="noreferrer">Visual adaptation</a>
+  <div>说明视觉适应与阈值变化。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

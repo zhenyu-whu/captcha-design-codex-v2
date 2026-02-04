@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#20 形状优先偏置 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#20</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>形状优先偏置</h1>
+        <p>在轮廓与纹理冲突场景中检测形状优先偏置与拖拽分组轨迹。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>提供轮廓与纹理冲突的图形集合，让用户快速拖拽分组（按“形状相似”而非纹理相似）。记录分组路径、停顿点与最终分组。</p>
+        <p>利用人类“形状优先”知觉偏置作为验证信号，而非识别正确与否。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉知觉中常存在形状优先于纹理的偏置倾向，尤其在快速分组与分类任务中更明显。利用这一偏置可形成可测的选择结果与操作轨迹特征，避免仅依赖答案。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>提供形状与纹理冲突的元素集合。</li><li>要求用户快速按形状相似拖拽分组。</li><li>记录分组结果、停顿点与拖拽路径。</li><li>分析形状优先比例与冲突处的犹豫特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到冲突元素集合与分组区。</li><li>步骤 2：用户拖拽元素按形状完成分组。</li><li>步骤 3：系统统计分组倾向与动作特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>形状优先的分组比例</strong>
+  <div>人类在冲突条件下通常仍偏向形状线索。</div>
+</div>
+
+<div class="signal-item">
+  <strong>冲突元素处的停顿与回撤</strong>
+  <div>真实判断存在短暂停顿与纠偏路径。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>以形状优先比例与冲突点停顿时间为核心信号，结合拖拽路径的连贯性进行综合判定；极端一致或毫无停顿均判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本按规则直接按形状分组</li><li>重放预录拖拽轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态生成形状与纹理组合，避免模板化脚本</li><li>引入微时序与路径抖动信号进行多信号耦合</li><li>在局部加入近似形状扰动，提高伪造成本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高对比与简化元素版本，并允许键盘分组模式，减少精细拖拽要求。</p>
+        <ul><li>部分用户在纹理线索上更依赖，可能造成误拒</li><li>移动端拖拽精度限制影响信号稳定性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-020-1.svg" alt="状态 1：冲突元素展示" />
+  <h3>状态 1：冲突元素展示</h3>
+  <p>形状与纹理线索出现冲突。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-020-2.svg" alt="状态 2：拖拽分组" />
+  <h3>状态 2：拖拽分组</h3>
+  <p>按形状优先进行拖拽归类。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-020-3.svg" alt="状态 3：偏置判定" />
+  <h3>状态 3：偏置判定</h3>
+  <p>评估形状优先比例与停顿特征。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Shape_bias" target="_blank" rel="noreferrer">Shape bias</a>
+  <div>说明形状优先偏置的概念与证据。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_perception" target="_blank" rel="noreferrer">Visual perception</a>
+  <div>说明视觉线索整合与知觉机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

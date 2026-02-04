@@ -1,0 +1,78 @@
+{
+  "id": "163",
+  "slug": "idea-163",
+  "title": "时钟标记现场感",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "将系统时钟抖动嵌入节奏提示，要求短窗口响应并评估节律序列。",
+  "background": "时钟抖动与系统节拍具有微随机性，真实用户在短窗口响应中会表现出稳定的相位滞后与修正轨迹。将“现场时间锚”作为不可预测因素可抬高伪造成本。",
+  "core_mechanism": [
+    "生成带抖动的节奏提示或时间窗。",
+    "用户在短窗口内进行响应。",
+    "记录相位偏差与节律序列。",
+    "与人类基线分布进行比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到随机节奏提示。",
+    "步骤 2：在短时间窗内点击或操作。",
+    "步骤 3：系统分析节律序列与偏差。"
+  ],
+  "signals": [
+    {
+      "signal": "相位滞后与修正曲线",
+      "why_it_matters": "人类对节拍响应存在稳定滞后与校准。"
+    },
+    {
+      "signal": "节律间隔抖动",
+      "why_it_matters": "真实跟随会产生可解释的抖动结构。"
+    }
+  ],
+  "decision_logic": "相位偏差与抖动需落在人类区间；过度精准或完全随机判异常。",
+  "attack_surface": [
+    "脚本读取时间窗并精确触发",
+    "回放记录的节律序列"
+  ],
+  "mitigations": [
+    "随机化抖动分布与相位",
+    "缩短响应窗口并加入干扰节拍",
+    "结合反应时与轨迹信号"
+  ],
+  "accessibility": "提供更慢节奏与视觉提示，避免听觉依赖。",
+  "risks": [
+    "设备计时精度差异影响判定",
+    "网络延迟影响短窗口响应"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：节奏提示",
+      "caption": "带抖动的节奏序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-163-1.svg"
+    },
+    {
+      "title": "状态 2：短窗响应",
+      "caption": "用户在短窗口内操作。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-163-2.svg"
+    },
+    {
+      "title": "状态 3：节律判定",
+      "caption": "分析相位偏差与抖动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-163-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Jitter",
+      "url": "https://en.wikipedia.org/wiki/Jitter",
+      "note": "说明时间抖动与随机性。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明短窗口响应与反应时分布。"
+    }
+  ]
+}

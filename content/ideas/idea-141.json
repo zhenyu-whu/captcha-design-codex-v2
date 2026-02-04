@@ -1,0 +1,78 @@
+{
+  "id": "141",
+  "slug": "idea-141",
+  "title": "操作因果回溯",
+  "group": "F：意图/现实耦合 × 异步/随机插入（路径/预测误差）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "任务后异步要求复原两步操作顺序或关键路径，比较复原与真实轨迹的一致性。",
+  "background": "真实用户会保留短时操作因果关系与顺序记忆，回溯存在典型延迟与误差分布。脚本虽可完美复原，但其反应时与停顿模式不同。",
+  "core_mechanism": [
+    "用户完成主任务后延迟触发回溯问题。",
+    "要求复原两步顺序或关键路径。",
+    "记录回忆准确率与反应时。",
+    "与历史基线或群体分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成主任务流程。",
+    "步骤 2：系统提示回溯两步操作。",
+    "步骤 3：系统记录准确率与反应时。"
+  ],
+  "signals": [
+    {
+      "signal": "顺序回忆准确率",
+      "why_it_matters": "真实回忆存在有限但稳定的准确率。"
+    },
+    {
+      "signal": "回忆反应时",
+      "why_it_matters": "回溯需要检索而非瞬时输出。"
+    }
+  ],
+  "decision_logic": "准确率与反应时需在合理区间；完美且零迟疑或随机猜测判异常。",
+  "attack_surface": [
+    "脚本记录操作日志并完美作答",
+    "重放历史回忆序列"
+  ],
+  "mitigations": [
+    "随机化回溯时机与问题形式",
+    "加入干扰选项与时间间隔",
+    "多轮回溯取一致性"
+  ],
+  "accessibility": "提供清晰提示与更长答题时间，支持键盘操作。",
+  "risks": [
+    "记忆负担导致误拒",
+    "复杂流程可能引发困惑"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：操作路径",
+      "caption": "记录用户完成的操作路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-141-1.svg"
+    },
+    {
+      "title": "状态 2：回溯选择",
+      "caption": "选择两步操作的正确顺序。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-141-2.svg"
+    },
+    {
+      "title": "状态 3：一致性判定",
+      "caption": "对比回溯结果与历史路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-141-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Episodic memory",
+      "url": "https://en.wikipedia.org/wiki/Episodic_memory",
+      "note": "说明回溯与情景记忆特性。"
+    },
+    {
+      "title": "Working memory",
+      "url": "https://en.wikipedia.org/wiki/Working_memory",
+      "note": "说明短时顺序保持能力。"
+    }
+  ]
+}

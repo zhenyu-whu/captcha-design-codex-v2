@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#14 微疲劳漂移 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#14</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>微疲劳漂移</h1>
+        <p>通过 10–15 次微任务捕捉短时疲劳带来的精度与速度轻微退化。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>让用户完成一组 10-15 次微任务，观察精度与速度的轻微退化趋势。人体肌肉会在短时间内出现轻微漂移，而脚本往往保持恒定。</p>
+        <p>利用“短时疲劳漂移”作为真实用户特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>短时间连续动作可能引发轻微疲劳与运动控制波动，表现为精度下降或速度衰减趋势。利用这一微退化曲线，可区分脚本的恒定输出与真实用户的生理漂移。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>设置 10–15 次短微任务，节奏稳定。</li><li>记录每次任务的完成时间与偏差。</li><li>评估精度与速度是否出现轻微退化趋势。</li><li>容许波动，强调整体趋势而非单点表现。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成一组微任务序列。</li><li>步骤 2：系统记录每次任务的时间与精度。</li><li>步骤 3：系统计算退化趋势并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>精度退化斜率</strong>
+  <div>短时疲劳可能导致轻微精度下降。</div>
+</div>
+
+<div class="signal-item">
+  <strong>完成时间微衰减或波动</strong>
+  <div>真实用户会出现速度波动而非恒定输出。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>计算序列内精度与时间的趋势线，要求出现轻微退化或波动；完全恒定或完美直线判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本人为注入退化趋势</li><li>回放真实用户的完整序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标与任务顺序，降低回放价值</li><li>结合微抖动与反应时等信号进行交叉验证</li><li>对趋势过度线性或过度随机进行异常检测</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>允许更短序列或降低任务强度，避免对体力或注意力有限用户造成负担。</p>
+        <ul><li>用户状态良好时可能不出现明显退化</li><li>过长序列易引发反感与流失</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-014-1.svg" alt="状态 1：微任务序列" />
+  <h3>状态 1：微任务序列</h3>
+  <p>连续 10–15 次微任务构成短序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-014-2.svg" alt="状态 2：轻微退化" />
+  <h3>状态 2：轻微退化</h3>
+  <p>精度与速度出现轻微下降趋势。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-014-3.svg" alt="状态 3：趋势判定" />
+  <h3>状态 3：趋势判定</h3>
+  <p>基于趋势线与波动范围判断。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Muscle_fatigue" target="_blank" rel="noreferrer">Muscle fatigue</a>
+  <div>说明短时疲劳对运动表现的影响。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_variability" target="_blank" rel="noreferrer">Motor variability</a>
+  <div>说明运动过程中的自然波动。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

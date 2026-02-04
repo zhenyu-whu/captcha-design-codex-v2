@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#129 瞬时容量阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#129</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>瞬时容量阈值</h1>
+        <p>闪现阵列中调整数量/曝光到刚能回忆，记录容量阈值与反应时。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>闪现阵列逐步增减数量/曝光，用户调整到“仍可瞬时回忆”的边界，记录容量阈值与反应时并与群体基线对比。</p>
+        <p>以瞬时视觉容量边界替代识别难度。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉瞬时容量与图像记忆存在稳定上限，阈值与反应时的组合可表征个体差异。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>短时闪现物体阵列并立刻遮罩。</li><li>用户调节物体数量或曝光时长到“刚可回忆”。</li><li>记录容量阈值与回忆反应时。</li><li>与群体基线或历史记录比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短暂闪现的物体阵列。</li><li>步骤 2：调整数量/时长到刚能回忆。</li><li>步骤 3：系统记录阈值与反应时。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>瞬时容量阈值</strong>
+  <div>阈值反映视觉短时容量上限。</div>
+</div>
+
+<div class="signal-item">
+  <strong>临界反应时与正确率</strong>
+  <div>临界附近反应时与错率变化具有特征。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值与反应时需落在人类范围；过高容量或零迟疑判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本读取 DOM/像素直接识别</li><li>重放历史答题序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化物体类型与位置</li><li>使用短时呈现后遮罩</li><li>引入干扰项与多轮一致性检查</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与较慢曝光选项。</p>
+        <ul><li>展示过短导致挫败</li><li>工作记忆差异导致波动</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-129-1.svg" alt="状态 1：闪现阵列" />
+  <h3>状态 1：闪现阵列</h3>
+  <p>短暂闪现多目标阵列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-129-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>调整数量或曝光到刚可回忆。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-129-3.svg" alt="状态 3：容量判定" />
+  <h3>状态 3：容量判定</h3>
+  <p>记录容量阈值与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Iconic_memory" target="_blank" rel="noreferrer">Iconic memory</a>
+  <div>说明瞬时视觉记忆容量。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_working_memory" target="_blank" rel="noreferrer">Visual working memory</a>
+  <div>说明视觉短时记忆容量限制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

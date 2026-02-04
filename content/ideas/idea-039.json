@@ -1,0 +1,78 @@
+{
+  "id": "39",
+  "slug": "idea-039",
+  "title": "交替主导判别",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "两个模式快速交替，用户调节到主导感受平衡点，以平衡阈值与路径验证真实性。",
+  "background": "视觉竞争会导致主导感受在不同刺激间交替，主观平衡点具有可测的个体区间。通过测量平衡阈值与调节路径，可形成难以伪造的知觉信号。",
+  "core_mechanism": [
+    "呈现两种模式快速交替的刺激。",
+    "提供滑杆调节两者强度比例。",
+    "用户调节到主导感受相等。",
+    "记录平衡阈值与调节曲线。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到两种模式交替呈现。",
+    "步骤 2：用户调节比例直到主导感平衡。",
+    "步骤 3：系统记录平衡点并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "平衡阈值区间",
+      "why_it_matters": "主导竞争存在稳定的主观平衡点。"
+    },
+    {
+      "signal": "调节路径与回撤次数",
+      "why_it_matters": "真实判断通常呈逐步逼近与微调。"
+    }
+  ],
+  "decision_logic": "评估平衡阈值是否落在人类区间，并结合调节收敛曲线；一次到位或固定值判异常。",
+  "attack_surface": [
+    "脚本直接设置固定比例",
+    "重放真实用户的调节序列"
+  ],
+  "mitigations": [
+    "随机化交替频率与模式细节",
+    "加入短时扰动与噪声避免固定模式",
+    "叠加鼠标轨迹与微时序信号进行多信号判定"
+  ],
+  "accessibility": "提供更低频率或替代任务模式，避免对视觉敏感用户造成不适。",
+  "risks": [
+    "快速交替可能引起视觉疲劳",
+    "显示器刷新率影响交替感受"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：交替刺激",
+      "caption": "两种模式快速交替呈现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-039-1.svg"
+    },
+    {
+      "title": "状态 2：主导调节",
+      "caption": "用户调节比例直到平衡。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-039-2.svg"
+    },
+    {
+      "title": "状态 3：平衡判定",
+      "caption": "记录平衡点与调节路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-039-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Binocular rivalry",
+      "url": "https://en.wikipedia.org/wiki/Binocular_rivalry",
+      "note": "说明视觉竞争与主导交替。"
+    },
+    {
+      "title": "Visual perception",
+      "url": "https://en.wikipedia.org/wiki/Visual_perception",
+      "note": "说明视觉主导与竞争的基础。"
+    }
+  ]
+}

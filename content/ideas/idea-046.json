@@ -1,0 +1,78 @@
+{
+  "id": "46",
+  "slug": "idea-046",
+  "title": "对比适应中性点",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "高对比适应后调节灰阶条纹中性点，以偏移方向与稳定时间验证对比适应特征。",
+  "background": "对比适应会改变对后续灰阶刺激的感知，使中性点发生偏移。通过测量中性点的偏移方向与稳定时间，可获得主观适应的行为特征。",
+  "core_mechanism": [
+    "先暴露高对比纹理进行适应。",
+    "切换灰阶条纹并提供对比度滑杆。",
+    "用户调节到“感觉中性”的对比度。",
+    "记录偏移方向、幅度与稳定时间。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看高对比纹理。",
+    "步骤 2：出现灰阶条纹并开始调节。",
+    "步骤 3：系统记录中性点并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "中性点偏移方向与幅度",
+      "why_it_matters": "对比适应导致可预测的偏移趋势。"
+    },
+    {
+      "signal": "稳定时间与微调次数",
+      "why_it_matters": "真实校准通常伴随短暂收敛过程。"
+    }
+  ],
+  "decision_logic": "检查中性点偏移是否落在人类区间，并结合稳定时间与微调曲线；一次到位或无偏移判异常。",
+  "attack_surface": [
+    "脚本固定对比度直接提交",
+    "重放真实用户调节序列"
+  ],
+  "mitigations": [
+    "随机化纹理方向与对比度强度",
+    "加入亮度噪声与轻微相位扰动",
+    "叠加微时序与鼠标轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供低对比或替代任务，避免对对比敏感用户造成不适。",
+  "risks": [
+    "显示设备对比度设置差异影响中性点",
+    "环境光线影响对比感知"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：高对比适应",
+      "caption": "高对比纹理短时适应。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-046-1.svg"
+    },
+    {
+      "title": "状态 2：中性点调节",
+      "caption": "用户调节灰阶条纹对比度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-046-2.svg"
+    },
+    {
+      "title": "状态 3：适应判定",
+      "caption": "分析偏移方向与稳定时间。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-046-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Contrast adaptation",
+      "url": "https://en.wikipedia.org/wiki/Contrast_adaptation",
+      "note": "说明对比适应与中性点偏移。"
+    },
+    {
+      "title": "Contrast sensitivity",
+      "url": "https://en.wikipedia.org/wiki/Contrast_sensitivity",
+      "note": "说明对比感知与阈值特性。"
+    }
+  ]
+}

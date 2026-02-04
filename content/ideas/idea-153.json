@@ -1,0 +1,78 @@
+{
+  "id": "153",
+  "slug": "idea-153",
+  "title": "多段一致性门槛",
+  "group": "Reverse Brainstorming - Round 1",
+  "phase": "Reverse Brainstorming - Round 1",
+  "kind": "idea",
+  "summary": "将任务拆为多段并做相对比较，要求节律、路径或偏差在跨段保持一致。",
+  "background": "单次作答易被随机或脚本命中，而跨段一致性更难伪造。真实用户在连续任务中会呈现相似但非完全一致的行为结构。",
+  "core_mechanism": [
+    "任务拆分为 2–3 段连续流程。",
+    "每段采集节律/路径/偏差信号。",
+    "计算跨段相对一致性与漂移量。",
+    "以一致性阈值作为判定核心。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成第 1 段任务。",
+    "步骤 2：继续完成第 2–3 段任务。",
+    "步骤 3：系统比较跨段一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "跨段节律一致性",
+      "why_it_matters": "真实用户节律结构相似但存在微漂移。"
+    },
+    {
+      "signal": "路径/偏差相对差",
+      "why_it_matters": "相对差反映稳定策略与自然波动。"
+    }
+  ],
+  "decision_logic": "一致性需落在人类区间；过度一致或随机漂移判异常。",
+  "attack_surface": [
+    "脚本重放单段轨迹",
+    "随机生成多段噪声伪装"
+  ],
+  "mitigations": [
+    "随机化每段起始参数",
+    "加入段间短间隔打断重放",
+    "多维信号耦合评估"
+  ],
+  "accessibility": "允许使用更慢节奏或替代通道完成多段。",
+  "risks": [
+    "多段任务增加疲劳",
+    "设备延迟影响一致性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：多段任务",
+      "caption": "任务分为多段连续流程。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-153-1.svg"
+    },
+    {
+      "title": "状态 2：跨段信号",
+      "caption": "比较各段节律与路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-153-2.svg"
+    },
+    {
+      "title": "状态 3：一致性判定",
+      "caption": "以一致性阈值输出结果。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-153-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明行为一致性作为识别依据。"
+    },
+    {
+      "title": "Signal detection theory",
+      "url": "https://en.wikipedia.org/wiki/Signal_detection_theory",
+      "note": "说明阈值判定与一致性评估。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "20",
+  "slug": "idea-020",
+  "title": "形状优先偏置",
+  "group": "视觉思考范式：空间/结构/直觉",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在轮廓与纹理冲突场景中检测形状优先偏置与拖拽分组轨迹。",
+  "background": "视觉知觉中常存在形状优先于纹理的偏置倾向，尤其在快速分组与分类任务中更明显。利用这一偏置可形成可测的选择结果与操作轨迹特征，避免仅依赖答案。",
+  "core_mechanism": [
+    "提供形状与纹理冲突的元素集合。",
+    "要求用户快速按形状相似拖拽分组。",
+    "记录分组结果、停顿点与拖拽路径。",
+    "分析形状优先比例与冲突处的犹豫特征。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到冲突元素集合与分组区。",
+    "步骤 2：用户拖拽元素按形状完成分组。",
+    "步骤 3：系统统计分组倾向与动作特征。"
+  ],
+  "signals": [
+    {
+      "signal": "形状优先的分组比例",
+      "why_it_matters": "人类在冲突条件下通常仍偏向形状线索。"
+    },
+    {
+      "signal": "冲突元素处的停顿与回撤",
+      "why_it_matters": "真实判断存在短暂停顿与纠偏路径。"
+    }
+  ],
+  "decision_logic": "以形状优先比例与冲突点停顿时间为核心信号，结合拖拽路径的连贯性进行综合判定；极端一致或毫无停顿均判异常。",
+  "attack_surface": [
+    "脚本按规则直接按形状分组",
+    "重放预录拖拽轨迹"
+  ],
+  "mitigations": [
+    "动态生成形状与纹理组合，避免模板化脚本",
+    "引入微时序与路径抖动信号进行多信号耦合",
+    "在局部加入近似形状扰动，提高伪造成本"
+  ],
+  "accessibility": "提供高对比与简化元素版本，并允许键盘分组模式，减少精细拖拽要求。",
+  "risks": [
+    "部分用户在纹理线索上更依赖，可能造成误拒",
+    "移动端拖拽精度限制影响信号稳定性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：冲突元素展示",
+      "caption": "形状与纹理线索出现冲突。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-020-1.svg"
+    },
+    {
+      "title": "状态 2：拖拽分组",
+      "caption": "按形状优先进行拖拽归类。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-020-2.svg"
+    },
+    {
+      "title": "状态 3：偏置判定",
+      "caption": "评估形状优先比例与停顿特征。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-020-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Shape bias",
+      "url": "https://en.wikipedia.org/wiki/Shape_bias",
+      "note": "说明形状优先偏置的概念与证据。"
+    },
+    {
+      "title": "Visual perception",
+      "url": "https://en.wikipedia.org/wiki/Visual_perception",
+      "note": "说明视觉线索整合与知觉机制。"
+    }
+  ]
+}

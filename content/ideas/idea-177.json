@@ -1,0 +1,78 @@
+{
+  "id": "177",
+  "slug": "idea-177",
+  "title": "UI 完整性探针",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "在 UI 中嵌入微偏移探针，验证命中分布是否匹配真实坐标映射。",
+  "background": "代理层或 UI 篡改常带来坐标映射偏差。通过隐蔽命中区与微偏移探针，可检测真实 UI 层的命中分布。",
+  "core_mechanism": [
+    "布置不可见的微偏移命中区。",
+    "记录点击/触控命中分布。",
+    "对比期望坐标映射模型。",
+    "检测偏移与异常命中模式。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成常规点击任务。",
+    "步骤 2：系统记录命中分布。",
+    "步骤 3：系统评估坐标一致性。"
+  ],
+  "signals": [
+    {
+      "signal": "命中偏移分布",
+      "why_it_matters": "真实 UI 命中有稳定偏移结构。"
+    },
+    {
+      "signal": "探针命中率",
+      "why_it_matters": "异常映射会改变探针命中率。"
+    }
+  ],
+  "decision_logic": "偏移分布需匹配基线；整体偏移或过均匀命中判异常。",
+  "attack_surface": [
+    "脚本读取 DOM 并精确点击",
+    "代理层重映射坐标"
+  ],
+  "mitigations": [
+    "随机化探针位置与形状",
+    "加入动态缩放与旋转",
+    "多轮分布一致性检查"
+  ],
+  "accessibility": "探针设置在可达区域并允许误差窗口。",
+  "risks": [
+    "探针过小导致误拒",
+    "高 DPI 缩放影响偏移"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：隐藏探针",
+      "caption": "UI 中嵌入微偏移探针。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-177-1.svg"
+    },
+    {
+      "title": "状态 2：命中热区",
+      "caption": "记录点击热区分布。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-177-2.svg"
+    },
+    {
+      "title": "状态 3：映射判定",
+      "caption": "检测坐标映射偏差。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-177-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Hit-testing",
+      "url": "https://en.wikipedia.org/wiki/Hit-testing",
+      "note": "说明命中检测与坐标映射。"
+    },
+    {
+      "title": "User interface",
+      "url": "https://en.wikipedia.org/wiki/User_interface",
+      "note": "说明 UI 层与交互映射。"
+    }
+  ]
+}

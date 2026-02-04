@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#59 遮挡连续性预测 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#59</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>遮挡连续性预测</h1>
+        <p>目标沿路径运动被遮挡，用户预测将要出现的位置或时间，利用预测误差分布验证连续性直觉。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>目标沿路径移动后被遮挡，用户预测其“将要出现的位置/时间点”并点击；记录预测误差与反应时分布。</p>
+        <p>依赖人类对物体连续性的直觉预测，而非图像识别。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对物体连续运动具有强烈的预测倾向，遮挡期间会根据速度与方向进行内插预测。测量预测误差与反应时分布可形成稳定的直觉特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>目标沿路径运动后进入遮挡区域。</li><li>用户预测其将要出现的位置或时间并点击。</li><li>记录预测误差与反应时。</li><li>分析连续性预测的稳定性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观察目标沿路径运动。</li><li>步骤 2：目标被遮挡，用户预测出现位置。</li><li>步骤 3：系统记录误差与判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>预测误差分布</strong>
+  <div>连续性预测误差具有稳定范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与遮挡时长关系</strong>
+  <div>遮挡时间越长预测误差越大，形成规律性。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合误差分布与反应时曲线判定；误差过低或过高且无规律判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算轨迹并预测位置</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化速度、方向与遮挡长度</li><li>引入轻微加速度变化降低预测性</li><li>叠加鼠标轨迹与微时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢速度或替代任务模式，避免对运动敏感用户造成负担。</p>
+        <ul><li>不同设备刷新率影响运动节奏</li><li>遮挡时间过长增加误差</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-059-1.svg" alt="状态 1：运动路径" />
+  <h3>状态 1：运动路径</h3>
+  <p>目标沿路径运动接近遮挡区域。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-059-2.svg" alt="状态 2：遮挡预测" />
+  <h3>状态 2：遮挡预测</h3>
+  <p>目标被遮挡，用户预测位置。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-059-3.svg" alt="状态 3：误差判定" />
+  <h3>状态 3：误差判定</h3>
+  <p>分析预测误差与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motion_perception" target="_blank" rel="noreferrer">Motion perception</a>
+  <div>说明运动连续性与预测机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Object_permanence" target="_blank" rel="noreferrer">Object permanence</a>
+  <div>说明遮挡期间对物体连续性的认知。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

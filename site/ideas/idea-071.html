@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#71 伪词分块直觉 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#71</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>伪词分块直觉</h1>
+        <p>让用户对无意义字母串进行“顺口分块”，利用边界位置与停顿节奏验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出无意义字母串，让用户按“读起来顺口的分块”拖拽断开位置。记录分块位置、停顿与回撤次数。</p>
+        <p>捕捉人类在阅读中的“直觉分块”策略，而不是语义理解。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类阅读会依赖音节与发音习惯进行直觉分块，即使面对伪词也会产生稳定的分段倾向。分块位置、停顿与回撤反映了自然的认知过程，可作为行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现无意义字母串，提供可拖拽的分隔点。</li><li>用户按“读起来顺口”的方式调整分块边界。</li><li>记录分块位置、停顿与回撤次数。</li><li>多轮不同字母串形成稳定分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到伪词与可调分隔点。</li><li>步骤 2：用户拖拽分隔点完成分块。</li><li>步骤 3：系统记录边界与节奏并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>分块边界位置</strong>
+  <div>人类分块会集中在特定发音边界附近。</div>
+</div>
+
+<div class="signal-item">
+  <strong>停顿与回撤次数</strong>
+  <div>真实分块通常伴随短暂停顿与微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>边界分布需符合人类分块倾向，并伴随合理停顿节奏；随机边界或无微调判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>算法化分块或音节划分脚本</li><li>重放真实用户的拖拽轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>使用含歧义的字母串与不同长度模式</li><li>引入轻微视觉扰动降低模板化</li><li>叠加拖拽时序与路径信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供大字号与高对比模式，允许键盘调整分隔点，并提供替代任务避免对阅读障碍用户造成压力。</p>
+        <ul><li>语言背景差异导致分块偏好不同</li><li>阅读障碍用户可能增加误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-071-1.svg" alt="状态 1：伪词呈现" />
+  <h3>状态 1：伪词呈现</h3>
+  <p>无意义字母串与可调分隔点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-071-2.svg" alt="状态 2：拖拽分块" />
+  <h3>状态 2：拖拽分块</h3>
+  <p>用户拖拽分隔点形成顺口分块。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-071-3.svg" alt="状态 3：分块判定" />
+  <h3>状态 3：分块判定</h3>
+  <p>对比边界与节奏形成判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Syllabification" target="_blank" rel="noreferrer">Syllabification</a>
+  <div>说明音节划分与分块规则。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Phonotactics" target="_blank" rel="noreferrer">Phonotactics</a>
+  <div>说明发音组合的直觉限制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

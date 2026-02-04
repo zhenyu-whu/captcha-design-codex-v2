@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#70 字形歧义滑杆 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#70</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>字形歧义滑杆</h1>
+        <p>在两种相近字形的连续形变中寻找“更像哪一个”的临界点，以相似度阈值与微调轨迹验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>显示介于两种字形之间的变形图（如 O/0、l/1），让用户拖动滑杆到“更像某个字符”的临界点。系统记录临界位置与来回微调路径。</p>
+        <p>依赖人类对字形相似度的连续感知阈值，而非识别正确率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在识别相似字形时存在连续感知与犹豫区间，临界点位置与微调路径具有稳定的个体与群体分布。通过记录滑杆调整过程，可提取区别于脚本的微行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示两种字形之间的连续形变图，提供滑杆控制。</li><li>用户拖动滑杆到“更像字符 A/B”的临界点。</li><li>采集临界位置、往返微调与停顿时间。</li><li>多轮随机字形对与字体以形成稳定区间。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到字形形变图与滑杆。</li><li>步骤 2：用户拖动到主观临界点并微调确认。</li><li>步骤 3：系统记录阈值与轨迹并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>临界位置分布</strong>
+  <div>人类相似度阈值集中在可预测区间。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调往返与停顿节奏</strong>
+  <div>真实判断通常伴随短暂停顿与回撤。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值需落在人类分布区间，且微调节奏具有人类特征；一次到位或过度随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本计算形变参数直接定位临界点</li><li>重放真实用户的滑杆轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化字形对、字体与细节扰动</li><li>引入微小动态噪声降低参数直接映射</li><li>叠加滑动速度与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>支持高对比与大字号模式，允许键盘微调，并提供替代任务避免对阅读障碍用户造成阻碍。</p>
+        <ul><li>阅读障碍或低视力用户阈值偏移</li><li>不同渲染引擎导致字形差异</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-070-1.svg" alt="状态 1：字形形变" />
+  <h3>状态 1：字形形变</h3>
+  <p>两种相近字形之间的连续形变。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-070-2.svg" alt="状态 2：滑杆微调" />
+  <h3>状态 2：滑杆微调</h3>
+  <p>用户拖动滑杆并往返微调临界点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-070-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>对比阈值与微调节奏形成判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_word_recognition" target="_blank" rel="noreferrer">Visual word recognition</a>
+  <div>说明字形识别与视觉辨别机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Glyph" target="_blank" rel="noreferrer">Glyph</a>
+  <div>说明字形的视觉表征与变化。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

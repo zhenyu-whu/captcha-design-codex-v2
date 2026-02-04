@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#38 断裂补全延迟 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#38</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>断裂补全延迟</h1>
+        <p>断裂轮廓短闪后消失，记录心理补全的方向与描绘速度作为补全偏差信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>断裂轮廓闪现后消失，用户快速描出“心理补全的那段”。记录补全方向、长度与速度。</p>
+        <p>利用人类补全偏差与描绘节奏。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉系统会对断裂轮廓进行补全，形成主观连续的形状。补全方向与长度存在稳定偏差，可通过描绘节奏与路径特征提取行为签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>断裂轮廓短时闪现后立即消失。</li><li>用户快速描绘他们认为的补全段。</li><li>记录补全方向、长度与描绘速度。</li><li>分析补全偏差与节奏特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到断裂轮廓闪现。</li><li>步骤 2：图形消失后用户描绘补全段。</li><li>步骤 3：系统分析补全特征并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>补全方向与长度分布</strong>
+  <div>人类补全具有稳定的方向与长度偏差。</div>
+</div>
+
+<div class="signal-item">
+  <strong>描绘速度与起笔延迟</strong>
+  <div>真实补全会在短暂思考后快速描绘。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估补全方向、长度与描绘时序是否落在人类范围；过度精确或随机化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本基于几何规则直接补全</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化断裂形态与方向，避免固定几何解</li><li>引入轻微噪声与遮罩增强不确定性</li><li>叠加微时序与轨迹抖动进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供点击选择补全方向的替代模式，减少精细描绘负担。</p>
+        <ul><li>对形状知觉差异导致补全偏差</li><li>触控设备描绘精度影响特征稳定性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-038-1.svg" alt="状态 1：断裂轮廓" />
+  <h3>状态 1：断裂轮廓</h3>
+  <p>断裂轮廓短时闪现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-038-2.svg" alt="状态 2：补全描绘" />
+  <h3>状态 2：补全描绘</h3>
+  <p>用户描绘心理补全段。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-038-3.svg" alt="状态 3：补全判定" />
+  <h3>状态 3：补全判定</h3>
+  <p>分析补全方向与速度。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Illusory_contours" target="_blank" rel="noreferrer">Perceptual completion</a>
+  <div>说明视觉补全与虚假轮廓现象。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gestalt_psychology" target="_blank" rel="noreferrer">Gestalt psychology</a>
+  <div>说明补全作为整体知觉原则。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

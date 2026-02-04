@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#115 路径回忆复刻 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#115</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>路径回忆复刻</h1>
+        <p>用户完成导航后异步要求快速复刻操作路径，以路径相似度与反应时验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户完成界面导航后异步要求快速复刻刚才的操作路径，系统比较路径相似度与反应时。任务结构为异步验证，信号形态为搜索路径与反应时。</p>
+        <p>以“意图记忆”替代一次性任务。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实用户对刚完成的路径具有短时记忆，复刻路径会呈现自然的简化与偏差。脚本难以在跨时上下文中保持一致的意图轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>记录用户完成任务时的操作路径。</li><li>异步提示用户快速复刻路径。</li><li>计算路径相似度与反应时。</li><li>与群体分布比对判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成导航任务，系统记录路径。</li><li>步骤 2：异步提示复刻路径。</li><li>步骤 3：系统比较相似度与反应时。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>路径相似度</strong>
+  <div>真实用户能复刻大致路径但会有自然误差。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与停顿</strong>
+  <div>记忆复刻存在合理的启动与停顿节奏。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>相似度与反应时需落在人类分布区间；过度精确或随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接重放原路径</li><li>伪造固定路径模板</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化复刻入口与路径分辨率</li><li>引入轻微扰动降低重放价值</li><li>叠加轨迹微抖动与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化路径复刻或替代任务，避免对记忆障碍用户造成压力。</p>
+        <ul><li>异步弹窗可能打断体验</li><li>用户未记清路径导致误判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-115-1.svg" alt="状态 1：路径记录" />
+  <h3>状态 1：路径记录</h3>
+  <p>记录用户完成任务路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-115-2.svg" alt="状态 2：路径复刻" />
+  <h3>状态 2：路径复刻</h3>
+  <p>用户快速复刻路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-115-3.svg" alt="状态 3：相似判定" />
+  <h3>状态 3：相似判定</h3>
+  <p>比较路径相似度与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Procedural_memory" target="_blank" rel="noreferrer">Procedural memory</a>
+  <div>说明路径复刻与动作记忆基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Spatial_memory" target="_blank" rel="noreferrer">Spatial memory</a>
+  <div>说明路径记忆与复刻误差。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

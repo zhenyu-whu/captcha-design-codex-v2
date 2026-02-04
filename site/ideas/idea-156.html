@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#156 多信号耦合一致性 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#156</span>
+          <span class="chip teal">Reverse Brainstorming - Round 2</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>多信号耦合一致性</h1>
+        <p>同时采集轨迹动力学、反应时与适应曲线，判定依赖多信号耦合结构。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 2</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在同一任务内同时采集轨迹动力学、反应时与适应曲线，判定基于多信号的一致性相关结构而非单一统计分布。</p>
+        <p>让“单分布伪造”失效，必须同时复刻多维耦合关系。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>单一分布易被伪造，多信号间的相关结构更难复刻。耦合一致性可反映真实操控的整体模式。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在同一任务内采集多维信号。</li><li>提取轨迹、反应时与适应曲线。</li><li>计算信号间相关结构。</li><li>以耦合一致性作为判定核心。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成多信号任务。</li><li>步骤 2：系统提取多维信号。</li><li>步骤 3：系统评估耦合一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>轨迹‑反应时相关性</strong>
+  <div>真实操作会呈现耦合关系。</div>
+</div>
+
+<div class="signal-item">
+  <strong>适应曲线与纠偏一致性</strong>
+  <div>多维信号同步性难以伪造。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>多信号相关结构需落在基线区间；单一信号异常或耦合断裂判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>逐一拟合单信号分布</li><li>回放真实多信号记录</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态参数扰动避免固定分布</li><li>加入额外信号提高维度</li><li>检查跨任务一致性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>确保任务负担可控并提供替代通道。</p>
+        <ul><li>信号耦合过强导致误拒</li><li>采样不足影响相关性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-156-1.svg" alt="状态 1：多信号采集" />
+  <h3>状态 1：多信号采集</h3>
+  <p>同时采集轨迹与反应时。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-156-2.svg" alt="状态 2：耦合结构" />
+  <h3>状态 2：耦合结构</h3>
+  <p>展示信号相关结构。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-156-3.svg" alt="状态 3：一致性判定" />
+  <h3>状态 3：一致性判定</h3>
+  <p>基于耦合关系输出判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Multivariate_analysis" target="_blank" rel="noreferrer">Multivariate analysis</a>
+  <div>说明多维信号相关结构。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Behavioral_biometrics" target="_blank" rel="noreferrer">Behavioral biometrics</a>
+  <div>说明多信号行为特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

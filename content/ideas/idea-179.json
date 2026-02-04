@@ -1,0 +1,78 @@
+{
+  "id": "179",
+  "slug": "idea-179",
+  "title": "帧锁反制",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "在关键帧触发响应要求，判定基于反应时与帧同步一致性。",
+  "background": "关键帧同步依赖真实渲染时序，代理层或回放难以精确对齐。通过帧锁响应可检测渲染同步异常。",
+  "core_mechanism": [
+    "在关键帧显示提示或目标。",
+    "要求用户即时响应。",
+    "记录响应相对帧时间的偏差。",
+    "检测帧同步一致性与抖动。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看帧级提示。",
+    "步骤 2：在关键帧内响应。",
+    "步骤 3：系统分析帧同步与反应时。"
+  ],
+  "signals": [
+    {
+      "signal": "帧对齐反应时",
+      "why_it_matters": "真实用户响应与帧同步存在自然窗口。"
+    },
+    {
+      "signal": "帧间响应抖动",
+      "why_it_matters": "回放难以复刻自然抖动。"
+    }
+  ],
+  "decision_logic": "响应需落在帧同步窗口且抖动合理；过度精准或偏移判异常。",
+  "attack_surface": [
+    "脚本直接读取帧事件并触发",
+    "高帧率回放模拟"
+  ],
+  "mitigations": [
+    "随机化关键帧与提示形态",
+    "加入帧级微扰",
+    "与路径信号联合判断"
+  ],
+  "accessibility": "提供更宽的帧窗口与替代通道。",
+  "risks": [
+    "低帧率设备影响判定",
+    "视觉敏感用户不适"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：关键帧提示",
+      "caption": "关键帧出现响应提示。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-179-1.svg"
+    },
+    {
+      "title": "状态 2：即时响应",
+      "caption": "用户在帧窗口内操作。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-179-2.svg"
+    },
+    {
+      "title": "状态 3：同步判定",
+      "caption": "分析帧同步与抖动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-179-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Vertical synchronization",
+      "url": "https://en.wikipedia.org/wiki/Vertical_synchronization",
+      "note": "说明帧同步与渲染时序。"
+    },
+    {
+      "title": "Frame rate",
+      "url": "https://en.wikipedia.org/wiki/Frame_rate",
+      "note": "说明帧级时序与窗口。"
+    }
+  ]
+}

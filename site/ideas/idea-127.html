@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#127 顺序判别临界值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#127</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>顺序判别临界值</h1>
+        <p>调节两刺激间隔到刚能判断先后，记录顺序判别阈值与微调次数。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两刺激间隔可调，用户调到“刚能判断先后”的临界值，系统记录阈值与微调次数并与群体基线对比。</p>
+        <p>把时间顺序 JND 作为核心信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>时间顺序判别任务可估计 JND，阈值与微调模式具有稳定区间，适合形成单信号验证。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现两个时间相近的刺激。</li><li>用户调节间隔到“刚能判断先后”。</li><li>记录 JND 阈值与调整次数。</li><li>与群体基线或历史分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到两刺激依次出现。</li><li>步骤 2：调节间隔直到刚能分辨顺序。</li><li>步骤 3：系统记录阈值并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>时间顺序 JND 阈值</strong>
+  <div>阈值落在稳定范围且难以精确伪造。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调次数与反应时</strong>
+  <div>真实用户需要多次试探。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值与微调特征需符合人类分布；过低阈值或无试探判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本选择固定阈值</li><li>重放用户的调整轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化刺激位置/强度与顺序</li><li>加入零间隔/长间隔捕捉试次</li><li>限制可见时窗减少脚本读取</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大间隔范围与视觉/听觉替代版本。</p>
+        <ul><li>设备计时精度影响阈值</li><li>视觉敏感用户不适</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-127-1.svg" alt="状态 1：顺序呈现" />
+  <h3>状态 1：顺序呈现</h3>
+  <p>两刺激按顺序出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-127-2.svg" alt="状态 2：间隔调节" />
+  <h3>状态 2：间隔调节</h3>
+  <p>拖动滑杆调整时间间隔。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-127-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>记录阈值与微调次数。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Temporal_order_judgment" target="_blank" rel="noreferrer">Temporal order judgment</a>
+  <div>说明顺序判别任务与阈值。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Just-noticeable_difference" target="_blank" rel="noreferrer">Just-noticeable difference</a>
+  <div>说明可觉差阈值。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

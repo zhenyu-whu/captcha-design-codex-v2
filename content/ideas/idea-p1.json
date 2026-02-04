@@ -1,0 +1,78 @@
+{
+  "id": "P1",
+  "slug": "idea-p1",
+  "title": "普适可达",
+  "group": "Foundational Principles",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "principle",
+  "summary": "把低门槛与等效替代通道作为验证机制的安全约束，确保多数真实用户可快速通过。",
+  "background": "验证码一旦对真实用户设置过高门槛，会显著放大误拒与流失。可达性设计强调不同能力与设备条件下的可用性与公平性，因此应将通用性视为安全体系的一部分，而不仅是体验优化。",
+  "core_mechanism": [
+    "选择低负担的感知或动作任务，降低认知与体力成本。",
+    "提供等效替代通道（键盘/简化模式/辅助提示）并保持安全强度一致。",
+    "根据设备与环境自适应阈值，允许合理的误差区间与重试。",
+    "持续记录完成时间与失败模式，作为阈值与任务复杂度的校准依据。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到主任务及可达性入口。",
+    "步骤 2：用户完成主任务或选择替代通道完成验证。",
+    "步骤 3：系统以一致的安全标准判定并输出结果。"
+  ],
+  "signals": [
+    {
+      "signal": "完成时间与纠错次数",
+      "why_it_matters": "可达性不足会导致异常耗时与高纠错率。"
+    },
+    {
+      "signal": "替代通道使用率与成功率",
+      "why_it_matters": "反映不同用户群体的可达性需求与任务门槛。"
+    }
+  ],
+  "decision_logic": "主通道或替代通道满足人类基线分布即可通过；对异常低成本或异常一致的行为进行额外校验。",
+  "attack_surface": [
+    "攻击者利用最弱通道绕过主任务",
+    "脚本模拟低负担流程进行批量通过"
+  ],
+  "mitigations": [
+    "各通道共用核心行为信号，避免安全强度割裂",
+    "风险分级：高风险场景要求更强信号或多通道验证",
+    "持续监控替代通道的通过率与异常分布"
+  ],
+  "accessibility": "提供键盘可操作、慢速模式与辅助提示，支持屏幕阅读器与高对比显示，确保特殊群体有等效通道。",
+  "risks": [
+    "替代通道成为攻击者优先选择的弱点",
+    "过度简化导致区分度下降"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：多通道入口",
+      "caption": "主任务与可达性入口并列呈现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-p1-1.svg"
+    },
+    {
+      "title": "状态 2：替代通道",
+      "caption": "用户选择等效替代方式完成验证。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-p1-2.svg"
+    },
+    {
+      "title": "状态 3：一致判定",
+      "caption": "不同通道均以一致标准判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-p1-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.1",
+      "url": "https://www.w3.org/TR/WCAG21/",
+      "note": "说明可达性要求与设计约束。"
+    },
+    {
+      "title": "Inclusive design",
+      "url": "https://en.wikipedia.org/wiki/Inclusive_design",
+      "note": "说明面向多样化能力的通用设计原则。"
+    }
+  ]
+}

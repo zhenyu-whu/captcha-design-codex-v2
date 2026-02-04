@@ -1,0 +1,78 @@
+{
+  "id": "63",
+  "slug": "idea-063",
+  "title": "双稳态首选与翻转",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "展示双稳态图形并记录首选版本与翻转时刻，用潜伏期与偏好分布验证真实性。",
+  "background": "双稳态知觉（如 Necker 立方体、鲁宾花瓶）会在两个版本间自发翻转，首选偏好与翻转潜伏期具有稳定分布。通过记录动态特征可形成可靠的知觉信号。",
+  "core_mechanism": [
+    "展示双稳态图形。",
+    "用户点击第一眼看到的版本。",
+    "随后按键标记翻转时刻。",
+    "记录首选偏好与翻转潜伏期。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到双稳态图形。",
+    "步骤 2：用户选择第一眼版本。",
+    "步骤 3：系统记录翻转时刻并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "首选版本偏好",
+      "why_it_matters": "首选偏好在群体中具有稳定趋势。"
+    },
+    {
+      "signal": "翻转潜伏期分布",
+      "why_it_matters": "双稳态翻转具有典型时间分布。"
+    }
+  ],
+  "decision_logic": "综合首选偏好与翻转潜伏期分布判定；潜伏期过于恒定或无翻转判异常。",
+  "attack_surface": [
+    "脚本固定选择并定时触发",
+    "重放真实用户的翻转序列"
+  ],
+  "mitigations": [
+    "随机化双稳态图形样式与尺度",
+    "加入轻微噪声与对比度扰动",
+    "叠加微时序与鼠标轨迹信号进行多信号验证"
+  ],
+  "accessibility": "提供替代任务或降低对比度刺激，避免对视觉敏感用户造成不适。",
+  "risks": [
+    "长时间注视可能疲劳",
+    "部分用户翻转不明显导致误差"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：双稳态图形",
+      "caption": "Necker 立方体或鲁宾花瓶。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-063-1.svg"
+    },
+    {
+      "title": "状态 2：首选选择",
+      "caption": "用户标记第一眼版本。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-063-2.svg"
+    },
+    {
+      "title": "状态 3：翻转判定",
+      "caption": "记录翻转潜伏期分布。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-063-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Bistable perception",
+      "url": "https://en.wikipedia.org/wiki/Bistable_perception",
+      "note": "说明双稳态知觉与翻转现象。"
+    },
+    {
+      "title": "Necker cube",
+      "url": "https://en.wikipedia.org/wiki/Necker_cube",
+      "note": "说明经典双稳态图形。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#4 节律—误差双条件 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#4</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>节律—误差双条件</h1>
+        <p>要求用户跟随节拍完成点击/拖拽，同时利用自然误差作为“人类证据”。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>让用户完成一组节律性点击/拖拽（节奏由轻量提示引导），通过“节律相对稳定 + 微误差自然存在”作为通过条件。机器人若节律过于精准或误差过小会被判为异常。</p>
+        <p>使用“适度不精确”作为人类证据，逆向利用机器的过度完美。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在节律任务中会表现出可预测的时间判断与微误差分布，节拍稳定但不完美。将“节律稳定 + 适度误差”作为双条件，可避免脚本过度精准带来的伪造。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>以视觉或轻量提示引导节拍，形成短序列任务。</li><li>记录节拍间隔、提前/滞后误差与漂移趋势。</li><li>判定强调“稳定但不完美”的时间分布。</li><li>可在 2–3 轮节拍中检查一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到节拍提示与点击目标。</li><li>步骤 2：用户跟随节拍完成 4–6 次点击。</li><li>步骤 3：系统分析节律序列与误差分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>相邻节拍间隔（ITI）与漂移趋势</strong>
+  <div>人类节律呈稳定但缓慢漂移的特征。</div>
+</div>
+
+<div class="signal-item">
+  <strong>提前/滞后误差分布</strong>
+  <div>真实用户会出现微小偏差而非完美对齐。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>设置节律稳定阈值与误差窗口，要求“稳定度达到阈值且误差不为零”；过度精准或过度随机均判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本注入固定抖动以模拟误差</li><li>通过预测节拍提前触发点击</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机节拍起始相位与间隔，减少可预测性</li><li>加入微弱节拍变化，检测适应曲线</li><li>结合轨迹微波动与反应时作为辅助信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供纯视觉提示以替代声音，支持更慢节拍模式并允许放宽误差窗口。</p>
+        <ul><li>听觉障碍或注意力负担可能导致误拒</li><li>高延迟设备影响节拍精度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-004-1.svg" alt="状态 1：节拍提示" />
+  <h3>状态 1：节拍提示</h3>
+  <p>以视觉脉冲提示节奏，显示点击目标。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-004-2.svg" alt="状态 2：节律点击" />
+  <h3>状态 2：节律点击</h3>
+  <p>用户跟随节拍完成点击序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-004-3.svg" alt="状态 3：误差窗口判定" />
+  <h3>状态 3：误差窗口判定</h3>
+  <p>基于节拍稳定度与误差分布判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Time_perception" target="_blank" rel="noreferrer">Time perception</a>
+  <div>说明人类对时间与节律的感知特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时分布与时间判断的基本特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

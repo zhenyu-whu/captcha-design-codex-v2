@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#155 异步回验链 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#155</span>
+          <span class="chip teal">Reverse Brainstorming - Round 1</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>异步回验链</h1>
+        <p>主任务完成后异步触发短回验，验证与先前行为的一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 1</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在主任务完成后异步触发短回验，验证与先前交互的意图一致性（路径/停顿/节律），并做异常检测。</p>
+        <p>暴力/一次性解答难以跨时保持一致性。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>一次性解答难以跨时间保持一致性。异步回验可捕捉意图与节律的持续性，抬高回放与脚本成本。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>主任务完成后延迟触发回验。</li><li>回验复用先前任务的关键特征。</li><li>对比路径、停顿或节律一致性。</li><li>以一致性链作为判定依据。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成主任务。</li><li>步骤 2：系统异步触发短回验。</li><li>步骤 3：系统比较前后一致性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>前后节律一致性</strong>
+  <div>真实用户节律保持相似结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>路径/停顿复现度</strong>
+  <div>回放容易过度一致或失真。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>一致性需在合理区间；过度一致或无关联判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本记录并重放全链</li><li>随机生成回验轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>回验时机与形式随机化</li><li>回验内容与主任务轻度变形</li><li>多次回验取一致性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>回验任务保持低负担并可跳转替代通道。</p>
+        <ul><li>异步回验增加流程时长</li><li>短时记忆差异导致误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-155-1.svg" alt="状态 1：主任务完成" />
+  <h3>状态 1：主任务完成</h3>
+  <p>记录主任务行为信号。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-155-2.svg" alt="状态 2：异步回验" />
+  <h3>状态 2：异步回验</h3>
+  <p>延迟触发短回验任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-155-3.svg" alt="状态 3：一致性链" />
+  <h3>状态 3：一致性链</h3>
+  <p>比较前后链路一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Behavioral_biometrics" target="_blank" rel="noreferrer">Behavioral biometrics</a>
+  <div>说明跨时间行为一致性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Short-term_memory" target="_blank" rel="noreferrer">Short-term memory</a>
+  <div>说明短时记忆与回验关联。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

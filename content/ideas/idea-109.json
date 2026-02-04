@@ -1,0 +1,78 @@
+{
+  "id": "109",
+  "slug": "idea-109",
+  "title": "全局‑局部切换门槛",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在 Navon 图形中先选全局/局部，再调节切换阈值，以反应时与阈值位置验证真实性。",
+  "background": "Navon 图形会触发全局‑局部知觉偏置，切换阈值反映个体对局部与全局的偏好与处理门槛。两阶段测量可形成稳定信号。",
+  "core_mechanism": [
+    "呈现 Navon 图形并要求选择全局或局部。",
+    "进入切换阈值滑杆微调。",
+    "记录反应时与阈值位置。",
+    "进行任务内相对比较判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户选择全局/局部目标。",
+    "步骤 2：用户调节切换阈值。",
+    "步骤 3：系统比较反应时与阈值并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "全局‑局部反应时",
+      "why_it_matters": "知觉偏置会影响选择速度。"
+    },
+    {
+      "signal": "切换阈值位置",
+      "why_it_matters": "阈值反映全局‑局部优先级。"
+    }
+  ],
+  "decision_logic": "反应时与阈值需落在人类分布区间且相对关系合理；无偏置或过度一致判异常。",
+  "attack_surface": [
+    "脚本直接选择并固定阈值",
+    "重放真实用户的反应时序列"
+  ],
+  "mitigations": [
+    "随机化 Navon 字母与布局",
+    "动态调整阈值范围与起点",
+    "叠加轨迹与停顿信号"
+  ],
+  "accessibility": "提供更大字号与慢速模式，必要时提供替代任务。",
+  "risks": [
+    "视觉障碍用户难以区分全局‑局部",
+    "设备分辨率影响识别"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：全局‑局部选择",
+      "caption": "Navon 图形选择全局或局部。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-109-1.svg"
+    },
+    {
+      "title": "状态 2：阈值微调",
+      "caption": "调节全局‑局部切换阈值。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-109-2.svg"
+    },
+    {
+      "title": "状态 3：门槛判定",
+      "caption": "比较反应时与阈值位置。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-109-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Navon figure",
+      "url": "https://en.wikipedia.org/wiki/Navon_figure",
+      "note": "说明全局‑局部知觉偏置。"
+    },
+    {
+      "title": "Global precedence",
+      "url": "https://en.wikipedia.org/wiki/Global_precedence",
+      "note": "说明全局优先效应与切换特性。"
+    }
+  ]
+}

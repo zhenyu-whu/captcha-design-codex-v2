@@ -1,0 +1,78 @@
+{
+  "id": "97",
+  "slug": "idea-097",
+  "title": "过冲比例序列",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "连续三次精准落点，记录过冲‑回拉比例序列并进行任务内相对比较。",
+  "background": "连续落点任务能显露人类纠偏的稳定性与波动范围。过冲‑回拉比例序列比单点更难被脚本稳定拟合。",
+  "core_mechanism": [
+    "呈现连续三个目标点，要求精准落点。",
+    "记录每次过冲与回拉比例。",
+    "比较序列形态与相对关系。",
+    "与群体基线分布比对判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户依次点击三个目标点。",
+    "步骤 2：系统记录过冲与回拉比例。",
+    "步骤 3：系统比较序列形态并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "过冲‑回拉比例序列",
+      "why_it_matters": "真实用户的纠偏序列具有稳定形态与微波动。"
+    },
+    {
+      "signal": "落点停顿节奏",
+      "why_it_matters": "自然点击会出现短暂停顿与调整。"
+    }
+  ],
+  "decision_logic": "比例序列需落在人类分布区间并具有合理波动；过度一致或完全随机判异常。",
+  "attack_surface": [
+    "脚本固定过冲比例序列",
+    "重放真实用户的落点轨迹"
+  ],
+  "mitigations": [
+    "随机化目标位置与间距",
+    "引入轻微动态扰动降低模板化",
+    "叠加轨迹抖动与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供更大目标与慢速模式，支持键盘替代输入。",
+  "risks": [
+    "设备延迟影响过冲比例",
+    "触控设备误差更大"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：连续目标",
+      "caption": "三次精准落点任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-097-1.svg"
+    },
+    {
+      "title": "状态 2：过冲回拉",
+      "caption": "记录每次过冲与回拉。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-097-2.svg"
+    },
+    {
+      "title": "状态 3：序列判定",
+      "caption": "比较过冲比例序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-097-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Control theory",
+      "url": "https://en.wikipedia.org/wiki/Control_theory",
+      "note": "说明反馈控制与过冲现象。"
+    },
+    {
+      "title": "Motor learning",
+      "url": "https://en.wikipedia.org/wiki/Motor_learning",
+      "note": "说明纠偏与序列稳定性。"
+    }
+  ]
+}

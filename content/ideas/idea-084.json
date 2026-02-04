@@ -1,0 +1,78 @@
+{
+  "id": "84",
+  "slug": "idea-084",
+  "title": "闪烁自适应爬坡",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "逐步提高闪烁频率，让用户在“刚不再闪烁”时停下，以适应阈值与回弹曲线验证真实性。",
+  "background": "人类对闪烁频率的敏感度存在个体差异，且在适应过程中会出现稳定的阈值与回弹曲线。通过记录阈值位置与回弹行为，可形成难以被脚本稳定拟合的视觉信号。",
+  "core_mechanism": [
+    "闪烁频率缓慢爬升并提示用户观察。",
+    "用户在主观“刚不再闪烁”的位置停止。",
+    "记录阈值位置与回弹调整曲线。",
+    "与个体或群体基线进行比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到闪烁目标，频率逐步提高。",
+    "步骤 2：用户在临界点停止并微调。",
+    "步骤 3：系统记录阈值与回弹曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "临界闪烁阈值",
+      "why_it_matters": "人类对临界融合频率存在稳定区间。"
+    },
+    {
+      "signal": "回弹与微调曲线",
+      "why_it_matters": "真实用户会出现自然的回调与确认过程。"
+    }
+  ],
+  "decision_logic": "阈值需落在人类分布区间，回弹曲线具有人类特征；过度一致或无回弹判异常。",
+  "attack_surface": [
+    "脚本直接选择固定阈值",
+    "模拟线性调整曲线进行伪造"
+  ],
+  "mitigations": [
+    "随机化闪烁样式与爬升速度",
+    "加入轻微亮度扰动降低固定阈值价值",
+    "叠加停顿与微调信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢频率范围与替代任务，避免对光敏用户造成不适。",
+  "risks": [
+    "光敏用户可能触发不适或误拒",
+    "显示设备刷新率影响阈值判断"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：闪烁爬升",
+      "caption": "闪烁频率逐步提高。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-084-1.svg"
+    },
+    {
+      "title": "状态 2：阈值停止",
+      "caption": "用户停在主观临界点并微调。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-084-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "根据阈值与回弹曲线判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-084-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Flicker fusion threshold",
+      "url": "https://en.wikipedia.org/wiki/Flicker_fusion_threshold",
+      "note": "说明临界闪烁融合频率与个体差异。"
+    },
+    {
+      "title": "Visual adaptation",
+      "url": "https://en.wikipedia.org/wiki/Visual_adaptation",
+      "note": "说明视觉适应与阈值变化。"
+    }
+  ]
+}

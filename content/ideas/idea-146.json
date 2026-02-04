@@ -1,0 +1,78 @@
+{
+  "id": "146",
+  "slug": "idea-146",
+  "title": "意图漂移检测",
+  "group": "F：意图/现实耦合 × 异步/随机插入（路径/预测误差）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "同一目标在流程中两次随机插入，比较注意力分布与路径一致性。",
+  "background": "真实用户的意图具有一致性但不会完全复制，注意力分布与路径会呈现相似‑非恒定的模式。通过两次插入对比可识别脚本或回放。",
+  "core_mechanism": [
+    "在流程中两次插入同类目标任务。",
+    "记录两次的注意力分布与路径。",
+    "计算相似度与偏移量。",
+    "与基线区间比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成首次目标任务。",
+    "步骤 2：随机插入第二次同类任务。",
+    "步骤 3：系统比较注意力与路径一致性。"
+  ],
+  "signals": [
+    {
+      "signal": "注意力热区相似度",
+      "why_it_matters": "真实意图会保持一定一致性。"
+    },
+    {
+      "signal": "路径长度与停顿一致性",
+      "why_it_matters": "路径重复不会完全相同且存在微差。"
+    }
+  ],
+  "decision_logic": "相似度需落在人类区间；过度一致或过度漂移判异常。",
+  "attack_surface": [
+    "脚本固定路径并重复",
+    "随机化路径伪装"
+  ],
+  "mitigations": [
+    "更换背景与干扰项",
+    "插入时间间隔拉开记忆",
+    "多任务叠加一致性检查"
+  ],
+  "accessibility": "减少干扰元素并提供较大目标。",
+  "risks": [
+    "疲劳导致路径漂移增大",
+    "界面复杂影响注意力判断"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：首次插入",
+      "caption": "记录首次注意力分布与路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-146-1.svg"
+    },
+    {
+      "title": "状态 2：再次插入",
+      "caption": "同类目标再次出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-146-2.svg"
+    },
+    {
+      "title": "状态 3：一致性对比",
+      "caption": "比较两次热区与路径相似度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-146-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual attention",
+      "url": "https://en.wikipedia.org/wiki/Visual_attention",
+      "note": "说明注意力分配与热区特性。"
+    },
+    {
+      "title": "Saliency map",
+      "url": "https://en.wikipedia.org/wiki/Saliency_map",
+      "note": "说明显著性与注意力热点。"
+    }
+  ]
+}

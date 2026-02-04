@@ -1,0 +1,78 @@
+{
+  "id": "161",
+  "slug": "idea-161",
+  "title": "可达性镜像通道",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "为复杂任务提供等效低负担通道，并用任务内相对比较判定。",
+  "background": "可达性要求提供替代通道，但安全强度应保持一致。镜像通道通过相对比较与一致性判定确保等效安全。",
+  "core_mechanism": [
+    "提供主任务与低负担镜像通道。",
+    "两通道采集可比信号。",
+    "使用相对比较与一致性判定。",
+    "统一安全阈值与风险策略。"
+  ],
+  "user_flow": [
+    "步骤 1：用户选择主任务或镜像通道。",
+    "步骤 2：完成所选任务并采集信号。",
+    "步骤 3：系统按一致标准判定。"
+  ],
+  "signals": [
+    {
+      "signal": "任务内相对差",
+      "why_it_matters": "相对比较降低通道差异影响。"
+    },
+    {
+      "signal": "替代通道完成时序",
+      "why_it_matters": "真实用户存在自然节律。"
+    }
+  ],
+  "decision_logic": "两通道均需满足一致的相对判定阈值。",
+  "attack_surface": [
+    "攻击者优先选择更弱通道",
+    "脚本针对镜像通道优化"
+  ],
+  "mitigations": [
+    "通道共享核心信号与阈值",
+    "动态调整通道参数",
+    "异常通道使用率监测"
+  ],
+  "accessibility": "提供键盘与慢速模式，确保普适可达。",
+  "risks": [
+    "通道间差异引发误判",
+    "替代通道成为攻击目标"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：双通道入口",
+      "caption": "主任务与镜像通道并列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-161-1.svg"
+    },
+    {
+      "title": "状态 2：镜像任务",
+      "caption": "低负担通道完成任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-161-2.svg"
+    },
+    {
+      "title": "状态 3：统一判定",
+      "caption": "使用相对比较保持安全强度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-161-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Accessibility",
+      "url": "https://en.wikipedia.org/wiki/Accessibility",
+      "note": "说明可达性与替代通道。"
+    },
+    {
+      "title": "Inclusive design",
+      "url": "https://en.wikipedia.org/wiki/Inclusive_design",
+      "note": "说明等效体验设计原则。"
+    }
+  ]
+}

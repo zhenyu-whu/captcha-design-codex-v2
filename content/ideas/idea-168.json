@@ -1,0 +1,78 @@
+{
+  "id": "168",
+  "slug": "idea-168",
+  "title": "交错微任务一致性",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "在多微任务中切换动力学参数，判定依赖跨任务一致性与节律结构。",
+  "background": "交错微任务增加了策略迁移要求，真实用户在不同任务中会保持相似节律与适应模式，而脚本难以在多场景保持一致。",
+  "core_mechanism": [
+    "连续 2–3 个微任务随机切换参数。",
+    "记录每段节律、路径与适应速度。",
+    "比较跨任务一致性与漂移。",
+    "以一致性阈值判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成第一段微任务。",
+    "步骤 2：系统切换参数进入下一段。",
+    "步骤 3：系统分析跨任务一致性。"
+  ],
+  "signals": [
+    {
+      "signal": "跨任务节律一致性",
+      "why_it_matters": "真实节律结构在不同任务中仍相似。"
+    },
+    {
+      "signal": "适应速度差异",
+      "why_it_matters": "适应能力在多任务中保持稳定。"
+    }
+  ],
+  "decision_logic": "一致性需落在人类区间；过度一致或无规律漂移判异常。",
+  "attack_surface": [
+    "脚本固定路径跨任务复用",
+    "随机化轨迹伪装"
+  ],
+  "mitigations": [
+    "任务参数与顺序随机化",
+    "加入段间扰动与时间间隔",
+    "多信号耦合评估"
+  ],
+  "accessibility": "提供慢速与简化版本，减少负担。",
+  "risks": [
+    "多任务导致疲劳",
+    "设备差异影响适应速度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：交错任务",
+      "caption": "多段微任务交错出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-168-1.svg"
+    },
+    {
+      "title": "状态 2：跨段信号",
+      "caption": "记录节律与适应速度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-168-2.svg"
+    },
+    {
+      "title": "状态 3：一致性判定",
+      "caption": "比较跨任务一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-168-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Task switching",
+      "url": "https://en.wikipedia.org/wiki/Task_switching_(psychology)",
+      "note": "说明多任务切换与成本。"
+    },
+    {
+      "title": "Motor learning",
+      "url": "https://en.wikipedia.org/wiki/Motor_learning",
+      "note": "说明跨任务适应与稳定性。"
+    }
+  ]
+}

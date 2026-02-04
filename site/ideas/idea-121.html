@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#121 双频融合对比 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#121</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>双频融合对比</h1>
+        <p>两个区域以不同频率闪烁，用户调节到“都不再闪烁”，记录临界频率差并做相对比较。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两个区域以不同频率闪烁，用户调节到“两个都不再闪烁”的状态，系统记录两区临界频率差并做任务内相对比较。</p>
+        <p>使用“融合阈值差异”而非绝对阈值，降低伪造空间。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>临界闪烁融合频率存在个体差异，但两区域的阈值差异更稳定。以融合阈值差异作为信号可降低绝对阈值被仿真的风险。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>两个区域以不同频率闪烁。</li><li>用户调节频率到“都不再闪烁”。</li><li>记录两区临界频率与差值。</li><li>进行任务内相对比较判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到双区域闪烁。</li><li>步骤 2：调节到两区都不再闪烁。</li><li>步骤 3：系统比较阈值差并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>两区融合阈值差</strong>
+  <div>差值相对稳定，难以被固定阈值伪造。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调节过程与回弹</strong>
+  <div>真实用户通常会出现微调与回弹。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>阈值差需落在人类分布区间且存在自然微调；过度一致或无回弹判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接选择固定阈值差</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化初始频率与区域位置</li><li>加入轻微亮度扰动降低模板化</li><li>叠加停顿与反应时信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢频率范围与替代任务，避免对光敏用户造成不适。</p>
+        <ul><li>屏幕刷新率限制阈值精度</li><li>光敏用户可能触发不适</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-121-1.svg" alt="状态 1：双频闪烁" />
+  <h3>状态 1：双频闪烁</h3>
+  <p>两个区域不同频率闪烁。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-121-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>调节至两区都不再闪烁。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-121-3.svg" alt="状态 3：差值判定" />
+  <h3>状态 3：差值判定</h3>
+  <p>比较融合阈值差异。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Flicker_fusion_threshold" target="_blank" rel="noreferrer">Flicker fusion threshold</a>
+  <div>说明临界闪烁融合频率。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Temporal_resolution" target="_blank" rel="noreferrer">Temporal resolution</a>
+  <div>说明视觉系统的时间分辨能力。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

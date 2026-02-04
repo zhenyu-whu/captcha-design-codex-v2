@@ -1,0 +1,78 @@
+{
+  "id": "131",
+  "slug": "idea-131",
+  "title": "搜索路径‑过冲回拉",
+  "group": "E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在干扰图中搜索目标并点击，记录搜索路径效率与过冲回拉比例。",
+  "background": "视觉搜索路径体现注意力策略，运动点击过程受 Fitts 定律影响会产生过冲与修正。两者组合能区分自动化轨迹。",
+  "core_mechanism": [
+    "提供干扰项较多的搜索场景。",
+    "用户移动指针寻找并点击目标。",
+    "记录路径长度、速度与过冲回拉。",
+    "在多试次中比较一致性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到含多干扰项的场景。",
+    "步骤 2：移动指针找到并点击目标。",
+    "步骤 3：系统分析路径效率与过冲回拉。"
+  ],
+  "signals": [
+    {
+      "signal": "搜索路径效率",
+      "why_it_matters": "真实搜索通常非最短路径且具停顿。"
+    },
+    {
+      "signal": "过冲‑回拉比例",
+      "why_it_matters": "人类运动常出现超调与修正。"
+    }
+  ],
+  "decision_logic": "路径效率与过冲比例需符合人类范围且跨试次稳定；过直或零过冲判异常。",
+  "attack_surface": [
+    "脚本直接计算最短路径点击",
+    "远程人工标注后重放"
+  ],
+  "mitigations": [
+    "随机化目标位置与干扰项",
+    "加入动态干扰或短暂遮挡",
+    "叠加停顿/速度信号多维判定"
+  ],
+  "accessibility": "提供更大目标与键盘替代，降低精细操作负担。",
+  "risks": [
+    "指针设备差异导致路径变化",
+    "高延迟使过冲增加"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：搜索场景",
+      "caption": "多干扰项中寻找目标。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-131-1.svg"
+    },
+    {
+      "title": "状态 2：路径与过冲",
+      "caption": "记录搜索路径与过冲回拉。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-131-2.svg"
+    },
+    {
+      "title": "状态 3：双信号判定",
+      "caption": "比较路径效率与过冲比例。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-131-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual search",
+      "url": "https://en.wikipedia.org/wiki/Visual_search",
+      "note": "说明视觉搜索策略。"
+    },
+    {
+      "title": "Fitts's law",
+      "url": "https://en.wikipedia.org/wiki/Fitts%27s_law",
+      "note": "说明运动到达与过冲修正。"
+    }
+  ]
+}

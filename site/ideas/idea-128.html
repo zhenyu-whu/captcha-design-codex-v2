@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#128 对比恢复曲线 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#128</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>对比恢复曲线</h1>
+        <p>高对比适应后提升对比至刚可读，记录恢复曲线与调整速度。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>高对比暴露后逐步提升可读性，用户在“刚可读”处停下，记录对比恢复曲线并与个体基线比对。</p>
+        <p>利用对比适应回弹的个体差异。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>对比适应会暂时降低敏感度，恢复曲线存在个体差异。记录回弹轨迹可作为时域特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现高对比纹理或文本进行适应。</li><li>切换到低对比目标并允许调节。</li><li>用户在“刚可读”处停下并重复。</li><li>记录恢复曲线与反应时。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看高对比适应刺激。</li><li>步骤 2：调节对比到刚好可读。</li><li>步骤 3：系统记录曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>对比恢复曲线</strong>
+  <div>回弹速度与拐点具有个体差异。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调整速度与回拉</strong>
+  <div>人类会出现轻微过冲与回拉。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>曲线需符合人类分布且存在合理回拉；过快或过稳判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设定中值对比</li><li>重放历史调节路径</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化文本样式与背景纹理</li><li>加入噪声与遮罩降低读取</li><li>改变适应时长与对比阶梯</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供大字号与高对比替代通道。</p>
+        <ul><li>环境光导致可读性变化</li><li>屏幕校准差异影响阈值</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-128-1.svg" alt="状态 1：高对比适应" />
+  <h3>状态 1：高对比适应</h3>
+  <p>高对比纹理作为适应刺激。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-128-2.svg" alt="状态 2：对比调节" />
+  <h3>状态 2：对比调节</h3>
+  <p>将低对比内容调到刚可读。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-128-3.svg" alt="状态 3：恢复曲线" />
+  <h3>状态 3：恢复曲线</h3>
+  <p>记录对比恢复轨迹。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_adaptation" target="_blank" rel="noreferrer">Contrast adaptation</a>
+  <div>说明对比适应与敏感度变化。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_sensitivity" target="_blank" rel="noreferrer">Contrast sensitivity</a>
+  <div>说明对比度阈值。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

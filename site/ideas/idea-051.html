@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#51 阅读路径偏好 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#51</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>阅读路径偏好</h1>
+        <p>在结构化布局中标出最先扫到的关键块，利用阅读扫描路径偏好验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出类文本/结构化布局，要求用户快速标出“你最先扫到的两个关键块”；记录路径是否呈现典型阅读扫描结构（如 F‑型、Z‑型）。</p>
+        <p>验证“视觉扫描策略”而非具体内容理解。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>阅读或浏览布局时，人类常呈现典型扫描路径（如 F 型、Z 型），并在关键块上形成停留。记录首扫路径与停留顺序可形成稳定的视觉策略特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示类似文本的结构化布局。</li><li>用户标出最先扫到的两个关键块。</li><li>记录路径顺序与停留时间。</li><li>分析是否符合典型扫描结构。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到结构化布局。</li><li>步骤 2：用户选择最先扫到的关键块。</li><li>步骤 3：系统分析扫描路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>首扫路径结构</strong>
+  <div>阅读扫描通常呈现稳定的路径模式。</div>
+</div>
+
+<div class="signal-item">
+  <strong>停留顺序与停留时长</strong>
+  <div>真实扫描会在关键块上产生停留。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合路径结构与停留时序判定；路径过度随机或过度机械判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定点击预设位置</li><li>重放真实用户的点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化布局结构与块大小</li><li>引入扰动元素减少模板化路径</li><li>叠加鼠标轨迹与微时序信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更简单布局或键盘选择模式，避免对阅读困难用户造成负担。</p>
+        <ul><li>文化与阅读习惯差异影响路径</li><li>小屏设备改变扫描模式</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-051-1.svg" alt="状态 1：结构化布局" />
+  <h3>状态 1：结构化布局</h3>
+  <p>模拟文本与模块布局。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-051-2.svg" alt="状态 2：路径选择" />
+  <h3>状态 2：路径选择</h3>
+  <p>标出最先扫到的关键块。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-051-3.svg" alt="状态 3：路径判定" />
+  <h3>状态 3：路径判定</h3>
+  <p>分析扫描结构与停留顺序。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Eye_tracking" target="_blank" rel="noreferrer">Eye tracking</a>
+  <div>说明阅读路径与注视分析方法。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Saccade" target="_blank" rel="noreferrer">Saccade</a>
+  <div>说明扫视与停留行为基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

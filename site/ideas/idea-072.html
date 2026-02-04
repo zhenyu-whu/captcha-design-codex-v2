@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#72 字距舒适阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#72</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>字距舒适阈值</h1>
+        <p>让用户调节字符间距到“最易读”状态，以舒适阈值与调整节奏形成验证信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户调节字符间距直到“最易读”的状态，系统记录舒适阈值与调整节奏。可做 2-3 轮建立稳定区间。</p>
+        <p>把“可读性主观阈值”转化为生理‑认知签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>字距会显著影响可读性与阅读速度。人类对舒适间距存在稳定偏好，调整过程会出现微调与停顿模式。通过多轮记录可得到个体与群体分布，用于区分脚本行为。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>提供文本样本与字距调节滑杆。</li><li>用户调节到“最易读”的舒适区间。</li><li>记录最终间距、调整路径与节奏。</li><li>多轮不同样本建立稳定阈值。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到文本样本与滑杆。</li><li>步骤 2：用户调整字距并确认舒适状态。</li><li>步骤 3：系统记录阈值与节奏并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>舒适间距范围</strong>
+  <div>人类偏好集中在稳定区间。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调整速度与微调次数</strong>
+  <div>真实选择通常伴随细微回调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>间距需落在人类舒适区间且多轮一致；过度极端或一次到位判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本选择默认或平均间距直接提交</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化文本样本与字体风格</li><li>引入细微噪声降低参数直接映射</li><li>叠加滑动速度与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>允许字号调整与高对比模式，对阅读障碍用户提供更大间距的替代通道。</p>
+        <ul><li>设备渲染差异影响字距感知</li><li>语言与字体差异导致阈值漂移</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-072-1.svg" alt="状态 1：字距调节" />
+  <h3>状态 1：字距调节</h3>
+  <p>文本样本与字距滑杆。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-072-2.svg" alt="状态 2：舒适微调" />
+  <h3>状态 2：舒适微调</h3>
+  <p>用户微调字距以找到舒适区间。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-072-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>对比舒适区间与一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Letter_spacing" target="_blank" rel="noreferrer">Letter spacing</a>
+  <div>说明字距对阅读的影响。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Legibility" target="_blank" rel="noreferrer">Legibility</a>
+  <div>说明可读性与视觉识别因素。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

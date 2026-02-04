@@ -1,0 +1,78 @@
+{
+  "id": "P2",
+  "slug": "idea-p2",
+  "title": "人机差异空间",
+  "group": "Foundational Principles",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "principle",
+  "summary": "在“人类稳定优势—机器脆弱环节”的差异带上构建任务与信号，形成结构性安全底座。",
+  "background": "验证码的有效性取决于人类与机器能力差异。相比单点识别难度，更重要的是寻找稳定且难以被机器完全复制的差异空间，并通过多信号组合构建可持续的区分度。",
+  "core_mechanism": [
+    "识别人类稳定优势维度（感知整合、微动作噪声、策略调整）。",
+    "设计能放大差异的交互任务，避免直接可计算答案。",
+    "采集多信号特征，强调一致性与微调模式。",
+    "持续更新任务参数，防止差异带被模型快速学习。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进入差异带任务场景。",
+    "步骤 2：用户完成交互，系统采集多维信号。",
+    "步骤 3：系统对比人类分布并给出判定。"
+  ],
+  "signals": [
+    {
+      "signal": "微时序与轨迹噪声结构",
+      "why_it_matters": "人类动作存在稳定的非线性微差异。"
+    },
+    {
+      "signal": "策略选择与纠偏模式",
+      "why_it_matters": "真实用户会表现出试探、回撤与自我修正。"
+    }
+  ],
+  "decision_logic": "以多信号一致性为判定核心，要求落在人类差异带分布；过度最优或过度平滑的行为判异常。",
+  "attack_surface": [
+    "模型学习任务并拟合人类分布",
+    "批量采集真实用户行为进行重放"
+  ],
+  "mitigations": [
+    "动态生成任务参数并随机化刺激",
+    "多模态信号耦合提升仿真成本",
+    "周期性更新差异带任务设计"
+  ],
+  "accessibility": "在差异带内提供可达性替代方式，确保特殊用户仍能提供可判定的信号。",
+  "risks": [
+    "机器能力提升导致差异带收窄",
+    "过度依赖某一群体特征引发偏差"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：差异带定位",
+      "caption": "在人类优势与机器弱点之间定位差异空间。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-p2-1.svg"
+    },
+    {
+      "title": "状态 2：任务锚定",
+      "caption": "任务锚定在差异带区域并采集信号。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-p2-2.svg"
+    },
+    {
+      "title": "状态 3：分布判定",
+      "caption": "以人类分布为参照形成判定边界。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-p2-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "CAPTCHA",
+      "url": "https://en.wikipedia.org/wiki/CAPTCHA",
+      "note": "说明验证码依赖人机能力差异。"
+    },
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明行为特征在区分中的价值。"
+    }
+  ]
+}

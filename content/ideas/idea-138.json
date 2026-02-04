@@ -1,0 +1,78 @@
+{
+  "id": "138",
+  "slug": "idea-138",
+  "title": "错觉校准‑适应回弹",
+  "group": "E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "对齐错觉后短暂适应，再次校准并记录偏差回弹曲线。",
+  "background": "知觉适应会改变错觉偏差，回弹过程具有个体差异。通过前后校准的偏差轨迹可形成稳定的时域特征。",
+  "core_mechanism": [
+    "进行一次错觉对齐校准并记录偏差。",
+    "短时适应刺激后重复校准。",
+    "记录偏差回弹曲线与稳定时间。",
+    "与个体基线或群体分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成错觉对齐。",
+    "步骤 2：经历短适应刺激后再对齐。",
+    "步骤 3：系统分析偏差回弹曲线。"
+  ],
+  "signals": [
+    {
+      "signal": "偏差回弹曲线",
+      "why_it_matters": "适应回弹具有稳定斜率与形态。"
+    },
+    {
+      "signal": "微调次数与时长",
+      "why_it_matters": "真实用户存在试探与回拉行为。"
+    }
+  ],
+  "decision_logic": "回弹曲线需符合人类分布并具有自然微调；过快归零或无变化判异常。",
+  "attack_surface": [
+    "脚本固定偏差并直接输出",
+    "重放历史对齐轨迹"
+  ],
+  "mitigations": [
+    "随机化错觉类型与方向",
+    "变换适应时长与强度",
+    "加入噪声与多轮对照"
+  ],
+  "accessibility": "降低适应强度并提供简化图形，减少视觉负担。",
+  "risks": [
+    "适应效应弱导致曲线不明显",
+    "长时间任务引发疲劳"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：错觉校准",
+      "caption": "基线错觉对齐。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-138-1.svg"
+    },
+    {
+      "title": "状态 2：适应回弹",
+      "caption": "适应后偏差发生回弹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-138-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "记录回弹曲线与稳定时间。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-138-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Optical illusion",
+      "url": "https://en.wikipedia.org/wiki/Optical_illusion",
+      "note": "说明错觉导致的知觉偏差。"
+    },
+    {
+      "title": "Sensory adaptation",
+      "url": "https://en.wikipedia.org/wiki/Sensory_adaptation",
+      "note": "说明适应与回弹特性。"
+    }
+  ]
+}

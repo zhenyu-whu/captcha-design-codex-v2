@@ -1,0 +1,78 @@
+{
+  "id": "107",
+  "slug": "idea-107",
+  "title": "扫描‑显著性双证",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "画面短闪后点击三个最显著点，再拖拽标注扫视路径，以点击顺序与路径一致性验证真实性。",
+  "background": "显著性点选择与扫视路径体现注意力组织方式。双通道记录可捕捉一致性与自然的探索节奏，提升对脚本的区分度。",
+  "core_mechanism": [
+    "短闪呈现复杂画面。",
+    "用户点击三个最显著点。",
+    "用户拖拽标注扫视路径。",
+    "比较点击顺序与路径一致性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到短闪画面。",
+    "步骤 2：用户点击三个最显著点。",
+    "步骤 3：用户拖拽标注扫视路径并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "显著点点击顺序",
+      "why_it_matters": "人类注意力会形成稳定的显著点优先级。"
+    },
+    {
+      "signal": "扫视路径形态",
+      "why_it_matters": "真实用户的路径包含自然的探索节奏。"
+    }
+  ],
+  "decision_logic": "点击顺序与路径需符合人类分布且一致性合理；过度完美或随机判异常。",
+  "attack_surface": [
+    "脚本基于显著性模型直接选择",
+    "重放真实用户的路径序列"
+  ],
+  "mitigations": [
+    "随机化画面内容与布局",
+    "加入轻微噪声降低模型预测",
+    "叠加反应时与停顿信号"
+  ],
+  "accessibility": "提供更长展示时间与更少显著点要求，支持键盘替代。",
+  "risks": [
+    "短闪可能导致真实用户漏检",
+    "视觉障碍用户难以完成"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：短闪画面",
+      "caption": "复杂画面短时闪现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-107-1.svg"
+    },
+    {
+      "title": "状态 2：显著点点击",
+      "caption": "用户点击三个显著点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-107-2.svg"
+    },
+    {
+      "title": "状态 3：路径判定",
+      "caption": "比较点击顺序与扫视路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-107-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual attention",
+      "url": "https://en.wikipedia.org/wiki/Visual_attention",
+      "note": "说明显著性与注意力选择机制。"
+    },
+    {
+      "title": "Salience (neuroscience)",
+      "url": "https://en.wikipedia.org/wiki/Salience_(neuroscience)",
+      "note": "说明显著性与注意力组织。"
+    }
+  ]
+}

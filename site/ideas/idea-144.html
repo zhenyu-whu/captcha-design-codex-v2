@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#144 环境光偏移校准 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#144</span>
+          <span class="chip teal">F：意图/现实耦合 × 异步/随机插入（路径/预测误差）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>环境光偏移校准</h1>
+        <p>读取环境光并让用户调节亮度到匹配当前环境，记录偏差与调整轨迹。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>读取环境光后要求用户调节亮度到“匹配当前环境”的主观点，系统与设备基线对比。</p>
+        <p>把“现场光照一致性”纳入验证。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>亮度知觉受到环境光适应影响，用户对“匹配当前环境”的主观校准具有稳定区间。将环境光读数与调节行为耦合，可反映真实在场与感知一致性。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>读取环境光传感器值作为参考。</li><li>用户调节屏幕亮度到“匹配环境”。</li><li>记录目标亮度与调整轨迹。</li><li>与设备基线及群体分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：系统读取环境光并显示调节界面。</li><li>步骤 2：用户调节亮度直到感觉匹配。</li><li>步骤 3：系统记录偏差与调整过程。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>环境光‑亮度匹配比值</strong>
+  <div>人类对环境光的匹配存在稳定比例。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调节回弹与停顿</strong>
+  <div>真实用户会出现试探与微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>匹配比值与调节轨迹需落在基线范围；过度恒定或无微调判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>伪造环境光读数并固定亮度</li><li>脚本直接设置目标值</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>要求短时遮挡/移开产生光照变化</li><li>随机化再次校准的时机</li><li>结合反应时与路径信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>无传感器设备提供手动输入与替代任务。</p>
+        <ul><li>自动亮度调整干扰校准</li><li>屏幕校准差异影响匹配</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-144-1.svg" alt="状态 1：环境光读取" />
+  <h3>状态 1：环境光读取</h3>
+  <p>展示环境光读数与校准提示。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-144-2.svg" alt="状态 2：亮度调节" />
+  <h3>状态 2：亮度调节</h3>
+  <p>调节滑杆匹配环境光。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-144-3.svg" alt="状态 3：偏差对比" />
+  <h3>状态 3：偏差对比</h3>
+  <p>比较匹配比值与调整轨迹。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Ambient_light_sensor" target="_blank" rel="noreferrer">Ambient light sensor</a>
+  <div>说明环境光传感器与读数。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Brightness" target="_blank" rel="noreferrer">Brightness</a>
+  <div>说明亮度知觉与适应。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

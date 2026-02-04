@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#53 虚轮廓补全描绘 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#53</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>虚轮廓补全描绘</h1>
+        <p>展示 Kanizsa 类图形并描绘虚轮廓，利用补全连贯度与路径特征验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出 Kanizsa 类虚轮廓图形，用户描出“感觉存在”的轮廓边缘；系统评估描绘路径与补全连贯度。</p>
+        <p>以“知觉补全痕迹”作为人类特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>Kanizsa 虚轮廓会诱发人类的知觉补全，形成主观边缘与形状。通过记录描绘路径与连贯度，可获得稳定的补全特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现 Kanizsa 类虚轮廓图形。</li><li>用户描绘主观感受到的轮廓边缘。</li><li>记录路径连贯性与速度变化。</li><li>分析补全连贯度与偏差。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到虚轮廓图形。</li><li>步骤 2：用户描绘感知到的边缘。</li><li>步骤 3：系统分析路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>补全路径的连贯性</strong>
+  <div>真实补全通常呈现连续且平滑的路径。</div>
+</div>
+
+<div class="signal-item">
+  <strong>起笔延迟与描绘速度</strong>
+  <div>真实补全会在短暂犹豫后快速描绘。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合路径连贯度与时序节律判定；过度机械或随机化判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本按几何规则直接描绘</li><li>重放真实用户的描绘轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化虚轮廓形态与遮挡位置</li><li>加入轻微噪声与位置抖动</li><li>叠加微时序与轨迹抖动进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供点击选择轮廓的替代模式，避免对绘制能力受限用户造成负担。</p>
+        <ul><li>部分用户对虚轮廓不敏感导致误拒</li><li>触控设备描绘精度影响特征稳定性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-053-1.svg" alt="状态 1：虚轮廓图形" />
+  <h3>状态 1：虚轮廓图形</h3>
+  <p>Kanizsa 类图形诱发补全。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-053-2.svg" alt="状态 2：补全描绘" />
+  <h3>状态 2：补全描绘</h3>
+  <p>用户描绘感知到的轮廓。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-053-3.svg" alt="状态 3：补全判定" />
+  <h3>状态 3：补全判定</h3>
+  <p>分析连贯度与路径特征。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Illusory_contours" target="_blank" rel="noreferrer">Illusory contours</a>
+  <div>说明 Kanizsa 虚轮廓与补全现象。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gestalt_psychology" target="_blank" rel="noreferrer">Gestalt psychology</a>
+  <div>说明整体知觉与补全机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

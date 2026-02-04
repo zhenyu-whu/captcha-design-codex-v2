@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#75 倒置阅读时间曲线 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#75</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>倒置阅读时间曲线</h1>
+        <p>通过逐步旋转文本并记录可读范围内的反应时曲线，利用人类阅读姿态的时间函数验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>逐步旋转文本（0°/90°/180°），让用户在“仍可读”的范围内完成短任务，记录反应时曲线。</p>
+        <p>通过阅读姿态的时间函数，而非内容识别，建立人类加工特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>文本旋转会显著增加阅读时间，人类在不同角度下的反应时具有稳定的非线性曲线。记录不同角度的完成时长与失败阈值，可形成区别于脚本的行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>提供多个旋转角度的短文本任务。</li><li>用户在仍可读的范围内完成简单操作。</li><li>记录各角度反应时与失败点。</li><li>多轮随机文本与角度建立曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到不同旋转角度的文本卡片。</li><li>步骤 2：用户完成快速阅读任务。</li><li>步骤 3：系统记录时间曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时随角度变化的曲线</strong>
+  <div>人类阅读时间会随旋转角度非线性上升。</div>
+</div>
+
+<div class="signal-item">
+  <strong>可读阈值角度</strong>
+  <div>人类在高角度下存在稳定的失败区间。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>曲线斜率与阈值需符合人类分布；过于平坦或过度稳定的曲线判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>OCR 直接识别并绕过阅读过程</li><li>模拟固定时间曲线进行伪造</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化文本长度、字体与角度顺序</li><li>加入轻微扰动降低 OCR 直接识别</li><li>叠加鼠标轨迹与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低角度替代任务或非文本方案，允许放慢节奏并支持键盘操作。</p>
+        <ul><li>视力或认知差异导致反应时偏移</li><li>小屏设备上角度识别更困难</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-075-1.svg" alt="状态 1：多角度文本" />
+  <h3>状态 1：多角度文本</h3>
+  <p>文本以不同角度呈现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-075-2.svg" alt="状态 2：阅读计时" />
+  <h3>状态 2：阅读计时</h3>
+  <p>用户完成短任务并记录耗时。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-075-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>反应时曲线用于判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Mental_rotation" target="_blank" rel="noreferrer">Mental rotation</a>
+  <div>说明旋转对识别与处理时间的影响。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时作为行为指标的意义。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

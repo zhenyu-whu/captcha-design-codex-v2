@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#85 瞬时节律抖动 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#85</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>瞬时节律抖动</h1>
+        <p>在极短节拍序列中让用户同步点击，以节律抖动与反应时序列识别真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>极短时间内出现 3–4 次节拍提示，用户同步点击，系统评估节律序列中的自然抖动并做异常检测。任务结构为短序列，信号形态为反应时与节律序列。</p>
+        <p>反向利用“适度不精确”作为人类特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在节拍同步任务中会出现可预测的微抖动与相位偏移，短序列仍能体现稳定的生理节律特征。利用“适度不精确”可提高对脚本的区分度。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现 3–4 次短促节拍提示。</li><li>用户同步点击或按键响应。</li><li>记录反应时序列与节律抖动。</li><li>与群体基线进行比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短促节拍提示。</li><li>步骤 2：用户同步点击完成序列。</li><li>步骤 3：系统分析抖动与相位并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时抖动与相位偏移</strong>
+  <div>人类同步点击存在稳定的微抖动。</div>
+</div>
+
+<div class="signal-item">
+  <strong>节拍一致性</strong>
+  <div>真实用户的节奏一致性不会过度完美。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>抖动与相位偏移需落在人类分布区间；过度精准或随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本按固定间隔触发点击</li><li>重放真实用户的节奏序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化节拍间隔与音视觉提示</li><li>加入轻微节奏扰动降低模板化</li><li>叠加指针轨迹与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢节奏与视觉替代提示，避免对听觉障碍用户造成影响。</p>
+        <ul><li>节奏过快导致误差增大</li><li>不同设备延迟影响节拍同步</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-085-1.svg" alt="状态 1：短促节拍" />
+  <h3>状态 1：短促节拍</h3>
+  <p>节拍提示快速出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-085-2.svg" alt="状态 2：同步点击" />
+  <h3>状态 2：同步点击</h3>
+  <p>用户同步点击完成节拍序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-085-3.svg" alt="状态 3：抖动判定" />
+  <h3>状态 3：抖动判定</h3>
+  <p>根据抖动与相位判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Sensorimotor_synchronization" target="_blank" rel="noreferrer">Sensorimotor synchronization</a>
+  <div>说明节拍同步中的反应时与抖动特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Rhythm" target="_blank" rel="noreferrer">Rhythm</a>
+  <div>说明节律感知与时序一致性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#164 会话隐变量指纹 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#164</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>会话隐变量指纹</h1>
+        <p>每次会话注入动态隐变量，评估用户适应曲线与纠偏模式。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>每次验证都注入一组不可感知的动态隐变量（微延迟/摩擦/节奏），并评估用户对这些隐变量的适应曲线与纠偏模式。</p>
+        <p>行为样本库难以覆盖“会话级动态变量”，统计逼近失效。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>会话级隐变量（微延迟、摩擦、节奏）在用户不可感知的层面影响操控。真实用户会产生稳定的适应曲线与回拉模式，而样本库难以覆盖这些动态变化。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在会话内注入动态隐变量。</li><li>记录误差与适应过程。</li><li>提取适应斜率与纠偏结构。</li><li>与人类分布与设备基线比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户开始交互任务。</li><li>步骤 2：系统动态调整隐变量。</li><li>步骤 3：系统分析适应曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>适应斜率与稳定时间</strong>
+  <div>真实适应呈连续收敛曲线。</div>
+</div>
+
+<div class="signal-item">
+  <strong>纠偏回拉结构</strong>
+  <div>微纠偏反映闭环反馈特性。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>适应曲线需符合人类区间；无适应或瞬时收敛判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本预测隐变量并预补偿</li><li>回放已采集的适应轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>会话级随机化隐变量序列</li><li>加入多阶段变化提升拟合成本</li><li>与其他信号交叉验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低强度隐变量与替代任务。</p>
+        <ul><li>低性能设备适应曲线失真</li><li>隐变量过强影响完成率</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-164-1.svg" alt="状态 1：隐变量注入" />
+  <h3>状态 1：隐变量注入</h3>
+  <p>会话内动态变化参数。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-164-2.svg" alt="状态 2：适应轨迹" />
+  <h3>状态 2：适应轨迹</h3>
+  <p>记录误差回落过程。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-164-3.svg" alt="状态 3：指纹判定" />
+  <h3>状态 3：指纹判定</h3>
+  <p>对比适应曲线与纠偏结构。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_adaptation" target="_blank" rel="noreferrer">Motor adaptation</a>
+  <div>说明适应曲线与误差修正。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_system" target="_blank" rel="noreferrer">Control system</a>
+  <div>说明动态系统与反馈控制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

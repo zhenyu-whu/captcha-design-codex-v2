@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#62 特征绑定错配 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#62</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>特征绑定错配</h1>
+        <p>快速闪现颜色与形状组合后遮罩，利用绑定错觉错误分布与反应时验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>快速闪现红/绿 X/O 组合后遮罩，要求选择“刚出现的组合”。记录典型绑定错觉的错误模式与反应时。</p>
+        <p>以人类特征绑定误差分布作为生理证据。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>特征绑定在快速呈现时容易产生错配（illusory conjunction），错误分布与反应时具有稳定模式。通过测量这些错误结构可获得可靠的行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>快速闪现红/绿 X/O 组合后遮罩。</li><li>用户选择刚出现的组合。</li><li>记录错误类型与反应时。</li><li>分析绑定错觉的误差分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短时闪现的组合。</li><li>步骤 2：遮罩后选择出现过的组合。</li><li>步骤 3：系统分析错误分布并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>绑定错配错误分布</strong>
+  <div>人类在快速呈现下常出现特定错配。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与错配类型</strong>
+  <div>真实判断的反应时与错误类型存在关联。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合错配错误分布与反应时结构，要求符合人类模式；错误过低或分布异常判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本逐帧读取刺激并直接选择</li><li>重放真实用户的选择序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化组合与呈现位置</li><li>调整遮罩时序并加入噪声</li><li>叠加鼠标轨迹与微时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长呈现时间或减少组合数量，避免对视觉敏感用户造成负担。</p>
+        <ul><li>短时闪现导致误差增大</li><li>设备刷新率影响呈现精度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-062-1.svg" alt="状态 1：快速组合" />
+  <h3>状态 1：快速组合</h3>
+  <p>红绿 X/O 组合短时闪现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-062-2.svg" alt="状态 2：组合选择" />
+  <h3>状态 2：组合选择</h3>
+  <p>用户选择刚出现的组合。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-062-3.svg" alt="状态 3：错配判定" />
+  <h3>状态 3：错配判定</h3>
+  <p>分析错误分布与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Illusory_conjunction" target="_blank" rel="noreferrer">Illusory conjunction</a>
+  <div>说明特征绑定错觉与错误分布。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Feature_integration_theory" target="_blank" rel="noreferrer">Feature integration theory</a>
+  <div>说明特征绑定与注意力机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "id": "87",
+  "slug": "idea-087",
+  "title": "错觉序列签名",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "连续呈现 3 个错觉校准任务，利用偏差量序列形态与一致性验证真实性。",
+  "background": "单点错觉偏差容易被模仿，但连续序列的偏差曲线具有更稳定的个体与群体特征。通过短序列比较可提高对脚本的辨识度。",
+  "core_mechanism": [
+    "连续呈现 3 个不同错觉校准任务。",
+    "用户依次调整到主观正确状态。",
+    "记录偏差量序列与变化趋势。",
+    "与群体基线分布进行比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成第 1 个错觉校准。",
+    "步骤 2：连续完成第 2、3 个校准。",
+    "步骤 3：系统记录偏差序列并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "偏差量序列形态",
+      "why_it_matters": "真实用户的偏差序列具有稳定趋势。"
+    },
+    {
+      "signal": "序列内一致性",
+      "why_it_matters": "真实用户在短序列中的变化范围有限。"
+    }
+  ],
+  "decision_logic": "偏差序列需落在人类分布区间并保持一致性；随机或过度一致判异常。",
+  "attack_surface": [
+    "脚本直接计算并输出固定偏差序列",
+    "重放真实用户的偏差序列"
+  ],
+  "mitigations": [
+    "随机化错觉类型与顺序",
+    "动态扰动校准起点与参数",
+    "叠加反应时与微调信号进行多信号判定"
+  ],
+  "accessibility": "提供更低负担的错觉类型或替代任务，避免对视觉敏感用户造成压力。",
+  "risks": [
+    "连续任务可能增加疲劳",
+    "显示设备差异影响偏差量"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：错觉序列",
+      "caption": "连续呈现多个错觉校准任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-087-1.svg"
+    },
+    {
+      "title": "状态 2：逐步校准",
+      "caption": "用户依次完成校准并微调。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-087-2.svg"
+    },
+    {
+      "title": "状态 3：序列判定",
+      "caption": "根据偏差序列形态判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-087-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Optical illusion",
+      "url": "https://en.wikipedia.org/wiki/Optical_illusion",
+      "note": "说明错觉偏差与感知规律。"
+    },
+    {
+      "title": "Psychophysics",
+      "url": "https://en.wikipedia.org/wiki/Psychophysics",
+      "note": "说明感知偏差的测量方法。"
+    }
+  ]
+}

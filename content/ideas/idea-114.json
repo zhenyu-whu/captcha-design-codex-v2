@@ -1,0 +1,78 @@
+{
+  "id": "114",
+  "slug": "idea-114",
+  "title": "环境噪声对齐",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "短时间采集环境噪声节律作为参考，异步要求用户按相同节奏完成点击序列，以一致性验证真实性。",
+  "background": "现场环境噪声包含不可预录的节律特征，用户在短时记忆内可对齐节奏。脚本难以获取或复刻实时噪声节律，因此具有在场性优势。",
+  "core_mechanism": [
+    "短时间采集环境噪声并提取节律。",
+    "异步弹出节奏匹配微任务。",
+    "记录点击节律序列与误差。",
+    "与环境节律进行一致性比较。"
+  ],
+  "user_flow": [
+    "步骤 1：系统采集环境噪声节律。",
+    "步骤 2：异步提示用户完成节奏点击。",
+    "步骤 3：系统比较节律一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "节律对齐误差",
+      "why_it_matters": "真实用户对现场节奏具有可测的同步能力。"
+    },
+    {
+      "signal": "节拍波动",
+      "why_it_matters": "人类同步存在稳定的微抖动。"
+    }
+  ],
+  "decision_logic": "对齐误差需落在人类分布区间；过度完美或无关联判异常。",
+  "attack_surface": [
+    "脚本伪造固定节奏序列",
+    "重放真实用户的节奏点击"
+  ],
+  "mitigations": [
+    "随机化采样窗口与节奏片段",
+    "绑定音频特征与任务时序",
+    "叠加反应时与停顿信号"
+  ],
+  "accessibility": "提供视觉节奏提示与无音频替代任务，避免对听障用户造成排斥。",
+  "risks": [
+    "环境噪声过弱导致节律不稳定",
+    "隐私与录音权限需要明确告知"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：噪声采集",
+      "caption": "短时间采集环境节律。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-114-1.svg"
+    },
+    {
+      "title": "状态 2：节奏对齐",
+      "caption": "异步提示节奏点击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-114-2.svg"
+    },
+    {
+      "title": "状态 3：一致判定",
+      "caption": "比较节律一致性与误差。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-114-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Rhythm",
+      "url": "https://en.wikipedia.org/wiki/Rhythm",
+      "note": "说明节律感知与同步特征。"
+    },
+    {
+      "title": "Auditory scene analysis",
+      "url": "https://en.wikipedia.org/wiki/Auditory_scene_analysis",
+      "note": "说明环境噪声节律提取基础。"
+    }
+  ]
+}

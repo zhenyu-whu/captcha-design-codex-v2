@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#116 目标意图插问 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#116</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>目标意图插问</h1>
+        <p>在操作流程中随机插入与目标相关的微选择，以反应时与路径停顿一致性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在操作流程中随机插入与目标相关的微选择，系统比较反应时与路径停顿的任务内一致性。任务结构为随机插入，信号形态为反应时与注意力分布。</p>
+        <p>利用“意图驱动的快速决策”作为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>意图驱动的快速决策会在路径停顿与反应时中体现。随机插问可检验用户是否保持目标意图，脚本难以在动态上下文中一致应答。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在操作流程中随机插入微选择题。</li><li>题目与当前目标意图相关。</li><li>记录反应时与路径停顿位置。</li><li>比较任务内一致性与分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进行正常操作流程。</li><li>步骤 2：随机插入微选择并即时响应。</li><li>步骤 3：系统分析反应时与停顿一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时分布</strong>
+  <div>真实用户对目标相关问题反应更快。</div>
+</div>
+
+<div class="signal-item">
+  <strong>路径停顿一致性</strong>
+  <div>意图驱动会在停顿位置上形成一致性。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>反应时与停顿一致性需落在人类分布区间；随机或过度稳定判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本快速选择固定答案</li><li>重放真实用户的响应序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化插问时机与题目形式</li><li>绑定上下文与目标状态</li><li>叠加轨迹与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供可跳过或简化问题，避免对注意力障碍用户造成负担。</p>
+        <ul><li>插问过多影响体验</li><li>用户分心导致误判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-116-1.svg" alt="状态 1：正常操作" />
+  <h3>状态 1：正常操作</h3>
+  <p>用户进行目标操作流程。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-116-2.svg" alt="状态 2：意图插问" />
+  <h3>状态 2：意图插问</h3>
+  <p>随机插入与目标相关的问题。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-116-3.svg" alt="状态 3：一致判定" />
+  <h3>状态 3：一致判定</h3>
+  <p>比较反应时与停顿一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Attention" target="_blank" rel="noreferrer">Attention</a>
+  <div>说明意图驱动的注意力与反应时。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Decision-making" target="_blank" rel="noreferrer">Decision making</a>
+  <div>说明快速决策与路径停顿关联。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

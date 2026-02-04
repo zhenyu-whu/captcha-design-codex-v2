@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#29 近似对称轴 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#29</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>近似对称轴</h1>
+        <p>让用户标出近似对称轴，以偏移模式与稳定性反映人类对近似对称的感知偏差。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出近似对称但存在微扰的图形，用户拖拽标出对称轴；系统评估轴线偏移模式与稳定性。</p>
+        <p>利用人类对“近似对称”的感知偏差作为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对对称结构高度敏感，但在存在微扰时会产生稳定的偏移与误差模式。通过测量用户对近似对称轴的定位误差，可获得比答案本身更稳健的行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示近似对称但带微扰的图形。</li><li>用户拖拽标出他们认为的对称轴。</li><li>记录轴线位置、角度与微调轨迹。</li><li>统计偏移方向与稳定性分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到近似对称图形。</li><li>步骤 2：用户拖拽并调整对称轴位置。</li><li>步骤 3：系统分析偏移模式并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>轴线偏移方向与幅度分布</strong>
+  <div>人类对近似对称的判断会出现稳定偏差。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调次数与停顿节奏</strong>
+  <div>真实判断通常伴随短暂微调与犹豫。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>综合轴线偏移幅度、方向一致性与微调节奏，要求符合人类统计区间；完全精确或缺乏调整判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算几何对称轴</li><li>重放真实用户的调整轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化微扰类型与幅度，避免固定几何解</li><li>引入轻微噪声与动态元素增强不确定性</li><li>叠加拖拽速度与停顿分布进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高对比与放大模式，并允许键盘微调轴线，避免对精细操作用户造成负担。</p>
+        <ul><li>文化或经验差异导致对称偏好差异</li><li>触控设备精度影响微调特征</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-029-1.svg" alt="状态 1：近似对称图形" />
+  <h3>状态 1：近似对称图形</h3>
+  <p>轻微扰动打破完美对称。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-029-2.svg" alt="状态 2：轴线拖拽" />
+  <h3>状态 2：轴线拖拽</h3>
+  <p>用户拖拽并微调对称轴。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-029-3.svg" alt="状态 3：偏移判定" />
+  <h3>状态 3：偏移判定</h3>
+  <p>分析偏移方向与稳定性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gestalt_psychology" target="_blank" rel="noreferrer">Gestalt psychology</a>
+  <div>说明对称性作为分组与整体知觉线索。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Symmetry" target="_blank" rel="noreferrer">Symmetry</a>
+  <div>说明对称结构的基础概念。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

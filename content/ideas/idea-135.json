@@ -1,0 +1,78 @@
+{
+  "id": "135",
+  "slug": "idea-135",
+  "title": "遮挡预测‑反应时耦合",
+  "group": "E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "遮挡预测点击后紧接短反应时任务，比较预测误差与反应时耦合。",
+  "background": "遮挡预测依赖对物体轨迹的外推，反应时任务反映即时处理负荷。预测误差与反应时往往相关，脚本难以自然匹配。",
+  "core_mechanism": [
+    "展示运动物体并短时遮挡。",
+    "用户点击预测点并立即进入反应时任务。",
+    "记录预测误差与反应时。",
+    "分析误差‑反应时耦合关系。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看物体运动并被遮挡。",
+    "步骤 2：点击预测出现位置。",
+    "步骤 3：立即完成反应时任务并分析耦合。"
+  ],
+  "signals": [
+    {
+      "signal": "预测误差大小",
+      "why_it_matters": "外推误差体现感知与策略差异。"
+    },
+    {
+      "signal": "反应时与波动",
+      "why_it_matters": "反应时反映即时负荷与注意力状态。"
+    }
+  ],
+  "decision_logic": "预测误差与反应时需呈合理关联且在基线范围；零误差或恒定反应判异常。",
+  "attack_surface": [
+    "脚本直接预测并给出最优点击",
+    "固定反应时或回放点击序列"
+  ],
+  "mitigations": [
+    "随机化速度、遮挡长度与轨迹",
+    "反应时提示随机化并含干扰",
+    "多轮一致性检测"
+  ],
+  "accessibility": "提供更慢速度与更大预测区域，支持键盘替代。",
+  "risks": [
+    "系统延迟影响反应时精度",
+    "任务节奏过快导致挫败"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：遮挡预测",
+      "caption": "物体遮挡后预测出现点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-135-1.svg"
+    },
+    {
+      "title": "状态 2：即时反应",
+      "caption": "点击后进入快速反应任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-135-2.svg"
+    },
+    {
+      "title": "状态 3：耦合分析",
+      "caption": "比较预测误差与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-135-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Representational momentum",
+      "url": "https://en.wikipedia.org/wiki/Representational_momentum",
+      "note": "说明遮挡外推与位置偏移。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时分布与负荷关系。"
+    }
+  ]
+}

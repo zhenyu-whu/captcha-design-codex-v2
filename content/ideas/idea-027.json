@@ -1,0 +1,78 @@
+{
+  "id": "27",
+  "slug": "idea-027",
+  "title": "视觉因果路径",
+  "group": "视觉思考范式：空间/结构/直觉",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "让用户描绘直觉物理轨迹，依据惯性与转折自然度验证真实性。",
+  "background": "人类对物体运动存在直觉物理预期，如惯性延续、平滑转折与碰撞反弹。将该直觉转化为绘制轨迹任务，可得到相对稳定且难以精确伪造的运动路径特征。",
+  "core_mechanism": [
+    "展示简单物理场景（球、斜坡、挡板）。",
+    "用户用鼠标描绘物体运动轨迹。",
+    "记录轨迹曲率、速度变化与转折角度。",
+    "评估轨迹与直觉物理模型的一致度。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到物理场景与起点。",
+    "步骤 2：用户描绘物体可能的运动轨迹。",
+    "步骤 3：系统分析轨迹特征并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "轨迹曲率与转折平滑度",
+      "why_it_matters": "真实直觉轨迹通常连续平滑而非突变折线。"
+    },
+    {
+      "signal": "碰撞点后的反弹角与惯性延续",
+      "why_it_matters": "符合直觉物理的反弹角度与方向具有规律性。"
+    }
+  ],
+  "decision_logic": "评估轨迹的平滑度、转折角与反弹方向是否符合直觉物理范围；过度理想化或完全随机化判异常。",
+  "attack_surface": [
+    "脚本调用物理引擎生成轨迹",
+    "重放真实用户绘制路径"
+  ],
+  "mitigations": [
+    "随机化坡度、挡板位置与摩擦参数",
+    "引入轻微扰动与多场景组合提高伪造成本",
+    "叠加速度曲线与停顿分布进行多信号验证"
+  ],
+  "accessibility": "提供点击选择路径的替代模式，避免对精细绘制能力受限用户造成障碍。",
+  "risks": [
+    "不同文化与物理经验差异导致轨迹偏差",
+    "触控设备绘制精度影响信号稳定性"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：物理场景",
+      "caption": "球体与斜坡构成直觉物理任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-027-1.svg"
+    },
+    {
+      "title": "状态 2：轨迹描绘",
+      "caption": "用户描绘可能的运动路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-027-2.svg"
+    },
+    {
+      "title": "状态 3：路径判定",
+      "caption": "评估平滑度与反弹角度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-027-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Naive physics",
+      "url": "https://en.wikipedia.org/wiki/Na%C3%AFve_physics",
+      "note": "说明人类直觉物理的认知基础。"
+    },
+    {
+      "title": "Projectile motion",
+      "url": "https://en.wikipedia.org/wiki/Projectile_motion",
+      "note": "说明常见运动轨迹的物理规律。"
+    }
+  ]
+}

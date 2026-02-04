@@ -1,0 +1,78 @@
+{
+  "id": "37",
+  "slug": "idea-037",
+  "title": "瞬时阵列记忆",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "短时闪现图形阵列后遮罩，利用短时记忆容量与反应模式进行判定。",
+  "background": "视觉短时记忆容量有限，短暂呈现后对位置与形状的记忆呈现稳定上限。通过测量反应时与容量边界，可获得稳健的认知特征。",
+  "core_mechanism": [
+    "50-200ms 闪现一组图形阵列。",
+    "立即遮罩并呈现选择题。",
+    "用户选择刚才出现的形状或位置。",
+    "记录反应时与容量边界。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到短暂闪现的阵列。",
+    "步骤 2：遮罩后选择出现过的元素。",
+    "步骤 3：系统统计反应与容量指标。"
+  ],
+  "signals": [
+    {
+      "signal": "容量边界与正确率曲线",
+      "why_it_matters": "人类短时记忆容量存在稳定上限。"
+    },
+    {
+      "signal": "反应时与不确定性分布",
+      "why_it_matters": "真实判断会呈现特定的犹豫与选择时序。"
+    }
+  ],
+  "decision_logic": "拟合容量边界与反应时分布，要求落在人类范围；容量异常高或反应过快判异常。",
+  "attack_surface": [
+    "脚本直接记录闪现阵列并选择",
+    "重放真实用户的选择序列"
+  ],
+  "mitigations": [
+    "随机化阵列布局与元素组合",
+    "加入掩蔽噪声与短时干扰",
+    "叠加鼠标轨迹与微时序信号进行多信号判定"
+  ],
+  "accessibility": "提供更长呈现时间或替代任务，避免对短时记忆受限用户造成障碍。",
+  "risks": [
+    "快速闪现可能引起不适",
+    "屏幕刷新率限制呈现时间精度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：阵列闪现",
+      "caption": "元素阵列短时出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-037-1.svg"
+    },
+    {
+      "title": "状态 2：遮罩选择",
+      "caption": "遮罩后选择出现过的元素。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-037-2.svg"
+    },
+    {
+      "title": "状态 3：容量判定",
+      "caption": "分析容量边界与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-037-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Short-term memory",
+      "url": "https://en.wikipedia.org/wiki/Short-term_memory",
+      "note": "说明短时记忆容量与时域限制。"
+    },
+    {
+      "title": "Iconic memory",
+      "url": "https://en.wikipedia.org/wiki/Iconic_memory",
+      "note": "说明视觉暂留与快速呈现的基础。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#175 事件时序水印 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#175</span>
+          <span class="chip teal">Reverse Brainstorming - Round 4</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>事件时序水印</h1>
+        <p>在事件间隔中嵌入微小水印，验证响应序列与水印时序的一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 4</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在输入事件序列中嵌入微小、不可感知的时序水印（事件间隔微扰），并验证用户响应是否与水印时序一致。</p>
+        <p>回放无法复刻动态水印，延迟回放易暴露。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>时序水印可隐藏在微小间隔扰动中，真实用户响应会自然跟随，而回放或脚本难以复刻动态水印序列。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>生成带水印的时间间隔序列。</li><li>用户进行输入操作形成响应序列。</li><li>计算响应与水印序列的相关性。</li><li>基于相关度与时序偏差判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：系统发出带水印的节奏提示。</li><li>步骤 2：用户进行输入响应。</li><li>步骤 3：系统对比水印相关性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>水印相关系数</strong>
+  <div>真实响应应与水印序列存在相关。</div>
+</div>
+
+<div class="signal-item">
+  <strong>时序偏移分布</strong>
+  <div>人类会出现稳定偏移而非完全对齐。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>相关度需落在合理区间且偏移分布自然；零相关或过度对齐判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本读取水印并同步触发</li><li>回放历史响应序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>会话级随机化水印序列</li><li>叠加轻噪声与多段水印</li><li>缩短响应窗口</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>保持水印幅度在感知阈下并提供慢速模式。</p>
+        <ul><li>低分辨率计时影响水印检测</li><li>浏览器节流导致时序偏差</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-175-1.svg" alt="状态 1：水印节奏" />
+  <h3>状态 1：水印节奏</h3>
+  <p>间隔中嵌入微扰水印。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-175-2.svg" alt="状态 2：响应序列" />
+  <h3>状态 2：响应序列</h3>
+  <p>用户响应形成时序序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-175-3.svg" alt="状态 3：相关判定" />
+  <h3>状态 3：相关判定</h3>
+  <p>比较水印相关度。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Digital_watermarking" target="_blank" rel="noreferrer">Digital watermarking</a>
+  <div>说明水印与隐蔽序列。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Jitter" target="_blank" rel="noreferrer">Jitter</a>
+  <div>说明时序微扰与抖动。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

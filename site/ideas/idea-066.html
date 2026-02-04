@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#66 空间频率阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#66</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>空间频率阈值</h1>
+        <p>调节 Gabor 条纹到刚可辨识的阈值，用空间频率敏感度与回拉轨迹验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>Gabor 条纹逐渐显隐，用户拖动滑杆到“刚好能辨认条纹”的阈值。记录阈值与回拉轨迹。</p>
+        <p>依赖人类空间频率敏感度与调整行为。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对不同空间频率的敏感度存在阈值，Gabor 条纹可用于测量视觉系统对频率与对比的响应。记录阈值与回拉轨迹可形成稳定的感知特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示 Gabor 条纹并逐步显隐。</li><li>用户拖动滑杆到“刚好可辨认”。</li><li>记录阈值位置与回拉轨迹。</li><li>分析阈值分布与收敛节奏。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到 Gabor 条纹变化。</li><li>步骤 2：用户调节滑杆至可辨阈值。</li><li>步骤 3：系统记录阈值并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>空间频率阈值</strong>
+  <div>人类视觉对频率的敏感度具有稳定范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回拉轨迹与微调节奏</strong>
+  <div>真实调节通常呈现先过后回的路径。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估阈值与回拉曲线是否落在人类范围；无回拉或异常阈值判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定阈值直接提交</li><li>重放真实用户的调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化频率、相位与对比度</li><li>加入轻微噪声与背景扰动</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更低频率或替代任务模式，避免对低视力用户造成负担。</p>
+        <ul><li>显示设备分辨率影响频率可见性</li><li>环境光线影响阈值判断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-066-1.svg" alt="状态 1：条纹显隐" />
+  <h3>状态 1：条纹显隐</h3>
+  <p>Gabor 条纹逐步显隐。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-066-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>用户调节至刚可辨识。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-066-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>分析阈值与回拉路径。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gabor_filter" target="_blank" rel="noreferrer">Gabor filter</a>
+  <div>说明 Gabor 条纹与频率测量基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Spatial_frequency" target="_blank" rel="noreferrer">Spatial frequency</a>
+  <div>说明空间频率与视觉敏感度。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

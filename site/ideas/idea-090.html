@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#90 微弧双击校准 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#90</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>微弧双击校准</h1>
+        <p>用户双击后立即拖出微弧轨迹，系统记录加速度与抖动谱并与基线比对验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户完成双击后立即拖出微弧轨迹，系统记录加速度‑抖动谱并与群体基线比对。任务结构为短序列，信号形态为轨迹动力学与抖动谱。</p>
+        <p>用“微弧运动学”替代识别任务。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>短序列中的双击—微弧动作会暴露人类手部控制的非线性细节，如起始加速度、过冲与微抖动。脚本虽可生成轨迹，但难以稳定复现真实动力学特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>提示用户完成一次双击。</li><li>双击后立即拖出短小弧形轨迹。</li><li>记录加速度、过冲与抖动频谱。</li><li>与群体基线进行比对判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到双击提示。</li><li>步骤 2：双击后拖出微弧轨迹。</li><li>步骤 3：系统分析动力学并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>起始加速度与过冲</strong>
+  <div>人类动作起步存在稳定的动力学形态。</div>
+</div>
+
+<div class="signal-item">
+  <strong>抖动频谱</strong>
+  <div>微弧轨迹包含生理噪声结构。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>加速度曲线与抖动谱需落在人类分布区间；过度平滑或过度一致判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本生成固定微弧轨迹</li><li>重放真实用户的拖拽序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化弧长与方向</li><li>加入轻微动态扰动降低模板化</li><li>叠加双击节奏与停顿信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供替代任务与慢速模式，避免对手部障碍用户造成负担。</p>
+        <ul><li>小屏设备难以精确拖弧</li><li>设备采样率影响频谱质量</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-090-1.svg" alt="状态 1：双击提示" />
+  <h3>状态 1：双击提示</h3>
+  <p>用户完成双击操作。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-090-2.svg" alt="状态 2：微弧拖动" />
+  <h3>状态 2：微弧拖动</h3>
+  <p>双击后拖出微弧轨迹。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-090-3.svg" alt="状态 3：动力判定" />
+  <h3>状态 3：动力判定</h3>
+  <p>根据动力学与抖动谱判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明动作控制与动力学特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Kinematics" target="_blank" rel="noreferrer">Kinematics</a>
+  <div>说明速度与加速度等运动学指标。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

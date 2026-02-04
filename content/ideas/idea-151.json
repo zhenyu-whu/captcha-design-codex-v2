@@ -1,0 +1,78 @@
+{
+  "id": "151",
+  "slug": "idea-151",
+  "title": "动态暗变量",
+  "group": "Reverse Brainstorming - Round 1",
+  "phase": "Reverse Brainstorming - Round 1",
+  "kind": "idea",
+  "summary": "在任务中引入不可感知的动态参数，以真实适应曲线作为判定依据。",
+  "background": "人类在动态参数变化下会展现适应曲线与误差修正，而脚本难以准确同步隐含变量。利用暗变量可放大真实适应特征。",
+  "core_mechanism": [
+    "在交互中引入动态摩擦/延迟等暗变量。",
+    "记录误差与修正过程。",
+    "提取适应曲线斜率与稳定时间。",
+    "与人类基线分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户开始交互任务。",
+    "步骤 2：暗变量动态变化并引发误差。",
+    "步骤 3：系统分析适应曲线判定。"
+  ],
+  "signals": [
+    {
+      "signal": "误差下降斜率",
+      "why_it_matters": "真实适应表现为渐进收敛。"
+    },
+    {
+      "signal": "调整时延与回拉",
+      "why_it_matters": "适应过程存在可测的延迟。"
+    }
+  ],
+  "decision_logic": "适应曲线需符合人类范围；无适应或瞬时收敛判异常。",
+  "attack_surface": [
+    "控制器预测暗变量并模拟",
+    "回放历史适应曲线"
+  ],
+  "mitigations": [
+    "随机化暗变量变化模式",
+    "多阶段切换提高拟合成本",
+    "与其他信号联合判定"
+  ],
+  "accessibility": "提供低强度模式与退出选项，避免不适。",
+  "risks": [
+    "高延迟设备影响适应曲线",
+    "参数过强导致失败率上升"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：暗变量介入",
+      "caption": "任务中隐含参数动态变化。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-151-1.svg"
+    },
+    {
+      "title": "状态 2：适应过程",
+      "caption": "用户逐步修正误差。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-151-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "评估适应曲线与稳定时间。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-151-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor adaptation",
+      "url": "https://en.wikipedia.org/wiki/Motor_adaptation",
+      "note": "说明人在动力学变化下的适应。"
+    },
+    {
+      "title": "Internal model (motor control)",
+      "url": "https://en.wikipedia.org/wiki/Internal_model_(motor_control)",
+      "note": "说明内部模型与误差修正。"
+    }
+  ]
+}

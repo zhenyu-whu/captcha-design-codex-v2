@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#30 残影描摹窗口 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#30</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>残影描摹窗口</h1>
+        <p>短时呈现图形后立即空白，让用户在残影衰减期描摹轮廓以验证手眼同步与视觉暂留。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>先呈现高对比图形 200–400ms 后立即空白，让用户在残影尚未消失时快速描摹轮廓。系统记录起笔延迟、描摹速度与残影衰减曲线。</p>
+        <p>验证的是“视觉暂留衰减+手眼同步”，不是识别正确与否。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉暂留会在刺激消失后短时间内保留残影，且残影强度随时间衰减。人类在残影窗口内描摹时呈现特定的起笔延迟与速度变化，可用于行为判别。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>短时呈现高对比图形后切换为空白。</li><li>用户在残影消失前快速描摹轮廓。</li><li>记录起笔延迟、描摹速度与停顿。</li><li>分析与残影衰减窗口的一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短暂闪现的图形。</li><li>步骤 2：画面空白后用户立即描摹。</li><li>步骤 3：系统评估描摹时序与轨迹。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>起笔延迟与残影窗口匹配度</strong>
+  <div>人类通常在残影衰减前启动描摹。</div>
+</div>
+
+<div class="signal-item">
+  <strong>描摹速度随时间的变化</strong>
+  <div>残影减弱会导致描摹速度与精度变化。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合起笔延迟、描摹速度曲线与轨迹连贯性，要求匹配残影衰减窗口；过度恒定或无延迟判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接存储图形并在空白期描摹</li><li>重放真实用户的描摹轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化图形与呈现时长，避免模板化复现</li><li>加入轻微噪声与位置抖动增加记忆难度</li><li>叠加微时序与压力分布等多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长残影窗口或替代任务，避免对视觉迟缓用户造成负担。</p>
+        <ul><li>短时刺激可能导致紧张或疲劳</li><li>设备刷新率影响残影时序</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-030-1.svg" alt="状态 1：短时呈现" />
+  <h3>状态 1：短时呈现</h3>
+  <p>高对比图形短暂闪现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-030-2.svg" alt="状态 2：残影描摹" />
+  <h3>状态 2：残影描摹</h3>
+  <p>空白背景中快速描摹轮廓。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-030-3.svg" alt="状态 3：时序判定" />
+  <h3>状态 3：时序判定</h3>
+  <p>分析起笔延迟与衰减曲线。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Iconic_memory" target="_blank" rel="noreferrer">Iconic memory</a>
+  <div>说明视觉暂留与残影窗口。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Afterimage" target="_blank" rel="noreferrer">Afterimage</a>
+  <div>说明残影现象与衰减特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

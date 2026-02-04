@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#119 现实耦合分岔 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#119</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>现实耦合分岔</h1>
+        <p>根据当前交互状态随机分岔到不同微任务，以分岔前后预测误差与反应时验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>任务中根据当前交互状态随机分岔到不同微任务，系统比较分岔前后的预测误差与反应时。任务结构为随机插入，信号形态为预测误差与反应时。</p>
+        <p>利用“实时状态分岔”打断脚本的固定策略。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实交互中存在不可预期的状态分岔，脚本策略容易被打断。利用实时状态触发分岔微任务，可检验用户对上下文的即时理解与反应一致性。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>监测当前交互状态并随机触发分岔。</li><li>进入不同的短微任务分支。</li><li>记录分岔前后的预测误差与反应时。</li><li>对任务内一致性进行判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户正常操作流程。</li><li>步骤 2：系统根据状态分岔到微任务。</li><li>步骤 3：系统比较误差与反应时并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>预测误差</strong>
+  <div>真实用户能基于上下文做出更准确判断。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时变化</strong>
+  <div>分岔会引发可预测的反应时波动。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>误差与反应时需落在人类分布区间，且分岔前后变化合理；过度一致或无关联判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定分支策略快速应答</li><li>重放真实用户的分岔序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化分岔触发时机与任务类型</li><li>绑定实时上下文与短时状态</li><li>叠加轨迹与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化分岔或可跳过选项，避免频繁打断体验。</p>
+        <ul><li>分岔过多导致用户疲劳</li><li>上下文理解差异引发误判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-119-1.svg" alt="状态 1：正常流程" />
+  <h3>状态 1：正常流程</h3>
+  <p>用户处于正常交互流程。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-119-2.svg" alt="状态 2：状态分岔" />
+  <h3>状态 2：状态分岔</h3>
+  <p>随机分岔进入不同微任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-119-3.svg" alt="状态 3：误差判定" />
+  <h3>状态 3：误差判定</h3>
+  <p>比较预测误差与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Decision-making" target="_blank" rel="noreferrer">Decision-making</a>
+  <div>说明分岔选择与即时决策机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时作为行为信号。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

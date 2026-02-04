@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#60 亲近‑相似冲突分组 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#60</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>亲近‑相似冲突分组</h1>
+        <p>在亲近与相似线索冲突时观察分组偏置，用拖拽路径与犹豫停顿验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>画面中点阵同时存在“距离近”和“颜色同”两种分组线索，要求用户按直觉拖拽成组并画出分界。记录分组选择、拖拽路径与犹豫停顿。</p>
+        <p>利用人类在冲突线索下的分组偏置作为验证信号，而不是分组对错。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>Gestalt 分组中亲近性与相似性常产生冲突，人类会在冲突条件下表现出稳定的偏置与犹豫节奏。通过记录分组选择与拖拽轨迹，可获得比正确性更稳定的行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现点阵同时提供距离近与颜色同两类线索。</li><li>用户按直觉拖拽分组并画出分界。</li><li>记录分组选择、拖拽路径与停顿。</li><li>分析偏置方向与犹豫节奏。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到冲突线索点阵。</li><li>步骤 2：用户拖拽分组并画出分界。</li><li>步骤 3：系统分析偏置与路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>分组选择偏置</strong>
+  <div>人类在冲突线索下存在可预测偏向。</div>
+</div>
+
+<div class="signal-item">
+  <strong>拖拽路径与犹豫停顿</strong>
+  <div>真实分组会出现试探与短暂停顿。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合分组偏置方向、路径连贯性与停顿节奏判定；极端规则或完全随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定按颜色或距离规则分组</li><li>重放真实用户的拖拽轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化点阵布局与颜色分布</li><li>加入轻微位置噪声与密度变化</li><li>叠加微时序与轨迹抖动进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供点击选择分组或降低密度模式，避免对精细拖拽用户造成负担。</p>
+        <ul><li>文化或经验差异影响分组偏好</li><li>小屏设备降低分组清晰度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-060-1.svg" alt="状态 1：冲突线索" />
+  <h3>状态 1：冲突线索</h3>
+  <p>距离与颜色同时提示分组。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-060-2.svg" alt="状态 2：拖拽分组" />
+  <h3>状态 2：拖拽分组</h3>
+  <p>用户拖拽并画出分界。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-060-3.svg" alt="状态 3：偏置判定" />
+  <h3>状态 3：偏置判定</h3>
+  <p>分析分组偏置与犹豫节奏。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Gestalt_psychology" target="_blank" rel="noreferrer">Gestalt psychology</a>
+  <div>说明亲近性与相似性分组原则。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Principles_of_grouping" target="_blank" rel="noreferrer">Principles of grouping</a>
+  <div>说明冲突线索下的分组偏置。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

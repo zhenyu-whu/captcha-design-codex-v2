@@ -1,0 +1,78 @@
+{
+  "id": "162",
+  "slug": "idea-162",
+  "title": "传感器一致性链",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "结合多传感器信号的时间一致性做判定，并与设备基线比对。",
+  "background": "跨传感器一致性需要真实设备协同，脚本难以同步伪造。通过时间对齐与相位一致性可提升抗攻击性。",
+  "core_mechanism": [
+    "采集指针微抖与姿态微漂移等多源信号。",
+    "进行时间对齐与相位比较。",
+    "计算跨传感器一致性得分。",
+    "与设备基线分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成短交互并产生多源信号。",
+    "步骤 2：系统对齐并分析一致性。",
+    "步骤 3：系统输出一致性判定。"
+  ],
+  "signals": [
+    {
+      "signal": "跨传感器时间一致性",
+      "why_it_matters": "真实设备信号具有同步结构。"
+    },
+    {
+      "signal": "相位偏移与漂移",
+      "why_it_matters": "一致性偏移反映真实在场。"
+    }
+  ],
+  "decision_logic": "一致性得分需在基线范围；时间对齐异常或漂移过大判异常。",
+  "attack_surface": [
+    "伪造单一传感器信号",
+    "脚本同步生成多通道信号"
+  ],
+  "mitigations": [
+    "随机化采样窗口",
+    "引入难以预测的微扰",
+    "多通道交叉验证"
+  ],
+  "accessibility": "对无传感器设备提供替代信号或简化模式。",
+  "risks": [
+    "传感器权限受限",
+    "设备噪声导致一致性下降"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：多传感器采集",
+      "caption": "采集指针与姿态信号。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-162-1.svg"
+    },
+    {
+      "title": "状态 2：时间对齐",
+      "caption": "对齐多通道时间线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-162-2.svg"
+    },
+    {
+      "title": "状态 3：一致性判定",
+      "caption": "计算跨传感器一致性得分。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-162-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Sensor fusion",
+      "url": "https://en.wikipedia.org/wiki/Sensor_fusion",
+      "note": "说明多传感器一致性与融合。"
+    },
+    {
+      "title": "Inertial measurement unit",
+      "url": "https://en.wikipedia.org/wiki/Inertial_measurement_unit",
+      "note": "说明姿态与运动传感器。"
+    }
+  ]
+}

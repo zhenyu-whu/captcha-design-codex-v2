@@ -1,0 +1,78 @@
+{
+  "id": "58",
+  "slug": "idea-058",
+  "title": "亚视觉计数阈值",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "短时闪现 1-6 个点并即时报数，利用 subitizing 的反应时拐点验证真实性。",
+  "background": "人类对少量目标具有快速的直觉数能力（subitizing），超过阈值后反应时显著增加。通过测量反应时拐点与错误分布，可形成稳定的行为特征。",
+  "core_mechanism": [
+    "50-150ms 闪现 1-6 个点。",
+    "用户立即报数或选择数量。",
+    "记录反应时与错误分布。",
+    "拟合直觉数到计数的拐点。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到短时闪现的点数。",
+    "步骤 2：用户立即报数或选择数量。",
+    "步骤 3：系统拟合拐点并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "反应时拐点位置",
+      "why_it_matters": "subitizing 与计数的过渡具有稳定阈值。"
+    },
+    {
+      "signal": "错误分布与波动",
+      "why_it_matters": "阈值附近错误率上升具有规律性。"
+    }
+  ],
+  "decision_logic": "拟合反应时曲线与错误分布，要求拐点落在人类范围；反应时线性或拐点异常判异常。",
+  "attack_surface": [
+    "脚本直接统计点数并固定响应",
+    "重放真实用户的作答序列"
+  ],
+  "mitigations": [
+    "随机化点位与呈现时长",
+    "加入轻微噪声与掩蔽干扰",
+    "叠加微时序与鼠标轨迹信号进行多信号验证"
+  ],
+  "accessibility": "提供更长呈现时间或替代任务模式，避免对视觉敏感用户造成负担。",
+  "risks": [
+    "短时闪现导致误差增大",
+    "显示器刷新率限制呈现精度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：点数闪现",
+      "caption": "短时闪现少量点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-058-1.svg"
+    },
+    {
+      "title": "状态 2：即时报数",
+      "caption": "用户快速选择数量。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-058-2.svg"
+    },
+    {
+      "title": "状态 3：拐点判定",
+      "caption": "拟合反应时拐点曲线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-058-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Subitizing",
+      "url": "https://en.wikipedia.org/wiki/Subitizing",
+      "note": "说明直觉数与反应时拐点。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时作为行为特征。"
+    }
+  ]
+}

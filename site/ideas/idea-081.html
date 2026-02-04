@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#81 意图路径双段 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#81</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>意图路径双段</h1>
+        <p>通过两阶段意图定位任务比较搜索路径与停顿分布的一致性，验证目的驱动的注意力轨迹。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>第一步给定目标意图让用户完成定位，第二步要求细化选择；系统比较两步中搜索路径与停顿分布的一致性并做异常检测。任务结构为多阶段，信号形态为搜索路径与反应时。</p>
+        <p>验证“目的驱动的注意力路径”，而非对错判断。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在目标导向任务中会形成稳定的搜索路径与停顿节奏，两阶段任务能揭示意图一致性。脚本往往缺乏自然的探索与纠偏模式。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>第一阶段让用户完成粗定位或初步选择。</li><li>第二阶段要求细化或再次确认目标。</li><li>记录两阶段的搜索路径、停顿与回撤。</li><li>比较一致性与差异形成判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成第一阶段的意图定位。</li><li>步骤 2：进入第二阶段进行细化选择。</li><li>步骤 3：系统比较路径与节奏并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>搜索路径一致性</strong>
+  <div>真实用户的注意力路径具有目的驱动的稳定性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>停顿与回撤分布</strong>
+  <div>自然探索会出现短暂停顿与修正。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>两阶段路径与停顿分布需保持合理一致性；瞬时直达或完全随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接点击目标绕过搜索</li><li>重放真实用户的路径序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标与干扰项位置</li><li>加入动态提示与多目标场景</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与键盘导航，允许慢速模式或替代任务。</p>
+        <ul><li>复杂场景可能增加真实用户负担</li><li>设备差异影响路径分布</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-081-1.svg" alt="状态 1：初步定位" />
+  <h3>状态 1：初步定位</h3>
+  <p>第一阶段完成意图定位。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-081-2.svg" alt="状态 2：细化选择" />
+  <h3>状态 2：细化选择</h3>
+  <p>第二阶段进行细化选择。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-081-3.svg" alt="状态 3：路径判定" />
+  <h3>状态 3：路径判定</h3>
+  <p>比较路径与节奏一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_search" target="_blank" rel="noreferrer">Visual search</a>
+  <div>说明目标搜索中的注意力路径与停顿。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Attention" target="_blank" rel="noreferrer">Attention</a>
+  <div>说明目的驱动的注意力机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

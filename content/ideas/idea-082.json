@@ -1,0 +1,78 @@
+{
+  "id": "82",
+  "slug": "idea-082",
+  "title": "生理漂移追踪",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "让用户持续追踪轻微扰动目标，采集轨迹动力学与微漂移特征作为验证信号。",
+  "background": "持续追踪任务会暴露人类运动控制中的微漂移、延迟与纠偏特征。脚本虽可跟随目标，但难以复现真实的生理噪声结构。",
+  "core_mechanism": [
+    "目标以轻微扰动轨迹移动 5–8 秒。",
+    "用户持续跟随目标完成追踪。",
+    "采集轨迹动力学、延迟与微漂移。",
+    "与人类基线分布进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到移动目标。",
+    "步骤 2：用户持续追踪目标轨迹。",
+    "步骤 3：系统分析漂移与延迟并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "追踪延迟与过冲",
+      "why_it_matters": "人类追踪存在稳定的反应延迟与纠偏模式。"
+    },
+    {
+      "signal": "微漂移频谱",
+      "why_it_matters": "生理噪声在频谱上具有稳定结构。"
+    }
+  ],
+  "decision_logic": "延迟、过冲与漂移频谱需落在人类分布区间；过度平滑或完美跟随判异常。",
+  "attack_surface": [
+    "脚本直接追踪目标路径",
+    "重放真实用户的追踪轨迹"
+  ],
+  "mitigations": [
+    "随机化扰动模式与目标速度",
+    "加入随机短暂停顿降低预测性",
+    "叠加时序与微抖动信号进行多信号判定"
+  ],
+  "accessibility": "提供慢速模式与替代任务，允许更大目标与键盘辅助输入。",
+  "risks": [
+    "运动障碍用户可能出现误拒",
+    "不同设备采样率影响信号质量"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：扰动目标",
+      "caption": "目标带轻微扰动移动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-082-1.svg"
+    },
+    {
+      "title": "状态 2：持续追踪",
+      "caption": "用户持续跟随目标。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-082-2.svg"
+    },
+    {
+      "title": "状态 3：漂移判定",
+      "caption": "分析延迟与漂移频谱。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-082-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明追踪控制的生理基础。"
+    },
+    {
+      "title": "Physiological tremor",
+      "url": "https://en.wikipedia.org/wiki/Physiological_tremor",
+      "note": "说明微漂移与生理噪声结构。"
+    }
+  ]
+}

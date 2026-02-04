@@ -1,0 +1,78 @@
+{
+  "id": "112",
+  "slug": "idea-112",
+  "title": "时间锁拖拽",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在时间窗口与系统时钟对齐的瞬间完成拖拽，以反应时与一致性验证真实性。",
+  "background": "时间锁任务要求用户与系统节拍对齐，真实用户会表现出特定的反应时分布与节律波动。脚本难以在不读取时钟的情况下稳定同步。",
+  "core_mechanism": [
+    "显示时间窗口或节拍提示。",
+    "用户在对齐窗口完成拖拽。",
+    "记录反应时与对齐误差。",
+    "比较任务内一致性与基线分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观察时间窗口提示。",
+    "步骤 2：对齐窗口完成拖拽。",
+    "步骤 3：系统记录误差并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "对齐误差分布",
+      "why_it_matters": "人类同步存在稳定的偏移与波动。"
+    },
+    {
+      "signal": "反应时与节律一致性",
+      "why_it_matters": "真实用户的同步不会过度精确。"
+    }
+  ],
+  "decision_logic": "误差与反应时需落在人类区间；过度精准或无波动判异常。",
+  "attack_surface": [
+    "脚本读取系统时钟精确对齐",
+    "重放真实用户的时间序列"
+  ],
+  "mitigations": [
+    "随机化时间窗口与节拍",
+    "加入轻微扰动降低固定同步",
+    "叠加轨迹与停顿信号"
+  ],
+  "accessibility": "提供更长对齐窗口与慢速模式，允许键盘替代。",
+  "risks": [
+    "设备延迟影响同步误差",
+    "节拍过快导致误拒"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：时间窗口",
+      "caption": "提示对齐窗口或节拍。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-112-1.svg"
+    },
+    {
+      "title": "状态 2：对齐拖拽",
+      "caption": "在窗口内完成拖拽。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-112-2.svg"
+    },
+    {
+      "title": "状态 3：误差判定",
+      "caption": "比较对齐误差与一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-112-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节律同步与误差分布。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时作为同步证据。"
+    }
+  ]
+}

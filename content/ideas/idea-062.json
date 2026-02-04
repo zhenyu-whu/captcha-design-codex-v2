@@ -1,0 +1,78 @@
+{
+  "id": "62",
+  "slug": "idea-062",
+  "title": "特征绑定错配",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "快速闪现颜色与形状组合后遮罩，利用绑定错觉错误分布与反应时验证真实性。",
+  "background": "特征绑定在快速呈现时容易产生错配（illusory conjunction），错误分布与反应时具有稳定模式。通过测量这些错误结构可获得可靠的行为信号。",
+  "core_mechanism": [
+    "快速闪现红/绿 X/O 组合后遮罩。",
+    "用户选择刚出现的组合。",
+    "记录错误类型与反应时。",
+    "分析绑定错觉的误差分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到短时闪现的组合。",
+    "步骤 2：遮罩后选择出现过的组合。",
+    "步骤 3：系统分析错误分布并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "绑定错配错误分布",
+      "why_it_matters": "人类在快速呈现下常出现特定错配。"
+    },
+    {
+      "signal": "反应时与错配类型",
+      "why_it_matters": "真实判断的反应时与错误类型存在关联。"
+    }
+  ],
+  "decision_logic": "拟合错配错误分布与反应时结构，要求符合人类模式；错误过低或分布异常判异常。",
+  "attack_surface": [
+    "脚本逐帧读取刺激并直接选择",
+    "重放真实用户的选择序列"
+  ],
+  "mitigations": [
+    "随机化组合与呈现位置",
+    "调整遮罩时序并加入噪声",
+    "叠加鼠标轨迹与微时序信号进行多信号验证"
+  ],
+  "accessibility": "提供更长呈现时间或减少组合数量，避免对视觉敏感用户造成负担。",
+  "risks": [
+    "短时闪现导致误差增大",
+    "设备刷新率影响呈现精度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：快速组合",
+      "caption": "红绿 X/O 组合短时闪现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-062-1.svg"
+    },
+    {
+      "title": "状态 2：组合选择",
+      "caption": "用户选择刚出现的组合。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-062-2.svg"
+    },
+    {
+      "title": "状态 3：错配判定",
+      "caption": "分析错误分布与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-062-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Illusory conjunction",
+      "url": "https://en.wikipedia.org/wiki/Illusory_conjunction",
+      "note": "说明特征绑定错觉与错误分布。"
+    },
+    {
+      "title": "Feature integration theory",
+      "url": "https://en.wikipedia.org/wiki/Feature_integration_theory",
+      "note": "说明特征绑定与注意力机制。"
+    }
+  ]
+}

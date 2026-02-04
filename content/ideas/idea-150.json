@@ -1,0 +1,78 @@
+{
+  "id": "150",
+  "slug": "idea-150",
+  "title": "无答案验证",
+  "group": "Reverse Brainstorming - Round 1",
+  "phase": "Reverse Brainstorming - Round 1",
+  "kind": "idea",
+  "summary": "将判定从“正确答案”转向连续行为信号，任务结果不作为主要依据。",
+  "background": "行为特征可形成稳定的人机差异，即使任务结果被猜中，轨迹、时序与纠偏仍能体现真实操控。以行为信号为核心可降低解题能力带来的风险。",
+  "core_mechanism": [
+    "设计开放式或弱约束的交互任务。",
+    "高频采集轨迹、时序与微纠偏。",
+    "构建多信号一致性判定。",
+    "任务结果仅作为辅助参考。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成开放式交互任务。",
+    "步骤 2：系统采集连续信号。",
+    "步骤 3：系统基于行为分布判定。"
+  ],
+  "signals": [
+    {
+      "signal": "轨迹微抖动与速度曲线",
+      "why_it_matters": "生理噪声与纠偏反映真实在场。"
+    },
+    {
+      "signal": "反应时与纠偏模式",
+      "why_it_matters": "真实用户存在试探与回拉过程。"
+    }
+  ],
+  "decision_logic": "多信号需落在人类分布区间；过度完美或过度随机判异常。",
+  "attack_surface": [
+    "模型拟合人类分布生成轨迹",
+    "重放真实用户信号"
+  ],
+  "mitigations": [
+    "动态生成任务参数",
+    "多信号耦合并交错任务",
+    "风险分级与二次校验"
+  ],
+  "accessibility": "保持低负担并提供等效替代通道。",
+  "risks": [
+    "信号过于依赖设备采样率",
+    "行为分布漂移导致误判"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：开放任务",
+      "caption": "任务结果不设唯一答案。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-150-1.svg"
+    },
+    {
+      "title": "状态 2：信号采集",
+      "caption": "采集轨迹与时序信号。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-150-2.svg"
+    },
+    {
+      "title": "状态 3：多信号判定",
+      "caption": "以行为分布为核心判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-150-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明行为特征作为识别信号。"
+    },
+    {
+      "title": "CAPTCHA",
+      "url": "https://en.wikipedia.org/wiki/CAPTCHA",
+      "note": "说明验证码的人机差异基础。"
+    }
+  ]
+}

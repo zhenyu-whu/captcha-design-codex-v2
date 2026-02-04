@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#166 意图‑上下文绑定 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#166</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>意图‑上下文绑定</h1>
+        <p>将验证任务绑定当前操作上下文，比较注意力路径与任务一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>将验证任务与当前操作意图绑定（与正在执行的动作、焦点区域相关），并比较注意力路径与任务内一致性。</p>
+        <p>采样得到的“通用人类分布”无法适配具体上下文。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>上下文绑定可避免通用分布攻击。真实用户的注意力路径与当前意图高度相关，脚本难以在具体上下文中保持一致。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>从当前操作上下文生成任务。</li><li>记录注意力路径与停顿。</li><li>比较路径与上下文一致性。</li><li>结合反应时输出判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：系统基于当前上下文生成任务。</li><li>步骤 2：用户完成任务并产生路径。</li><li>步骤 3：系统评估上下文一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>注意力路径‑上下文匹配</strong>
+  <div>真实用户路径与目标区域关联度高。</div>
+</div>
+
+<div class="signal-item">
+  <strong>上下文切换反应时</strong>
+  <div>意图绑定会体现自然反应时分布。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>路径一致性与反应时需在基线范围；脱离上下文或异常快判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本忽略上下文并固定路径</li><li>利用通用模型模拟注意力</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>动态生成上下文相关任务</li><li>隐藏关键线索并随机化提示</li><li>结合历史上下文链验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化上下文提示与键盘替代。</p>
+        <ul><li>上下文变化过快导致困惑</li><li>复杂界面影响路径判断</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-166-1.svg" alt="状态 1：上下文锚点" />
+  <h3>状态 1：上下文锚点</h3>
+  <p>任务与当前区域绑定。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-166-2.svg" alt="状态 2：路径一致性" />
+  <h3>状态 2：路径一致性</h3>
+  <p>记录注意力路径与停顿。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-166-3.svg" alt="状态 3：绑定判定" />
+  <h3>状态 3：绑定判定</h3>
+  <p>比较路径与上下文一致性。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Context-aware_computing" target="_blank" rel="noreferrer">Context-aware computing</a>
+  <div>说明上下文绑定与任务生成。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_attention" target="_blank" rel="noreferrer">Visual attention</a>
+  <div>说明注意力路径与目标一致性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#126 运动后效中性滑杆 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#126</span>
+          <span class="chip teal">D：单底座 × 单信号 × 自适应/短序列（视觉时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>运动后效中性滑杆</h1>
+        <p>运动适应后调节反向速度到主观静止，记录中性点曲线与调整过程。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>运动适应后让用户调节反向运动速度到“感觉静止”，连续两轮记录适应曲线并做异常检测。</p>
+        <p>以主观中性点的适应轨迹作为验证特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>运动后效使静止刺激出现反向运动知觉，中性点会随适应衰减变化。该适应轨迹具有个体差异。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>显示单向运动刺激进行适应。</li><li>切换到可调反向运动滑杆。</li><li>用户调节到“感觉静止”并重复两轮。</li><li>记录中性点与调整动态。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看运动适应刺激。</li><li>步骤 2：拖动滑杆调到主观静止。</li><li>步骤 3：重复一轮并记录中性点变化。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>中性点速度偏移</strong>
+  <div>中性点反映运动后效强度。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调整轨迹与回拉</strong>
+  <div>真实用户会出现微调与延迟。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>中性点需随轮次衰减且调整轨迹具微调特征；瞬时归零判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定设置零速度</li><li>重放历史中性点轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化方向、点密度与速度</li><li>改变适应时长与间隔</li><li>叠加反应时/路径信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢速度与缩短适应时长，减少眩晕。</p>
+        <ul><li>低帧率影响速度感知</li><li>部分用户易产生眩晕</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-126-1.svg" alt="状态 1：运动适应" />
+  <h3>状态 1：运动适应</h3>
+  <p>点阵沿单向运动形成适应。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-126-2.svg" alt="状态 2：中性滑杆" />
+  <h3>状态 2：中性滑杆</h3>
+  <p>调节反向速度到主观静止。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-126-3.svg" alt="状态 3：中性点曲线" />
+  <h3>状态 3：中性点曲线</h3>
+  <p>比较中性点随轮次变化。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motion_aftereffect" target="_blank" rel="noreferrer">Motion aftereffect</a>
+  <div>说明运动适应与主观静止。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motion_perception" target="_blank" rel="noreferrer">Motion perception</a>
+  <div>说明运动感知机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

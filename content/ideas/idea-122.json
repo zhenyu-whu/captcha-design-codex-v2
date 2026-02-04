@@ -1,0 +1,78 @@
+{
+  "id": "122",
+  "slug": "idea-122",
+  "title": "眨眼窗宽度",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在 RSVP 中调整两目标时间间隔直到可稳定捕捉双目标，记录间隔阈值与反应时曲线。",
+  "background": "注意力眨眼导致两个目标在特定时间窗内难以同时捕捉。通过调节目标间隔获得阈值与反应时曲线，可形成稳定的人类特征。",
+  "core_mechanism": [
+    "呈现 RSVP 序列包含两个目标。",
+    "用户调节两目标间隔直到稳定捕捉。",
+    "记录阈值间隔与反应时曲线。",
+    "与群体基线分布进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看 RSVP 序列。",
+    "步骤 2：调节两目标间隔并确认。",
+    "步骤 3：系统记录阈值与反应时并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "眨眼窗阈值",
+      "why_it_matters": "注意力眨眼时间窗具有稳定区间。"
+    },
+    {
+      "signal": "反应时曲线",
+      "why_it_matters": "阈值附近的反应时变化具有特征性。"
+    }
+  ],
+  "decision_logic": "阈值与反应时曲线需落在人类分布区间；过度稳定或无眨眼效应判异常。",
+  "attack_surface": [
+    "脚本直接识别目标并设置极小间隔",
+    "重放真实用户的阈值序列"
+  ],
+  "mitigations": [
+    "随机化序列内容与目标位置",
+    "加入轻微噪声降低直接识别",
+    "叠加停顿与路径信号"
+  ],
+  "accessibility": "提供更慢序列与替代任务，避免对视觉敏感用户造成压力。",
+  "risks": [
+    "序列过快导致真实用户失败",
+    "设备刷新率影响间隔精度"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：RSVP 序列",
+      "caption": "包含两个目标的快速序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-122-1.svg"
+    },
+    {
+      "title": "状态 2：间隔调节",
+      "caption": "调节两目标间隔到可捕捉。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-122-2.svg"
+    },
+    {
+      "title": "状态 3：阈值判定",
+      "caption": "比较阈值与反应时曲线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-122-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Attentional blink",
+      "url": "https://en.wikipedia.org/wiki/Attentional_blink",
+      "note": "说明注意力眨眼时间窗。"
+    },
+    {
+      "title": "Rapid serial visual presentation",
+      "url": "https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation",
+      "note": "说明 RSVP 任务结构。"
+    }
+  ]
+}

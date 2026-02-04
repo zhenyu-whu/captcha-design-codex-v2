@@ -1,0 +1,78 @@
+{
+  "id": "100",
+  "slug": "idea-100",
+  "title": "残影补全双阶段",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "先闪现残影图形并描摹轮廓，再进行对称阈值微调，以双阶段信号验证真实性。",
+  "background": "残影会在短时间内形成可感知的轮廓，用户描摹过程包含自然的曲率与速度特征；随后对称阈值微调进一步捕捉感知偏差。两阶段组合提高识别度。",
+  "core_mechanism": [
+    "短暂闪现残影图形并隐藏。",
+    "用户描摹轮廓完成补全。",
+    "进入对称阈值滑杆微调。",
+    "比较描摹轨迹与阈值选择。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到残影闪现。",
+    "步骤 2：用户描摹轮廓完成补全。",
+    "步骤 3：用户微调对称阈值并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "轮廓描摹曲率与速度",
+      "why_it_matters": "人类描摹会出现自然的曲率与停顿。"
+    },
+    {
+      "signal": "对称阈值偏差",
+      "why_it_matters": "感知对称的阈值分布具有稳定区间。"
+    }
+  ],
+  "decision_logic": "描摹轨迹与阈值需落在人类分布区间；过度几何化或无微调判异常。",
+  "attack_surface": [
+    "脚本直接重绘轮廓并选择固定阈值",
+    "重放真实用户的描摹轨迹"
+  ],
+  "mitigations": [
+    "随机化残影形状与对称参数",
+    "加入轻微噪声降低模板化",
+    "叠加停顿与抖动信号进行多信号判定"
+  ],
+  "accessibility": "提供更大残影与慢速模式，允许选择题替代描摹。",
+  "risks": [
+    "残影强度不足影响描摹质量",
+    "设备刷新率影响残影呈现"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：残影闪现",
+      "caption": "短暂闪现残影形状。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-100-1.svg"
+    },
+    {
+      "title": "状态 2：轮廓描摹",
+      "caption": "用户描摹补全轮廓。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-100-2.svg"
+    },
+    {
+      "title": "状态 3：阈值微调",
+      "caption": "对称阈值微调判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-100-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Afterimage",
+      "url": "https://en.wikipedia.org/wiki/Afterimage",
+      "note": "说明残影与短时视觉记忆。"
+    },
+    {
+      "title": "Symmetry",
+      "url": "https://en.wikipedia.org/wiki/Symmetry",
+      "note": "说明对称感知与阈值判断。"
+    }
+  ]
+}

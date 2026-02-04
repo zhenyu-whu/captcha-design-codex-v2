@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#151 动态暗变量 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#151</span>
+          <span class="chip teal">Reverse Brainstorming - Round 1</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>动态暗变量</h1>
+        <p>在任务中引入不可感知的动态参数，以真实适应曲线作为判定依据。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 1</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在任务过程中引入用户不可感知的动态参数（如随机摩擦/延迟/刺激节奏），判定基于对这些暗变量的真实适应曲线。</p>
+        <p>正确答案不可推导，必须呈现真实适应过程。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在动态参数变化下会展现适应曲线与误差修正，而脚本难以准确同步隐含变量。利用暗变量可放大真实适应特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在交互中引入动态摩擦/延迟等暗变量。</li><li>记录误差与修正过程。</li><li>提取适应曲线斜率与稳定时间。</li><li>与人类基线分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户开始交互任务。</li><li>步骤 2：暗变量动态变化并引发误差。</li><li>步骤 3：系统分析适应曲线判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>误差下降斜率</strong>
+  <div>真实适应表现为渐进收敛。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调整时延与回拉</strong>
+  <div>适应过程存在可测的延迟。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>适应曲线需符合人类范围；无适应或瞬时收敛判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>控制器预测暗变量并模拟</li><li>回放历史适应曲线</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化暗变量变化模式</li><li>多阶段切换提高拟合成本</li><li>与其他信号联合判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低强度模式与退出选项，避免不适。</p>
+        <ul><li>高延迟设备影响适应曲线</li><li>参数过强导致失败率上升</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-151-1.svg" alt="状态 1：暗变量介入" />
+  <h3>状态 1：暗变量介入</h3>
+  <p>任务中隐含参数动态变化。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-151-2.svg" alt="状态 2：适应过程" />
+  <h3>状态 2：适应过程</h3>
+  <p>用户逐步修正误差。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-151-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>评估适应曲线与稳定时间。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_adaptation" target="_blank" rel="noreferrer">Motor adaptation</a>
+  <div>说明人在动力学变化下的适应。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Internal_model_(motor_control)" target="_blank" rel="noreferrer">Internal model (motor control)</a>
+  <div>说明内部模型与误差修正。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

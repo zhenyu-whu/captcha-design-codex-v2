@@ -1,0 +1,78 @@
+{
+  "id": "29",
+  "slug": "idea-029",
+  "title": "近似对称轴",
+  "group": "视觉思考范式：空间/结构/直觉",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "让用户标出近似对称轴，以偏移模式与稳定性反映人类对近似对称的感知偏差。",
+  "background": "人类对对称结构高度敏感，但在存在微扰时会产生稳定的偏移与误差模式。通过测量用户对近似对称轴的定位误差，可获得比答案本身更稳健的行为特征。",
+  "core_mechanism": [
+    "展示近似对称但带微扰的图形。",
+    "用户拖拽标出他们认为的对称轴。",
+    "记录轴线位置、角度与微调轨迹。",
+    "统计偏移方向与稳定性分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到近似对称图形。",
+    "步骤 2：用户拖拽并调整对称轴位置。",
+    "步骤 3：系统分析偏移模式并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "轴线偏移方向与幅度分布",
+      "why_it_matters": "人类对近似对称的判断会出现稳定偏差。"
+    },
+    {
+      "signal": "微调次数与停顿节奏",
+      "why_it_matters": "真实判断通常伴随短暂微调与犹豫。"
+    }
+  ],
+  "decision_logic": "综合轴线偏移幅度、方向一致性与微调节奏，要求符合人类统计区间；完全精确或缺乏调整判异常。",
+  "attack_surface": [
+    "脚本直接计算几何对称轴",
+    "重放真实用户的调整轨迹"
+  ],
+  "mitigations": [
+    "随机化微扰类型与幅度，避免固定几何解",
+    "引入轻微噪声与动态元素增强不确定性",
+    "叠加拖拽速度与停顿分布进行多信号判定"
+  ],
+  "accessibility": "提供高对比与放大模式，并允许键盘微调轴线，避免对精细操作用户造成负担。",
+  "risks": [
+    "文化或经验差异导致对称偏好差异",
+    "触控设备精度影响微调特征"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：近似对称图形",
+      "caption": "轻微扰动打破完美对称。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-029-1.svg"
+    },
+    {
+      "title": "状态 2：轴线拖拽",
+      "caption": "用户拖拽并微调对称轴。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-029-2.svg"
+    },
+    {
+      "title": "状态 3：偏移判定",
+      "caption": "分析偏移方向与稳定性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-029-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Gestalt psychology",
+      "url": "https://en.wikipedia.org/wiki/Gestalt_psychology",
+      "note": "说明对称性作为分组与整体知觉线索。"
+    },
+    {
+      "title": "Symmetry",
+      "url": "https://en.wikipedia.org/wiki/Symmetry",
+      "note": "说明对称结构的基础概念。"
+    }
+  ]
+}

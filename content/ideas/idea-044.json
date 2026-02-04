@@ -1,0 +1,78 @@
+{
+  "id": "44",
+  "slug": "idea-044",
+  "title": "外周拥挤签名",
+  "group": "视觉思考范式：时域/适应/残影",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "保持中心锚点不动，外围短暂出现目标，利用错误类型与反应时分布验证真实性。",
+  "background": "外周视觉存在拥挤效应，短暂刺激下会出现稳定的错误类型与反应时分布。通过记录外围目标识别的误差结构，可得到具有鲁棒性的行为特征。",
+  "core_mechanism": [
+    "要求用户保持光标在中心锚点。",
+    "外围短暂出现目标与干扰。",
+    "用户快速点击或选择目标。",
+    "记录错误类型与反应时分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户将光标保持在中心锚点。",
+    "步骤 2：外围目标短暂出现，用户快速点击。",
+    "步骤 3：系统统计误差分布并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "错误类型分布",
+      "why_it_matters": "外周拥挤引发的混淆错误具有规律性。"
+    },
+    {
+      "signal": "反应时与偏心距离关系",
+      "why_it_matters": "目标越偏外围反应通常越慢。"
+    }
+  ],
+  "decision_logic": "综合错误类型分布与反应时曲线，要求符合外周拥挤规律；误差过低或反应异常快判异常。",
+  "attack_surface": [
+    "脚本直接识别外围目标并点击",
+    "重放真实用户的点击序列"
+  ],
+  "mitigations": [
+    "随机化目标位置、出现时长与干扰密度",
+    "引入轻微噪声与掩蔽降低脚本识别",
+    "叠加轨迹与时序信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢节奏或替代任务模式，避免对低视力用户造成不适。",
+  "risks": [
+    "过短呈现可能导致较高误拒",
+    "显示器尺寸影响偏心距离参数"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：中心锚点",
+      "caption": "中心锚点与外围刺激区域。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-044-1.svg"
+    },
+    {
+      "title": "状态 2：外围点击",
+      "caption": "目标短暂出现后快速点击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-044-2.svg"
+    },
+    {
+      "title": "状态 3：拥挤判定",
+      "caption": "分析错误类型与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-044-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Crowding (visual perception)",
+      "url": "https://en.wikipedia.org/wiki/Crowding_(visual_perception)",
+      "note": "说明外周视觉拥挤效应。"
+    },
+    {
+      "title": "Peripheral vision",
+      "url": "https://en.wikipedia.org/wiki/Peripheral_vision",
+      "note": "说明外周视觉的识别限制。"
+    }
+  ]
+}

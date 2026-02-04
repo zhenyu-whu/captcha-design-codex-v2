@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#87 错觉序列签名 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#87</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>错觉序列签名</h1>
+        <p>连续呈现 3 个错觉校准任务，利用偏差量序列形态与一致性验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>连续呈现 3 个错觉校准任务，记录偏差量序列并与群体基线比对。任务结构为短序列，信号形态为错觉偏差量。</p>
+        <p>用“偏差序列形态”替代单点判定。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>单点错觉偏差容易被模仿，但连续序列的偏差曲线具有更稳定的个体与群体特征。通过短序列比较可提高对脚本的辨识度。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>连续呈现 3 个不同错觉校准任务。</li><li>用户依次调整到主观正确状态。</li><li>记录偏差量序列与变化趋势。</li><li>与群体基线分布进行比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成第 1 个错觉校准。</li><li>步骤 2：连续完成第 2、3 个校准。</li><li>步骤 3：系统记录偏差序列并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>偏差量序列形态</strong>
+  <div>真实用户的偏差序列具有稳定趋势。</div>
+</div>
+
+<div class="signal-item">
+  <strong>序列内一致性</strong>
+  <div>真实用户在短序列中的变化范围有限。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>偏差序列需落在人类分布区间并保持一致性；随机或过度一致判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算并输出固定偏差序列</li><li>重放真实用户的偏差序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化错觉类型与顺序</li><li>动态扰动校准起点与参数</li><li>叠加反应时与微调信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更低负担的错觉类型或替代任务，避免对视觉敏感用户造成压力。</p>
+        <ul><li>连续任务可能增加疲劳</li><li>显示设备差异影响偏差量</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-087-1.svg" alt="状态 1：错觉序列" />
+  <h3>状态 1：错觉序列</h3>
+  <p>连续呈现多个错觉校准任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-087-2.svg" alt="状态 2：逐步校准" />
+  <h3>状态 2：逐步校准</h3>
+  <p>用户依次完成校准并微调。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-087-3.svg" alt="状态 3：序列判定" />
+  <h3>状态 3：序列判定</h3>
+  <p>根据偏差序列形态判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Optical_illusion" target="_blank" rel="noreferrer">Optical illusion</a>
+  <div>说明错觉偏差与感知规律。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Psychophysics" target="_blank" rel="noreferrer">Psychophysics</a>
+  <div>说明感知偏差的测量方法。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

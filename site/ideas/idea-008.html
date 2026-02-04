@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#8 两段式速度曲线 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#8</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>两段式速度曲线</h1>
+        <p>捕捉“先快后细”的双阶段运动轨迹，以速度曲线结构区分人机。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>让用户快速移动到大致区域后，再进行精细对准，系统捕捉“快速弹道 + 细微修正”的速度曲线与减速波形。人类会出现典型的“先快后细、末端抖动”的双阶段轨迹。</p>
+        <p>用运动学曲线结构验证“生物控制机制”，而不是任务内容本身。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在快速指向任务中通常呈现速度‑精度权衡：先进行快速弹道运动，再进入细微修正阶段。该双阶段结构在速度曲线与末端抖动上具有稳定形态，可作为无需答案的行为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>要求用户快速移动到目标区域，再进行精细对准。</li><li>记录速度曲线的峰值、减速段与末端微调。</li><li>提取双阶段曲线结构与比例关系。</li><li>多次短任务提高稳定性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到目标区域与精细对准提示。</li><li>步骤 2：用户快速移动后进行末端微调。</li><li>步骤 3：系统分析速度曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>速度曲线的双阶段结构</strong>
+  <div>人类运动通常呈现快速弹道 + 细微修正。</div>
+</div>
+
+<div class="signal-item">
+  <strong>末端微调次数与抖动幅度</strong>
+  <div>末端修正是人类精细控制的典型特征。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检测速度曲线是否包含明显峰值与减速段，并要求末端出现有限次数的微调；若全程平滑或过度精准则判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本基于模型生成双阶段曲线</li><li>重放真实用户轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机目标大小与距离，改变速度曲线比例</li><li>引入微扰或轻微延迟，检测适应反应</li><li>结合抖动谱与反应时进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更大目标与更长时间窗口，允许用户选择慢速模式完成。</p>
+        <ul><li>输入设备差异影响速度曲线形态</li><li>低性能设备延迟可能扭曲末端修正</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-008-1.svg" alt="状态 1：快速移动" />
+  <h3>状态 1：快速移动</h3>
+  <p>用户先快速进入目标区域。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-008-2.svg" alt="状态 2：末端微调" />
+  <h3>状态 2：末端微调</h3>
+  <p>进入细微修正阶段，产生末端抖动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-008-3.svg" alt="状态 3：速度曲线" />
+  <h3>状态 3：速度曲线</h3>
+  <p>双阶段速度曲线结构用于判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Speed%E2%80%93accuracy_tradeoff" target="_blank" rel="noreferrer">Speed–accuracy tradeoff</a>
+  <div>说明速度‑精度权衡与双阶段动作特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明人类运动控制的基本机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

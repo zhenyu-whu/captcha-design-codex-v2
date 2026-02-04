@@ -1,0 +1,78 @@
+{
+  "id": "94",
+  "slug": "idea-094",
+  "title": "随机摩擦点刺",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "多个目标点带不同摩擦系数，用户快速点击，系统观察适应曲线与停顿分布判定真实性。",
+  "background": "在非均匀摩擦或阻力环境中，人类会表现出可测的适应与回调策略。脚本难以在短序列中体现自然的摩擦适应曲线。",
+  "core_mechanism": [
+    "呈现 2–3 个具有不同摩擦系数的目标点。",
+    "用户快速点击目标完成短序列。",
+    "记录到达时间、停顿与速度变化。",
+    "分析适应曲线与停顿分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到多个目标点。",
+    "步骤 2：依次快速点击各目标。",
+    "步骤 3：系统分析适应曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "速度变化与适应曲线",
+      "why_it_matters": "人类对摩擦差异会出现渐进调整。"
+    },
+    {
+      "signal": "停顿分布",
+      "why_it_matters": "真实用户会在高摩擦点短暂停顿。"
+    }
+  ],
+  "decision_logic": "适应曲线需符合人类分布，停顿与速度变化合理；过度一致或无适应判异常。",
+  "attack_surface": [
+    "脚本忽略摩擦差异并固定速度",
+    "重放真实用户的点击序列"
+  ],
+  "mitigations": [
+    "随机化摩擦系数与目标位置",
+    "引入轻微扰动降低模板化",
+    "叠加轨迹微抖动与反应时信号"
+  ],
+  "accessibility": "提供慢速模式与更大目标，避免对手部障碍用户造成负担。",
+  "risks": [
+    "设备差异导致摩擦感受不一致",
+    "触控设备难以体现摩擦变化"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：摩擦目标",
+      "caption": "目标点带不同摩擦标记。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-094-1.svg"
+    },
+    {
+      "title": "状态 2：快速点击",
+      "caption": "用户在不同摩擦点间切换。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-094-2.svg"
+    },
+    {
+      "title": "状态 3：适应判定",
+      "caption": "依据适应曲线与停顿判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-094-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor adaptation",
+      "url": "https://en.wikipedia.org/wiki/Motor_adaptation",
+      "note": "说明对阻力变化的运动适应机制。"
+    },
+    {
+      "title": "Haptic perception",
+      "url": "https://en.wikipedia.org/wiki/Haptic_perception",
+      "note": "说明触觉反馈与摩擦感知基础。"
+    }
+  ]
+}

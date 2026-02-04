@@ -1,0 +1,78 @@
+{
+  "id": "128",
+  "slug": "idea-128",
+  "title": "对比恢复曲线",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "高对比适应后提升对比至刚可读，记录恢复曲线与调整速度。",
+  "background": "对比适应会暂时降低敏感度，恢复曲线存在个体差异。记录回弹轨迹可作为时域特征。",
+  "core_mechanism": [
+    "呈现高对比纹理或文本进行适应。",
+    "切换到低对比目标并允许调节。",
+    "用户在“刚可读”处停下并重复。",
+    "记录恢复曲线与反应时。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看高对比适应刺激。",
+    "步骤 2：调节对比到刚好可读。",
+    "步骤 3：系统记录曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "对比恢复曲线",
+      "why_it_matters": "回弹速度与拐点具有个体差异。"
+    },
+    {
+      "signal": "调整速度与回拉",
+      "why_it_matters": "人类会出现轻微过冲与回拉。"
+    }
+  ],
+  "decision_logic": "曲线需符合人类分布且存在合理回拉；过快或过稳判异常。",
+  "attack_surface": [
+    "脚本直接设定中值对比",
+    "重放历史调节路径"
+  ],
+  "mitigations": [
+    "随机化文本样式与背景纹理",
+    "加入噪声与遮罩降低读取",
+    "改变适应时长与对比阶梯"
+  ],
+  "accessibility": "提供大字号与高对比替代通道。",
+  "risks": [
+    "环境光导致可读性变化",
+    "屏幕校准差异影响阈值"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：高对比适应",
+      "caption": "高对比纹理作为适应刺激。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-128-1.svg"
+    },
+    {
+      "title": "状态 2：对比调节",
+      "caption": "将低对比内容调到刚可读。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-128-2.svg"
+    },
+    {
+      "title": "状态 3：恢复曲线",
+      "caption": "记录对比恢复轨迹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-128-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Contrast adaptation",
+      "url": "https://en.wikipedia.org/wiki/Contrast_adaptation",
+      "note": "说明对比适应与敏感度变化。"
+    },
+    {
+      "title": "Contrast sensitivity",
+      "url": "https://en.wikipedia.org/wiki/Contrast_sensitivity",
+      "note": "说明对比度阈值。"
+    }
+  ]
+}

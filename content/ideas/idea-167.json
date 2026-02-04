@@ -1,0 +1,78 @@
+{
+  "id": "167",
+  "slug": "idea-167",
+  "title": "主动扰动回馈",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "轨迹中插入扰动点并观察即时回馈曲线，判定基于纠偏时序与抖动谱。",
+  "background": "主动扰动会引发即时纠偏，真实用户反馈呈稳定时序结构与微抖动谱。扰动点不可预测，可削弱预生成轨迹攻击。",
+  "core_mechanism": [
+    "在轨迹中随机插入扰动点。",
+    "记录扰动后的回拉与时延。",
+    "提取微抖动频谱与纠偏幅度。",
+    "与人类基线分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行连续轨迹操作。",
+    "步骤 2：系统插入短促扰动。",
+    "步骤 3：系统分析回馈曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "扰动后纠偏时延",
+      "why_it_matters": "真实反馈存在可测延迟。"
+    },
+    {
+      "signal": "微抖动频谱",
+      "why_it_matters": "生理噪声体现真实操控。"
+    }
+  ],
+  "decision_logic": "纠偏时延与抖动谱需匹配人类区间；瞬时回弹或过度平滑判异常。",
+  "attack_surface": [
+    "脚本预测扰动并预补偿",
+    "回放固定纠偏轨迹"
+  ],
+  "mitigations": [
+    "扰动位置与幅度随机化",
+    "多次扰动叠加检测",
+    "结合反应时与路径信号"
+  ],
+  "accessibility": "提供低强度扰动与慢速模式。",
+  "risks": [
+    "扰动过强影响任务完成",
+    "触控设备噪声干扰"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：扰动插入",
+      "caption": "轨迹中出现扰动点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-167-1.svg"
+    },
+    {
+      "title": "状态 2：即时纠偏",
+      "caption": "记录回拉与修正。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-167-2.svg"
+    },
+    {
+      "title": "状态 3：频谱判定",
+      "caption": "分析抖动谱与时延。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-167-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Closed-loop control",
+      "url": "https://en.wikipedia.org/wiki/Control_system#Closed-loop_control",
+      "note": "说明扰动与反馈机制。"
+    },
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明纠偏与运动控制。"
+    }
+  ]
+}

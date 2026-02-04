@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#41 注意力眨眼门 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#41</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>注意力眨眼门</h1>
+        <p>连续闪现序列中识别两个目标，利用注意力眨眼的漏检曲线作为时域信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>RSVP 连续闪现符号序列，要求用户选出两个目标（如“红色项”），记录第二目标在 200–500ms 间的典型漏检曲线。</p>
+        <p>以“注意力眨眼”时间曲线作为人类特征，而非识别准确率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>注意力眨眼表明在快速序列中第二目标在 200-500ms 窗口内更易漏检，形成稳定的时间曲线。通过测量漏检分布与反应时序可形成可靠行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>快速序列呈现多个符号目标与干扰项。</li><li>用户识别两个目标并作答。</li><li>记录第二目标在不同时间间隔下的漏检率。</li><li>分析注意力眨眼时间曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看快速符号序列。</li><li>步骤 2：用户选择或输入两个目标。</li><li>步骤 3：系统拟合漏检曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>第二目标漏检率曲线</strong>
+  <div>注意力眨眼具有典型的时间窗口与形态。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与目标间隔的关系</strong>
+  <div>人类在眨眼窗口会出现延迟与犹豫。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合第二目标漏检率随间隔变化的曲线，并结合反应时分布；曲线异常平坦或无窗口判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本逐帧读取序列直接作答</li><li>重放真实用户的答题序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标样式、颜色与出现位置</li><li>引入掩蔽与节奏抖动降低脚本识别</li><li>叠加微时序与鼠标轨迹信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供较慢序列或替代任务，避免对注意力受限用户不友好。</p>
+        <ul><li>快速闪烁可能引起疲劳</li><li>显示设备刷新率影响序列时间控制</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-041-1.svg" alt="状态 1：快速序列" />
+  <h3>状态 1：快速序列</h3>
+  <p>符号序列快速闪现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-041-2.svg" alt="状态 2：目标识别" />
+  <h3>状态 2：目标识别</h3>
+  <p>用户选择两个目标。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-041-3.svg" alt="状态 3：眨眼曲线" />
+  <h3>状态 3：眨眼曲线</h3>
+  <p>分析第二目标漏检曲线。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Attentional_blink" target="_blank" rel="noreferrer">Attentional blink</a>
+  <div>说明注意力眨眼现象与时间窗。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_attention" target="_blank" rel="noreferrer">Visual attention</a>
+  <div>说明注意力限制对序列识别的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

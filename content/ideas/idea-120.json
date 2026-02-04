@@ -1,0 +1,78 @@
+{
+  "id": "120",
+  "slug": "idea-120",
+  "title": "残影衰减阶梯",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "高对比图形短闪后进入空白，用户在残影衰减中逐级确认边界，记录衰减曲线与起笔延迟。",
+  "background": "残影会随时间衰减，用户对“刚可感知”的边界存在稳定阈值与延迟特征。通过阶梯式确认残影强度，可形成个体化的时域信号。",
+  "core_mechanism": [
+    "短闪高对比图形并进入空白背景。",
+    "用户按阶梯确认残影边界位置。",
+    "记录起笔延迟与衰减曲线。",
+    "与个体或群体基线进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到高对比图形短闪。",
+    "步骤 2：在空白中逐级确认残影边界。",
+    "步骤 3：系统分析衰减曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "残影衰减曲线",
+      "why_it_matters": "真实用户的残影可感知强度随时间稳定衰减。"
+    },
+    {
+      "signal": "起笔延迟",
+      "why_it_matters": "感知到残影边界存在稳定的延迟分布。"
+    }
+  ],
+  "decision_logic": "衰减曲线与延迟需落在人类分布区间；过度平滑或无衰减判异常。",
+  "attack_surface": [
+    "脚本固定衰减曲线并机械确认",
+    "重放真实用户的衰减序列"
+  ],
+  "mitigations": [
+    "随机化残影形状与闪现强度",
+    "引入轻微噪声降低模板化",
+    "叠加反应时与停顿信号"
+  ],
+  "accessibility": "提供更慢衰减与替代任务，避免对视觉敏感用户造成负担。",
+  "risks": [
+    "残影强度不足导致误判",
+    "设备亮度差异影响衰减曲线"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：短闪残影",
+      "caption": "高对比图形短闪后进入空白。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-120-1.svg"
+    },
+    {
+      "title": "状态 2：阶梯确认",
+      "caption": "逐级确认残影边界。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-120-2.svg"
+    },
+    {
+      "title": "状态 3：衰减判定",
+      "caption": "比较残影衰减曲线与延迟。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-120-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Afterimage",
+      "url": "https://en.wikipedia.org/wiki/Afterimage",
+      "note": "说明残影现象与衰减规律。"
+    },
+    {
+      "title": "Visual adaptation",
+      "url": "https://en.wikipedia.org/wiki/Visual_adaptation",
+      "note": "说明视觉系统对刺激的衰减与适应。"
+    }
+  ]
+}

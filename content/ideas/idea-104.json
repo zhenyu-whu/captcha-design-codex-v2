@@ -1,0 +1,78 @@
+{
+  "id": "104",
+  "slug": "idea-104",
+  "title": "虚轮廓‑对称联测",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "先描绘 Kanizsa 虚轮廓，再微调对称阈值，以反应时与调整幅度的关系验证真实性。",
+  "background": "虚轮廓补全体现人类的整体感知能力，对称阈值反映感知敏感度。两步任务结合可形成更稳定的区分信号。",
+  "core_mechanism": [
+    "呈现 Kanizsa 虚轮廓并要求描绘轮廓。",
+    "进入对称阈值滑杆微调。",
+    "记录描绘反应时与阈值调整幅度。",
+    "进行任务内相对比较判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户描绘虚轮廓边界。",
+    "步骤 2：用户微调对称阈值。",
+    "步骤 3：系统比较反应时与幅度并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "虚轮廓描绘反应时",
+      "why_it_matters": "补全能力影响完成速度。"
+    },
+    {
+      "signal": "对称阈值调整幅度",
+      "why_it_matters": "对称敏感度有稳定分布。"
+    }
+  ],
+  "decision_logic": "反应时与阈值幅度需落在人类区间且相对关系合理；过度极端或无微调判异常。",
+  "attack_surface": [
+    "脚本直接描绘轮廓并固定阈值",
+    "重放真实用户的描绘轨迹"
+  ],
+  "mitigations": [
+    "随机化虚轮廓形态与对称参数",
+    "加入轻微噪声降低模板化",
+    "叠加描绘速度与停顿信号"
+  ],
+  "accessibility": "提供更大图形与慢速模式，允许选择题替代描绘。",
+  "risks": [
+    "虚轮廓感知能力差异导致误拒",
+    "设备显示质量影响虚轮廓效果"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：虚轮廓描绘",
+      "caption": "用户描绘 Kanizsa 虚轮廓。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-104-1.svg"
+    },
+    {
+      "title": "状态 2：对称微调",
+      "caption": "微调对称阈值。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-104-2.svg"
+    },
+    {
+      "title": "状态 3：联测判定",
+      "caption": "比较两步指标判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-104-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Kanizsa triangle",
+      "url": "https://en.wikipedia.org/wiki/Kanizsa_triangle",
+      "note": "说明虚轮廓补全的感知基础。"
+    },
+    {
+      "title": "Symmetry",
+      "url": "https://en.wikipedia.org/wiki/Symmetry",
+      "note": "说明对称感知与阈值判断。"
+    }
+  ]
+}

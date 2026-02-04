@@ -1,0 +1,78 @@
+{
+  "id": "5",
+  "slug": "idea-005",
+  "title": "双手协同微调",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "通过键盘与指针双通道协作，验证手眼协同与通道切换的连续性。",
+  "background": "双手协同控制与手眼协调是人类操作的稳定特征，涉及多通道时序同步与连续控制。将“键盘切换灵敏度 + 指针精细操作”组合，可要求用户在两个输入通道间进行实时协调，脚本难以自然模拟。",
+  "core_mechanism": [
+    "用户按键切换指针灵敏度或模式。",
+    "在单次任务中完成粗定位与细定位。",
+    "记录切换时序、过渡平滑度与微调行为。",
+    "评估“按键‑指针”协调的连续性与延迟。"
+  ],
+  "user_flow": [
+    "步骤 1：用户按住键盘键进入低灵敏度模式。",
+    "步骤 2：用户完成粗定位后释放键并细调到目标。",
+    "步骤 3：系统分析切换时序与轨迹连续性。"
+  ],
+  "signals": [
+    {
+      "signal": "按键状态变化与指针速度的对齐度",
+      "why_it_matters": "人类在通道切换时呈现可观察的时序耦合。"
+    },
+    {
+      "signal": "切换过渡区的轨迹连续性",
+      "why_it_matters": "真实操控会出现平滑过渡而非突变。"
+    }
+  ],
+  "decision_logic": "基于按键事件与指针速度曲线的同步性、切换前后轨迹连续度进行综合判定；若通道切换与轨迹无关联则判异常。",
+  "attack_surface": [
+    "脚本同时驱动键盘与鼠标事件",
+    "通过预录轨迹回放模拟双通道"
+  ],
+  "mitigations": [
+    "随机化切换条件与灵敏度曲线",
+    "加入微扰与多次切换要求，提升一致性难度",
+    "联合微抖动与过冲‑回拉作为辅判"
+  ],
+  "accessibility": "提供单通道替代（例如滑杆切换灵敏度），并允许用户选择触控等输入方式。",
+  "risks": [
+    "需要键盘输入的任务可能不适用于移动端",
+    "对新手用户可能增加学习成本"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：双通道提示",
+      "caption": "提示按键切换灵敏度并进入粗定位。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-005-1.svg"
+    },
+    {
+      "title": "状态 2：协同微调",
+      "caption": "按键切换时轨迹连续过渡到细调。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-005-2.svg"
+    },
+    {
+      "title": "状态 3：时序一致性",
+      "caption": "分析按键事件与速度曲线对齐度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-005-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Bimanual coordination",
+      "url": "https://en.wikipedia.org/wiki/Bimanual_coordination",
+      "note": "说明双手协同控制的规律。"
+    },
+    {
+      "title": "Hand–eye coordination",
+      "url": "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination",
+      "note": "说明手眼协调的多通道协作特性。"
+    }
+  ]
+}

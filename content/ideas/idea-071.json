@@ -1,0 +1,78 @@
+{
+  "id": "71",
+  "slug": "idea-071",
+  "title": "伪词分块直觉",
+  "group": "视觉思考范式：文字与符号",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "让用户对无意义字母串进行“顺口分块”，利用边界位置与停顿节奏验证真实性。",
+  "background": "人类阅读会依赖音节与发音习惯进行直觉分块，即使面对伪词也会产生稳定的分段倾向。分块位置、停顿与回撤反映了自然的认知过程，可作为行为信号。",
+  "core_mechanism": [
+    "呈现无意义字母串，提供可拖拽的分隔点。",
+    "用户按“读起来顺口”的方式调整分块边界。",
+    "记录分块位置、停顿与回撤次数。",
+    "多轮不同字母串形成稳定分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到伪词与可调分隔点。",
+    "步骤 2：用户拖拽分隔点完成分块。",
+    "步骤 3：系统记录边界与节奏并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "分块边界位置",
+      "why_it_matters": "人类分块会集中在特定发音边界附近。"
+    },
+    {
+      "signal": "停顿与回撤次数",
+      "why_it_matters": "真实分块通常伴随短暂停顿与微调。"
+    }
+  ],
+  "decision_logic": "边界分布需符合人类分块倾向，并伴随合理停顿节奏；随机边界或无微调判异常。",
+  "attack_surface": [
+    "算法化分块或音节划分脚本",
+    "重放真实用户的拖拽轨迹"
+  ],
+  "mitigations": [
+    "使用含歧义的字母串与不同长度模式",
+    "引入轻微视觉扰动降低模板化",
+    "叠加拖拽时序与路径信号进行多信号判定"
+  ],
+  "accessibility": "提供大字号与高对比模式，允许键盘调整分隔点，并提供替代任务避免对阅读障碍用户造成压力。",
+  "risks": [
+    "语言背景差异导致分块偏好不同",
+    "阅读障碍用户可能增加误拒"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：伪词呈现",
+      "caption": "无意义字母串与可调分隔点。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-071-1.svg"
+    },
+    {
+      "title": "状态 2：拖拽分块",
+      "caption": "用户拖拽分隔点形成顺口分块。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-071-2.svg"
+    },
+    {
+      "title": "状态 3：分块判定",
+      "caption": "对比边界与节奏形成判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-071-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Syllabification",
+      "url": "https://en.wikipedia.org/wiki/Syllabification",
+      "note": "说明音节划分与分块规则。"
+    },
+    {
+      "title": "Phonotactics",
+      "url": "https://en.wikipedia.org/wiki/Phonotactics",
+      "note": "说明发音组合的直觉限制。"
+    }
+  ]
+}

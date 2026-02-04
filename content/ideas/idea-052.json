@@ -1,0 +1,78 @@
+{
+  "id": "52",
+  "slug": "idea-052",
+  "title": "全局‑局部优先偏置",
+  "group": "视觉思考范式：扫描/错觉/全局-局部",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "展示 Navon 图形并让用户判断第一眼看到的大字母或小字母，利用全局/局部优先性验证真实性。",
+  "background": "Navon 图形显示人类常对全局形状具有优先加工倾向，但个体与情境差异可导致局部优先。通过记录选择偏向与反应时，可形成稳定的知觉特征。",
+  "core_mechanism": [
+    "展示由小元素组成的大字母图形。",
+    "用户选择第一眼注意到的是全局还是局部。",
+    "记录反应时与选择偏向。",
+    "分析全局/局部优先性分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到 Navon 图形。",
+    "步骤 2：用户选择全局或局部优先。",
+    "步骤 3：系统分析反应与偏向。"
+  ],
+  "signals": [
+    {
+      "signal": "全局/局部选择偏向",
+      "why_it_matters": "人类存在稳定的全局优先或局部优先倾向。"
+    },
+    {
+      "signal": "反应时分布",
+      "why_it_matters": "全局优先通常伴随更快的初始反应。"
+    }
+  ],
+  "decision_logic": "结合选择偏向与反应时分布判定；反应过快且无偏向或随机化判异常。",
+  "attack_surface": [
+    "脚本固定选择某一选项",
+    "重放真实用户的选择序列"
+  ],
+  "mitigations": [
+    "随机化字母组合与大小比例",
+    "引入轻微噪声与位置抖动",
+    "叠加鼠标轨迹与微时序信号进行多信号验证"
+  ],
+  "accessibility": "提供更大字号或替代任务模式，避免对视力较弱用户造成负担。",
+  "risks": [
+    "文化与阅读习惯影响局部优先性",
+    "屏幕尺寸影响全局感知"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：Navon 图形",
+      "caption": "大字母由小字母组成。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-052-1.svg"
+    },
+    {
+      "title": "状态 2：优先选择",
+      "caption": "选择全局或局部优先。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-052-2.svg"
+    },
+    {
+      "title": "状态 3：偏置判定",
+      "caption": "统计偏向与反应时。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-052-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Navon figures",
+      "url": "https://en.wikipedia.org/wiki/Navon_figure",
+      "note": "说明全局与局部优先加工现象。"
+    },
+    {
+      "title": "Global precedence",
+      "url": "https://en.wikipedia.org/wiki/Global_precedence",
+      "note": "说明全局优先效应与反应时差异。"
+    }
+  ]
+}

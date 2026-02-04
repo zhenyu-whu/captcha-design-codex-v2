@@ -1,0 +1,78 @@
+{
+  "id": "79",
+  "slug": "idea-079",
+  "title": "词形轮廓补全",
+  "group": "视觉思考范式：文字与符号",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "仅展示词形上下轮廓，引导用户补全或选择匹配词形，以描绘路径与弯折位置验证真实性。",
+  "background": "人类阅读不仅依赖逐字识别，还会利用词形轮廓进行整体感知。对轮廓的补全路径与弯折点具有可测的速度与停顿模式，可用于区分脚本与真实用户。",
+  "core_mechanism": [
+    "展示词形上下轮廓线或缺口轮廓。",
+    "用户选择匹配词或沿轮廓描绘补全。",
+    "记录描绘速度、弯折位置与停顿。",
+    "多轮随机词形与字体保持稳定分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到词形轮廓提示。",
+    "步骤 2：用户补全轮廓或选择匹配词。",
+    "步骤 3：系统记录路径与节奏并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "描绘速度与弯折点分布",
+      "why_it_matters": "人类补全轮廓会在关键拐点处放慢并微调。"
+    },
+    {
+      "signal": "轮廓匹配误差",
+      "why_it_matters": "真实用户的补全路径具有稳定的误差范围。"
+    }
+  ],
+  "decision_logic": "补全路径需落在人类误差区间且包含自然的停顿节奏；过度平滑或直线化判异常。",
+  "attack_surface": [
+    "脚本提取轮廓并自动描绘",
+    "重放真实用户的描绘轨迹"
+  ],
+  "mitigations": [
+    "随机化词形、字体与轮廓缺口",
+    "加入轻微噪声降低轮廓拟合",
+    "叠加描绘时序与压力节奏进行多信号判定"
+  ],
+  "accessibility": "提供更大字号与高对比模式，并允许选择题替代描绘任务。",
+  "risks": [
+    "语言与词形熟悉度差异影响表现",
+    "描绘任务对手部障碍用户不友好"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：轮廓提示",
+      "caption": "仅显示词形轮廓线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-079-1.svg"
+    },
+    {
+      "title": "状态 2：补全描绘",
+      "caption": "用户沿轮廓补全路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-079-2.svg"
+    },
+    {
+      "title": "状态 3：误差判定",
+      "caption": "根据路径误差与节奏判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-079-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Bouma shape",
+      "url": "https://en.wikipedia.org/wiki/Bouma_shape",
+      "note": "说明词形轮廓在阅读中的作用。"
+    },
+    {
+      "title": "Visual word recognition",
+      "url": "https://en.wikipedia.org/wiki/Visual_word_recognition",
+      "note": "说明整体词形感知的研究背景。"
+    }
+  ]
+}

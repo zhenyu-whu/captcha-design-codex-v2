@@ -1,0 +1,78 @@
+{
+  "id": "169",
+  "slug": "idea-169",
+  "title": "反拟合噪声窗",
+  "group": "Reverse Brainstorming - Round 3",
+  "phase": "Reverse Brainstorming - Round 3",
+  "kind": "idea",
+  "summary": "设定合理噪声窗口，过度平滑或过度随机均判异常。",
+  "background": "人类轨迹噪声具有可解释的谱结构。引入噪声窗可抑制刻意拟合：过平滑或过随机都会偏离人类分布。",
+  "core_mechanism": [
+    "定义噪声谱的合理窗口。",
+    "采集轨迹微抖动与速度波动。",
+    "检测是否落在噪声窗内。",
+    "结合纠偏频率输出判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成短轨迹任务。",
+    "步骤 2：系统提取噪声谱与波动。",
+    "步骤 3：系统对照噪声窗判定。"
+  ],
+  "signals": [
+    {
+      "signal": "噪声谱落点",
+      "why_it_matters": "人类噪声谱在有限窗口内。"
+    },
+    {
+      "signal": "纠偏频率",
+      "why_it_matters": "真实纠偏节律不会过度规则。"
+    }
+  ],
+  "decision_logic": "噪声谱需落在窗口且纠偏频率合理；过度平滑或过度随机判异常。",
+  "attack_surface": [
+    "脚本注入伪随机噪声",
+    "平滑轨迹规避噪声检测"
+  ],
+  "mitigations": [
+    "动态调整噪声窗口",
+    "结合多维信号交叉验证",
+    "检测噪声谱与任务参数的耦合"
+  ],
+  "accessibility": "允许放宽噪声窗并提供替代任务。",
+  "risks": [
+    "设备采样率影响噪声谱",
+    "噪声窗设置过严导致误拒"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：噪声窗口",
+      "caption": "定义合理噪声范围。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-169-1.svg"
+    },
+    {
+      "title": "状态 2：平滑/随机对照",
+      "caption": "过平滑或过随机为异常。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-169-2.svg"
+    },
+    {
+      "title": "状态 3：窗口判定",
+      "caption": "噪声落窗则通过。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-169-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Noise",
+      "url": "https://en.wikipedia.org/wiki/Noise",
+      "note": "说明噪声与谱结构。"
+    },
+    {
+      "title": "Signal detection theory",
+      "url": "https://en.wikipedia.org/wiki/Signal_detection_theory",
+      "note": "说明阈值窗口与判定。"
+    }
+  ]
+}

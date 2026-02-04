@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#118 异步意图链 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#118</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>异步意图链</h1>
+        <p>在主操作后分两次异步校验意图（选择 + 微路径），以任务内相对比较验证一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户完成主操作后分两次异步校验其意图（选择 + 微路径），系统以任务内相对比较判定一致性。任务结构为异步验证，信号形态为注意力分布与搜索路径。</p>
+        <p>以“跨时意图链”降低一次性伪造。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实用户的意图会在短时内保持连续性，两次异步校验可形成“意图链”。脚本难以跨时保持一致的注意力分布与路径特征，从而提升在场验证强度。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>记录主操作期间的注意力与路径特征。</li><li>异步弹出第一次微选择校验。</li><li>稍后进行第二次微路径复核。</li><li>对两次校验与主操作进行相对比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成主操作并继续使用页面。</li><li>步骤 2：异步提示进行微选择。</li><li>步骤 3：再次异步提示复核微路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>注意力分布一致性</strong>
+  <div>真实用户的关注区域与意图存在连续性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微路径相似度</strong>
+  <div>跨时复核的路径相似度具有稳定区间。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>两次异步校验需与主操作保持合理一致性；完全不相关或过度完美判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定选择与路径模板</li><li>重放真实用户的意图链序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化异步时机与题目形式</li><li>绑定上下文状态与动态参数</li><li>叠加反应时与停顿信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供可跳过或简化校验，避免频繁弹窗影响体验。</p>
+        <ul><li>异步打断导致用户困扰</li><li>意图变化可能引发误判</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-118-1.svg" alt="状态 1：主操作" />
+  <h3>状态 1：主操作</h3>
+  <p>记录主操作的注意力与路径。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-118-2.svg" alt="状态 2：异步选择" />
+  <h3>状态 2：异步选择</h3>
+  <p>第一次异步微选择校验。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-118-3.svg" alt="状态 3：异步路径" />
+  <h3>状态 3：异步路径</h3>
+  <p>第二次异步微路径复核。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Prospective_memory" target="_blank" rel="noreferrer">Prospective memory</a>
+  <div>说明跨时意图保持与回忆机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_search" target="_blank" rel="noreferrer">Visual search</a>
+  <div>说明注意力分布与路径特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

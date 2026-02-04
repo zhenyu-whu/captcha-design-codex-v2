@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#82 生理漂移追踪 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#82</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>生理漂移追踪</h1>
+        <p>让用户持续追踪轻微扰动目标，采集轨迹动力学与微漂移特征作为验证信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户持续追踪轻微扰动目标 5–8 秒，系统采集轨迹动力学与微漂移特征并与群体基线比对。任务结构为持续追踪，信号形态为轨迹动力学。</p>
+        <p>用“持续追踪的生理漂移”作为关键证据，脚本难维持自然波动。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>持续追踪任务会暴露人类运动控制中的微漂移、延迟与纠偏特征。脚本虽可跟随目标，但难以复现真实的生理噪声结构。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>目标以轻微扰动轨迹移动 5–8 秒。</li><li>用户持续跟随目标完成追踪。</li><li>采集轨迹动力学、延迟与微漂移。</li><li>与人类基线分布进行比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到移动目标。</li><li>步骤 2：用户持续追踪目标轨迹。</li><li>步骤 3：系统分析漂移与延迟并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>追踪延迟与过冲</strong>
+  <div>人类追踪存在稳定的反应延迟与纠偏模式。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微漂移频谱</strong>
+  <div>生理噪声在频谱上具有稳定结构。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>延迟、过冲与漂移频谱需落在人类分布区间；过度平滑或完美跟随判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接追踪目标路径</li><li>重放真实用户的追踪轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化扰动模式与目标速度</li><li>加入随机短暂停顿降低预测性</li><li>叠加时序与微抖动信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供慢速模式与替代任务，允许更大目标与键盘辅助输入。</p>
+        <ul><li>运动障碍用户可能出现误拒</li><li>不同设备采样率影响信号质量</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-082-1.svg" alt="状态 1：扰动目标" />
+  <h3>状态 1：扰动目标</h3>
+  <p>目标带轻微扰动移动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-082-2.svg" alt="状态 2：持续追踪" />
+  <h3>状态 2：持续追踪</h3>
+  <p>用户持续跟随目标。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-082-3.svg" alt="状态 3：漂移判定" />
+  <h3>状态 3：漂移判定</h3>
+  <p>分析延迟与漂移频谱。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明追踪控制的生理基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Physiological_tremor" target="_blank" rel="noreferrer">Physiological tremor</a>
+  <div>说明微漂移与生理噪声结构。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

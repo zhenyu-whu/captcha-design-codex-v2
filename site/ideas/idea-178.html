@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#178 延迟漂移剖面 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#178</span>
+          <span class="chip teal">Reverse Brainstorming - Round 4</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>延迟漂移剖面</h1>
+        <p>逐步改变响应延迟并记录适应曲线，识别固定延迟回放。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 4</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在验证过程中逐步改变响应延迟并记录用户适应曲线，判断是否出现典型的回放“固定延迟”特征。</p>
+        <p>延迟回放难以跟随动态延迟漂移。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实用户会对延迟变化逐步适应，形成可观测的漂移剖面。回放或脚本通常表现为固定延迟模式。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在验证过程中缓慢改变反馈延迟。</li><li>记录用户补偿行为与反应时。</li><li>拟合延迟适应曲线。</li><li>检测固定延迟或不适应模式。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成连续操作。</li><li>步骤 2：系统逐步改变反馈延迟。</li><li>步骤 3：系统分析适应剖面并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>适应斜率</strong>
+  <div>真实用户会逐步补偿延迟。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时漂移</strong>
+  <div>延迟变化会改变反应时结构。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>适应曲线需连续且有补偿趋势；固定延迟或无适应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本忽略反馈并固定输出</li><li>回放固定延迟轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化延迟漂移轨迹</li><li>加入短时反向漂移</li><li>与路径信号联合判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>限制最大延迟并提供慢速模式。</p>
+        <ul><li>高延迟设备误判</li><li>用户体验下降</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-178-1.svg" alt="状态 1：延迟变化" />
+  <h3>状态 1：延迟变化</h3>
+  <p>反馈延迟逐步漂移。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-178-2.svg" alt="状态 2：适应轨迹" />
+  <h3>状态 2：适应轨迹</h3>
+  <p>记录补偿与反应时。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-178-3.svg" alt="状态 3：剖面判定" />
+  <h3>状态 3：剖面判定</h3>
+  <p>分析漂移剖面特征。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Latency_(engineering)" target="_blank" rel="noreferrer">Latency (engineering)</a>
+  <div>说明延迟与响应特性。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时变化与适应。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

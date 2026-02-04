@@ -1,0 +1,78 @@
+{
+  "id": "16",
+  "slug": "idea-016",
+  "title": "双通道灵敏度切换",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在单次拖拽中切换灵敏度，验证按键与指针的时序协调与动作连续性。",
+  "background": "多通道协同控制是人类交互的重要特征，涉及按键与指针同步调整。通过在任务中要求切换灵敏度完成粗定位与细定位，可观察通道切换的时序一致性与轨迹连续性，从而区分脚本与真实操控。",
+  "core_mechanism": [
+    "设置“按键切换灵敏度”的规则。",
+    "要求用户在一次拖拽中完成粗定位与细定位。",
+    "记录按键事件与速度曲线的对齐关系。",
+    "评估切换瞬间的轨迹连续性与微调行为。"
+  ],
+  "user_flow": [
+    "步骤 1：用户按住键进入低灵敏度模式。",
+    "步骤 2：完成粗定位后释放键进行细调。",
+    "步骤 3：系统分析时序一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "按键事件与速度曲线同步性",
+      "why_it_matters": "真实操控会体现明确的通道切换时序。"
+    },
+    {
+      "signal": "切换点轨迹连续性",
+      "why_it_matters": "人类切换通常平滑而非突变。"
+    }
+  ],
+  "decision_logic": "检测按键切换时序与速度曲线是否一致，并评估切换处的轨迹连续性；若事件序列与轨迹无关联则判异常。",
+  "attack_surface": [
+    "脚本同步发送键鼠事件",
+    "预录轨迹与切换序列"
+  ],
+  "mitigations": [
+    "随机化切换条件与灵敏度曲线",
+    "加入微扰以检测实时适应",
+    "与抖动谱或过冲‑回拉信号耦合"
+  ],
+  "accessibility": "提供非按键切换的替代方式（如滑杆或按钮），兼容移动端与无键盘设备。",
+  "risks": [
+    "对新手用户存在学习成本",
+    "移动端或触控设备可能不适配"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：灵敏度切换",
+      "caption": "按键控制灵敏度并启动拖拽。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-016-1.svg"
+    },
+    {
+      "title": "状态 2：粗细定位",
+      "caption": "粗定位后切换到细定位完成对准。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-016-2.svg"
+    },
+    {
+      "title": "状态 3：时序判定",
+      "caption": "检测按键事件与速度曲线对齐。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-016-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Bimanual coordination",
+      "url": "https://en.wikipedia.org/wiki/Bimanual_coordination",
+      "note": "说明双通道协同控制的规律。"
+    },
+    {
+      "title": "Hand–eye coordination",
+      "url": "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination",
+      "note": "说明手眼协调与多通道协作。"
+    }
+  ]
+}

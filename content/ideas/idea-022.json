@@ -1,0 +1,78 @@
+{
+  "id": "22",
+  "slug": "idea-022",
+  "title": "心理旋转时间曲线",
+  "group": "视觉思考范式：空间/结构/直觉",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "通过旋转角度与反应时曲线的匹配关系检验心理旋转特性。",
+  "background": "心理旋转研究表明，目标与候选形状之间的角度差越大，反应时往往越长，形成近似线性关系。利用这一时间曲线可形成较难伪造的行为信号。",
+  "core_mechanism": [
+    "展示目标形状与多角度旋转候选。",
+    "要求用户快速匹配目标并记录反应时。",
+    "在多个角度条件下收集反应时序列。",
+    "拟合角度-反应时曲线并进行判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到目标形状与候选集合。",
+    "步骤 2：用户选择匹配形状并完成点击。",
+    "步骤 3：系统拟合时间曲线并输出判定。"
+  ],
+  "signals": [
+    {
+      "signal": "反应时随角度差的斜率",
+      "why_it_matters": "人类心理旋转呈现随角度增大的时间成本。"
+    },
+    {
+      "signal": "角度差条件下的错误分布",
+      "why_it_matters": "角度更大时错误率上升具有稳定趋势。"
+    }
+  ],
+  "decision_logic": "拟合角度差与反应时的线性趋势，要求斜率与误差分布落在人类范围；反应时近似常数或随机波动判异常。",
+  "attack_surface": [
+    "脚本预计算答案并固定延时响应",
+    "重放真实用户的作答序列"
+  ],
+  "mitigations": [
+    "动态生成形状与角度，避免固定答案",
+    "混合镜像与干扰角度，增加判断复杂度",
+    "叠加微时序与鼠标轨迹信号提高伪造成本"
+  ],
+  "accessibility": "提供更长时间窗口与替代通道（非旋转类任务），避免对空间旋转能力受限用户过度惩罚。",
+  "risks": [
+    "不同年龄与经验导致反应时差异",
+    "过多试次可能增加疲劳"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：旋转匹配任务",
+      "caption": "目标形状与多角度候选同时出现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-022-1.svg"
+    },
+    {
+      "title": "状态 2：快速匹配",
+      "caption": "用户选择与目标相同的旋转形态。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-022-2.svg"
+    },
+    {
+      "title": "状态 3：时间曲线",
+      "caption": "拟合角度与反应时曲线并判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-022-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Mental rotation",
+      "url": "https://en.wikipedia.org/wiki/Mental_rotation",
+      "note": "说明心理旋转与反应时关系。"
+    },
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时作为行为特征的基础。"
+    }
+  ]
+}

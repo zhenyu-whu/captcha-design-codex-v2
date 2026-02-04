@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#26 视觉层级压缩 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#26</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>视觉层级压缩</h1>
+        <p>让用户按视觉层级顺序点击关键元素，验证层级直觉排序的一致性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出复杂界面样式，要求用户按“视觉层级”依次点击最重要元素；记录点击序列与停顿时间。</p>
+        <p>验证人类对视觉层级的直觉排序，而非语义理解。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉层级由大小、对比、位置等线索共同驱动，用户在短时间内能形成相对一致的注意力排序。测量点击顺序与停顿节奏可形成稳定的行为信号，而非依赖语义理解。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示包含多层级元素的界面样式。</li><li>要求用户依次点击最重要的元素。</li><li>记录点击序列与每次停顿时间。</li><li>计算层级排序与预期模型的一致度。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到一组视觉层级明显的元素。</li><li>步骤 2：用户按重要性顺序点击元素。</li><li>步骤 3：系统评估点击序列并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>点击序列与层级排序的相关度</strong>
+  <div>人类对视觉层级的直觉排序通常高度一致。</div>
+</div>
+
+<div class="signal-item">
+  <strong>停顿时间与层级跨度关系</strong>
+  <div>层级跨度越大，决策停顿通常越短。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>计算点击序列与层级模型的一致度，并结合停顿分布；一致度过低或停顿模式异常判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本依据尺寸与对比规则排序点击</li><li>重放真实用户序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化层级线索组合并加入冲突线索</li><li>多轮任务对跨题稳定性进行检查</li><li>叠加鼠标轨迹与微时序信号增强鲁棒性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化布局与键盘排序模式，避免对视觉障碍用户造成负担。</p>
+        <ul><li>设计风格差异导致层级判断偏差</li><li>小屏设备降低层级线索显著度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-026-1.svg" alt="状态 1：层级界面" />
+  <h3>状态 1：层级界面</h3>
+  <p>元素大小与对比形成视觉层级。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-026-2.svg" alt="状态 2：点击排序" />
+  <h3>状态 2：点击排序</h3>
+  <p>按重要性依次点击关键元素。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-026-3.svg" alt="状态 3：序列评估" />
+  <h3>状态 3：序列评估</h3>
+  <p>对比点击顺序与层级模型。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_hierarchy" target="_blank" rel="noreferrer">Visual hierarchy</a>
+  <div>说明视觉层级与注意力排序的基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Salience_(neuroscience)" target="_blank" rel="noreferrer">Salience (neuroscience)</a>
+  <div>说明显著性线索对注意力的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

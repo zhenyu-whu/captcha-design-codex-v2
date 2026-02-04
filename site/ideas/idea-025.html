@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#25 变化盲视检测 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#25</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>变化盲视检测</h1>
+        <p>利用变化发现的延迟曲线与变化尺度关系验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两幅近似图形快速交替，用户发现变化后点击位置；系统评估发现时间分布与变化尺度的关系。</p>
+        <p>用“发现延迟曲线”而不是“是否找到”作为判定依据。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>变化盲视表明人类对场景变化的检测存在显著延迟，且延迟与变化规模、位置与干扰程度相关。通过测量发现时间分布可形成稳定的行为特征，而非单纯依赖是否找到。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>两幅近似图形快速交替呈现。</li><li>用户发现变化后点击变化位置。</li><li>记录发现时间与点击位置误差。</li><li>分析发现时间与变化尺度的关系。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到交替闪烁的场景。</li><li>步骤 2：用户发现变化并点击位置。</li><li>步骤 3：系统拟合延迟曲线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>发现时间与变化尺度的曲线</strong>
+  <div>人类变化检测存在稳定的延迟曲线。</div>
+</div>
+
+<div class="signal-item">
+  <strong>搜索轨迹与点击误差</strong>
+  <div>真实搜索会出现逐步定位与局部停顿。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>综合发现时间曲线与搜索轨迹特征，要求与人类统计范围一致；极端快速或无规律波动判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本对两帧做像素差检测</li><li>重放真实用户的发现序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化变化位置、大小与出现节奏</li><li>加入局部噪声与轻微位移干扰差分检测</li><li>叠加鼠标轨迹与停顿分布进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低闪烁频率或替代模式，并允许键盘选择变化区域，避免对光敏或注意力受限用户不友好。</p>
+        <ul><li>频繁闪烁可能引起视觉疲劳</li><li>环境光线与屏幕刷新率影响延迟测量</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-025-1.svg" alt="状态 1：交替场景" />
+  <h3>状态 1：交替场景</h3>
+  <p>两幅近似图形快速切换。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-025-2.svg" alt="状态 2：变化定位" />
+  <h3>状态 2：变化定位</h3>
+  <p>用户发现变化并点击。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-025-3.svg" alt="状态 3：延迟曲线" />
+  <h3>状态 3：延迟曲线</h3>
+  <p>拟合变化尺度与发现时间关系。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Change_blindness" target="_blank" rel="noreferrer">Change blindness</a>
+  <div>说明变化盲视的基本现象与机制。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Attention" target="_blank" rel="noreferrer">Attention</a>
+  <div>说明注意力限制对变化检测的影响。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

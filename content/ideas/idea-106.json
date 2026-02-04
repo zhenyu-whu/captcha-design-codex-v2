@@ -1,0 +1,78 @@
+{
+  "id": "106",
+  "slug": "idea-106",
+  "title": "暂留拼合‑预测误差",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "两段图形快速交替后消失，用户预测缺失段位置并轻描，以预测误差与一致性验证真实性。",
+  "background": "视觉暂留会在短时间内整合交替刺激，用户的补全预测会呈现稳定的误差分布。脚本难以在时域整合与预测误差上保持人类特征。",
+  "core_mechanism": [
+    "两段图形快速交替呈现后消失。",
+    "用户预测缺失段位置并轻描。",
+    "记录预测误差与路径曲率。",
+    "与任务内一致性进行比较。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到交替闪现的图形片段。",
+    "步骤 2：图形消失后用户轻描缺失段。",
+    "步骤 3：系统计算预测误差并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "预测误差分布",
+      "why_it_matters": "人类补全存在稳定的误差范围。"
+    },
+    {
+      "signal": "路径曲率与停顿",
+      "why_it_matters": "真实用户补全会出现自然的曲率与微停顿。"
+    }
+  ],
+  "decision_logic": "误差分布与路径形态需落在人类区间；过度精确或过度平滑判异常。",
+  "attack_surface": [
+    "脚本直接计算缺失段并描绘",
+    "重放真实用户的补全轨迹"
+  ],
+  "mitigations": [
+    "随机化交替片段与节奏",
+    "加入轻微噪声降低模板化",
+    "叠加反应时与抖动信号"
+  ],
+  "accessibility": "提供更慢闪现与替代任务，避免对视觉敏感用户造成压力。",
+  "risks": [
+    "闪现过快导致真实用户补全困难",
+    "设备刷新率影响暂留效果"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：交替片段",
+      "caption": "两段图形快速交替呈现。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-106-1.svg"
+    },
+    {
+      "title": "状态 2：预测补全",
+      "caption": "用户轻描缺失段。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-106-2.svg"
+    },
+    {
+      "title": "状态 3：误差判定",
+      "caption": "根据预测误差与路径判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-106-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Persistence of vision",
+      "url": "https://en.wikipedia.org/wiki/Persistence_of_vision",
+      "note": "说明视觉暂留与时域整合。"
+    },
+    {
+      "title": "Predictive coding",
+      "url": "https://en.wikipedia.org/wiki/Predictive_coding",
+      "note": "说明预测误差与感知补全机制。"
+    }
+  ]
+}

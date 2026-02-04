@@ -1,0 +1,78 @@
+{
+  "id": "98",
+  "slug": "idea-098",
+  "title": "速度衰减签名",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "要求用户沿直线持续拖拽 3 秒，记录速度衰减斜率与微抖动作为验证信号。",
+  "background": "人类在持续拖拽中会出现自然的速度衰减与微纠偏，速度曲线并非恒定。通过测量衰减斜率与波动形态，可区分脚本化的恒速轨迹。",
+  "core_mechanism": [
+    "提供直线路径与 3 秒持续拖拽任务。",
+    "记录速度随时间的衰减曲线。",
+    "采集微抖动与纠偏频率。",
+    "与群体基线分布进行比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到直线拖拽任务。",
+    "步骤 2：用户保持拖拽完成 3 秒。",
+    "步骤 3：系统分析速度衰减并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "速度衰减斜率",
+      "why_it_matters": "人类持续动作会出现稳定的衰减趋势。"
+    },
+    {
+      "signal": "微抖动频率",
+      "why_it_matters": "生理噪声在轨迹中具有可辨结构。"
+    }
+  ],
+  "decision_logic": "衰减斜率与波动需落在人类分布区间；过度恒速或过度平滑判异常。",
+  "attack_surface": [
+    "脚本保持恒速直线拖拽",
+    "重放真实用户的速度曲线"
+  ],
+  "mitigations": [
+    "随机化拖拽方向与距离",
+    "引入轻微扰动降低模板化",
+    "叠加停顿与抖动信号进行多信号判定"
+  ],
+  "accessibility": "提供更短时长与更大路径，允许键盘替代拖拽。",
+  "risks": [
+    "设备采样率不足影响速度曲线",
+    "手部障碍用户可能出现误拒"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：直线拖拽",
+      "caption": "持续拖拽 3 秒。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-098-1.svg"
+    },
+    {
+      "title": "状态 2：速度衰减",
+      "caption": "速度随时间自然衰减。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-098-2.svg"
+    },
+    {
+      "title": "状态 3：曲线判定",
+      "caption": "比较衰减曲线与抖动谱。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-098-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明持续动作中的控制与衰减特征。"
+    },
+    {
+      "title": "Speed%E2%80%93accuracy tradeoff",
+      "url": "https://en.wikipedia.org/wiki/Speed%E2%80%93accuracy_tradeoff",
+      "note": "说明速度变化与控制策略的关系。"
+    }
+  ]
+}

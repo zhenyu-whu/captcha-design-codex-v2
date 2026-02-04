@@ -1,0 +1,78 @@
+{
+  "id": "152",
+  "slug": "idea-152",
+  "title": "连续值锁",
+  "group": "Reverse Brainstorming - Round 1",
+  "phase": "Reverse Brainstorming - Round 1",
+  "kind": "idea",
+  "summary": "将答案空间扩展为连续值，利用微调轨迹与阈值位置进行判定。",
+  "background": "连续值任务依赖感知阈值与精细控制，用户会表现出自然的微调与回拉。相比离散选择，连续空间更难被穷举或直接计算。",
+  "core_mechanism": [
+    "提供连续滑杆/对齐任务。",
+    "记录微调轨迹与停顿。",
+    "提取最终阈值位置与轨迹形态。",
+    "结合多轮相对比较进行判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行连续值调节。",
+    "步骤 2：完成微调并确认。",
+    "步骤 3：系统分析轨迹与阈值位置。"
+  ],
+  "signals": [
+    {
+      "signal": "微调轨迹与回拉",
+      "why_it_matters": "真实用户会出现试探与微纠偏。"
+    },
+    {
+      "signal": "阈值位置分布",
+      "why_it_matters": "感知阈值落在稳定区间。"
+    }
+  ],
+  "decision_logic": "轨迹形态与阈值需在基线范围；跳跃式搜索或恒定输出判异常。",
+  "attack_surface": [
+    "脚本二分搜索最优值",
+    "重放历史微调轨迹"
+  ],
+  "mitigations": [
+    "随机化映射与反馈曲线",
+    "加入噪声与短时扰动",
+    "多轮相对比较降低穷举"
+  ],
+  "accessibility": "提供粗粒度调节与替代任务，避免精细操作负担。",
+  "risks": [
+    "设备分辨率限制精度",
+    "微调过多导致疲劳"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：连续调节",
+      "caption": "连续滑杆与目标范围。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-152-1.svg"
+    },
+    {
+      "title": "状态 2：微调轨迹",
+      "caption": "记录微调与回拉过程。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-152-2.svg"
+    },
+    {
+      "title": "状态 3：阈值判定",
+      "caption": "比较轨迹形态与阈值分布。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-152-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Just-noticeable difference",
+      "url": "https://en.wikipedia.org/wiki/Just-noticeable_difference",
+      "note": "说明阈值与可觉差异。"
+    },
+    {
+      "title": "Psychophysics",
+      "url": "https://en.wikipedia.org/wiki/Psychophysics",
+      "note": "说明感知与连续量测。"
+    }
+  ]
+}

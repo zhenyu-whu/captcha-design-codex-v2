@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#67 方向差异阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#67</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>方向差异阈值</h1>
+        <p>旋转近似平行的线直到看似平行，利用方向 JND 阈值与微调步数验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两条近似平行的线，用户旋转其中一条直到“看起来平行”。记录最小可辨角度与微调步数。</p>
+        <p>基于方向 JND 的生理限制而非正确率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>方向差异的最小可觉阈（JND）反映人类对角度变化的敏感度，调节过程中的微调节奏具有稳定特征。测量阈值与微调步数可形成行为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示两条近似平行的线。</li><li>用户旋转其中一条直到看似平行。</li><li>记录最小可辨角度与微调步数。</li><li>分析方向阈值与调节节奏。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到两条近似平行线。</li><li>步骤 2：用户调节角度直到平行。</li><li>步骤 3：系统记录阈值并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>最小可辨角度阈值</strong>
+  <div>方向 JND 具有稳定范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微调步数与回撤节奏</strong>
+  <div>真实调节通常伴随多次微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估角度阈值与微调节奏是否落在人类范围；一次到位或异常阈值判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设定角度</li><li>重放真实用户的调节轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化初始角度与线段长度</li><li>加入轻微噪声与位置抖动</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供键盘微调或替代任务模式，避免对精细操作用户造成负担。</p>
+        <ul><li>小屏设备降低角度感知精度</li><li>设备输入精度影响调节步数</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-067-1.svg" alt="状态 1：近似平行" />
+  <h3>状态 1：近似平行</h3>
+  <p>两条线存在轻微角度差。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-067-2.svg" alt="状态 2：角度调节" />
+  <h3>状态 2：角度调节</h3>
+  <p>用户旋转至看似平行。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-067-3.svg" alt="状态 3：阈值判定" />
+  <h3>状态 3：阈值判定</h3>
+  <p>分析角度阈值与微调节奏。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Just-noticeable_difference" target="_blank" rel="noreferrer">Just-noticeable difference</a>
+  <div>说明方向差异阈值与 JND 概念。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Orientation_(geometry)" target="_blank" rel="noreferrer">Orientation (geometry)</a>
+  <div>说明方向与角度感知基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

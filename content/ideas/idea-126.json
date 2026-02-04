@@ -1,0 +1,78 @@
+{
+  "id": "126",
+  "slug": "idea-126",
+  "title": "运动后效中性滑杆",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "运动适应后调节反向速度到主观静止，记录中性点曲线与调整过程。",
+  "background": "运动后效使静止刺激出现反向运动知觉，中性点会随适应衰减变化。该适应轨迹具有个体差异。",
+  "core_mechanism": [
+    "显示单向运动刺激进行适应。",
+    "切换到可调反向运动滑杆。",
+    "用户调节到“感觉静止”并重复两轮。",
+    "记录中性点与调整动态。"
+  ],
+  "user_flow": [
+    "步骤 1：用户观看运动适应刺激。",
+    "步骤 2：拖动滑杆调到主观静止。",
+    "步骤 3：重复一轮并记录中性点变化。"
+  ],
+  "signals": [
+    {
+      "signal": "中性点速度偏移",
+      "why_it_matters": "中性点反映运动后效强度。"
+    },
+    {
+      "signal": "调整轨迹与回拉",
+      "why_it_matters": "真实用户会出现微调与延迟。"
+    }
+  ],
+  "decision_logic": "中性点需随轮次衰减且调整轨迹具微调特征；瞬时归零判异常。",
+  "attack_surface": [
+    "脚本固定设置零速度",
+    "重放历史中性点轨迹"
+  ],
+  "mitigations": [
+    "随机化方向、点密度与速度",
+    "改变适应时长与间隔",
+    "叠加反应时/路径信号"
+  ],
+  "accessibility": "提供更慢速度与缩短适应时长，减少眩晕。",
+  "risks": [
+    "低帧率影响速度感知",
+    "部分用户易产生眩晕"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：运动适应",
+      "caption": "点阵沿单向运动形成适应。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-126-1.svg"
+    },
+    {
+      "title": "状态 2：中性滑杆",
+      "caption": "调节反向速度到主观静止。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-126-2.svg"
+    },
+    {
+      "title": "状态 3：中性点曲线",
+      "caption": "比较中性点随轮次变化。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-126-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motion aftereffect",
+      "url": "https://en.wikipedia.org/wiki/Motion_aftereffect",
+      "note": "说明运动适应与主观静止。"
+    },
+    {
+      "title": "Motion perception",
+      "url": "https://en.wikipedia.org/wiki/Motion_perception",
+      "note": "说明运动感知机制。"
+    }
+  ]
+}

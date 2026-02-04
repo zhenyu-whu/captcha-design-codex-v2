@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#76 标点视觉节律 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#76</span>
+          <span class="chip teal">视觉思考范式：文字与符号</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>标点视觉节律</h1>
+        <p>利用无标点短句的视觉节奏提示让用户插入标点，以插入位置与顺序验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>给出无标点的短句，以视觉布局提示节奏，用户插入标点；记录插入位置与先后顺序。</p>
+        <p>利用人类对阅读节律的视觉化直觉，而不是语义解析。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>阅读节律与停顿与标点位置密切相关，即使缺乏语义也会产生视觉分段倾向。记录标点插入位置与时间顺序，可提取人类在节奏感知上的稳定特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现无标点的短句，并用布局暗示节奏。</li><li>用户插入标点符号完成分段。</li><li>记录插入位置、先后顺序与停顿。</li><li>多轮不同句式建立稳定分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到无标点短句与插入工具。</li><li>步骤 2：用户插入标点形成节奏分段。</li><li>步骤 3：系统记录位置与顺序并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>标点插入位置</strong>
+  <div>人类节奏分段在位置上具有聚集性。</div>
+</div>
+
+<div class="signal-item">
+  <strong>插入顺序与停顿</strong>
+  <div>真实用户会呈现自然的节奏化停顿。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>插入位置与顺序需符合人类节律分布；随机或等距分布判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>规则化脚本按固定间隔插入标点</li><li>重放真实用户的插入序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化句长、字体与布局节奏</li><li>引入轻微视觉扰动降低模板化</li><li>叠加停顿与指针轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更简短句式与键盘操作，对语言障碍用户提供替代任务。</p>
+        <ul><li>语言背景差异导致节奏偏好不同</li><li>语义不足时分段更具不确定性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-076-1.svg" alt="状态 1：无标点短句" />
+  <h3>状态 1：无标点短句</h3>
+  <p>视觉布局暗示节奏分段。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-076-2.svg" alt="状态 2：插入标点" />
+  <h3>状态 2：插入标点</h3>
+  <p>用户插入标点并形成节奏。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-076-3.svg" alt="状态 3：节律判定" />
+  <h3>状态 3：节律判定</h3>
+  <p>依据位置与顺序判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Punctuation" target="_blank" rel="noreferrer">Punctuation</a>
+  <div>说明标点在阅读节奏中的作用。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Prosody_(linguistics)" target="_blank" rel="noreferrer">Prosody (linguistics)</a>
+  <div>说明节奏与停顿的语言学基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

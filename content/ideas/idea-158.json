@@ -1,0 +1,78 @@
+{
+  "id": "158",
+  "slug": "idea-158",
+  "title": "帧级瞬态挑战",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "帧级微变形/噪声呈现元素，要求短序列响应并评估反应时与路径一致性。",
+  "background": "瞬态渲染细节对自动化读取不友好，真实用户在快速响应中会表现出稳定的反应时分布与路径特征。",
+  "core_mechanism": [
+    "在帧级引入微变形或噪声。",
+    "要求用户快速完成短序列响应。",
+    "记录反应时与路径轨迹。",
+    "检查跨帧一致性与分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到瞬态变化元素。",
+    "步骤 2：快速响应并完成序列。",
+    "步骤 3：系统分析反应时与路径。"
+  ],
+  "signals": [
+    {
+      "signal": "反应时分布",
+      "why_it_matters": "真实反应存在稳定时间窗。"
+    },
+    {
+      "signal": "路径微波动",
+      "why_it_matters": "短序列中轨迹仍具生理特征。"
+    }
+  ],
+  "decision_logic": "反应时与路径需符合基线；过快或过度平滑判异常。",
+  "attack_surface": [
+    "脚本直接读取渲染帧并点击",
+    "预计算帧序列回放"
+  ],
+  "mitigations": [
+    "随机化微变形相位",
+    "加入时间窗限制",
+    "结合输入抖动信号"
+  ],
+  "accessibility": "提供更慢版本或替代任务。",
+  "risks": [
+    "帧率差异影响一致性",
+    "视觉敏感用户不适"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：帧级变化",
+      "caption": "元素在帧间微变形。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-158-1.svg"
+    },
+    {
+      "title": "状态 2：快速响应",
+      "caption": "短序列响应与点击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-158-2.svg"
+    },
+    {
+      "title": "状态 3：一致性分析",
+      "caption": "分析反应时与路径一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-158-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Reaction time",
+      "url": "https://en.wikipedia.org/wiki/Reaction_time",
+      "note": "说明反应时与时间窗。"
+    },
+    {
+      "title": "Frame rate",
+      "url": "https://en.wikipedia.org/wiki/Frame_rate",
+      "note": "说明帧级变化与显示特性。"
+    }
+  ]
+}

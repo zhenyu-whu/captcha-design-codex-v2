@@ -1,0 +1,78 @@
+{
+  "id": "123",
+  "slug": "idea-123",
+  "title": "掩蔽解除对齐",
+  "group": "D：单底座 × 单信号 × 自适应/短序列（视觉时域）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "调节两目标的掩蔽强度到刚可见且相等，记录阈值差与微调轨迹进行判定。",
+  "background": "视觉掩蔽会改变可见性阈值，个体对相对可见性校准更稳定。通过比较两目标的解除阈值与微调路径，可形成难以伪造的时域特征。",
+  "core_mechanism": [
+    "两个目标被不同强度的掩蔽覆盖。",
+    "用户调节曝光/透明度到“刚能看见且两者相等”。",
+    "记录两目标阈值差与微调轨迹。",
+    "在任务内做相对比较并与基线对照。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到两个被掩蔽的目标。",
+    "步骤 2：拖动滑杆调整掩蔽强度直到两者刚好等可见。",
+    "步骤 3：系统记录阈值差与微调次数并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "相对可见性阈值差",
+      "why_it_matters": "相对阈值比绝对亮度更稳定。"
+    },
+    {
+      "signal": "微调轨迹与回拉",
+      "why_it_matters": "真实用户会出现细微往返调整。"
+    }
+  ],
+  "decision_logic": "阈值差需落在人类分布区间且存在自然微调；过度稳定或无回拉判异常。",
+  "attack_surface": [
+    "脚本直接读取渲染层并设定固定阈值",
+    "重放真实用户的调节轨迹"
+  ],
+  "mitigations": [
+    "随机化掩蔽纹理与目标形状",
+    "加入短时呈现与噪声干扰",
+    "多轮相对比较降低单次伪造"
+  ],
+  "accessibility": "提供高对比替代任务与可调亮度范围，避免低视力用户失败。",
+  "risks": [
+    "屏幕亮度/对比度差异影响阈值",
+    "掩蔽过强导致用户挫败"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：双目标掩蔽",
+      "caption": "两个目标被不同强度的掩蔽覆盖。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-123-1.svg"
+    },
+    {
+      "title": "状态 2：阈值对齐",
+      "caption": "拖动滑杆让两者刚可见且相等。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-123-2.svg"
+    },
+    {
+      "title": "状态 3：阈值差判定",
+      "caption": "比较阈值差与微调轨迹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-123-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Visual masking",
+      "url": "https://en.wikipedia.org/wiki/Visual_masking",
+      "note": "说明掩蔽对可见性阈值的影响。"
+    },
+    {
+      "title": "Just-noticeable difference",
+      "url": "https://en.wikipedia.org/wiki/Just-noticeable_difference",
+      "note": "说明阈值与可觉差异。"
+    }
+  ]
+}

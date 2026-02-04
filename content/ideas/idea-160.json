@@ -1,0 +1,78 @@
+{
+  "id": "160",
+  "slug": "idea-160",
+  "title": "风险分层减负",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "低风险场景采用短序列低负担任务，高风险触发多阶段验证。",
+  "background": "安全强度应与风险动态匹配，避免所有用户承担高负担。分层策略可降低误拒并保持安全性。",
+  "core_mechanism": [
+    "低风险采用短任务快速通过。",
+    "异常或高风险触发多阶段验证。",
+    "多阶段任务采集多信号。",
+    "按风险级别输出判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成低负担任务。",
+    "步骤 2：系统判断是否升级。",
+    "步骤 3：必要时进入多阶段验证。"
+  ],
+  "signals": [
+    {
+      "signal": "风险评分",
+      "why_it_matters": "决定任务强度与验证路径。"
+    },
+    {
+      "signal": "多阶段行为信号",
+      "why_it_matters": "高风险需要更强判定信号。"
+    }
+  ],
+  "decision_logic": "低风险直接通过；高风险需满足多阶段阈值。",
+  "attack_surface": [
+    "伪装低风险绕过",
+    "针对低负担任务优化脚本"
+  ],
+  "mitigations": [
+    "动态风险评估与随机抽检",
+    "低负担任务加入轻量行为信号",
+    "升级任务参数随机化"
+  ],
+  "accessibility": "多阶段任务提供等效替代通道与慢速模式。",
+  "risks": [
+    "风险模型误判带来体验波动",
+    "多阶段验证增加时延"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：低负担流程",
+      "caption": "低风险快速任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-160-1.svg"
+    },
+    {
+      "title": "状态 2：多阶段验证",
+      "caption": "高风险触发多阶段任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-160-2.svg"
+    },
+    {
+      "title": "状态 3：分层判定",
+      "caption": "按风险级别输出结果。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-160-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Risk-based authentication",
+      "url": "https://en.wikipedia.org/wiki/Risk-based_authentication",
+      "note": "说明风险分层的验证策略。"
+    },
+    {
+      "title": "Usability",
+      "url": "https://en.wikipedia.org/wiki/Usability",
+      "note": "说明可用性与负担权衡。"
+    }
+  ]
+}

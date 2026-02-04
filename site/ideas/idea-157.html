@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#157 闭环微扰探针 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#157</span>
+          <span class="chip teal">Reverse Brainstorming - Round 2</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>闭环微扰探针</h1>
+        <p>交互中插入不可见微扰，测量即时修正曲线与响应时延。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 2</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在交互过程中插入不可见微扰（随机摩擦/延迟/增益变化），测量用户的即时修正曲线与时延响应。</p>
+        <p>验证“真实反馈闭环”，脚本难以同步适配微扰。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实操控是闭环反馈过程，微扰会引发可测的修正与延迟。脚本难以同步适配微扰模式。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在交互中注入随机微扰。</li><li>记录误差与修正轨迹。</li><li>测量响应时延与回拉。</li><li>与基线适应曲线比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进行连续交互。</li><li>步骤 2：系统注入微扰并记录修正。</li><li>步骤 3：系统分析时延与适应曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>修正时延</strong>
+  <div>真实反馈存在可测延迟。</div>
+</div>
+
+<div class="signal-item">
+  <strong>误差回拉曲线</strong>
+  <div>人类修正呈渐进形态。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>修正时延与回拉曲线需落在人类区间；瞬时修正或无反应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本预测微扰并预补偿</li><li>回放真实修正轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化微扰方向与幅度</li><li>短时多次微扰叠加</li><li>与反应时信号联合判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低强度微扰与放宽阈值选项。</p>
+        <ul><li>微扰过强影响完成率</li><li>低性能设备延迟偏大</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-157-1.svg" alt="状态 1：微扰插入" />
+  <h3>状态 1：微扰插入</h3>
+  <p>交互过程出现不可见微扰。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-157-2.svg" alt="状态 2：即时修正" />
+  <h3>状态 2：即时修正</h3>
+  <p>记录修正轨迹与回拉。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-157-3.svg" alt="状态 3：时延判定" />
+  <h3>状态 3：时延判定</h3>
+  <p>评估修正时延与曲线。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Control_system#Closed-loop_control" target="_blank" rel="noreferrer">Closed-loop control</a>
+  <div>说明闭环反馈与修正。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明运动控制与反馈。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#165 非平稳适应轨迹 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#165</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>非平稳适应轨迹</h1>
+        <p>在单次验证中缓慢漂移动力学参数，判定基于适应连续性与曲线形态。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>在同一次验证中逐步改变交互动力学（例如增益/阻尼缓慢漂移），判定基于适应曲线的连续性与形态。</p>
+        <p>让攻击者难以用静态分布拟合，必须实时跟随非平稳变化。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>非平稳变化会迫使用户持续调整，真实适应呈连续跟随而非静态分布。攻击者难以用固定模型拟合非平稳轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在任务中缓慢漂移增益/阻尼等参数。</li><li>记录用户误差与纠偏变化。</li><li>分析适应曲线连续性。</li><li>与基线区间比较。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户进入连续控制任务。</li><li>步骤 2：系统逐步改变动力学参数。</li><li>步骤 3：系统评估适应连续性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>连续适应斜率</strong>
+  <div>真实适应表现为平滑连续变化。</div>
+</div>
+
+<div class="signal-item">
+  <strong>漂移跟随误差</strong>
+  <div>跟随误差反映实时调整能力。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>适应曲线需连续且在基线范围；分段跳变或无跟随判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>控制器拟合固定分布</li><li>回放静态轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化漂移速率与方向</li><li>插入小幅随机扰动</li><li>结合反应时信号</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢漂移与宽容阈值。</p>
+        <ul><li>漂移过快导致失败率高</li><li>低性能设备响应滞后</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-165-1.svg" alt="状态 1：参数漂移" />
+  <h3>状态 1：参数漂移</h3>
+  <p>动力学参数缓慢变化。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-165-2.svg" alt="状态 2：连续适应" />
+  <h3>状态 2：连续适应</h3>
+  <p>用户持续修正误差。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-165-3.svg" alt="状态 3：形态判定" />
+  <h3>状态 3：形态判定</h3>
+  <p>评估适应曲线形态。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Non-stationary_process" target="_blank" rel="noreferrer">Non-stationary process</a>
+  <div>说明非平稳变化与漂移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_adaptation" target="_blank" rel="noreferrer">Motor adaptation</a>
+  <div>说明持续适应与曲线形态。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

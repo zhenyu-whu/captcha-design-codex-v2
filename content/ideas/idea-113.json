@@ -1,0 +1,78 @@
+{
+  "id": "113",
+  "slug": "idea-113",
+  "title": "姿态微漂移校核",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "记录设备姿态微漂移作为背景，随机插入小任务要求保持一致操控力度，以异常检测验证真实性。",
+  "background": "移动设备在真实持握下会产生细微姿态漂移，这些漂移与操控力度存在稳定关系。随机插入任务可检验在场性与一致性，脚本难以复刻真实姿态基线。",
+  "core_mechanism": [
+    "持续记录设备姿态与微漂移。",
+    "随机插入短任务要求保持一致操控力度。",
+    "记录轨迹动力学与姿态基线。",
+    "对异常偏离进行检测与判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户正常操作，系统记录姿态微漂移。",
+    "步骤 2：随机出现短任务保持一致力度。",
+    "步骤 3：系统分析一致性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "姿态微漂移谱",
+      "why_it_matters": "真实持握具有稳定的微漂移结构。"
+    },
+    {
+      "signal": "操控力度与轨迹一致性",
+      "why_it_matters": "真实用户操控力度与姿态漂移存在关联。"
+    }
+  ],
+  "decision_logic": "漂移谱与操控一致性需落在人类分布区间；过度稳定或突变判异常。",
+  "attack_surface": [
+    "脚本伪造固定姿态曲线",
+    "重放真实用户的姿态序列"
+  ],
+  "mitigations": [
+    "随机化任务时机与力度要求",
+    "结合多传感器信号交叉验证",
+    "叠加反应时与停顿信号"
+  ],
+  "accessibility": "提供无需姿态传感器的替代任务，避免对特殊设备或用户造成障碍。",
+  "risks": [
+    "传感器噪声可能引入误判",
+    "设备型号差异影响基线"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：姿态记录",
+      "caption": "后台记录姿态微漂移。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-113-1.svg"
+    },
+    {
+      "title": "状态 2：随机任务",
+      "caption": "随机插入保持力度的小任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-113-2.svg"
+    },
+    {
+      "title": "状态 3：一致判定",
+      "caption": "比较姿态漂移与操控一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-113-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Inertial measurement unit",
+      "url": "https://en.wikipedia.org/wiki/Inertial_measurement_unit",
+      "note": "说明姿态传感器与微漂移数据来源。"
+    },
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明操控力度与微动作稳定性。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "157",
+  "slug": "idea-157",
+  "title": "闭环微扰探针",
+  "group": "Reverse Brainstorming - Round 2",
+  "phase": "Reverse Brainstorming - Round 2",
+  "kind": "idea",
+  "summary": "交互中插入不可见微扰，测量即时修正曲线与响应时延。",
+  "background": "真实操控是闭环反馈过程，微扰会引发可测的修正与延迟。脚本难以同步适配微扰模式。",
+  "core_mechanism": [
+    "在交互中注入随机微扰。",
+    "记录误差与修正轨迹。",
+    "测量响应时延与回拉。",
+    "与基线适应曲线比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行连续交互。",
+    "步骤 2：系统注入微扰并记录修正。",
+    "步骤 3：系统分析时延与适应曲线。"
+  ],
+  "signals": [
+    {
+      "signal": "修正时延",
+      "why_it_matters": "真实反馈存在可测延迟。"
+    },
+    {
+      "signal": "误差回拉曲线",
+      "why_it_matters": "人类修正呈渐进形态。"
+    }
+  ],
+  "decision_logic": "修正时延与回拉曲线需落在人类区间；瞬时修正或无反应判异常。",
+  "attack_surface": [
+    "脚本预测微扰并预补偿",
+    "回放真实修正轨迹"
+  ],
+  "mitigations": [
+    "随机化微扰方向与幅度",
+    "短时多次微扰叠加",
+    "与反应时信号联合判定"
+  ],
+  "accessibility": "提供低强度微扰与放宽阈值选项。",
+  "risks": [
+    "微扰过强影响完成率",
+    "低性能设备延迟偏大"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：微扰插入",
+      "caption": "交互过程出现不可见微扰。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-157-1.svg"
+    },
+    {
+      "title": "状态 2：即时修正",
+      "caption": "记录修正轨迹与回拉。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-157-2.svg"
+    },
+    {
+      "title": "状态 3：时延判定",
+      "caption": "评估修正时延与曲线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-157-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Closed-loop control",
+      "url": "https://en.wikipedia.org/wiki/Control_system#Closed-loop_control",
+      "note": "说明闭环反馈与修正。"
+    },
+    {
+      "title": "Motor control",
+      "url": "https://en.wikipedia.org/wiki/Motor_control",
+      "note": "说明运动控制与反馈。"
+    }
+  ]
+}

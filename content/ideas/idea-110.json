@@ -1,0 +1,78 @@
+{
+  "id": "110",
+  "slug": "idea-110",
+  "title": "滚动惯性回放",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "记录用户一次真实滚动的惯性曲线，异步微任务要求匹配该曲线，以预测误差验证真实性。",
+  "background": "真实滚动会形成独特的惯性衰减曲线，脚本难以跨时复刻。异步匹配任务可以检验用户对自身惯性节奏的记忆与一致性。",
+  "core_mechanism": [
+    "记录用户真实滚动的速度‑时间曲线。",
+    "稍后弹出微任务要求匹配惯性曲线。",
+    "计算预测误差与相似度。",
+    "与群体基线分布比对判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户正常滚动页面，系统记录惯性曲线。",
+    "步骤 2：异步出现匹配惯性的微任务。",
+    "步骤 3：系统计算误差并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "惯性衰减曲线",
+      "why_it_matters": "真实滚动具有自然的速度衰减形态。"
+    },
+    {
+      "signal": "预测误差",
+      "why_it_matters": "真实用户更容易匹配自己的惯性节奏。"
+    }
+  ],
+  "decision_logic": "匹配误差需落在人类分布区间，且曲线形态合理；过度完美或无一致性判异常。",
+  "attack_surface": [
+    "脚本记录并重放惯性曲线",
+    "伪造固定衰减曲线"
+  ],
+  "mitigations": [
+    "随机化异步触发时机",
+    "绑定上下文与滚动环境参数",
+    "叠加反应时与停顿信号"
+  ],
+  "accessibility": "提供可跳过或简化任务，避免打断体验。",
+  "risks": [
+    "异步任务可能引起困惑",
+    "触控与鼠标滚动差异较大"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：惯性记录",
+      "caption": "记录真实滚动惯性曲线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-110-1.svg"
+    },
+    {
+      "title": "状态 2：曲线匹配",
+      "caption": "异步微任务匹配惯性曲线。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-110-2.svg"
+    },
+    {
+      "title": "状态 3：误差判定",
+      "caption": "计算预测误差与一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-110-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Scrolling",
+      "url": "https://en.wikipedia.org/wiki/Scrolling",
+      "note": "说明滚动行为与惯性特征。"
+    },
+    {
+      "title": "Inertia",
+      "url": "https://en.wikipedia.org/wiki/Inertia",
+      "note": "说明惯性衰减与速度曲线形态。"
+    }
+  ]
+}

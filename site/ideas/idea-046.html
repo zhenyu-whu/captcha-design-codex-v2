@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#46 对比适应中性点 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#46</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>对比适应中性点</h1>
+        <p>高对比适应后调节灰阶条纹中性点，以偏移方向与稳定时间验证对比适应特征。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>先暴露高对比纹理，再出现灰阶条纹，用户调整“感觉中性”的对比度；记录偏移方向与稳定时间。</p>
+        <p>利用对比适应的主观回弹特性作为验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>对比适应会改变对后续灰阶刺激的感知，使中性点发生偏移。通过测量中性点的偏移方向与稳定时间，可获得主观适应的行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>先暴露高对比纹理进行适应。</li><li>切换灰阶条纹并提供对比度滑杆。</li><li>用户调节到“感觉中性”的对比度。</li><li>记录偏移方向、幅度与稳定时间。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看高对比纹理。</li><li>步骤 2：出现灰阶条纹并开始调节。</li><li>步骤 3：系统记录中性点并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>中性点偏移方向与幅度</strong>
+  <div>对比适应导致可预测的偏移趋势。</div>
+</div>
+
+<div class="signal-item">
+  <strong>稳定时间与微调次数</strong>
+  <div>真实校准通常伴随短暂收敛过程。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检查中性点偏移是否落在人类区间，并结合稳定时间与微调曲线；一次到位或无偏移判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本固定对比度直接提交</li><li>重放真实用户调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化纹理方向与对比度强度</li><li>加入亮度噪声与轻微相位扰动</li><li>叠加微时序与鼠标轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低对比或替代任务，避免对对比敏感用户造成不适。</p>
+        <ul><li>显示设备对比度设置差异影响中性点</li><li>环境光线影响对比感知</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-046-1.svg" alt="状态 1：高对比适应" />
+  <h3>状态 1：高对比适应</h3>
+  <p>高对比纹理短时适应。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-046-2.svg" alt="状态 2：中性点调节" />
+  <h3>状态 2：中性点调节</h3>
+  <p>用户调节灰阶条纹对比度。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-046-3.svg" alt="状态 3：适应判定" />
+  <h3>状态 3：适应判定</h3>
+  <p>分析偏移方向与稳定时间。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_adaptation" target="_blank" rel="noreferrer">Contrast adaptation</a>
+  <div>说明对比适应与中性点偏移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_sensitivity" target="_blank" rel="noreferrer">Contrast sensitivity</a>
+  <div>说明对比感知与阈值特性。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

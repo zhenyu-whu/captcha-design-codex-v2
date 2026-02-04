@@ -1,0 +1,78 @@
+{
+  "id": "180",
+  "slug": "idea-180",
+  "title": "输入抖动指纹",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "采集输入事件抖动分布与合并模式，结合设备基线判定。",
+  "background": "输入事件的抖动与合并模式与设备/系统管线相关，真实用户具有稳定指纹。自动化脚本难以复刻完整分布结构。",
+  "core_mechanism": [
+    "高频采集输入事件时间戳。",
+    "提取抖动分布与合并节律。",
+    "分析加速度噪声与微抖动。",
+    "与设备基线分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成短交互。",
+    "步骤 2：系统采集输入事件序列。",
+    "步骤 3：系统匹配抖动指纹并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "事件抖动分布",
+      "why_it_matters": "真实硬件抖动具有稳定结构。"
+    },
+    {
+      "signal": "合并模式与间隔谱",
+      "why_it_matters": "脚本难以模拟事件合并节律。"
+    }
+  ],
+  "decision_logic": "抖动与合并模式需匹配基线；过度规则或异常合并判异常。",
+  "attack_surface": [
+    "脚本注入伪随机抖动",
+    "回放真实事件序列"
+  ],
+  "mitigations": [
+    "多维统计与动态窗口检测",
+    "结合轨迹噪声信号",
+    "设备基线分层更新"
+  ],
+  "accessibility": "低负担采集，不要求精细操作。",
+  "risks": [
+    "系统平滑影响抖动特征",
+    "低采样率设备降低判别力"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：输入事件",
+      "caption": "采集输入事件时间序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-180-1.svg"
+    },
+    {
+      "title": "状态 2：抖动分布",
+      "caption": "分析抖动与合并节律。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-180-2.svg"
+    },
+    {
+      "title": "状态 3：指纹判定",
+      "caption": "与设备基线分布匹配。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-180-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Jitter",
+      "url": "https://en.wikipedia.org/wiki/Jitter",
+      "note": "说明时序抖动特征。"
+    },
+    {
+      "title": "Input method",
+      "url": "https://en.wikipedia.org/wiki/Input_method",
+      "note": "说明输入事件与设备差异。"
+    }
+  ]
+}

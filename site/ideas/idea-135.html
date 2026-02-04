@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#135 遮挡预测‑反应时耦合 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#135</span>
+          <span class="chip teal">E：双底座耦合 × 双信号 × 多阶段/双任务（认知偏置 + 生理/时域）</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>遮挡预测‑反应时耦合</h1>
+        <p>遮挡预测点击后紧接短反应时任务，比较预测误差与反应时耦合。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>物体遮挡消失后用户点击预测点，随后立即完成短反应时任务，系统对两者的相关性做群体基线比较。</p>
+        <p>以“预测‑反应”耦合曲线为人类特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>遮挡预测依赖对物体轨迹的外推，反应时任务反映即时处理负荷。预测误差与反应时往往相关，脚本难以自然匹配。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示运动物体并短时遮挡。</li><li>用户点击预测点并立即进入反应时任务。</li><li>记录预测误差与反应时。</li><li>分析误差‑反应时耦合关系。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户观看物体运动并被遮挡。</li><li>步骤 2：点击预测出现位置。</li><li>步骤 3：立即完成反应时任务并分析耦合。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>预测误差大小</strong>
+  <div>外推误差体现感知与策略差异。</div>
+</div>
+
+<div class="signal-item">
+  <strong>反应时与波动</strong>
+  <div>反应时反映即时负荷与注意力状态。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>预测误差与反应时需呈合理关联且在基线范围；零误差或恒定反应判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接预测并给出最优点击</li><li>固定反应时或回放点击序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化速度、遮挡长度与轨迹</li><li>反应时提示随机化并含干扰</li><li>多轮一致性检测</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更慢速度与更大预测区域，支持键盘替代。</p>
+        <ul><li>系统延迟影响反应时精度</li><li>任务节奏过快导致挫败</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-135-1.svg" alt="状态 1：遮挡预测" />
+  <h3>状态 1：遮挡预测</h3>
+  <p>物体遮挡后预测出现点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-135-2.svg" alt="状态 2：即时反应" />
+  <h3>状态 2：即时反应</h3>
+  <p>点击后进入快速反应任务。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-135-3.svg" alt="状态 3：耦合分析" />
+  <h3>状态 3：耦合分析</h3>
+  <p>比较预测误差与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Representational_momentum" target="_blank" rel="noreferrer">Representational momentum</a>
+  <div>说明遮挡外推与位置偏移。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时分布与负荷关系。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

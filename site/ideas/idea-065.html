@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#65 同时对比亮度匹配 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#65</span>
+          <span class="chip teal">视觉思考范式：Gestalt/对称/频率</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>同时对比亮度匹配</h1>
+        <p>不同背景下调节中心块亮度到看似相等，用对比错觉的稳定点与调整曲线验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>两个相同亮度的中心块处于不同背景，用户调节其中一个直到“看起来相等”。记录调整曲线与稳定点。</p>
+        <p>把“对比错觉”当作验证特征，而非视觉识别。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>同时对比会让相同亮度在不同背景上呈现不同主观亮度。通过测量亮度匹配的稳定点与调节路径，可形成可靠的知觉偏差特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>两个中心块置于不同亮度背景。</li><li>用户调节其中一个中心块亮度到“看起来相等”。</li><li>记录稳定点与回拉轨迹。</li><li>分析对比错觉偏差与调整节奏。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到不同背景上的中心块。</li><li>步骤 2：用户调节亮度至主观相等。</li><li>步骤 3：系统记录稳定点并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>亮度匹配稳定点</strong>
+  <div>对比错觉引发稳定的偏移方向。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调整曲线与回拉节奏</strong>
+  <div>真实匹配通常伴随微调与回撤。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估稳定点是否落在错觉范围，并结合调整曲线；无偏移或一次到位判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接计算亮度差并设定</li><li>重放真实用户的调整轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化背景亮度与中心块大小</li><li>加入轻微噪声与渐变扰动</li><li>叠加微时序与轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高对比或替代任务模式，避免对低视力用户造成负担。</p>
+        <ul><li>环境光线影响亮度判断</li><li>显示设备亮度校准差异</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-065-1.svg" alt="状态 1：对比场景" />
+  <h3>状态 1：对比场景</h3>
+  <p>相同中心块处于不同背景。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-065-2.svg" alt="状态 2：亮度调节" />
+  <h3>状态 2：亮度调节</h3>
+  <p>用户调节到看似相等。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-065-3.svg" alt="状态 3：稳定点判定" />
+  <h3>状态 3：稳定点判定</h3>
+  <p>分析调整曲线与稳定点。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Simultaneous_contrast" target="_blank" rel="noreferrer">Simultaneous contrast</a>
+  <div>说明背景对亮度感知的影响。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Luminance" target="_blank" rel="noreferrer">Luminance</a>
+  <div>说明亮度感知与校准基础。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

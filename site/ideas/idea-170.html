@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#170 真实硬件时序指纹 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#170</span>
+          <span class="chip teal">Reverse Brainstorming - Round 3</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>真实硬件时序指纹</h1>
+        <p>采集高频输入事件抖动与合并模式，与设备基线比对。</p>
+        <div class="idea-meta">
+          <span>阶段：Reverse Brainstorming - Round 3</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>采集高频输入事件的时序抖动与合并特征，并与设备基线对比。</p>
+        <p>低成本模拟器很难复刻真实硬件/OS 事件管线的时序特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>真实硬件与操作系统事件管线存在稳定抖动与合并节律。自动化脚本难以精确复刻时序指纹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>高频采集输入事件时间戳。</li><li>提取事件抖动与合并模式。</li><li>分析指针加速度噪声。</li><li>与设备基线分布比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户完成短交互序列。</li><li>步骤 2：系统采集原生事件时序。</li><li>步骤 3：系统匹配设备基线并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>事件间隔抖动</strong>
+  <div>硬件管线产生稳定抖动结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>合并事件节律</strong>
+  <div>事件合并模式反映真实设备特性。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>时序指纹需与设备基线一致；过度规则或异常合并判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本伪造固定间隔事件</li><li>模拟器生成伪随机时序</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>高分辨率计时与多维统计</li><li>与轨迹噪声信号耦合</li><li>设备基线动态更新</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>不要求精细操作，仅需短交互采集。</p>
+        <ul><li>系统级平滑影响时序特征</li><li>低采样率设备降低判别力</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-170-1.svg" alt="状态 1：事件采集" />
+  <h3>状态 1：事件采集</h3>
+  <p>高频事件时间序列。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-170-2.svg" alt="状态 2：抖动分析" />
+  <h3>状态 2：抖动分析</h3>
+  <p>提取抖动与合并节律。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-170-3.svg" alt="状态 3：基线匹配" />
+  <h3>状态 3：基线匹配</h3>
+  <p>与设备基线分布比对。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Jitter" target="_blank" rel="noreferrer">Jitter</a>
+  <div>说明时序抖动特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Input_method" target="_blank" rel="noreferrer">Input method</a>
+  <div>说明输入事件与设备差异。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#28 临界对比阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#28</span>
+          <span class="chip teal">视觉思考范式：空间/结构/直觉</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>临界对比阈值</h1>
+        <p>让用户调节对比度到刚可见，利用阈值区间与调节路径验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户调节对比度滑杆，直到目标“刚刚可见”；记录阈值区间与调整曲线。</p>
+        <p>依赖人类视觉敏感度分布与调节路径，而非识别正确性。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉系统对对比度的敏感度存在稳定分布，临界可见阈值在特定条件下呈可预测区间。通过测量阈值与调节曲线，可获得难以伪造的感知特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>呈现低对比目标与滑杆控制。</li><li>用户调节对比度直到目标刚可见。</li><li>记录阈值值域与调节步进曲线。</li><li>评估阈值与调节节奏的合理性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到低对比目标与滑杆。</li><li>步骤 2：用户调节滑杆直到刚可见。</li><li>步骤 3：系统分析阈值与路径并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>对比阈值区间</strong>
+  <div>人类对比敏感度存在稳定可测范围。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调节曲线的收敛方式</strong>
+  <div>真实调节会出现逐步逼近与微调行为。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>检查阈值是否落在合理区间，并分析调节曲线是否呈逐步收敛；阈值异常或一次到位判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设定固定阈值</li><li>重放真实用户调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化背景亮度与目标形态</li><li>多次测量取一致性并结合调节节奏</li><li>叠加微时序与鼠标轨迹信号提高伪造成本</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供高可见替代任务或可跳过选项，避免对低视力用户造成不公平负担。</p>
+        <ul><li>环境光线变化影响对比阈值</li><li>屏幕色彩校准差异导致偏差</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-028-1.svg" alt="状态 1：低对比目标" />
+  <h3>状态 1：低对比目标</h3>
+  <p>目标接近背景，仅在临界可见。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-028-2.svg" alt="状态 2：调节对比" />
+  <h3>状态 2：调节对比</h3>
+  <p>用户拖动滑杆逐步逼近阈值。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-028-3.svg" alt="状态 3：阈值分布" />
+  <h3>状态 3：阈值分布</h3>
+  <p>记录阈值与调节曲线形态。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Contrast_sensitivity" target="_blank" rel="noreferrer">Contrast sensitivity</a>
+  <div>说明对比敏感度与阈值概念。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Psychophysics" target="_blank" rel="noreferrer">Psychophysics</a>
+  <div>说明感知阈值测量的基础方法。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "id": "175",
+  "slug": "idea-175",
+  "title": "事件时序水印",
+  "group": "Reverse Brainstorming - Round 4",
+  "phase": "Reverse Brainstorming - Round 4",
+  "kind": "idea",
+  "summary": "在事件间隔中嵌入微小水印，验证响应序列与水印时序的一致性。",
+  "background": "时序水印可隐藏在微小间隔扰动中，真实用户响应会自然跟随，而回放或脚本难以复刻动态水印序列。",
+  "core_mechanism": [
+    "生成带水印的时间间隔序列。",
+    "用户进行输入操作形成响应序列。",
+    "计算响应与水印序列的相关性。",
+    "基于相关度与时序偏差判定。"
+  ],
+  "user_flow": [
+    "步骤 1：系统发出带水印的节奏提示。",
+    "步骤 2：用户进行输入响应。",
+    "步骤 3：系统对比水印相关性并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "水印相关系数",
+      "why_it_matters": "真实响应应与水印序列存在相关。"
+    },
+    {
+      "signal": "时序偏移分布",
+      "why_it_matters": "人类会出现稳定偏移而非完全对齐。"
+    }
+  ],
+  "decision_logic": "相关度需落在合理区间且偏移分布自然；零相关或过度对齐判异常。",
+  "attack_surface": [
+    "脚本读取水印并同步触发",
+    "回放历史响应序列"
+  ],
+  "mitigations": [
+    "会话级随机化水印序列",
+    "叠加轻噪声与多段水印",
+    "缩短响应窗口"
+  ],
+  "accessibility": "保持水印幅度在感知阈下并提供慢速模式。",
+  "risks": [
+    "低分辨率计时影响水印检测",
+    "浏览器节流导致时序偏差"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：水印节奏",
+      "caption": "间隔中嵌入微扰水印。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-175-1.svg"
+    },
+    {
+      "title": "状态 2：响应序列",
+      "caption": "用户响应形成时序序列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-175-2.svg"
+    },
+    {
+      "title": "状态 3：相关判定",
+      "caption": "比较水印相关度。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-175-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Digital watermarking",
+      "url": "https://en.wikipedia.org/wiki/Digital_watermarking",
+      "note": "说明水印与隐蔽序列。"
+    },
+    {
+      "title": "Jitter",
+      "url": "https://en.wikipedia.org/wiki/Jitter",
+      "note": "说明时序微扰与抖动。"
+    }
+  ]
+}

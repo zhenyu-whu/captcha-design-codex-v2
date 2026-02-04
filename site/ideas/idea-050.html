@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#50 扫视‑停留节律点击 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#50</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>扫视‑停留节律点击</h1>
+        <p>多目标瞬间出现后按第一眼顺序快速点击，利用扫视‑停留节律与序列结构验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>画面上瞬间出现多个目标点，用户按“第一眼注意到的顺序”快速点击 3–5 个；系统记录点击序列、停留时长与跳跃节律。</p>
+        <p>以“注意力扫视节奏”而非识别正确性作为人类证据。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类视觉扫视通常呈现短停留与跃迁的节律结构，注意力优先序列具有稳定的时序特征。通过记录点击序列与停留时长，可形成比正确性更稳定的行为签名。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>瞬时呈现多个目标点并限定时间窗口。</li><li>用户按第一眼注意到的顺序点击 3-5 个点。</li><li>记录点击序列、停留时长与跳跃节律。</li><li>分析序列结构与节律一致性。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到多个目标点瞬间出现。</li><li>步骤 2：用户快速按顺序点击多个目标。</li><li>步骤 3：系统分析节律与序列并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>点击序列与空间跳跃节律</strong>
+  <div>人类扫视与点击呈现短停留+跃迁的节律结构。</div>
+</div>
+
+<div class="signal-item">
+  <strong>停留时长分布</strong>
+  <div>真实注意力选择存在稳定的停留时间区间。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>结合序列结构、停留分布与跳跃节律进行判定；过度规则或过度随机判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本随机点击模拟序列</li><li>重放真实用户的点击轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化目标位置与数量</li><li>引入轻微时间抖动与干扰点</li><li>叠加鼠标轨迹与微时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长时间窗口或键盘选择模式，避免对反应较慢用户造成负担。</p>
+        <ul><li>过短时间窗导致误拒</li><li>屏幕尺寸差异影响跳跃距离</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-050-1.svg" alt="状态 1：目标瞬现" />
+  <h3>状态 1：目标瞬现</h3>
+  <p>多个目标点短时出现。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-050-2.svg" alt="状态 2：顺序点击" />
+  <h3>状态 2：顺序点击</h3>
+  <p>用户按第一眼顺序快速点击。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-050-3.svg" alt="状态 3：节律判定" />
+  <h3>状态 3：节律判定</h3>
+  <p>分析停留与跳跃节律。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Saccade" target="_blank" rel="noreferrer">Saccade</a>
+  <div>说明扫视与停留的节律特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_attention" target="_blank" rel="noreferrer">Visual attention</a>
+  <div>说明注意力优先序列与选择机制。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "id": "102",
+  "slug": "idea-102",
+  "title": "错觉校准‑节律干扰",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "先校准错觉图形到“看起来对齐”，再跟随节拍点击，以偏差量与节律稳定性组合验证真实性。",
+  "background": "错觉校准会产生稳定的感知偏差，随后节律任务暴露同步抖动。两阶段结合可形成更难伪造的人类签名。",
+  "core_mechanism": [
+    "呈现错觉图形并要求校准到对齐状态。",
+    "立即进入节拍点击任务。",
+    "记录错觉偏差量与节律稳定性。",
+    "做任务内相对比较形成判定。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成错觉图形校准。",
+    "步骤 2：用户跟随节拍点击。",
+    "步骤 3：系统分析偏差与节律并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "错觉偏差量",
+      "why_it_matters": "人类对错觉的校准存在稳定偏差。"
+    },
+    {
+      "signal": "节律抖动",
+      "why_it_matters": "同步点击会出现自然的微波动。"
+    }
+  ],
+  "decision_logic": "偏差量与节律抖动需落在人类分布区间；过度稳定或无偏差判异常。",
+  "attack_surface": [
+    "脚本直接计算对齐并固定节拍",
+    "重放真实用户的偏差与节拍序列"
+  ],
+  "mitigations": [
+    "随机化错觉参数与节拍间隔",
+    "加入轻微扰动降低模板化",
+    "叠加反应时与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更慢节拍与替代任务，避免对注意力或视觉敏感用户造成负担。",
+  "risks": [
+    "双阶段任务可能增加疲劳",
+    "设备延迟影响节拍同步"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：错觉校准",
+      "caption": "调整错觉图形到主观对齐。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-102-1.svg"
+    },
+    {
+      "title": "状态 2：节拍点击",
+      "caption": "随后跟随节拍点击。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-102-2.svg"
+    },
+    {
+      "title": "状态 3：组合判定",
+      "caption": "结合偏差与节律判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-102-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Optical illusion",
+      "url": "https://en.wikipedia.org/wiki/Optical_illusion",
+      "note": "说明错觉偏差与感知规律。"
+    },
+    {
+      "title": "Sensorimotor synchronization",
+      "url": "https://en.wikipedia.org/wiki/Sensorimotor_synchronization",
+      "note": "说明节律同步与抖动特征。"
+    }
+  ]
+}

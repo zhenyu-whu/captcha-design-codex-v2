@@ -1,0 +1,78 @@
+{
+  "id": "66",
+  "slug": "idea-066",
+  "title": "空间频率阈值",
+  "group": "视觉思考范式：Gestalt/对称/频率",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "调节 Gabor 条纹到刚可辨识的阈值，用空间频率敏感度与回拉轨迹验证真实性。",
+  "background": "人类对不同空间频率的敏感度存在阈值，Gabor 条纹可用于测量视觉系统对频率与对比的响应。记录阈值与回拉轨迹可形成稳定的感知特征。",
+  "core_mechanism": [
+    "展示 Gabor 条纹并逐步显隐。",
+    "用户拖动滑杆到“刚好可辨认”。",
+    "记录阈值位置与回拉轨迹。",
+    "分析阈值分布与收敛节奏。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到 Gabor 条纹变化。",
+    "步骤 2：用户调节滑杆至可辨阈值。",
+    "步骤 3：系统记录阈值并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "空间频率阈值",
+      "why_it_matters": "人类视觉对频率的敏感度具有稳定范围。"
+    },
+    {
+      "signal": "回拉轨迹与微调节奏",
+      "why_it_matters": "真实调节通常呈现先过后回的路径。"
+    }
+  ],
+  "decision_logic": "评估阈值与回拉曲线是否落在人类范围；无回拉或异常阈值判异常。",
+  "attack_surface": [
+    "脚本固定阈值直接提交",
+    "重放真实用户的调节序列"
+  ],
+  "mitigations": [
+    "随机化频率、相位与对比度",
+    "加入轻微噪声与背景扰动",
+    "叠加微时序与轨迹信号进行多信号判定"
+  ],
+  "accessibility": "提供更低频率或替代任务模式，避免对低视力用户造成负担。",
+  "risks": [
+    "显示设备分辨率影响频率可见性",
+    "环境光线影响阈值判断"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：条纹显隐",
+      "caption": "Gabor 条纹逐步显隐。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-066-1.svg"
+    },
+    {
+      "title": "状态 2：阈值调节",
+      "caption": "用户调节至刚可辨识。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-066-2.svg"
+    },
+    {
+      "title": "状态 3：阈值判定",
+      "caption": "分析阈值与回拉路径。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-066-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Gabor filter",
+      "url": "https://en.wikipedia.org/wiki/Gabor_filter",
+      "note": "说明 Gabor 条纹与频率测量基础。"
+    },
+    {
+      "title": "Spatial frequency",
+      "url": "https://en.wikipedia.org/wiki/Spatial_frequency",
+      "note": "说明空间频率与视觉敏感度。"
+    }
+  ]
+}

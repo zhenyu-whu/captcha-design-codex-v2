@@ -1,0 +1,78 @@
+{
+  "id": "149",
+  "slug": "idea-149",
+  "title": "滚动‑指针耦合比",
+  "group": "F：意图/现实耦合 × 异步/随机插入（路径/预测误差）",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "记录滚动与指针移动的耦合比例，异步要求同速率配对并与个体基线比对。",
+  "background": "跨通道协同需要感知‑运动耦合与节奏控制，真实用户的滚动与指针联动比值具有稳定区间。通过再现任务可验证一致性。",
+  "core_mechanism": [
+    "记录滚动速度与指针速度的自然比例。",
+    "异步插入同速率配对任务。",
+    "比较耦合比与相位延迟。",
+    "与个体基线和群体分布比对。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进行滚动与指针操作。",
+    "步骤 2：系统提示同速率配对任务。",
+    "步骤 3：系统分析耦合比与延迟。"
+  ],
+  "signals": [
+    {
+      "signal": "滚动‑指针速度比",
+      "why_it_matters": "耦合比例反映真实协同控制。"
+    },
+    {
+      "signal": "相位延迟与微纠偏",
+      "why_it_matters": "真实用户存在稳定延迟与纠偏。"
+    }
+  ],
+  "decision_logic": "耦合比与相位延迟需符合基线；过度恒定或失配判异常。",
+  "attack_surface": [
+    "脚本固定比值并同步驱动",
+    "重放真实耦合序列"
+  ],
+  "mitigations": [
+    "随机化目标比值与方向",
+    "加入短时扰动与反向段",
+    "结合停顿与反应时信号"
+  ],
+  "accessibility": "提供键盘滚动与简化模式，支持触控替代。",
+  "risks": [
+    "设备滚轮差异影响速度",
+    "触控设备难以统一比值"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：耦合采集",
+      "caption": "记录滚动与指针联动。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-149-1.svg"
+    },
+    {
+      "title": "状态 2：配对任务",
+      "caption": "要求同速率配对操作。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-149-2.svg"
+    },
+    {
+      "title": "状态 3：比值判定",
+      "caption": "比较耦合比与延迟。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-149-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor coordination",
+      "url": "https://en.wikipedia.org/wiki/Motor_coordination",
+      "note": "说明跨通道协同控制。"
+    },
+    {
+      "title": "Human–computer interaction",
+      "url": "https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction",
+      "note": "说明人机交互中的协同行为。"
+    }
+  ]
+}

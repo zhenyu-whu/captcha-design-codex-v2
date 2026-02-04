@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#42 掩蔽阈值滑杆 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#42</span>
+          <span class="chip teal">视觉思考范式：时域/适应/残影</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>掩蔽阈值滑杆</h1>
+        <p>目标与掩蔽快速交替，用户调节到刚可见阈值，利用迟滞曲线与阈值区间验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>目标+掩蔽图形快速交替，用户拖动滑杆调到“刚能看见”为止；记录阈值与回拉路径（先高后低的迟滞）。</p>
+        <p>使用主观可见阈值与迟滞曲线作为生理信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>视觉掩蔽会显著影响目标可见性，并产生随强度变化的主观阈值与迟滞现象。通过记录阈值与回拉路径，可形成稳定的感知信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>目标与掩蔽图形快速交替呈现。</li><li>用户调节滑杆直到目标刚可见。</li><li>记录阈值与回拉路径的迟滞特征。</li><li>分析阈值区间与调节曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到目标与掩蔽交替。</li><li>步骤 2：用户拖动滑杆调节可见性。</li><li>步骤 3：系统记录阈值与迟滞曲线。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>阈值区间与迟滞幅度</strong>
+  <div>主观可见阈值存在稳定范围与迟滞特征。</div>
+</div>
+
+<div class="signal-item">
+  <strong>调节路径的回拉比例</strong>
+  <div>真实调节通常出现先高后低的回拉。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>评估阈值区间与迟滞曲线是否符合人类分布；无迟滞或过快收敛判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接设置固定阈值</li><li>重放真实用户的调节序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化掩蔽图形与交替频率</li><li>加入噪声与微抖动降低模板化</li><li>叠加微时序与鼠标轨迹信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更低频率或替代任务模式，避免对光敏用户造成不适。</p>
+        <ul><li>快速交替可能引起视觉疲劳</li><li>设备刷新率限制交替精度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-042-1.svg" alt="状态 1：掩蔽交替" />
+  <h3>状态 1：掩蔽交替</h3>
+  <p>目标与掩蔽快速切换。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-042-2.svg" alt="状态 2：阈值调节" />
+  <h3>状态 2：阈值调节</h3>
+  <p>用户拖动滑杆至刚可见。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-042-3.svg" alt="状态 3：迟滞曲线" />
+  <h3>状态 3：迟滞曲线</h3>
+  <p>记录阈值与回拉路径。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Visual_masking" target="_blank" rel="noreferrer">Visual masking</a>
+  <div>说明掩蔽效应与可见性阈值。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Psychophysics" target="_blank" rel="noreferrer">Psychophysics</a>
+  <div>说明阈值测量与迟滞现象。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

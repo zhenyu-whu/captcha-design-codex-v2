@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#17 干扰避让反射 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#17</span>
+          <span class="chip teal">生物肌肉与鼠标运动</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>干扰避让反射</h1>
+        <p>在目标路径中插入移动干扰点，利用反射性避让的时间‑幅度分布验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>轨迹中随机出现移动干扰点，用户需即时避让并保持目标方向。人类反射性纠偏具有短时延与特定幅度分布。</p>
+        <p>以“反射反应的时间—幅度分布”作为核心验证信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>突发刺激会引发人类的反射性避让反应，具有可测的反应时与纠偏幅度分布。通过在轨迹中加入移动干扰点，可捕捉人类反射性纠偏的时序结构，抑制脚本的零延迟与过度平滑。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>在目标路径中随机插入移动干扰点。</li><li>要求用户保持主路径并即时避让。</li><li>记录反应时、避让幅度与回归速度。</li><li>多次插入构建稳定统计特征。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户开始沿主路径移动。</li><li>步骤 2：干扰点出现，用户即时避让并回归。</li><li>步骤 3：系统分析反射性参数并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>干扰出现后的反应时</strong>
+  <div>反射性反应存在典型时间窗。</div>
+</div>
+
+<div class="signal-item">
+  <strong>避让幅度与回归速度</strong>
+  <div>真实纠偏会呈现特定幅度与回弹曲线。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>以干扰事件为锚点统计反应时分布与避让幅度区间，要求符合人类反射模式；零延迟或过度平滑判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本预测干扰点并提前规划路径</li><li>回放真实避让轨迹</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机干扰点位置、速度与出现时机</li><li>结合微抖动与速度曲线进行多信号判定</li><li>引入短时不可预测的微扰</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供低干扰强度与更慢速度模式，避免对反应速度受限用户造成负担。</p>
+        <ul><li>频繁干扰可能引起认知负担</li><li>高延迟设备影响反应时统计</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-017-1.svg" alt="状态 1：主路径追踪" />
+  <h3>状态 1：主路径追踪</h3>
+  <p>用户沿主路径移动。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-017-2.svg" alt="状态 2：干扰避让" />
+  <h3>状态 2：干扰避让</h3>
+  <p>干扰点出现后立即避让并回归。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-017-3.svg" alt="状态 3：反射判定" />
+  <h3>状态 3：反射判定</h3>
+  <p>基于反应时与幅度分布判定。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reflex" target="_blank" rel="noreferrer">Reflex</a>
+  <div>说明反射性反应的生理基础。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时分布作为行为特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

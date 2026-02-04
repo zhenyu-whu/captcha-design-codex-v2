@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#58 亚视觉计数阈值 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#58</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>亚视觉计数阈值</h1>
+        <p>短时闪现 1-6 个点并即时报数，利用 subitizing 的反应时拐点验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>50–150ms 闪现 1–6 个点，用户即时报数；记录从“直觉数”到“需要数”的反应时拐点。</p>
+        <p>利用人类 subitizing 的速度拐点而非正确率。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类对少量目标具有快速的直觉数能力（subitizing），超过阈值后反应时显著增加。通过测量反应时拐点与错误分布，可形成稳定的行为特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>50-150ms 闪现 1-6 个点。</li><li>用户立即报数或选择数量。</li><li>记录反应时与错误分布。</li><li>拟合直觉数到计数的拐点。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到短时闪现的点数。</li><li>步骤 2：用户立即报数或选择数量。</li><li>步骤 3：系统拟合拐点并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>反应时拐点位置</strong>
+  <div>subitizing 与计数的过渡具有稳定阈值。</div>
+</div>
+
+<div class="signal-item">
+  <strong>错误分布与波动</strong>
+  <div>阈值附近错误率上升具有规律性。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>拟合反应时曲线与错误分布，要求拐点落在人类范围；反应时线性或拐点异常判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接统计点数并固定响应</li><li>重放真实用户的作答序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化点位与呈现时长</li><li>加入轻微噪声与掩蔽干扰</li><li>叠加微时序与鼠标轨迹信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更长呈现时间或替代任务模式，避免对视觉敏感用户造成负担。</p>
+        <ul><li>短时闪现导致误差增大</li><li>显示器刷新率限制呈现精度</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-058-1.svg" alt="状态 1：点数闪现" />
+  <h3>状态 1：点数闪现</h3>
+  <p>短时闪现少量点。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-058-2.svg" alt="状态 2：即时报数" />
+  <h3>状态 2：即时报数</h3>
+  <p>用户快速选择数量。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-058-3.svg" alt="状态 3：拐点判定" />
+  <h3>状态 3：拐点判定</h3>
+  <p>拟合反应时拐点曲线。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Subitizing" target="_blank" rel="noreferrer">Subitizing</a>
+  <div>说明直觉数与反应时拐点。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Reaction_time" target="_blank" rel="noreferrer">Reaction time</a>
+  <div>说明反应时作为行为特征。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

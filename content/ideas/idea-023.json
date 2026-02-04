@@ -1,0 +1,72 @@
+{
+  "id": "23",
+  "slug": "idea-023",
+  "title": "遮挡补全描边",
+  "group": "视觉思考范式：空间/结构/直觉",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "利用人类对遮挡形状的自然补全能力，让用户描摹“脑补轮廓”并据此判定真实性。",
+  "background": "视觉系统会自动补全被遮挡物体的轮廓，这种“非明示补全”是稳定的人类感知特征。让用户描摹被遮挡形状的推断轮廓，可将感知补全过程转化为可采集的动作信号。",
+  "core_mechanism": [
+    "呈现被遮挡的简单几何或日常形状，保留部分可见边缘。",
+    "用户沿“脑补的轮廓”快速描边，允许存在合理偏差。",
+    "系统评估描边连续性、曲率与完成顺序，强调结构合理性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到被遮挡的图形与描边提示。",
+    "步骤 2：用户沿可见线索补全轮廓并描边。",
+    "步骤 3：系统评估描边结构与动作节律完成判定。"
+  ],
+  "signals": [
+    {
+      "signal": "描边连续性与曲率变化",
+      "why_it_matters": "人类补全路径往往连续平滑且符合物体结构。"
+    },
+    {
+      "signal": "描边顺序与停顿点",
+      "why_it_matters": "人类常遵循可见线索进行结构化补全。"
+    }
+  ],
+  "decision_logic": "以可见边缘为锚，计算描边路径与“可解释补全”集合的相似度；同时检测停顿与回撤是否落在合理位置。",
+  "attack_surface": [
+    "算法生成补全曲线并自动描边",
+    "重放已采集的人类补全轨迹"
+  ],
+  "mitigations": [
+    "随机遮挡形状与位置，提升样本多样性",
+    "控制时间窗口并引入轻微动态遮挡，抬高回放难度",
+    "引入节律与速度曲线作为辅判信号"
+  ],
+  "accessibility": "为视力或精细控制受限用户提供“形状选择 + 简短拖拽”的替代通道；降低遮挡复杂度。",
+  "risks": [
+    "复杂遮挡可能带来认知负担与误拒",
+    "对低视力用户不友好，需要明确替代方案"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：遮挡形状呈现",
+      "caption": "部分轮廓被遮挡，保留关键可见线索。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-023-1.svg"
+    },
+    {
+      "title": "状态 2：补全描边",
+      "caption": "用户沿脑补轮廓描边，系统采集路径结构。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-023-2.svg"
+    },
+    {
+      "title": "状态 3：结构判定",
+      "caption": "评估曲率连续性与补全顺序，输出判定结果。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-023-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Amodal perception",
+      "url": "https://en.wikipedia.org/wiki/Amodal_perception",
+      "note": "说明遮挡补全与视觉补全的感知机制。"
+    }
+  ]
+}

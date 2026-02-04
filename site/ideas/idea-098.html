@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#98 速度衰减签名 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#98</span>
+          <span class="chip teal">Morphological Analysis - Combination Batches</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>速度衰减签名</h1>
+        <p>要求用户沿直线持续拖拽 3 秒，记录速度衰减斜率与微抖动作为验证信号。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>用户沿直线持续拖拽 3 秒，系统记录速度衰减斜率并与群体基线比对。任务结构为持续追踪，信号形态为轨迹动力学。</p>
+        <p>以“自然速度衰减”识别真实操控。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类在持续拖拽中会出现自然的速度衰减与微纠偏，速度曲线并非恒定。通过测量衰减斜率与波动形态，可区分脚本化的恒速轨迹。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>提供直线路径与 3 秒持续拖拽任务。</li><li>记录速度随时间的衰减曲线。</li><li>采集微抖动与纠偏频率。</li><li>与群体基线分布进行比对。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到直线拖拽任务。</li><li>步骤 2：用户保持拖拽完成 3 秒。</li><li>步骤 3：系统分析速度衰减并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>速度衰减斜率</strong>
+  <div>人类持续动作会出现稳定的衰减趋势。</div>
+</div>
+
+<div class="signal-item">
+  <strong>微抖动频率</strong>
+  <div>生理噪声在轨迹中具有可辨结构。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>衰减斜率与波动需落在人类分布区间；过度恒速或过度平滑判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本保持恒速直线拖拽</li><li>重放真实用户的速度曲线</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化拖拽方向与距离</li><li>引入轻微扰动降低模板化</li><li>叠加停顿与抖动信号进行多信号判定</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供更短时长与更大路径，允许键盘替代拖拽。</p>
+        <ul><li>设备采样率不足影响速度曲线</li><li>手部障碍用户可能出现误拒</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-098-1.svg" alt="状态 1：直线拖拽" />
+  <h3>状态 1：直线拖拽</h3>
+  <p>持续拖拽 3 秒。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-098-2.svg" alt="状态 2：速度衰减" />
+  <h3>状态 2：速度衰减</h3>
+  <p>速度随时间自然衰减。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-098-3.svg" alt="状态 3：曲线判定" />
+  <h3>状态 3：曲线判定</h3>
+  <p>比较衰减曲线与抖动谱。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Motor_control" target="_blank" rel="noreferrer">Motor control</a>
+  <div>说明持续动作中的控制与衰减特征。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Speed%E2%80%93accuracy_tradeoff" target="_blank" rel="noreferrer">Speed%E2%80%93accuracy tradeoff</a>
+  <div>说明速度变化与控制策略的关系。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

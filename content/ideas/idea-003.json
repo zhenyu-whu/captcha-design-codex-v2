@@ -1,0 +1,78 @@
+{
+  "id": "3",
+  "slug": "idea-003",
+  "title": "变阻尼追踪",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "通过动态变化的阻尼/惯性让用户持续纠偏，评估其适应曲线与反应时结构。",
+  "background": "人类在运动控制中会根据外部动力学变化进行快速适应，形成可观测的适应曲线与纠偏模式。若在指针控制中引入随机阻尼或增益变化，人类可在短时内调整动作幅度，而脚本往往表现为过度平滑或机械化补偿。",
+  "core_mechanism": [
+    "在追踪任务中动态改变阻尼/惯性或增益参数。",
+    "记录用户的过冲、回拉与适应时间。",
+    "提取“短期试错 → 稳定校准”的适应曲线形态。",
+    "采用多段随机参数，抬高预估与重放难度。"
+  ],
+  "user_flow": [
+    "步骤 1：用户进入窄通道追踪任务。",
+    "步骤 2：系统在不同时间片改变阻尼/惯性。",
+    "步骤 3：系统评估纠偏曲线与适应速度并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "适应曲线斜率与稳定时间",
+      "why_it_matters": "人类会出现可测的试错‑校准过程。"
+    },
+    {
+      "signal": "过冲‑回拉比率与纠偏时延",
+      "why_it_matters": "真实操控存在非线性纠偏与滞后。"
+    }
+  ],
+  "decision_logic": "以参数切换点为锚，计算适应时间窗、过冲比例与回拉速度；要求多段任务内具有一致的“人类适应曲线形态”。",
+  "attack_surface": [
+    "脚本提前读取参数并用控制器拟合",
+    "回放采集到的适应轨迹"
+  ],
+  "mitigations": [
+    "参数随机化并加入不可见微扰",
+    "多段切换与多信号耦合提升拟合成本",
+    "对“过度平滑”与“零延迟”进行异常检测"
+  ],
+  "accessibility": "提供低强度模式与更宽容通道，允许用户主动切换为更慢的适应节奏。",
+  "risks": [
+    "高频切换可能导致用户疲劳",
+    "低性能设备延迟可能扭曲适应曲线"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：动态阻尼通道",
+      "caption": "窄通道中阻尼随时间变化。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-003-1.svg"
+    },
+    {
+      "title": "状态 2：纠偏与过冲",
+      "caption": "用户在阻尼切换处出现过冲与回拉。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-003-2.svg"
+    },
+    {
+      "title": "状态 3：适应曲线判定",
+      "caption": "对比多段适应曲线的一致性。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-003-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor adaptation",
+      "url": "https://en.wikipedia.org/wiki/Motor_adaptation",
+      "note": "说明人在动力学变化下的适应机制。"
+    },
+    {
+      "title": "Motor learning",
+      "url": "https://en.wikipedia.org/wiki/Motor_learning",
+      "note": "说明短期试错到稳定校准的学习过程。"
+    }
+  ]
+}

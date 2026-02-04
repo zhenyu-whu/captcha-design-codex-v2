@@ -1,0 +1,78 @@
+{
+  "id": "77",
+  "slug": "idea-077",
+  "title": "字形风格匹配",
+  "group": "视觉思考范式：文字与符号",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "让用户从多种字形风格中选出同一字体系列的组合，以选择路径与回撤验证真实性。",
+  "background": "人类对字体家族一致性具有直觉判断，会依据笔画粗细、曲直与结构一致性进行匹配。选择路径与纠偏过程反映了自然的视觉分组策略。",
+  "core_mechanism": [
+    "展示同一字母的多种字体风格样本。",
+    "用户选择“最像同一系列”的组合。",
+    "记录选择路径、停顿与回撤。",
+    "多轮随机字母与字体族建立稳定分布。"
+  ],
+  "user_flow": [
+    "步骤 1：用户看到多种字形风格卡片。",
+    "步骤 2：用户选择匹配的字体系列。",
+    "步骤 3：系统记录选择路径并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "匹配组合一致性",
+      "why_it_matters": "人类对字体风格的分组具有稳定倾向。"
+    },
+    {
+      "signal": "回撤次数与停顿",
+      "why_it_matters": "真实选择常伴随短暂停顿与微调。"
+    }
+  ],
+  "decision_logic": "匹配组合需落在人类一致性分布，且存在自然的停顿与回撤；过度快速或零回撤判异常。",
+  "attack_surface": [
+    "字体特征计算脚本直接聚类",
+    "重放真实用户的选择序列"
+  ],
+  "mitigations": [
+    "随机化字体样本与字母类型",
+    "加入细微渲染扰动降低特征计算",
+    "叠加指针轨迹与停顿信号进行多信号判定"
+  ],
+  "accessibility": "提供大字号与高对比模式，并允许键盘选择，必要时提供非文字替代任务。",
+  "risks": [
+    "字体渲染差异影响风格判断",
+    "不同文化背景对字体风格熟悉度不同"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：风格样本",
+      "caption": "同一字母的多种字体风格。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-077-1.svg"
+    },
+    {
+      "title": "状态 2：选择匹配",
+      "caption": "用户选择同一风格系列。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-077-2.svg"
+    },
+    {
+      "title": "状态 3：一致判定",
+      "caption": "依据匹配一致性与路径判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-077-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Typeface",
+      "url": "https://en.wikipedia.org/wiki/Typeface",
+      "note": "说明字体风格与家族的视觉特征。"
+    },
+    {
+      "title": "Font",
+      "url": "https://en.wikipedia.org/wiki/Font",
+      "note": "说明字体与字形样式的基本概念。"
+    }
+  ]
+}

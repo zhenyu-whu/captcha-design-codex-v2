@@ -1,0 +1,78 @@
+{
+  "id": "12",
+  "slug": "idea-012",
+  "title": "非均匀增益适应",
+  "group": "生物肌肉与鼠标运动",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在不同方向引入不一致灵敏度，观察短期试错到稳定校准的适应曲线。",
+  "background": "当控制增益在不同方向不一致时，人类会通过试错逐步适应并形成校准曲线。这种非均匀适应过程具有可测的学习轨迹，可用于区分真实操控与脚本生成。",
+  "core_mechanism": [
+    "设置横向/纵向不同灵敏度的短任务。",
+    "记录初始误差与随时间的误差下降趋势。",
+    "评估试错‑校准曲线与稳定区间。",
+    "多次切换增益以观察适应一致性。"
+  ],
+  "user_flow": [
+    "步骤 1：用户完成带非均匀增益的移动任务。",
+    "步骤 2：系统记录误差与调整幅度。",
+    "步骤 3：系统分析适应曲线并判定。"
+  ],
+  "signals": [
+    {
+      "signal": "误差下降曲线",
+      "why_it_matters": "真实用户会出现可测的适应与学习过程。"
+    },
+    {
+      "signal": "方向性纠偏幅度",
+      "why_it_matters": "适应过程会表现为方向性校正。"
+    }
+  ],
+  "decision_logic": "以多段任务的误差下降斜率与稳定区间为判定依据，要求适应过程具有连续性与一致性；无适应或过度完美判异常。",
+  "attack_surface": [
+    "脚本提前获知增益参数并生成轨迹",
+    "回放已学习的适应曲线"
+  ],
+  "mitigations": [
+    "随机化增益参数与切换节奏",
+    "多段适应与多信号耦合判定",
+    "引入轻微扰动以检测实时调整"
+  ],
+  "accessibility": "提供低强度增益差异或替代任务，避免造成过大操控负担。",
+  "risks": [
+    "任务过长可能导致疲劳",
+    "设备差异影响适应曲线形态"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：非均匀增益",
+      "caption": "横向/纵向灵敏度不同的目标任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-012-1.svg"
+    },
+    {
+      "title": "状态 2：试错调整",
+      "caption": "用户逐步纠偏并形成适应轨迹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-012-2.svg"
+    },
+    {
+      "title": "状态 3：适应曲线",
+      "caption": "误差下降曲线用于判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-012-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Motor adaptation",
+      "url": "https://en.wikipedia.org/wiki/Motor_adaptation",
+      "note": "说明人类对控制参数变化的适应。"
+    },
+    {
+      "title": "Motor learning",
+      "url": "https://en.wikipedia.org/wiki/Motor_learning",
+      "note": "说明试错与稳定校准的学习过程。"
+    }
+  ]
+}

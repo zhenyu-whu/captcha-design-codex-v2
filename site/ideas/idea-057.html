@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#57 深度先验排序 · CAPTCHA 设计图谱</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body class="idea-page">
+    <div class="topbar">
+      <div class="logo">CAPTCHA 设计图谱</div>
+      <a class="back-link" href="../index.html">← 返回索引</a>
+    </div>
+    <main>
+      <section class="idea-hero">
+        <div class="card-top">
+          <span class="chip accent">#57</span>
+          <span class="chip teal">视觉思考范式：扫描/错觉/全局-局部</span>
+          <span class="chip blue">已扩展</span>
+        </div>
+        <h1>深度先验排序</h1>
+        <p>依据遮挡、阴影或透视提示快速排序前后层级，利用深度先验与排序时序验证真实性。</p>
+        <div class="idea-meta">
+          <span>阶段：Technique Execution Results (Partial)</span>
+          <span class="status-expanded">状态：已扩展</span>
+        </div>
+      </section>
+
+      
+
+      <section class="section">
+        <h2>概念原文</h2>
+        <p>通过遮挡、阴影或透视提示形成深度暗示，用户快速排序“前后层级”；记录排序耗时与一致性。</p>
+        <p>借助人类深度先验与快速分层决策作为信号。</p>
+      </section>
+
+      <section class="section">
+        <h2>研究背景</h2>
+        <p>人类利用遮挡、阴影和透视线索形成稳定的深度先验。测量层级排序的一致性与耗时，可形成可靠的视觉分层特征。</p>
+      </section>
+
+      <section class="section">
+        <h2>核心机制</h2>
+        <ul><li>展示包含遮挡与透视线索的场景。</li><li>用户快速排序前后层级。</li><li>记录排序耗时与一致性。</li><li>分析排序策略与反应时分布。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>用户流程</h2>
+        <ul><li>步骤 1：用户看到深度线索场景。</li><li>步骤 2：用户拖拽或点击排序层级。</li><li>步骤 3：系统分析排序一致性并判定。</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>判定信号</h2>
+        <div class="signal-list">
+<div class="signal-item">
+  <strong>排序一致性与反应时</strong>
+  <div>深度先验通常产生稳定的快速排序。</div>
+</div>
+
+<div class="signal-item">
+  <strong>回撤次数与排序路径</strong>
+  <div>真实判断会出现短暂回撤与微调。</div>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>判定逻辑</h2>
+        <p>综合排序一致性与反应时，要求与人类深度先验分布一致；排序随机或过快判异常。</p>
+      </section>
+
+      <section class="section">
+        <h2>对抗面</h2>
+        <ul><li>脚本直接读取图层信息排序</li><li>重放真实用户的排序序列</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>防御与缓解</h2>
+        <ul><li>随机化遮挡关系与透视角度</li><li>引入轻微噪声与位置抖动</li><li>叠加鼠标轨迹与微时序信号进行多信号验证</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可达性与风险</h2>
+        <p>提供简化场景或替代任务模式，避免对空间感知受限用户造成负担。</p>
+        <ul><li>场景复杂度过高增加认知负担</li><li>小屏设备降低深度线索显著性</li></ul>
+      </section>
+
+      <section class="section">
+        <h2>可视化状态</h2>
+        <div class="visual-grid">
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-057-1.svg" alt="状态 1：深度线索" />
+  <h3>状态 1：深度线索</h3>
+  <p>遮挡与透视形成层级暗示。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-057-2.svg" alt="状态 2：层级排序" />
+  <h3>状态 2：层级排序</h3>
+  <p>用户快速排序前后层级。</p>
+</div>
+
+<div class="visual-card">
+  <img src="../assets/diagrams/idea-057-3.svg" alt="状态 3：排序判定" />
+  <h3>状态 3：排序判定</h3>
+  <p>分析一致性与反应时。</p>
+</div>
+</div>
+      </section>
+
+      <section class="section">
+        <h2>参考资料</h2>
+        <div class="reference-list">
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Depth_perception" target="_blank" rel="noreferrer">Depth perception</a>
+  <div>说明深度线索与层级判断。</div>
+</div>
+
+<div class="reference-item">
+  <a href="https://en.wikipedia.org/wiki/Occlusion_(perception)" target="_blank" rel="noreferrer">Occlusion</a>
+  <div>说明遮挡作为深度先验线索。</div>
+</div>
+</div>
+      </section>
+    </main>
+  </body>
+</html>

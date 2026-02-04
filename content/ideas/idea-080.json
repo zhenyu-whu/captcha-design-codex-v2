@@ -1,0 +1,78 @@
+{
+  "id": "80",
+  "slug": "idea-080",
+  "title": "异步现实印章",
+  "group": "Morphological Analysis - Combination Batches",
+  "phase": "Technique Execution Results (Partial)",
+  "kind": "idea",
+  "summary": "在正常交互中采集在场轨迹，异步弹出微任务让用户匹配轨迹特征，以预测误差与相对比较判定真实性。",
+  "background": "真实用户在自然操作中形成稳定的时间‑动作轨迹，而脚本难以在不同时间点保持连续一致性。将验证从当下动作转移到跨时一致性，可增强对自动化的抵抗力。",
+  "core_mechanism": [
+    "后台记录用户真实交互轨迹与微时序特征。",
+    "稍后弹出微任务，要求匹配轨迹的局部节奏或曲线。",
+    "计算预测误差与相对选择一致性。",
+    "多次异步触发以累积稳定信号。"
+  ],
+  "user_flow": [
+    "步骤 1：用户正常完成页面操作，系统记录轨迹。",
+    "步骤 2：稍后出现短微任务，要求匹配轨迹片段。",
+    "步骤 3：系统计算预测误差并给出判定。"
+  ],
+  "signals": [
+    {
+      "signal": "轨迹动力学预测误差",
+      "why_it_matters": "真实用户的轨迹节奏在短时间内具有连续性。"
+    },
+    {
+      "signal": "相对匹配选择一致性",
+      "why_it_matters": "真实用户更容易匹配自己的轨迹特征。"
+    }
+  ],
+  "decision_logic": "预测误差需落在人类连续性区间，并在多轮匹配中保持一致；随机或过度完美判异常。",
+  "attack_surface": [
+    "脚本记录并重放轨迹特征",
+    "伪造固定节奏曲线以匹配任务"
+  ],
+  "mitigations": [
+    "随机化异步触发时机与任务形式",
+    "绑定上下文参数降低重放价值",
+    "叠加多段轨迹与时序信号进行多信号判定"
+  ],
+  "accessibility": "提供可跳过的替代验证或简化任务，避免对记忆与认知造成负担。",
+  "risks": [
+    "用户未意识到异步任务导致困惑",
+    "隐私与透明度要求需明确告知"
+  ],
+  "visuals": [
+    {
+      "title": "状态 1：轨迹记录",
+      "caption": "用户正常操作时记录轨迹。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-080-1.svg"
+    },
+    {
+      "title": "状态 2：异步微任务",
+      "caption": "稍后弹出匹配轨迹的微任务。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-080-2.svg"
+    },
+    {
+      "title": "状态 3：误差判定",
+      "caption": "根据预测误差与一致性判定。",
+      "diagram_type": "frame",
+      "asset": "assets/diagrams/idea-080-3.svg"
+    }
+  ],
+  "references": [
+    {
+      "title": "Behavioral biometrics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral_biometrics",
+      "note": "说明行为轨迹作为验证信号的依据。"
+    },
+    {
+      "title": "Motor memory",
+      "url": "https://en.wikipedia.org/wiki/Motor_memory",
+      "note": "说明跨时一致性的动作记忆基础。"
+    }
+  ]
+}
